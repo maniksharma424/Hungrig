@@ -1,0 +1,15 @@
+.Header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.Header a{
+    margin: 15px;
+    text-decoration: none;
+    font-size: 20px;
+}
+.Header a img{
+ height: 100px;
+ width: 100px;
+ border-radius: 25px;
+}

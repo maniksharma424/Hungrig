@@ -1,0 +1,80 @@
+body {
+  font-family: ProximaNova, arial, Helvetica Neue, sans-serif;
+}
+
+.Available-Resturants ul {
+  width: 90%;
+  flex-wrap: wrap;
+  margin: 20px 45px;
+  display: flex;
+}
+
+.Resturant-Card {
+  width: 18%;
+  border-bottom: .5px solid #789;
+  margin: 20px 40px;
+  list-style-type: none;
+}
+
+.Resturant-Card img {
+  width: 100%;
+  height: 180px;
+  background-image: url("");
+}
+
+.Resturant-Image {
+  width: 100%;
+  height: 160px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 10px;
+}
+
+.Resturant-info p {
+  margin: 0;
+  padding: 3px 2px;
+  font-size: 20px;
+}
+
+.Resturant-Cuisines {
+  height: 45px;
+  flex-wrap: wrap;
+  display: flex;
+}
+
+.Resturant-Cuisines p {
+  margin: 0;
+  padding-top: 0;
+  font-size: 11px;
+}
+
+.Resturant-Delivery-Info {
+  justify-content: space-between;
+  margin: 5px 0;
+  display: flex;
+}
+
+.Resturant-Delivery-Info span {
+  margin: 0 5px;
+}
+
+.Header {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.Header a {
+  margin: 15px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.Header a img {
+  height: 100px;
+  width: 100px;
+  border-radius: 25px;
+}
+
+/*# sourceMappingURL=index.dff24a3a.css.map */
