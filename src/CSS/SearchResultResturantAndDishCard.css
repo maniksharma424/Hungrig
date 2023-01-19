@@ -1,0 +1,32 @@
+.Search-Result-Dish-Card{
+    display: flex;
+    width: 400px;
+    height: 250px;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+
+}
+.Search-Result-Dish-Image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
+.Search-Result-Restaurant-Card{
+    display: flex;
+    width: 420px;
+    height: 200px;
+    justify-content: space-evenly;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+.Search-Result-Restaurant-Image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+
+}

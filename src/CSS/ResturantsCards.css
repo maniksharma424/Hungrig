@@ -5,6 +5,10 @@
     margin:  20px 45px;
 
 }
+.Available-Resturants input{
+    width: 800px;
+    height: 50px;
+}
 .Resturant-Card {
     width: 18%;
 

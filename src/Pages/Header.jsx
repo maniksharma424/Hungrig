@@ -11,7 +11,7 @@ const Header = ()=>{
             <p>
             <Link to='/login'>Login/Signup</Link>
             <a href="/">Offers</a><a href="/">Home</a>
-            <Link to="/cart"><i className="fa-solid fa-cart-shopping fa-large"></i></Link>
+            <Link to="/cart">crt</Link>
             </p>
         </div>
        

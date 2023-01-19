@@ -1,0 +1,16 @@
+.Food-Item-Card{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    margin: 20px;
+    height: 200px;
+    width: 400px;
+
+
+}
+.Food-Item-Image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}

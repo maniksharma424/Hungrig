@@ -7,6 +7,7 @@ import { SignUp } from "../Pages/SignUp"
 import { createBrowserRouter,Outlet } from "react-router-dom"
 import Header from "../Pages/Header"
 import Footer from "../Pages/Footer"
+import SearchPage from "../Pages/SearchPage"
 const App = ()=>{
     return(
         <>
@@ -39,6 +40,10 @@ export const MyRouter = createBrowserRouter([{
         {
             path:'/RestutantPage',
             element:<ResturantPage/>
+        },
+        {
+            path:'/searchpage',
+            element:<SearchPage/>
         }
     ]
     

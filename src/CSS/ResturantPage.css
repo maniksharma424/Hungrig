@@ -1,0 +1,28 @@
+.Resturant-banner{
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-around;
+    align-items: center;
+}
+.Resturant-Image{
+    border: 1px solid black;
+
+}
+.Resturant-Menu-Body{
+    display: flex;
+    justify-content: space-evenly;
+}
+.Resturant-Page-Input-Field{
+    margin-left: 500px;
+}
+.Resturant-Page-Input-Field :nth-child(1){
+    width: 350px;
+}
+.Resturant-Categories{
+    display: flex;
+    flex-direction: column;
+}
+.Resturant-Categories button{
+    margin: 5px;
+    padding: 10px;
+}

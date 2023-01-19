@@ -1,0 +1,19 @@
+.Suggsted-Item{
+    display: flex;
+    justify-content: space-evenly;
+    height: 100px;
+    width: 300px;
+    border: 1px solid black;
+    margin: 10px;
+    
+
+}
+
+
+
+.Suggested-Item-Image{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
