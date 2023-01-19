@@ -1,6 +1,8 @@
 import React from 'react'
 import "../CSS/SearchResultResturantAndDishCard.css"
-
+import { Link } from 'react-router-dom'
+import { CartItems } from './Cart'
+import { addToCart } from '../Utilities/utils'
 
 const SearchResultResturantCard = ({Dish,Restaurant}) => {
   
@@ -19,12 +21,15 @@ if (Dish) return (
                         <div className="Search-Result-Dish-Add-Cart">
                           <div className="Search-Result-Dish-Image" style={{"backgroundImage":`url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${Dish?.card?.card?.info?.imageId})`,"height":"150px","width":"150px"}}>
                           </div>
-                          <button>Add</button>
+                          <button onClick={()=>{
+                            console.log('Added..');
+                            addToCart(CartItems,{"info":Dish?.card?.card?.info,"restaurant":Dish?.card?.card?.restaurant?.info})}}>Add</button>
                         </div>
                     </div>
                         
                   )
 if(Restaurant) return (
+                    <Link state={{"id":Restaurant?.card?.card?.info?.id}} to='/restaurantPage'>
                         <div className="Search-Result-Restaurant-Card">
                             <div className="Search-Result-Restaurant">
                               <div className="Search-Result-Restaurant-Image" style={{"backgroundImage":`url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${Restaurant?.card?.card?.info?.cloudinaryImageId})`,"height":"150px","width":"150px"}}></div>
@@ -36,6 +41,7 @@ if(Restaurant) return (
                             <p>{Restaurant?.card?.card?.info?.cuisines.map((cuisine,index)=>{return <span key={index}>{cuisine},</span>})}</p>
                             </div>
                         </div>
+                     </Link>
 
                       )
 else return null

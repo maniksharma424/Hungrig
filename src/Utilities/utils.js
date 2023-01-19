@@ -80,6 +80,7 @@ export const getResturantMenu = async (signal,resturantID,setResturantData,setMe
 
   setMenu(Object.values(response.data.menu.items))
   setFilteredMenu(Object.values(response.data.menu.items))
+  console.log(response.data);
 
 }
 
@@ -113,3 +114,22 @@ export const handleFilterVegItems = (isVeg,state,setState)=>{
       isVeg ?(setState(state.filter(item=>item.isVeg>=1))):setState(state)
 }
       
+
+
+// add item to cart 
+export const addToCart = (Cart,Item)=>{
+  let cartItems = []
+  if(JSON.parse(localStorage.getItem('cartItems'))){
+     cartItems = JSON.parse(localStorage.getItem('cartItems'))
+     cartItems.map(cartItem=>{
+      (cartItem.restaurant.id === Item.restaurant.id) ?
+      Cart.push(Item):
+      alert('you want to add items from another restaurant')
+      })
+    }
+else {
+  Cart.push(Item)
+}
+  localStorage.setItem("cartItems",JSON.stringify(Cart))
+
+}

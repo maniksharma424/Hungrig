@@ -38,7 +38,7 @@ export const MyRouter = createBrowserRouter([{
             element:<SignUp/>
         },
         {
-            path:'/RestutantPage',
+            path:'/RestaurantPage',
             element:<ResturantPage/>
         },
         {

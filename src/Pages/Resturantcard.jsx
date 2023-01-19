@@ -9,7 +9,7 @@ export const ResturantCard = ({resturant}) => {
   return (
     <>
      <li key={count++} className=" Resturant-Card">
-    <Link state={{"id":resturant?.data?.data?.id}} to="/RestutantPage">
+    <Link state={{"id":resturant?.data?.data?.id}} to="/RestaurantPage">
          <div className="Resturant-Image" style={{"backgroundImage":`url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${resturant?.data?.data?.cloudinaryImageId})`}}></div>
         <div className="Resturant-data">
         <p>{resturant?.data?.data.name}</p>
@@ -21,8 +21,7 @@ export const ResturantCard = ({resturant}) => {
         <span>{resturant?.data?.data?.sla?.deliveryTime} Min</span>
         <span>{resturant?.data?.data?.costForTwo}</span>
                 </div>
-                  <p><button onClick={()=>{
-                      CartItems.push(resturant)}}>Add to Cart</button></p>
+                  
                  </div>
       </Link>
       </li>

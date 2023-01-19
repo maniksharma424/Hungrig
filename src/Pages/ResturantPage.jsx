@@ -19,7 +19,7 @@ const ResturantPage = ()=>{
         const signal = controller.signal
 
         getResturantMenu(signal,resturantID,setResturantData,setMenu,setFilteredMenu)
-            console.log(filteredMenu);
+
         return () => controller.abort()
     },[])
 
@@ -29,7 +29,7 @@ const ResturantPage = ()=>{
                     <div className="Resturant-Image" style={{"backgroundImage":`url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${resturantData?.cloudinaryImageId})`,"width": "300px"}}></div>
                     <div className="Resturant-Info">
                         <p>{resturantData?.name}</p>
-                         {resturantData?.cuisines?.map(item=><span key={--keyCount}>{item} ,</span>)}
+                         {resturantData?.cuisines?.map((item,index)=>{return <span key={index}>{item} ,</span>})}
                         <p>{resturantData?.locality}</p>
                         <span>
                             <p >{resturantData?.avgRating}</p>
@@ -38,7 +38,7 @@ const ResturantPage = ()=>{
                         </span>
                     </div>
                     <div className="Resturant-Offers">
-                        {resturantData?.offerMeta?.map(item=><p key={keyCount++}>{item.header}</p>)}
+                        {resturantData?.offerMeta?.map((item,index)=>{return <p key={index}>{item.header}</p>})}
                     </div>
             </div>
                 <div className="Resturant-Page-Input-Field">
@@ -62,7 +62,7 @@ const ResturantPage = ()=>{
                 </div>
                 <div className="Resturant-Menu-Items">
                         {filteredMenu.map(item=><ResturantMenuItemCard key={item.id}
-                         foodItem={item}/>)}
+                         foodItem={item} RestaurantData={resturantData}/>)}
                 </div>
             </div>
 
