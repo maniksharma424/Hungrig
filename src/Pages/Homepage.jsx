@@ -26,12 +26,15 @@ export const Homepage = () => {
       setAvailablerestaurants
     );
 
-    return () => controller.abort();
+    return () => {
+      controller.abort();
+      console.log("left homepage");
+    };
   }, []);
 
   window.onscroll = function () {
-    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight)) {
-      console.log('get more data');
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+      console.log("get more data");
       getMoreResturants(
         offSet,
         setOffSet,
@@ -40,9 +43,8 @@ export const Homepage = () => {
         filteredResturant,
         setFilteredResturant
       );
-    }
-    else{
-      console.log('not on bottom');
+    } else {
+      console.log("not on bottom");
     }
   };
 
@@ -51,7 +53,7 @@ export const Homepage = () => {
   };
 
   return (
-    <>
+    <div className="Homepage">
       <ResturantContext.Provider value={filteredResturant}>
         <Carousel />
         <Body
@@ -59,6 +61,6 @@ export const Homepage = () => {
           filterResturants={filterResturants}
         />
       </ResturantContext.Provider>
-    </>
+    </div>
   );
 };

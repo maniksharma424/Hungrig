@@ -31978,7 +31978,10 @@ const Homepage = ()=>{
         const controller = new AbortController();
         const signal = controller.signal;
         (0, _utils.getResturants)(offSet, signal, setAllResturants, setFilteredResturant, setAvailablerestaurants);
-        return ()=>controller.abort();
+        return ()=>{
+            controller.abort();
+            console.log("left homepage");
+        };
     }, []);
     window.onscroll = function() {
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
@@ -31989,13 +31992,14 @@ const Homepage = ()=>{
     const filterResturants = (searchInput)=>{
         (0, _utils.handleFilterResturants)(searchInput, allresturants, setFilteredResturant);
     };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Homepage",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contextResturant.ResturantContext).Provider, {
             value: filteredResturant,
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 56,
+                    lineNumber: 58,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {
@@ -32003,16 +32007,20 @@ const Homepage = ()=>{
                     filterResturants: filterResturants
                 }, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 57,
+                    lineNumber: 59,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Pages/Homepage.jsx",
-            lineNumber: 55,
+            lineNumber: 57,
             columnNumber: 7
         }, undefined)
-    }, void 0, false);
+    }, void 0, false, {
+        fileName: "src/Pages/Homepage.jsx",
+        lineNumber: 56,
+        columnNumber: 5
+    }, undefined);
 };
 _s(Homepage, "cCTGmYJxogw7QxJg47GOZy2wEQc=");
 _c = Homepage;
