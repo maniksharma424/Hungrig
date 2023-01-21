@@ -31971,10 +31971,11 @@ const Homepage = ()=>{
     const [allresturants, setAllResturants] = (0, _react.useState)([]);
     const [filteredResturant, setFilteredResturant] = (0, _react.useState)(allresturants);
     const [offSet, setOffSet] = (0, _react.useState)(15);
+    const [availableRestaurants, setAvailableRestaurants] = (0, _react.useState)(0);
     (0, _react.useEffect)(()=>{
         const controller = new AbortController();
         const signal = controller.signal;
-        (0, _utils.getResturants)(offSet, signal, setAllResturants, setFilteredResturant);
+        (0, _utils.getResturants)(offSet, signal, setAllResturants, setFilteredResturant, setAvailableRestaurants);
         return ()=>controller.abort();
     }, []);
     window.onscroll = function() {
@@ -31987,20 +31988,21 @@ const Homepage = ()=>{
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contextResturant.ResturantContext).Provider, {
             value: filteredResturant,
             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {
+                size: availableRestaurants,
                 filterResturants: filterResturants
             }, void 0, false, {
                 fileName: "src/Pages/Homepage.jsx",
-                lineNumber: 35,
+                lineNumber: 36,
                 columnNumber: 11
             }, undefined)
         }, void 0, false, {
             fileName: "src/Pages/Homepage.jsx",
-            lineNumber: 34,
+            lineNumber: 35,
             columnNumber: 11
         }, undefined)
     }, void 0, false);
 };
-_s(Homepage, "Ada16QgMIdLo10Bbh2jksfFwh40=");
+_s(Homepage, "QzEn4u3R5kVZN8z67dKFHS5Ir3s=");
 _c = Homepage;
 var _c;
 $RefreshReg$(_c, "Homepage");
@@ -32027,7 +32029,7 @@ var _resturantcardJsx = require("./Resturantcard.jsx");
 var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
 let i = 50;
-const Body = ({ filterResturants  })=>{
+const Body = ({ filterResturants , size  })=>{
     _s();
     const [searchText, setSearchText] = (0, _react.useState)("");
     const ResturantData = (0, _react.useContext)((0, _contextResturant.ResturantContext));
@@ -32040,6 +32042,13 @@ const Body = ({ filterResturants  })=>{
                 lineNumber: 13,
                 columnNumber: 5
             }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                children: size
+            }, void 0, false, {
+                fileName: "src/Pages/Body.jsx",
+                lineNumber: 14,
+                columnNumber: 9
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 id: "Available-Resturants-window",
                 className: "Available-Resturants",
@@ -32050,12 +32059,12 @@ const Body = ({ filterResturants  })=>{
                             placeholder: "search for Resturants"
                         }, void 0, false, {
                             fileName: "src/Pages/Body.jsx",
-                            lineNumber: 17,
+                            lineNumber: 18,
                             columnNumber: 17
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/Pages/Body.jsx",
-                        lineNumber: 16,
+                        lineNumber: 17,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
@@ -32064,19 +32073,19 @@ const Body = ({ filterResturants  })=>{
                                 resturant: resturant
                             }, i++, false, {
                                 fileName: "src/Pages/Body.jsx",
-                                lineNumber: 24,
+                                lineNumber: 25,
                                 columnNumber: 32
                             }, undefined);
                         })
                     }, void 0, false, {
                         fileName: "src/Pages/Body.jsx",
-                        lineNumber: 22,
+                        lineNumber: 23,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Pages/Body.jsx",
-                lineNumber: 15,
+                lineNumber: 16,
                 columnNumber: 9
             }, undefined)
         ]
@@ -32445,7 +32454,7 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./CartItemCard":"41W5D"}],"41W5D":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./CartItemCard":"41W5D","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"41W5D":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5c73 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -32518,9 +32527,10 @@ parcelHelpers.export(exports, "handleFilterMenuItems", ()=>handleFilterMenuItems
 parcelHelpers.export(exports, "handleCategoryMenu", ()=>handleCategoryMenu);
 parcelHelpers.export(exports, "handleFilterVegItems", ()=>handleFilterVegItems);
 parcelHelpers.export(exports, "addToCart", ()=>addToCart);
-const getResturants = async (offSet, signal, setAllResturants, setFilteredResturant)=>{
+const getResturants = async (offSet, signal, setAllResturants, setFilteredResturant, setAvaialableRestaurants)=>{
     const resturantDataSwiggy = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=${offSet}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`, signal).catch((err)=>console.log(err));
     const resturantDataJson = await resturantDataSwiggy?.json();
+    setAvaialableRestaurants(resturantDataJson?.data?.totalSize);
     setAllResturants(resturantDataJson?.data?.cards);
     setFilteredResturant(resturantDataJson?.data?.cards);
 };
@@ -32550,6 +32560,7 @@ const getQueryData = async (query, metaData, setState)=>{
     });
 };
 const getMoreResturants = (offSet, setOffSet, allresturants, setAllResturants, filteredResturant, setFilteredResturant)=>{
+    console.log("more data incomming");
     setOffSet((n)=>n + 16);
     const getResturants = async ()=>{
         const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=${offSet}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>console.log(err));
@@ -33828,7 +33839,7 @@ $RefreshReg$(_c, "SearchResultResturantCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../CSS/SearchResultResturantAndDishCard.css":"27Qi7","react-router-dom":"9xmpe","./Cart":"3PdSH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Utilities/utils":"bIOxy"}],"27Qi7":[function() {},{}],"5sGqh":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../CSS/SearchResultResturantAndDishCard.css":"27Qi7","react-router-dom":"9xmpe","./Cart":"3PdSH","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"27Qi7":[function() {},{}],"5sGqh":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ac75 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

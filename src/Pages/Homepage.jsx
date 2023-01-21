@@ -9,11 +9,12 @@ export const Homepage = () => {
     const [allresturants,setAllResturants] = useState([])
     const[filteredResturant,setFilteredResturant] = useState(allresturants)
     const[offSet,setOffSet] = useState(15)
+    const[availableRestaurants,setAvailableRestaurants] = useState(0)
 
     useEffect(()=>{
       const controller = new AbortController()
       const signal = controller.signal
-      getResturants(offSet,signal,setAllResturants,setFilteredResturant)
+      getResturants(offSet,signal,setAllResturants,setFilteredResturant,setAvailableRestaurants)
 
       return () => controller.abort()
       },[])
@@ -32,7 +33,7 @@ export const Homepage = () => {
      return (
           <>
           <ResturantContext.Provider value={filteredResturant}>
-          <Body filterResturants={filterResturants} />
+          <Body size={availableRestaurants} filterResturants={filterResturants} />
           </ResturantContext.Provider>
           </>
      )

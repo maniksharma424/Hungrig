@@ -5,12 +5,13 @@ import {ResturantContext} from "../Contexts/ContextResturant"
 import {ResturantCard} from "./Resturantcard.jsx"
 import {Link} from 'react-router-dom'
 let i = 50
-const Body = ({filterResturants})=>{
+const Body = ({filterResturants,size})=>{
     const[searchText,setSearchText]  = useState('')
     const ResturantData = useContext(ResturantContext)
     return(
         <>
     <h1>All Resturants Near You</h1>
+        <p>{size}</p>
 
         <div id="Available-Resturants-window" className="Available-Resturants">
             <Link to='/searchpage'>
