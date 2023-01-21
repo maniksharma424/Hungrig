@@ -13,5 +13,4 @@ const CartItemCard = ({ item }) => {
     </div>
   );
 };
- 
-export default CartItemCard; 
+export default CartItemCard;
