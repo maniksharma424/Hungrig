@@ -31984,7 +31984,7 @@ const Homepage = ()=>{
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
             console.log("get more data");
             (0, _utils.getMoreResturants)(offSet, setOffSet, allresturants, setAllResturants, filteredResturant, setFilteredResturant);
-        }
+        } else console.log("not on bottom");
     };
     const filterResturants = (searchInput)=>{
         (0, _utils.handleFilterResturants)(searchInput, allresturants, setFilteredResturant);
@@ -31995,7 +31995,7 @@ const Homepage = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 53,
+                    lineNumber: 56,
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {
@@ -32003,13 +32003,13 @@ const Homepage = ()=>{
                     filterResturants: filterResturants
                 }, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 54,
+                    lineNumber: 57,
                     columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Pages/Homepage.jsx",
-            lineNumber: 52,
+            lineNumber: 55,
             columnNumber: 7
         }, undefined)
     }, void 0, false);

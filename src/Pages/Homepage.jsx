@@ -30,7 +30,7 @@ export const Homepage = () => {
   }, []);
 
   window.onscroll = function () {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight)) {
       console.log('get more data');
       getMoreResturants(
         offSet,
@@ -40,6 +40,9 @@ export const Homepage = () => {
         filteredResturant,
         setFilteredResturant
       );
+    }
+    else{
+      console.log('not on bottom');
     }
   };
 
