@@ -32567,7 +32567,7 @@ const Sort = ({ availableRestaurants  })=>{
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
             className: "toatl-Restaurants font-[600] text-[27px] decoration-[#282c3f]",
             children: [
-                `${availableRestaurants.totalSize} restaurants`,
+                `${availableRestaurants?.totalSize} restaurants`,
                 " "
             ]
         }, void 0, true, {
