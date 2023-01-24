@@ -1,5 +1,5 @@
 import { useLocation } from "react-router-dom";
-import "../CSS/ResturantPage.css";
+
 import { useState, useEffect } from "react";
 import {
   getResturantMenu,
@@ -36,7 +36,7 @@ const ResturantPage = () => {
 
   return (
     <div className="Resturant-Page">
-      <div className="Resturant-banner  bg-[#171a29] px-12 py-12 h-245 flex justify-around items-center ">
+      <div className="Resturant-banner sticky top-0 z-20  bg-[#171a29] px-12 py-12 h-245 flex justify-around items-center ">
         <div
           className="Resturant-Image w-[254px] h-[165px] bg-centre bg-contain bg-no-repeat"
           style={{
@@ -77,13 +77,13 @@ const ResturantPage = () => {
               <p className="text-[10px] text-[#686b78]">Delivery Time</p>
             </li>
             <li className="mr-11 px-2">
-              {resturantData?.costForTwo}
+              ₹ {resturantData?.costForTwo/100}
               <p className="text-[10px] text-[#686b78]">Cost for two</p>
             </li>
           </ul>
         </div>
-        <div className="Resturant-Offers text-[white]">
-          <fieldset className="border-[1px] w-[400px] h-[150px]">
+        <div className="Resturant-Offers  text-[white]">
+          <fieldset className="border-[1px] w-[400px] h-[200px]">
             <legend className="text-[18px] p-2">OFFERS</legend>
             {resturantData?.aggregatedDiscountInfoV2?.descriptionList?.map(
               (item, index) => {
@@ -97,7 +97,7 @@ const ResturantPage = () => {
           </fieldset>
         </div>
       </div>
-      <div className="Resturant-Page-Input-Field   w-[530px] relative left-[390px] bottom-[32px] flex justify-between p-2 text-[white]">
+      <div className="Resturant-Page-Input-Field sticky    w-[530px] z-30 top-[255px] left-[405px] bottom-[32px] flex justify-between p-2 text-[white]">
         <label className="bg-white p-4 px-8 flex justify-start items-center shadow-xl text-[black]  ">
           <i class="fa-solid fa-magnifying-glass fa-lg relative right-[10px]"></i>
 
@@ -125,8 +125,8 @@ const ResturantPage = () => {
           />
         </label>
       </div>
-      <div className="Resturant-Menu-Body w-11/12  justify-evenly flex">
-        <div className="Resturant-Categories   h-fit flex flex-col">
+      <div className="Resturant-Menu-Body w-11/12    justify-evenly flex">
+        <div className="Resturant-Categories  sticky top-[310px] z-40 pr-16   h-fit flex flex-col">
           {resturantData?.menu?.widgets?.map((item) =>
             item.type === "category" ? (
               <button

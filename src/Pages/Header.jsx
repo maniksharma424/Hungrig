@@ -1,10 +1,8 @@
-import "../CSS/Header.css";
-
 import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <div className="Header sticky top-0 bg-white z-10 pt-3 pb-2  px-[130px] w-full flex justify-between items-center">
+      <div className="Header sticky top-0  bg-white z-10 pt-3 pb-2  px-[130px] w-full flex justify-between items-center shadow-xl">
         <div className="header-logo">
           <Link to="/">
             <img

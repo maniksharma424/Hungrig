@@ -2,9 +2,8 @@
 export const getResturants = async (
   offSet,
   signal,
-  setAllResturants,
-  setFilteredResturant,
-  setAvailablerestaurants
+  // setAllResturants,
+  setFilteredResturant
 ) => {
   const resturantDataSwiggy = await fetch(
     `https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=${offSet}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
@@ -12,9 +11,7 @@ export const getResturants = async (
   ).catch((err) => console.log(err));
 
   const resturantDataJson = await resturantDataSwiggy?.json();
-  // console.log(resturantDataJson);
-  setAllResturants(resturantDataJson?.data?.cards);
-  setAvailablerestaurants(resturantDataJson?.data);
+  // setAllResturants(resturantDataJson?.data?.cards);
   setFilteredResturant(resturantDataJson?.data?.cards);
 };
 
@@ -58,8 +55,8 @@ export const getQueryData = async (query, metaData, setState) => {
 export const getMoreResturants = (
   offSet,
   setOffSet,
-  allresturants,
-  setAllResturants,
+  // allresturants,
+  // setAllResturants,
   filteredResturant,
   setFilteredResturant
 ) => {
@@ -71,9 +68,9 @@ export const getMoreResturants = (
       .then((res) => res.json())
       .catch((err) => console.log(err));
 
-    const moreResturants = await fetchResturants.data.cards;
+    const moreResturants = await fetchResturants?.data?.cards;
     if (moreResturants) {
-      setAllResturants([...allresturants, ...moreResturants]);
+      // setAllResturants([...allresturants, ...moreResturants]);
       setFilteredResturant([...filteredResturant, ...moreResturants]);
       console.log(moreResturants);
     } else return null;
@@ -126,17 +123,34 @@ export const handleFilterVegItems = (isVeg, state, setState) => {
 };
 
 // add item to cart
-export const addToCart = (Cart, Item) => {
-  let cartItems = [];
-  if (JSON.parse(localStorage.getItem("cartItems"))) {
-    cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    cartItems.map((cartItem) => {
-      cartItem.restaurant.id === Item.restaurant.id
-        ? Cart.push(Item)
-        : alert("you want to add items from another restaurant");
-    });
-  } else {
-    Cart.push(Item);
+export const addToCart = (Item) => {
+let cart = []
+// alreday items in cart
+if(localStorage.getItem('cartItems')){
+  cart = JSON.parse(localStorage.getItem('cartItems'))
+  cart.map(item=>{
+    // are items from same restaurants
+    if(item?.restaurant?.id === Item?.restaurant?.id){
+    cart?.push(Item)
+    localStorage.clear()
+    localStorage.setItem('cartItems',JSON.stringify(cart))
   }
-  localStorage.setItem("cartItems", JSON.stringify(Cart));
+  // items from different restaurants
+  else{
+    if(window.confirm('Start a fresh cart')){
+      localStorage.clear()
+      let newCart =  []
+      newCart?.push(Item)
+      localStorage.setItem('cartItems',JSON.stringify(newCart))
+    }
+    else{
+      return null
+    }
+  }})
+}
+//empty cart add item
+else{
+  cart.push(Item)
+  localStorage.setItem('cartItems',JSON.stringify(cart))
+}
 };

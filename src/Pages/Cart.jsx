@@ -1,25 +1,24 @@
 import CartItemCard from "./CartItemCard";
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
+import CartItem from "./CartItem"
 
-export const CartItems = [];
+
 export const Cart = () => {
-  const cartItems = JSON.parse(localStorage.getItem("cartItems"));
+  const[cartItems,setCartItems] = useState(()=>{return JSON.parse(localStorage.getItem('cartItems'))})
 
-  console.log(cartItems);
+
+  useEffect(() => {
+ setCartItems(JSON.parse(localStorage.getItem('cartItems')))
+}, [cartItems])
+  
 
   return (
-    <>
-      <h1>Cart</h1>
-      <ul>
-        {cartItems?.map((item, index) => {
-          return (
-            <li key={index}>
-              <CartItemCard item={item} />
-            </li>
-          );
-        })}
-      </ul>
-      <h5>chckout details ....</h5>
-    </>
+    <div className="cart border-[1px] border-black w-full flex justify-start items-center bg-gray-100 h-[750px]">
+      <div className="Checkout-Box border-black border-[1px] w-[400px] bg-white h-[500px]">
+        <ul className="Cart-Items ">
+          {cartItems.map((item,index)=>{return <li key={item?.info?.id}><CartItem cartItem={item}/></li>})}
+        </ul>
+      </div>
+    </div>
   );
 };

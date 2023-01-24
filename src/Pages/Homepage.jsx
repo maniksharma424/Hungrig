@@ -10,10 +10,9 @@ import { ResturantContext } from "../Contexts/ContextResturant";
 import Carousel from "./Carousel";
 
 export const Homepage = () => {
-  const [allresturants, setAllResturants] = useState([]);
-  const [filteredResturant, setFilteredResturant] = useState(allresturants);
+  // const [allresturants, setAllResturants] = useState([]);
+  const [filteredResturant, setFilteredResturant] = useState([]);
   const [offSet, setOffSet] = useState(15);
-  const [availableRestaurants, setAvailablerestaurants] = useState(0);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -21,9 +20,8 @@ export const Homepage = () => {
     getResturants(
       offSet,
       signal,
-      setAllResturants,
-      setFilteredResturant,
-      setAvailablerestaurants
+      // setAllResturants,
+      setFilteredResturant
     );
 
     return () => {
@@ -33,13 +31,13 @@ export const Homepage = () => {
   }, []);
 
   window.onscroll = function () {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
       console.log("get more data");
       getMoreResturants(
         offSet,
         setOffSet,
-        allresturants,
-        setAllResturants,
+        // allresturants,
+        // setAllResturants,
         filteredResturant,
         setFilteredResturant
       );
@@ -47,19 +45,11 @@ export const Homepage = () => {
       console.log("not on bottom");
     }
   };
-
-  const filterResturants = (searchInput) => {
-    handleFilterResturants(searchInput, allresturants, setFilteredResturant);
-  };
-
   return (
     <div className="Homepage">
       <ResturantContext.Provider value={filteredResturant}>
         <Carousel />
-        <Body
-          availableRestaurants={availableRestaurants}
-          filterResturants={filterResturants}
-        />
+        <Body/>
       </ResturantContext.Provider>
     </div>
   );

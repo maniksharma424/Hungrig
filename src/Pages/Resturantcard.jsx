@@ -1,4 +1,4 @@
-import "../CSS/ResturantsCards.css";
+
 import { CartItems } from "./Cart.jsx";
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,7 @@ export const ResturantCard = ({ resturant }) => {
     <>
       <li
         key={count++}
-        className=" Resturant-Card w-72 h-80 border px-4  py-4 border-none mb-8 mt-4 hover:shadow-lg border-slate-500 hover:border-1 hover:border-solid"
+        className=' Resturant-Card  w-72 h-80 border px-4  py-4 border-none mb-8 mt-4 hover:shadow-xl border-slate-500 hover:border-[.5px] hover:border-solid'
       >
         <Link state={{ id: resturant?.data?.data?.id }} to="/RestaurantPage">
           <div
@@ -19,13 +19,13 @@ export const ResturantCard = ({ resturant }) => {
             }}
           ></div>
           <div className="Resturant-data flex flex-col justify-start content-evenly">
-            <p className="Restaurnat-Name p-0 pb-0 text-lg">
+            <p className="Restaurnat-Name p-0 pb-0 text-lg text-[#3e4152]">
               {resturant?.data?.data.name}
             </p>
             <div className="Resturant-Cuisines mr-3 p-0">
               {resturant?.data?.data?.cuisines?.map((item) => (
                 <span
-                  className="Cuisine pl-1 p-0 text-xs w-11/12 decoration-[#cacfe9]"
+                  className="Cuisine pl-1 p-0 text-xs w-11/12 text-[#535665]"
                   key={countTwo++}
                 >
                   {item}

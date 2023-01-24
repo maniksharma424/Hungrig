@@ -342,6 +342,14 @@ img, video {
   height: 2.5rem;
 }
 
+.h-\[\] {
+  height: ;
+}
+
+.h-\[1500px\] {
+  height: 1500px;
+}
+
 .w-full {
   width: 100%;
 }
