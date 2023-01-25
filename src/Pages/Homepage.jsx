@@ -1,56 +1,35 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Body from "./Body";
-import {
-  handleFilterResturants,
-  getResturants,
-  getMoreResturants,
-} from "../Utilities/utils";
 import { useState } from "react";
 import { ResturantContext } from "../Contexts/ContextResturant";
 import Carousel from "./Carousel";
+import useRestaurant from "../customHooks/useRestaurant";
+import { getMoreRestaurants } from "../Utilities/helpers";
+import { ShimmerSimpleGallery } from "react-shimmer-effects";
+import HomPageShimmer from "./HomPageShimmer";
 
 export const Homepage = () => {
-  // const [allresturants, setAllResturants] = useState([]);
-  const [filteredResturant, setFilteredResturant] = useState([]);
-  const [offSet, setOffSet] = useState(15);
+  const [resturants, setResturants] = useState([]);
+  const [showRestaurant, setShowRestaurant] = useState(15);
 
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-    getResturants(
-      offSet,
-      signal,
-      // setAllResturants,
-      setFilteredResturant
+  useRestaurant(resturants, setResturants);
+  window.onscroll = () => {
+    getMoreRestaurants(
+      resturants,
+      setResturants,
+      showRestaurant,
+      setShowRestaurant
     );
-
-    return () => {
-      controller.abort();
-      console.log("left homepage");
-    };
-  }, []);
-
-  window.onscroll = function () {
-    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      console.log("get more data");
-      getMoreResturants(
-        offSet,
-        setOffSet,
-        // allresturants,
-        // setAllResturants,
-        filteredResturant,
-        setFilteredResturant
-      );
-    } else {
-      console.log("not on bottom");
-    }
   };
-  return (
-    <div className="Homepage">
-      <ResturantContext.Provider value={filteredResturant}>
-        <Carousel />
-        <Body/>
-      </ResturantContext.Provider>
-    </div>
-  );
+
+  if (resturants.length <= 0) return <HomPageShimmer />;
+  else
+    return (
+      <div className="Homepage">
+        <ResturantContext.Provider value={resturants}>
+          <Carousel />
+          <Body />
+        </ResturantContext.Provider>
+      </div>
+    );
 };

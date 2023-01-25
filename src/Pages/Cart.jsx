@@ -5,11 +5,12 @@ import CartItem from "./CartItem"
 
 export const Cart = () => {
   const[cartItems,setCartItems] = useState(()=>{return JSON.parse(localStorage.getItem('cartItems'))})
-
+ 
 
   useEffect(() => {
  setCartItems(JSON.parse(localStorage.getItem('cartItems')))
-}, [cartItems])
+ 
+}, [])
   
 
   return (

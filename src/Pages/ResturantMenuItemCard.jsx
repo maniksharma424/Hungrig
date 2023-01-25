@@ -1,13 +1,10 @@
-
-
+import { IMAGE_URL } from "../Utilities/constants";
 import { addToCart } from "../Utilities/utils";
 const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
-  // console.log(RestaurantData,foodItem);
 
   return (
     <div className="Food-Item-Card flex justify-between items-center h-fit w-[450px] relative left-[50px]  m-[20px] border-b-[1px] border-slate-500 border-opacity-50">
       <div className="Food-Item-Info  relative bottom-[20px]  w-2/3 h-1/3">
-        {/* <p className="text-[15px]">{foodItem?.name}</p> */}
         {foodItem?.isVeg === 1 ? (
           <p className="text-[15px]">
             {foodItem?.name}{" "}
@@ -28,13 +25,9 @@ const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
       </div>
       <div className="Food-Item">
         <div
-          className="Food-Item-Image rounded-[10px]  bg-center bg-contain bg-no-repeat"
-          style={{
-            backgroundImage: `url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/${foodItem?.cloudinaryImageId})`,
-            "height":"100px",
-            "width":'100px'
-          }}
-        ></div>
+          className="Food-Item-Image" >
+          <img className="rounded-[10px] w-[100px] h-[90px]  bg-center bg-contain bg-no-repeat" src={IMAGE_URL+ foodItem?.cloudinaryImageId}/>
+        </div>
         <div className="Food-Add-Btn">
           <button
             className=" bg-white border-opacity-50 border-[1px] border-slate-500 p-1 px-4 text-green-600 shadow-xl relative left-[14px] bottom-[20px]"
