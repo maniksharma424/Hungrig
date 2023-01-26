@@ -22,18 +22,18 @@ const debounce = (callback, delay) => {
 export const getSearchedResturants = debounce(searchResturants,500);
 
 // get QueryData(DishName or Resturant Name) Across All resturants Ans Dishes
-export const getQueryData = async (query, metaData, setState) => {
-  const queryData =
-    await fetch(`https://www.swiggy.com/dapi/restaurants/search/v3?lat=32.681881&lng=74.906294&str=${query}&trackingId=null&submitAction=SUGGESTION&metaData=${metaData}
-  `)
-      .then((res) => res.json())
-      .then((res) => res?.data?.cards[1]?.groupedCard?.cardGroupMap)
-      .catch((err) => console.log(err));
+// export const getQueryData = async (query, metaData, setState) => {
+//   const queryData =
+//     await fetch(`https://www.swiggy.com/dapi/restaurants/search/v3?lat=32.681881&lng=74.906294&str=${query}&trackingId=null&submitAction=SUGGESTION&metaData=${metaData}
+//   `)
+//       .then((res) => res.json())
+//       .then((res) => res?.data?.cards[1]?.groupedCard?.cardGroupMap)
+//       .catch((err) => console.log(err));
 
-  console.log({ ...queryData });
+//   console.log({ ...queryData });
 
-  setState({ ...queryData });
-};
+//   setState({ ...queryData });
+// };
 
 
 

@@ -26,7 +26,7 @@ const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
       <div className="Food-Item">
         <div
           className="Food-Item-Image" >
-          <img className="rounded-[10px] w-[100px] h-[90px]  bg-center bg-contain bg-no-repeat" src={IMAGE_URL+ foodItem?.cloudinaryImageId}/>
+          <img className="rounded-[6px] w-[100px] h-[90px]  bg-center bg-contain bg-no-repeat" src={IMAGE_URL+ foodItem?.cloudinaryImageId}/>
         </div>
         <div className="Food-Add-Btn">
           <button

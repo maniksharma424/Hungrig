@@ -2,7 +2,9 @@ import React from 'react'
 import { getSearchedResturants } from '../Utilities/utils';
 
 
-const SearchPageSearchBox = ({searchText,setSearchText,setSearchResturantResult,setSuggestedResturants}) => {
+const SearchPageSearchBox = ({searchText,setSearchText,
+  // setSearchResturantResult,
+  setSuggestedResturants}) => {
     
   return (
     <>
@@ -12,16 +14,18 @@ const SearchPageSearchBox = ({searchText,setSearchText,setSearchResturantResult,
           placeholder="search for resturants and food ... "
           onChange={(e) => {
             setSearchText(e.target.value);
-            setSearchResturantResult([]);
+            // setSearchResturantResult([]);
 
-            getSearchedResturants(e.target.value, setSuggestedResturants);
+            setSuggestedResturants ?  getSearchedResturants(e.target.value
+              , setSuggestedResturants
+              ): null
           }}
         />
         <button
           className="relative left-[670px] decoration-[#cacfe9] bottom-[40px] text-slate-500"
           onClick={() => {
             setSearchText("");
-            setSuggestedResturants([]);
+            setSuggestedResturants ? setSuggestedResturants([]) : null
           }}
         >
           <i class="fa-solid fa-xmark fa-2xl"></i>

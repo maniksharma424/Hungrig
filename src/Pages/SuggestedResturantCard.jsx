@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
 import { IMAGE_URL } from "../Utilities/constants";
+import SearchResults from "./SearchResults";
 
 const SuggestedResturantCard = ({ foodItem }) => {
   return (
     <>
-    {/* <Link to="/searchResult"> */}
+    <Link state={{item:foodItem}} to='/searchResults' >
       <div className="Suggsted-Item hover:cursor-pointer flex justify-start items-center px-5  my-[15px] ">
         <div className="Suggested-Item-Image ">
           <img
@@ -19,7 +20,7 @@ const SuggestedResturantCard = ({ foodItem }) => {
           </p>
         </div>
       </div>
-            {/* </Link> */}
+            </Link>
     </>
   );
 };

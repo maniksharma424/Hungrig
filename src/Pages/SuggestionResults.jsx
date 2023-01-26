@@ -2,7 +2,9 @@ import React from 'react'
 import SuggestedResturantCard from './SuggestedResturantCard';
 import { getQueryData } from '../Utilities/utils';
 import {ShimmerCategoryList} from 'react-shimmer-effects'
-const SuggestionResults = ({suggestedResturants,setSearchResturantResult}) => {
+const SuggestionResults = ({suggestedResturants
+  // ,setSearchResturantResult
+}) => {
 
 
 
@@ -13,13 +15,7 @@ const SuggestionResults = ({suggestedResturants,setSearchResturantResult}) => {
     <ul>
       {suggestedResturants?.map((item, index) => (
         <li
-          onClick={() => {
-            getQueryData(
-              item?.text,
-              item?.metadata,
-              setSearchResturantResult
-            );
-          }}
+        
           key={index}
         >
           <SuggestedResturantCard foodItem={item} />

@@ -1,8 +1,10 @@
 import React from 'react'
 import { IMAGE_URL } from '../Utilities/constants';
 
+
 const RestaurantPageBanner = ({resturantData}) => {
-  return (
+
+   return (
     <div className="Resturant-banner sticky top-0 z-20  bg-[#171a29] px-12 py-12 h-245 flex justify-around items-center ">
         <div className="Resturant-Image">
           <img className='w-[254px] h-[165px] bg-centre bg-contain bg-no-repeat' src={IMAGE_URL+resturantData?.cloudinaryImageId}/>

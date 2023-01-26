@@ -23,7 +23,7 @@ const SimilarRestaurnts = ({ Restaurant }) => {
           </p>
           <span className="text-[12px]">
             {Restaurant?.info?.avgRating >= 4 ? (
-              <span className="Rating text-white pr- pl-1 py-[3px]  text-[10px] px-[2px] p-0.5 decoration-slate-50  bg-green-600">
+              <span className="Rating text-white pr-1 pl-1 py-[3px]  text-[10px] px-[2px] p-0.5 decoration-slate-50  bg-green-600">
                 <i className="fa-regular fa-star fa-small"></i>{" "}
                 {Restaurant?.info?.avgRating}
               </span>

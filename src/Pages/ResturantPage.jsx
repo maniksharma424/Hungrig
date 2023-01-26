@@ -4,6 +4,7 @@ import RestaurantPageBanner from "./RestaurantPageBanner";
 import RestaurantPageSearchbox from "./RestaurantPageSearchbox";
 import useRestaurantPage from "../customHooks/useRestaurantPage";
 import RestaurantPageBody from "./RestaurantPageBody";
+import RestaurantPageShimmer from "./RestaurantPageShimmer";
 const ResturantPage = () => {
   const [menu, setMenu] = useState([]);
   const [filteredMenu, setFilteredMenu] = useState([]);
@@ -15,8 +16,8 @@ const ResturantPage = () => {
     setMenu,
     setFilteredMenu
   );
-
-  return (
+if (resturantData<=0) return <RestaurantPageShimmer/>
+  else return (
     <div className="Resturant-Page">
       <RestaurantPageBanner resturantData={resturantData} />
 

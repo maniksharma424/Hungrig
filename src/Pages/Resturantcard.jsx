@@ -26,16 +26,15 @@ export const RestaurantCard = ({ restaurant }) => {
                 </span>
               ))}
             </div>
-            <div className="restaurant-Delivery-Info flex justify-between w-60 items-center h-10">
+            <div className="restaurant-Delivery-Info flex justify-between w-[256px] items-center h-10">
               {
-              
               restaurant?.avgRating >= 4 ? (
-                <span className="Rating text-white pr-1 pl-1  text-xs p-0.5 decoration-slate-50  bg-green-600">
+                <span className="Rating text-white pr-1 pl-1 text-xs p-0.5 decoration-slate-50  bg-green-600">
                   <i className="fa-regular fa-star fa-small"></i>{" "}
                   {restaurant?.avgRating}
                 </span>
               ) : restaurant?.avgRating > 2.8 ? (
-                <span className="Rating text-white pr-1 pl-1  p-0.5 text-xs bg-[#db7c38]">
+                <span className="Rating text-white pr-1 pl-1 p-0.5 text-xs bg-[#db7c38]">
                   <i className="fa-regular fa-star fa-small"></i>{" "}
                   {restaurant?.avgRating}
                 </span>
