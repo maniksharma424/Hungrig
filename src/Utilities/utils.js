@@ -1,4 +1,3 @@
-
 // get searchpage data / search resturants amd dishes data
 
 const searchResturants = async (text, setState) => {
@@ -19,25 +18,10 @@ const debounce = (callback, delay) => {
     }, delay);
   };
 };
-export const getSearchedResturants = debounce(searchResturants,500);
+export const getSearchedResturants = debounce(searchResturants, 500);
 
-// get QueryData(DishName or Resturant Name) Across All resturants Ans Dishes
-// export const getQueryData = async (query, metaData, setState) => {
-//   const queryData =
-//     await fetch(`https://www.swiggy.com/dapi/restaurants/search/v3?lat=32.681881&lng=74.906294&str=${query}&trackingId=null&submitAction=SUGGESTION&metaData=${metaData}
-//   `)
-//       .then((res) => res.json())
-//       .then((res) => res?.data?.cards[1]?.groupedCard?.cardGroupMap)
-//       .catch((err) => console.log(err));
-
-//   console.log({ ...queryData });
-
-//   setState({ ...queryData });
-// };
-
-
-
-
+//-------------------------------------------------------------------------------
+//
 
 //handle SearchResult for menuItems in resturantPage
 export const handleFilterMenuItems = (DishName, state, setState) => {
@@ -62,43 +46,40 @@ export const handleFilterVegItems = (isVeg, state, setState) => {
   isVeg ? setState(state.filter((item) => item.isVeg >= 1)) : setState(state);
 };
 
+//-------------------------------------------------------------------------------
+//
+
 // add item to cart
 export const addToCart = (Item) => {
-let cart = []
-// alreday items in cart
-if(localStorage.getItem('cartItems')){
-  cart = JSON.parse(localStorage.getItem('cartItems'))
-  cart.map(item=>{
+  let cart = [];
+  // alreday items in cart
+  if (localStorage.getItem("cartItems")) {
+    cart = JSON.parse(localStorage.getItem("cartItems"));
     // are items from same restaurants
-    if(item?.restaurant?.id === Item?.restaurant?.id){
-    cart?.push(Item)
-    localStorage.clear()
-    localStorage.setItem('cartItems',JSON.stringify(cart))
+    if (cart[0]?.restaurant?.id === Item?.restaurant?.id) {
+      cart?.push(Item);
+      localStorage.clear();
+      localStorage.setItem("cartItems", JSON.stringify(cart));
+    }
+    // items from different restaurants
+    else {
+      //start fresh cart
+      if (window.confirm("Start a fresh cart")) {
+        localStorage.clear();
+        let newCart = [];
+        newCart?.push(Item);
+        localStorage.setItem("cartItems", JSON.stringify(newCart));
+      } else {
+        return null;
+      }
+    }
   }
-  // items from different restaurants
-  else{
-    if(window.confirm('Start a fresh cart')){
-      localStorage.clear()
-      let newCart =  []
-      newCart?.push(Item)
-      localStorage.setItem('cartItems',JSON.stringify(newCart))
-    }
-    else{
-      return null
-    }
-  }})
-}
-//empty cart add item
-else{
-  cart.push(Item)
-  localStorage.setItem('cartItems',JSON.stringify(cart))
-}
+  //empty cart add item
+  else {
+    cart.push(Item);
+    localStorage.setItem("cartItems", JSON.stringify(cart));
+  }
 };
 
-// get Avg RAting
-export const getAvgRating = ()=>{
-  return(
-    <>
-    </>
-  )
-}
+//-------------------------------------------------------------------------------
+//
