@@ -1,5 +1,5 @@
 import { IMAGE_URL } from "../Utilities/constants";
-import { addToCart } from "../Utilities/utils";
+import { addToCart } from "../Utilities/helpers";
 const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
 
   return (
@@ -34,8 +34,9 @@ const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
             onClick={() => {
               console.log("added...");
               addToCart({
-                info: foodItem,
-                restaurant: RestaurantData
+                dish: foodItem,
+                restaurant: RestaurantData,
+                qty:1
               });
             }}
           >

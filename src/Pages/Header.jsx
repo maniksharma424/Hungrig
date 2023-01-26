@@ -17,7 +17,7 @@ const Header = () => {
             <i class="fa-solid fa-magnifying-glass"></i> Search
           </Link>
           <Link to="/login">Login</Link>
-          <Link to="/cart">
+          <Link to="/cart">c
             <i class="fa-sharp fa-solid fa-cart-shopping fa-xl"></i>
           </Link>
         </div>

@@ -32561,6 +32561,8 @@ exports.default = useRestaurant;
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getMoreRestaurants", ()=>getMoreRestaurants);
+parcelHelpers.export(exports, "addToCart", ()=>addToCart);
+parcelHelpers.export(exports, "decrement", ()=>decrement);
 const getMoreRestaurants = (restaurants, setResturants, showRestaurant, setshowRestaurant)=>{
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
         setshowRestaurant((n)=>n + 16);
@@ -32577,7 +32579,64 @@ const getMoreRestaurants = (restaurants, setResturants, showRestaurant, setshowR
         };
         getResturants();
     }
-}; //
+};
+const addToCart = (Dish)=>{
+    // is local storage empty || first order
+    console.log(Dish);
+    if (localStorage.getItem("orders")) {
+        let Orders = JSON.parse(localStorage.getItem("orders"));
+        //are orders from same restaurant
+        if (Orders[0]?.restaurant?.id === Dish?.restaurant?.id) {
+            if (Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id) >= 0) {
+                //inc qty of similar dish
+                console.log("adding similar dish");
+                let prevQty = Orders[Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id)].qty;
+                let newOrder = Orders.filter((item)=>item.dish.id != Dish?.dish?.id);
+                newOrder.push({
+                    dish: Dish.dish,
+                    qty: prevQty + 1,
+                    restaurant: Dish.restaurant
+                });
+                localStorage.clear();
+                localStorage.setItem("orders", JSON.stringify(newOrder));
+            } else {
+                // similar rest diff dish
+                console.log("similar rest diff dish");
+                Orders.push(Dish);
+                localStorage.clear();
+                localStorage.setItem("orders", JSON.stringify(Orders));
+            }
+        } else {
+            //ask to create new basket
+            if (window.confirm("Start a fresh cart")) {
+                console.log("created new basket");
+                localStorage.clear();
+                localStorage.setItem("orders", JSON.stringify([
+                    Dish
+                ]));
+            } else return null;
+        }
+    } else {
+        console.log("new Dish");
+        localStorage.setItem("orders", JSON.stringify([
+            Dish
+        ]));
+    }
+};
+const decrement = (updateItem)=>{
+    let prevQty = updateItem?.qty;
+    console.log(updateItem?.qty);
+    let CartItems = JSON.parse(localStorage.getItem("orders"));
+    let newCartItems = CartItems.filter((item)=>item.dish.id != updateItem?.dish?.id);
+    console.log(newCartItems);
+    localStorage.clear();
+    newCartItems.push({
+        dish: updateItem.dish,
+        qty: prevQty - 1,
+        restaurant: updateItem.restaurant
+    });
+    localStorage.setItem("orders", JSON.stringify(newCartItems));
+};
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ORgO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -34385,16 +34444,37 @@ var _react = require("react");
 var _cartItem = require("./CartItem");
 var _cartItemDefault = parcelHelpers.interopDefault(_cartItem);
 var _constants = require("../Utilities/constants");
+var _helpers = require("../Utilities/helpers");
 var _s = $RefreshSig$();
 const Cart = ()=>{
     _s();
-    const [cartItems, setCartItems] = (0, _react.useState)(()=>{
-        return JSON.parse(localStorage.getItem("cartItems"));
-    });
+    const [cartItems, setCartItems] = (0, _react.useState)([]);
     (0, _react.useEffect)(()=>{
-        setCartItems(JSON.parse(localStorage.getItem("cartItems")));
+        getCartItems(setCartItems);
     }, []);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+    const getCartItems = (setState)=>{
+        if (JSON.parse(localStorage.getItem("orders"))) {
+            setState(JSON.parse(localStorage.getItem("orders")));
+            console.log(cartItems);
+        }
+    };
+    console.log(cartItems);
+    const handleIncrement = (...props)=>{
+        (0, _helpers.addToCart)(...props);
+        getCartItems(setCartItems);
+    };
+    const handleDecrement = (...props)=>{
+        (0, _helpers.decrement)(...props);
+        getCartItems(setCartItems);
+    };
+    if (cartItems?.length <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+        children: "nithing in cart"
+    }, void 0, false, {
+        fileName: "src/Pages/Cart.jsx",
+        lineNumber: 31,
+        columnNumber: 38
+    }, undefined);
+    else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "cart border-[1px] border-black w-full flex justify-start items-center bg-gray-100 h-[750px]",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
             className: "Checkout-Box border-black border-[1px] w-[400px] bg-white h-[500px]",
@@ -34413,13 +34493,13 @@ const Cart = ()=>{
                                         src: (0, _constants.IMAGE_URL) + cartItems[0]?.restaurant?.cloudinaryImageId
                                     }, void 0, false, {
                                         fileName: "src/Pages/Cart.jsx",
-                                        lineNumber: 22,
-                                        columnNumber: 17
+                                        lineNumber: 40,
+                                        columnNumber: 19
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 21,
-                                    columnNumber: 15
+                                    lineNumber: 39,
+                                    columnNumber: 17
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                     className: "Restaurant-Info ml-4",
@@ -34429,67 +34509,69 @@ const Cart = ()=>{
                                             children: cartItems[0]?.restaurant?.name
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 28,
-                                            columnNumber: 17
+                                            lineNumber: 48,
+                                            columnNumber: 19
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                             className: "text-[12px] font-[100px]",
                                             children: cartItems[0]?.restaurant?.locality
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 32,
-                                            columnNumber: 17
+                                            lineNumber: 52,
+                                            columnNumber: 19
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 27,
-                                    columnNumber: 15
+                                    lineNumber: 47,
+                                    columnNumber: 17
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/Pages/Cart.jsx",
-                            lineNumber: 20,
-                            columnNumber: 13
+                            lineNumber: 38,
+                            columnNumber: 15
                         }, undefined),
-                        cartItems.map((item, index)=>{
+                        cartItems?.map((item, index)=>{
                             return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartItemDefault.default), {
+                                    increment: handleIncrement,
+                                    decrement: handleDecrement,
                                     cartItem: item
                                 }, void 0, false, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 40,
+                                    lineNumber: 60,
                                     columnNumber: 21
                                 }, undefined)
-                            }, item?.info?.id, false, {
+                            }, index, false, {
                                 fileName: "src/Pages/Cart.jsx",
-                                lineNumber: 39,
+                                lineNumber: 59,
                                 columnNumber: 19
                             }, undefined);
                         })
                     ]
                 }, void 0, true, {
                     fileName: "src/Pages/Cart.jsx",
-                    lineNumber: 19,
-                    columnNumber: 11
+                    lineNumber: 37,
+                    columnNumber: 13
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Pages/Cart.jsx",
-                lineNumber: 18,
-                columnNumber: 9
+                lineNumber: 36,
+                columnNumber: 11
             }, undefined)
         }, void 0, false, {
             fileName: "src/Pages/Cart.jsx",
-            lineNumber: 17,
-            columnNumber: 7
+            lineNumber: 35,
+            columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/Cart.jsx",
-        lineNumber: 16,
-        columnNumber: 5
+        lineNumber: 34,
+        columnNumber: 7
     }, undefined);
 };
-_s(Cart, "MT8OSe9ZyDA8Qz2doWvScV9qAUc=");
+_s(Cart, "yMyLm0mTOdUD4xRL2vnEhQFbjeY=");
 _c = Cart;
 var _c;
 $RefreshReg$(_c, "Cart");
@@ -34499,7 +34581,7 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CartItem":"g2qA5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Utilities/constants":"5t9MR"}],"g2qA5":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CartItem":"g2qA5","../Utilities/constants":"5t9MR","../Utilities/helpers":"4t9SJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g2qA5":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1f30 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34512,49 +34594,66 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _s = $RefreshSig$();
-const CartItem = ({ cartItem  })=>{
+const CartItem = ({ cartItem , increment , decrement  })=>{
     _s();
-    const [count, setCount] = (0, _react.useState)();
+    const [count, setCount] = (0, _react.useState)(cartItem?.qty);
+    console.log(cartItem);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "Item-info flex justify-around items-center border-black border-[1px] mt-3",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 className: "text-[14px]",
-                children: cartItem?.info?.name
+                children: cartItem?.dish?.name
             }, void 0, false, {
                 fileName: "src/Pages/CartItem.jsx",
                 lineNumber: 8,
-                columnNumber: 13
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                children: [
-                    "- ",
-                    "1",
-                    " +"
-                ]
-            }, void 0, true, {
+                onClick: ()=>{
+                    setCount((n)=>n - 1);
+                    decrement(cartItem);
+                },
+                children: "-"
+            }, void 0, false, {
                 fileName: "src/Pages/CartItem.jsx",
-                lineNumber: 9,
-                columnNumber: 13
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined),
+            count,
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                onClick: ()=>{
+                    setCount((n)=>n + 1);
+                    increment({
+                        dish: cartItem?.dish,
+                        restaurant: cartItem?.restaurant,
+                        qty: cartItem?.qty + 1
+                    });
+                },
+                children: "+"
+            }, void 0, false, {
+                fileName: "src/Pages/CartItem.jsx",
+                lineNumber: 20,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                 children: [
                     "₹",
-                    cartItem?.info?.price / 100
+                    cartItem?.dish?.price / 100 * cartItem?.qty
                 ]
             }, void 0, true, {
                 fileName: "src/Pages/CartItem.jsx",
-                lineNumber: 10,
-                columnNumber: 13
+                lineNumber: 34,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Pages/CartItem.jsx",
         lineNumber: 7,
-        columnNumber: 9
+        columnNumber: 5
     }, undefined);
 };
-_s(CartItem, "Yaifuta9yHkME6XdLFtAtk2BAKs=");
+_s(CartItem, "4faNLjflZtroUHvcDNqX55bybcQ=");
 _c = CartItem;
 exports.default = CartItem;
 var _c;
@@ -35112,6 +35211,12 @@ $RefreshReg$(_c, "RestaurantPageSearchbox");
   window.$RefreshSig$ = prevRefreshSig;
 }
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bIOxy":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a474 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a474.prelude(module);
+
+try {
 // get searchpage data / search resturants amd dishes data
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -35119,7 +35224,7 @@ parcelHelpers.export(exports, "getSearchedResturants", ()=>getSearchedResturants
 parcelHelpers.export(exports, "handleFilterMenuItems", ()=>handleFilterMenuItems);
 parcelHelpers.export(exports, "handleCategoryMenu", ()=>handleCategoryMenu);
 parcelHelpers.export(exports, "handleFilterVegItems", ()=>handleFilterVegItems);
-parcelHelpers.export(exports, "addToCart", ()=>addToCart);
+var _react = require("react");
 const searchResturants = async (text, setState)=>{
     const similarresturants = await fetch(`https://www.swiggy.com/dapi/restaurants/search/suggest?lat=32.681881&lng=74.906294&str=${text}&trackingId=null`).then((res)=>res.json()).catch((res)=>console.log(res));
     setState(similarresturants?.data?.suggestions);
@@ -35146,34 +35251,61 @@ const handleCategoryMenu = (categoryName, state, setState)=>{
 };
 const handleFilterVegItems = (isVeg, state, setState)=>{
     isVeg ? setState(state.filter((item)=>item.isVeg >= 1)) : setState(state);
-};
-const addToCart = (Item)=>{
-    let cart = [];
-    // alreday items in cart
-    if (localStorage.getItem("cartItems")) {
-        cart = JSON.parse(localStorage.getItem("cartItems"));
-        // are items from same restaurants
-        if (cart[0]?.restaurant?.id === Item?.restaurant?.id) {
-            cart?.push(Item);
-            localStorage.clear();
-            localStorage.setItem("cartItems", JSON.stringify(cart));
-        } else {
-            //start fresh cart
-            if (window.confirm("Start a fresh cart")) {
-                localStorage.clear();
-                let newCart = [];
-                newCart?.push(Item);
-                localStorage.setItem("cartItems", JSON.stringify(newCart));
-            } else return null;
-        }
-    } else {
-        cart.push(Item);
-        localStorage.setItem("cartItems", JSON.stringify(cart));
-    }
 }; //-------------------------------------------------------------------------------
  //
+ // add item to cart
+ // export const addToCart = (Item) => {
+ //   const[cart,setCart] = useState([])
+ //   // alreday items in cart
+ //   if (localStorage.getItem("cartItems")) {
+ //     setCart(JSON.parse(localStorage.getItem("cartItems")));
+ //     // are items from same restaurants
+ //     if (cart[0]?.restaurant?.id === Item?.restaurant?.id) {        
+ //     // if same item added again
+ //           //inc val
+ //       if(cart.filter(item=>item?.info?.id === Item.info.id))
+ //       {
+ //          setCart(cart.filter(item=>item.info.id !== Item.info.id))
+ //           setCart(...cart,{"info":Item?.info,"retaurant":Item?.restaurant,"value":Item?.value+1})
+ //           localStorage.clear();
+ //           localStorage.setItem("cartItems", JSON.stringify(cart));
+ //         }
+ //         // different item from same restaurant
+ //         else{
+ //           // cart?.push(Item);
+ //           setCart(...cart,Item)
+ //           localStorage.clear();
+ //           localStorage.setItem("cartItems", JSON.stringify(cart));
+ //         }
+ //     }
+ //     // items from different restaurants
+ //     else {
+ //       //start fresh cart
+ //       console.log(Item.restaurant.id);
+ //       if (window.confirm("Start a fresh cart")) {
+ //         localStorage.clear();
+ //         localStorage.setItem("cartItems", JSON.stringify([Item]));
+ //       } else {
+ //         return null;
+ //       }
+ //     }
+ //   }
+ //   //empty cart add item
+ //   else {
+ //     // cart.push(Item);
+ //     setCart(Item)
+ //     localStorage.setItem("cartItems", JSON.stringify(cart));
+ //   }
+ // };
+ //-------------------------------------------------------------------------------
+ //
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4rT59":[function(require,module,exports) {
+  $parcel$ReactRefreshHelpers$a474.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4rT59":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5b23 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35296,7 +35428,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constants = require("../Utilities/constants");
-var _utils = require("../Utilities/utils");
+var _helpers = require("../Utilities/helpers");
 const ResturantMenuItemCard = ({ foodItem , RestaurantData  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "Food-Item-Card flex justify-between items-center h-fit w-[450px] relative left-[50px] m-[20px] border-b-[1px] border-slate-500 border-opacity-50",
@@ -35404,9 +35536,10 @@ const ResturantMenuItemCard = ({ foodItem , RestaurantData  })=>{
                             className: " bg-white border-opacity-50 border-[1px] border-slate-500 p-1 px-4 text-green-600 shadow-xl relative left-[14px] bottom-[20px]",
                             onClick: ()=>{
                                 console.log("added...");
-                                (0, _utils.addToCart)({
-                                    info: foodItem,
-                                    restaurant: RestaurantData
+                                (0, _helpers.addToCart)({
+                                    dish: foodItem,
+                                    restaurant: RestaurantData,
+                                    qty: 1
                                 });
                             },
                             children: "ADD"
@@ -35443,7 +35576,7 @@ $RefreshReg$(_c, "ResturantMenuItemCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lK9cM":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","../Utilities/helpers":"4t9SJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lK9cM":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4c83 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35729,14 +35862,17 @@ const Header = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/cart",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                class: "fa-sharp fa-solid fa-cart-shopping fa-xl"
-                            }, void 0, false, {
-                                fileName: "src/Pages/Header.jsx",
-                                lineNumber: 21,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
+                            children: [
+                                "c",
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                    class: "fa-sharp fa-solid fa-cart-shopping fa-xl"
+                                }, void 0, false, {
+                                    fileName: "src/Pages/Header.jsx",
+                                    lineNumber: 21,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
                             fileName: "src/Pages/Header.jsx",
                             lineNumber: 20,
                             columnNumber: 11
@@ -36481,7 +36617,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _utils = require("../Utilities/utils");
+var _helpers = require("../Utilities/helpers");
 var _constants = require("../Utilities/constants");
 const ResultDish = ({ Dish  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36642,9 +36778,10 @@ const ResultDish = ({ Dish  })=>{
                         className: " bg-white border-opacity-50 border-[1px] border-slate-500 p-1 px-4 text-green-600 shadow-md relative left-[14px] bottom-[15px]",
                         onClick: ()=>{
                             console.log("Added..");
-                            (0, _utils.addToCart)({
-                                info: Dish?.info,
-                                restaurant: Dish?.restaurant?.info
+                            (0, _helpers.addToCart)({
+                                dish: Dish?.info,
+                                restaurant: Dish?.restaurant?.info,
+                                qty: 1
                             });
                         },
                         children: "Add"
@@ -36676,7 +36813,7 @@ $RefreshReg$(_c, "ResultDish");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ajT6S":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/helpers":"4t9SJ","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ajT6S":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1300 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

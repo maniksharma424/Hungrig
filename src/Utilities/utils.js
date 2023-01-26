@@ -1,5 +1,7 @@
 // get searchpage data / search resturants amd dishes data
 
+import { useState } from "react";
+
 const searchResturants = async (text, setState) => {
   const similarresturants = await fetch(
     `https://www.swiggy.com/dapi/restaurants/search/suggest?lat=32.681881&lng=74.906294&str=${text}&trackingId=null`
@@ -50,36 +52,52 @@ export const handleFilterVegItems = (isVeg, state, setState) => {
 //
 
 // add item to cart
-export const addToCart = (Item) => {
-  let cart = [];
-  // alreday items in cart
-  if (localStorage.getItem("cartItems")) {
-    cart = JSON.parse(localStorage.getItem("cartItems"));
-    // are items from same restaurants
-    if (cart[0]?.restaurant?.id === Item?.restaurant?.id) {
-      cart?.push(Item);
-      localStorage.clear();
-      localStorage.setItem("cartItems", JSON.stringify(cart));
-    }
-    // items from different restaurants
-    else {
-      //start fresh cart
-      if (window.confirm("Start a fresh cart")) {
-        localStorage.clear();
-        let newCart = [];
-        newCart?.push(Item);
-        localStorage.setItem("cartItems", JSON.stringify(newCart));
-      } else {
-        return null;
-      }
-    }
-  }
-  //empty cart add item
-  else {
-    cart.push(Item);
-    localStorage.setItem("cartItems", JSON.stringify(cart));
-  }
-};
+// export const addToCart = (Item) => {
+//   const[cart,setCart] = useState([])
+ 
+//   // alreday items in cart
+//   if (localStorage.getItem("cartItems")) {
+//     setCart(JSON.parse(localStorage.getItem("cartItems")));
+//     // are items from same restaurants
+//     if (cart[0]?.restaurant?.id === Item?.restaurant?.id) {        
+//     // if same item added again
+//           //inc val
+//       if(cart.filter(item=>item?.info?.id === Item.info.id))
+//       {
+        
+//          setCart(cart.filter(item=>item.info.id !== Item.info.id))
+//           setCart(...cart,{"info":Item?.info,"retaurant":Item?.restaurant,"value":Item?.value+1})
+//           localStorage.clear();
+//           localStorage.setItem("cartItems", JSON.stringify(cart));
+//         }
+//         // different item from same restaurant
+//         else{
+//           // cart?.push(Item);
+//           setCart(...cart,Item)
+//           localStorage.clear();
+//           localStorage.setItem("cartItems", JSON.stringify(cart));
+//         }
+//     }
+//     // items from different restaurants
+//     else {
+//       //start fresh cart
+//       console.log(Item.restaurant.id);
+//       if (window.confirm("Start a fresh cart")) {
+//         localStorage.clear();
+//         localStorage.setItem("cartItems", JSON.stringify([Item]));
+//       } else {
+//         return null;
+//       }
+//     }
+//   }
+//   //empty cart add item
+//   else {
+    
+//     // cart.push(Item);
+//     setCart(Item)
+//     localStorage.setItem("cartItems", JSON.stringify(cart));
+//   }
+// };
 
 //-------------------------------------------------------------------------------
 //

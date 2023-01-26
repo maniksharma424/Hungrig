@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { addToCart } from "../Utilities/utils";
+import { addToCart } from "../Utilities/helpers";
 import { IMAGE_URL } from '../Utilities/constants';
 
 const ResultDish = ({Dish}) => {
@@ -57,8 +57,9 @@ const ResultDish = ({Dish}) => {
             onClick={() => {
               console.log("Added..");
               addToCart( {
-                info: Dish?.info,
+                dish: Dish?.info,
                 restaurant: Dish?.restaurant?.info,
+                qty:1
               });
             }}
           >
