@@ -31861,24 +31861,23 @@ var _searchPage = require("../Pages/SearchPage");
 var _searchPageDefault = parcelHelpers.interopDefault(_searchPage);
 var _searchResults = require("../Pages/SearchResults");
 var _searchResultsDefault = parcelHelpers.interopDefault(_searchResults);
-console.log("hi i am present");
 const App = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/Utilities/MyApp.js",
-                lineNumber: 17,
-                columnNumber: 13
+                lineNumber: 18,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/Utilities/MyApp.js",
-                lineNumber: 18,
-                columnNumber: 13
+                lineNumber: 19,
+                columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/Utilities/MyApp.js",
-                lineNumber: 19,
-                columnNumber: 13
+                lineNumber: 20,
+                columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
@@ -31889,56 +31888,56 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
             fileName: "src/Utilities/MyApp.js",
-            lineNumber: 25,
-            columnNumber: 13
+            lineNumber: 27,
+            columnNumber: 14
         }, undefined),
         children: [
             {
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepage.Homepage), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 29,
-                    columnNumber: 21
+                    lineNumber: 31,
+                    columnNumber: 18
                 }, undefined)
             },
             {
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 33,
-                    columnNumber: 21
+                    lineNumber: 35,
+                    columnNumber: 18
                 }, undefined)
             },
             {
                 path: "/Login",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginDefault.default), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 37,
-                    columnNumber: 21
+                    lineNumber: 39,
+                    columnNumber: 18
                 }, undefined)
             },
             {
                 path: "/signup",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signUp.SignUp), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 41,
-                    columnNumber: 21
+                    lineNumber: 43,
+                    columnNumber: 18
                 }, undefined)
             },
             {
                 path: "/RestaurantPage",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantPageDefault.default), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 45,
-                    columnNumber: 21
+                    lineNumber: 47,
+                    columnNumber: 18
                 }, undefined)
             },
             {
                 path: "/searchpage",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _searchPageDefault.default), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 49,
-                    columnNumber: 21
+                    lineNumber: 51,
+                    columnNumber: 18
                 }, undefined)
             },
             {
@@ -31946,7 +31945,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _searchResultsDefault.default), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
                     lineNumber: 53,
-                    columnNumber: 13
+                    columnNumber: 42
                 }, undefined)
             }
         ]
@@ -31989,20 +31988,13 @@ const Homepage = ()=>{
     _s();
     const [resturants, setResturants] = (0, _react.useState)([]);
     const [showRestaurant, setShowRestaurant] = (0, _react.useState)(15);
-    const sucessCallback = (location)=>{
-        console.log(location);
-    };
-    const errCallback = (err)=>{
-        console.log(err);
-    };
-    navigator.geolocation.getCurrentPosition(sucessCallback, errCallback);
     (0, _useRestaurantDefault.default)(resturants, setResturants);
     window.onscroll = ()=>{
         (0, _helpers.getMoreRestaurants)(resturants, setResturants, showRestaurant, setShowRestaurant);
     };
     if (resturants.length <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homPageShimmerDefault.default), {}, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 32,
+        lineNumber: 24,
         columnNumber: 38
     }, undefined);
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32012,23 +32004,23 @@ const Homepage = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 37,
+                    lineNumber: 29,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 38,
+                    lineNumber: 30,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Pages/Homepage.jsx",
-            lineNumber: 36,
+            lineNumber: 28,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 35,
+        lineNumber: 27,
         columnNumber: 7
     }, undefined);
 };
@@ -32547,11 +32539,15 @@ const useRestaurant = (Resturants, setRestaurants)=>{
     (0, _react.useEffect)(()=>{
         const controller = new AbortController();
         const signal = controller.signal;
-        getResturants(signal, setRestaurants);
+        // getResturants(signal, setRestaurants);
+        navigator.geolocation.getCurrentPosition((cordinates)=>{
+            getResturants(signal, setRestaurants, cordinates);
+        });
         return ()=>controller.abort();
     }, []);
-    const getResturants = async (signal, setRestaurants)=>{
-        const resturantDataSwiggy = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING", signal).catch((err)=>console.log(err));
+    const getResturants = async (signal, setRestaurants, cordinates)=>{
+        console.log(cordinates);
+        const resturantDataSwiggy = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates.coords.latitude}&lng=${cordinates.coords.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`, signal).catch((err)=>console.log(err));
         const resturantDataJson = await resturantDataSwiggy?.json().catch((err)=>console.log(err));
         setRestaurants(resturantDataJson?.data?.cards);
     };
