@@ -3,7 +3,7 @@ const useRestaurant = (Resturants, setRestaurants) => {
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
-    // getResturants(signal, setRestaurants);
+
     navigator.geolocation.getCurrentPosition((cordinates) => {
       getResturants(signal, setRestaurants, cordinates);
     },);

@@ -32539,7 +32539,6 @@ const useRestaurant = (Resturants, setRestaurants)=>{
     (0, _react.useEffect)(()=>{
         const controller = new AbortController();
         const signal = controller.signal;
-        // getResturants(signal, setRestaurants);
         navigator.geolocation.getCurrentPosition((cordinates)=>{
             getResturants(signal, setRestaurants, cordinates);
         });
