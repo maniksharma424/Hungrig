@@ -9,7 +9,7 @@ export const RestaurantCard = ({ restaurant }) => {
           <div className="restaurant-Image">
             <img
               className="h-44 w-64 bg-center bg-no-repeat bg-contain"
-              src={IMAGE_URL+ restaurant?.cloudinaryImageId}
+              src={IMAGE_URL + restaurant?.cloudinaryImageId}
             />
           </div>
           <div className="restaurant-data flex flex-col justify-start content-evenly">
@@ -27,8 +27,7 @@ export const RestaurantCard = ({ restaurant }) => {
               ))}
             </div>
             <div className="restaurant-Delivery-Info flex justify-between w-[256px] items-center h-10">
-              {
-              restaurant?.avgRating >= 4 ? (
+              {restaurant?.avgRating >= 4 ? (
                 <span className="Rating text-white pr-1 pl-1 text-xs p-0.5 decoration-slate-50  bg-green-600">
                   <i className="fa-regular fa-star fa-small"></i>{" "}
                   {restaurant?.avgRating}

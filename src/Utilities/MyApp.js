@@ -1,6 +1,6 @@
 
 import { Homepage } from "../Pages/Homepage"
-import { Cart } from "../Pages/Cart"
+import Cart from "../Pages/Cart"
 import Login from "../Pages/Login"
 import ResturantPage from "../Pages/ResturantPage"
 import { SignUp } from "../Pages/SignUp"

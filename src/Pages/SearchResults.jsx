@@ -9,6 +9,7 @@ import { Navigate } from "react-router-dom";
 import { useSearchResult } from "../customHooks/useSearchResult";
 import SearchPageSearchBox from "./SearchPageSearchBox";
 const SearchResults = () => {
+
   const location = useLocation();
   const item = location?.state?.item;
   const [searchText, setSearchText] = useState(item?.text);

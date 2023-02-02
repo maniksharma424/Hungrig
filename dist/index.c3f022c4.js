@@ -31846,6 +31846,7 @@ parcelHelpers.export(exports, "MyRouter", ()=>MyRouter);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _homepage = require("../Pages/Homepage");
 var _cart = require("../Pages/Cart");
+var _cartDefault = parcelHelpers.interopDefault(_cart);
 var _login = require("../Pages/Login");
 var _loginDefault = parcelHelpers.interopDefault(_login);
 var _resturantPage = require("../Pages/ResturantPage");
@@ -31901,7 +31902,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
             },
             {
                 path: "/cart",
-                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cart.Cart), {}, void 0, false, {
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
                     lineNumber: 31,
                     columnNumber: 21
@@ -31958,7 +31959,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Pages/Homepage":"6540u","../Pages/Cart":"3PdSH","../Pages/Login":"kZRb1","../Pages/ResturantPage":"GvK7j","../Pages/SignUp":"74Gz0","react-router-dom":"9xmpe","../Pages/Header":"2h5Kc","../Pages/Footer":"RI2Qh","../Pages/SearchPage":"h0jL8","../Pages/SearchResults":"v2HEr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6540u":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Pages/Homepage":"6540u","../Pages/Login":"kZRb1","../Pages/ResturantPage":"GvK7j","../Pages/SignUp":"74Gz0","react-router-dom":"9xmpe","../Pages/Header":"2h5Kc","../Pages/Footer":"RI2Qh","../Pages/SearchPage":"h0jL8","../Pages/SearchResults":"v2HEr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Pages/Cart":"3PdSH"}],"6540u":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$16f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31987,13 +31988,20 @@ const Homepage = ()=>{
     _s();
     const [resturants, setResturants] = (0, _react.useState)([]);
     const [showRestaurant, setShowRestaurant] = (0, _react.useState)(15);
+    const sucessCallback = (location)=>{
+        console.log(location);
+    };
+    const errCallback = (err)=>{
+        console.log(err);
+    };
+    navigator.geolocation.getCurrentPosition(sucessCallback, errCallback);
     (0, _useRestaurantDefault.default)(resturants, setResturants);
     window.onscroll = ()=>{
         (0, _helpers.getMoreRestaurants)(resturants, setResturants, showRestaurant, setShowRestaurant);
     };
     if (resturants.length <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homPageShimmerDefault.default), {}, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 25,
+        lineNumber: 32,
         columnNumber: 38
     }, undefined);
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32003,23 +32011,23 @@ const Homepage = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 30,
+                    lineNumber: 37,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 31,
+                    lineNumber: 38,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Pages/Homepage.jsx",
-            lineNumber: 29,
+            lineNumber: 36,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 28,
+        lineNumber: 35,
         columnNumber: 7
     }, undefined);
 };
@@ -32318,7 +32326,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                                 className: "fa-regular fa-star fa-small"
                                             }, void 0, false, {
                                                 fileName: "src/Pages/Resturantcard.jsx",
-                                                lineNumber: 33,
+                                                lineNumber: 32,
                                                 columnNumber: 19
                                             }, undefined),
                                             " ",
@@ -32326,7 +32334,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/Resturantcard.jsx",
-                                        lineNumber: 32,
+                                        lineNumber: 31,
                                         columnNumber: 17
                                     }, undefined) : restaurant?.avgRating > 2.8 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "Rating text-white pr-1 pl-1 p-0.5 text-xs bg-[#db7c38]",
@@ -32335,7 +32343,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                                 className: "fa-regular fa-star fa-small"
                                             }, void 0, false, {
                                                 fileName: "src/Pages/Resturantcard.jsx",
-                                                lineNumber: 38,
+                                                lineNumber: 37,
                                                 columnNumber: 19
                                             }, undefined),
                                             " ",
@@ -32343,7 +32351,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/Resturantcard.jsx",
-                                        lineNumber: 37,
+                                        lineNumber: 36,
                                         columnNumber: 17
                                     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "Rating text-slate-400 text-xs ",
@@ -32352,7 +32360,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                                 className: "fa-regular fa-star fa-small"
                                             }, void 0, false, {
                                                 fileName: "src/Pages/Resturantcard.jsx",
-                                                lineNumber: 43,
+                                                lineNumber: 42,
                                                 columnNumber: 19
                                             }, undefined),
                                             " ",
@@ -32360,7 +32368,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/Resturantcard.jsx",
-                                        lineNumber: 42,
+                                        lineNumber: 41,
                                         columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -32371,7 +32379,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/Resturantcard.jsx",
-                                        lineNumber: 47,
+                                        lineNumber: 46,
                                         columnNumber: 15
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -32379,7 +32387,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                         children: restaurant?.costForTwoString
                                     }, void 0, false, {
                                         fileName: "src/Pages/Resturantcard.jsx",
-                                        lineNumber: 50,
+                                        lineNumber: 49,
                                         columnNumber: 15
                                     }, undefined)
                                 ]
@@ -32390,7 +32398,7 @@ const RestaurantCard = ({ restaurant  })=>{
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                                 fileName: "src/Pages/Resturantcard.jsx",
-                                lineNumber: 54,
+                                lineNumber: 53,
                                 columnNumber: 13
                             }, undefined)
                         ]
@@ -32582,17 +32590,16 @@ const getMoreRestaurants = (restaurants, setResturants, showRestaurant, setshowR
 };
 const addToCart = (Dish)=>{
     // is local storage empty || first order
-    console.log(Dish);
     if (localStorage.getItem("orders")) {
         let Orders = JSON.parse(localStorage.getItem("orders"));
         //are orders from same restaurant
         if (Orders[0]?.restaurant?.id === Dish?.restaurant?.id) {
             if (Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id) >= 0) {
                 //inc qty of similar dish
-                console.log("adding similar dish");
+                let prevIndex = Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id);
                 let prevQty = Orders[Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id)].qty;
                 let newOrder = Orders.filter((item)=>item.dish.id != Dish?.dish?.id);
-                newOrder.push({
+                newOrder.splice(prevIndex, 0, {
                     dish: Dish.dish,
                     qty: prevQty + 1,
                     restaurant: Dish.restaurant
@@ -32609,33 +32616,39 @@ const addToCart = (Dish)=>{
         } else {
             //ask to create new basket
             if (window.confirm("Start a fresh cart")) {
-                console.log("created new basket");
                 localStorage.clear();
                 localStorage.setItem("orders", JSON.stringify([
                     Dish
                 ]));
             } else return null;
         }
-    } else {
-        console.log("new Dish");
-        localStorage.setItem("orders", JSON.stringify([
-            Dish
-        ]));
-    }
+    } else localStorage.setItem("orders", JSON.stringify([
+        Dish
+    ]));
 };
 const decrement = (updateItem)=>{
-    let prevQty = updateItem?.qty;
-    console.log(updateItem?.qty);
     let CartItems = JSON.parse(localStorage.getItem("orders"));
-    let newCartItems = CartItems.filter((item)=>item.dish.id != updateItem?.dish?.id);
-    console.log(newCartItems);
-    localStorage.clear();
-    newCartItems.push({
-        dish: updateItem.dish,
-        qty: prevQty - 1,
-        restaurant: updateItem.restaurant
-    });
-    localStorage.setItem("orders", JSON.stringify(newCartItems));
+    let prevQty = updateItem?.qty;
+    if (prevQty === 1) {
+        let newCart = CartItems.filter((item)=>item.dish.id != updateItem?.dish?.id);
+        if (newCart.length >= 1) {
+            localStorage.clear();
+            localStorage.setItem("orders", JSON.stringify(newCart));
+        } else {
+            localStorage.clear();
+            console.log("local storage cleared");
+        }
+    } else {
+        let prevIndex = CartItems.findIndex((item)=>item.dish.id === updateItem?.dish?.id);
+        let newCartItems = CartItems.filter((item)=>item.dish.id != updateItem?.dish?.id);
+        localStorage.clear();
+        newCartItems.splice(prevIndex, 0, {
+            dish: updateItem.dish,
+            qty: prevQty - 1,
+            restaurant: updateItem.restaurant
+        });
+        localStorage.setItem("orders", JSON.stringify(newCartItems));
+    }
 };
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ORgO":[function(require,module,exports) {
@@ -34429,242 +34442,7 @@ $RefreshReg$(_c, "HomPageShimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3PdSH":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$99a4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$99a4.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Cart", ()=>Cart);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _cartItem = require("./CartItem");
-var _cartItemDefault = parcelHelpers.interopDefault(_cartItem);
-var _constants = require("../Utilities/constants");
-var _helpers = require("../Utilities/helpers");
-var _s = $RefreshSig$();
-const Cart = ()=>{
-    _s();
-    const [cartItems, setCartItems] = (0, _react.useState)([]);
-    (0, _react.useEffect)(()=>{
-        getCartItems(setCartItems);
-    }, []);
-    const getCartItems = (setState)=>{
-        if (JSON.parse(localStorage.getItem("orders"))) {
-            setState(JSON.parse(localStorage.getItem("orders")));
-            console.log(cartItems);
-        }
-    };
-    console.log(cartItems);
-    const handleIncrement = (...props)=>{
-        (0, _helpers.addToCart)(...props);
-        getCartItems(setCartItems);
-    };
-    const handleDecrement = (...props)=>{
-        (0, _helpers.decrement)(...props);
-        getCartItems(setCartItems);
-    };
-    if (cartItems?.length <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-        children: "nithing in cart"
-    }, void 0, false, {
-        fileName: "src/Pages/Cart.jsx",
-        lineNumber: 31,
-        columnNumber: 38
-    }, undefined);
-    else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "cart border-[1px] border-black w-full flex justify-start items-center bg-gray-100 h-[750px]",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "Checkout-Box border-black border-[1px] w-[400px] bg-white h-[500px]",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                className: "Cart-Items ",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "Cart-Item w-[full] h-[150px] border-black border-[1px] p-4",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "Restaurant-info flex justify-start items-center ",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "image",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        className: "Image rounded-md bg-no-repeat bg-center bg-contain h-[80px] w-[80px]",
-                                        src: (0, _constants.IMAGE_URL) + cartItems[0]?.restaurant?.cloudinaryImageId
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/Cart.jsx",
-                                        lineNumber: 40,
-                                        columnNumber: 19
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 39,
-                                    columnNumber: 17
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "Restaurant-Info ml-4",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                            className: "text-[18px] font-[900px] text-[#3e4152]",
-                                            children: cartItems[0]?.restaurant?.name
-                                        }, void 0, false, {
-                                            fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 48,
-                                            columnNumber: 19
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                            className: "text-[12px] font-[100px]",
-                                            children: cartItems[0]?.restaurant?.locality
-                                        }, void 0, false, {
-                                            fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 52,
-                                            columnNumber: 19
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 47,
-                                    columnNumber: 17
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/Pages/Cart.jsx",
-                            lineNumber: 38,
-                            columnNumber: 15
-                        }, undefined),
-                        cartItems?.map((item, index)=>{
-                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartItemDefault.default), {
-                                    increment: handleIncrement,
-                                    decrement: handleDecrement,
-                                    cartItem: item
-                                }, void 0, false, {
-                                    fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 60,
-                                    columnNumber: 21
-                                }, undefined)
-                            }, index, false, {
-                                fileName: "src/Pages/Cart.jsx",
-                                lineNumber: 59,
-                                columnNumber: 19
-                            }, undefined);
-                        })
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Pages/Cart.jsx",
-                    lineNumber: 37,
-                    columnNumber: 13
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Pages/Cart.jsx",
-                lineNumber: 36,
-                columnNumber: 11
-            }, undefined)
-        }, void 0, false, {
-            fileName: "src/Pages/Cart.jsx",
-            lineNumber: 35,
-            columnNumber: 9
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/Pages/Cart.jsx",
-        lineNumber: 34,
-        columnNumber: 7
-    }, undefined);
-};
-_s(Cart, "yMyLm0mTOdUD4xRL2vnEhQFbjeY=");
-_c = Cart;
-var _c;
-$RefreshReg$(_c, "Cart");
-
-  $parcel$ReactRefreshHelpers$99a4.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CartItem":"g2qA5","../Utilities/constants":"5t9MR","../Utilities/helpers":"4t9SJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g2qA5":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1f30 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1f30.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-const CartItem = ({ cartItem , increment , decrement  })=>{
-    _s();
-    const [count, setCount] = (0, _react.useState)(cartItem?.qty);
-    console.log(cartItem);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "Item-info flex justify-around items-center border-black border-[1px] mt-3",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                className: "text-[14px]",
-                children: cartItem?.dish?.name
-            }, void 0, false, {
-                fileName: "src/Pages/CartItem.jsx",
-                lineNumber: 8,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: ()=>{
-                    setCount((n)=>n - 1);
-                    decrement(cartItem);
-                },
-                children: "-"
-            }, void 0, false, {
-                fileName: "src/Pages/CartItem.jsx",
-                lineNumber: 11,
-                columnNumber: 7
-            }, undefined),
-            count,
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: ()=>{
-                    setCount((n)=>n + 1);
-                    increment({
-                        dish: cartItem?.dish,
-                        restaurant: cartItem?.restaurant,
-                        qty: cartItem?.qty + 1
-                    });
-                },
-                children: "+"
-            }, void 0, false, {
-                fileName: "src/Pages/CartItem.jsx",
-                lineNumber: 20,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: [
-                    "₹",
-                    cartItem?.dish?.price / 100 * cartItem?.qty
-                ]
-            }, void 0, true, {
-                fileName: "src/Pages/CartItem.jsx",
-                lineNumber: 34,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Pages/CartItem.jsx",
-        lineNumber: 7,
-        columnNumber: 5
-    }, undefined);
-};
-_s(CartItem, "4faNLjflZtroUHvcDNqX55bybcQ=");
-_c = CartItem;
-exports.default = CartItem;
-var _c;
-$RefreshReg$(_c, "CartItem");
-
-  $parcel$ReactRefreshHelpers$1f30.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kZRb1":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kZRb1":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1115 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35862,17 +35640,14 @@ const Header = ()=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/cart",
-                            children: [
-                                "c",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                    class: "fa-sharp fa-solid fa-cart-shopping fa-xl"
-                                }, void 0, false, {
-                                    fileName: "src/Pages/Header.jsx",
-                                    lineNumber: 21,
-                                    columnNumber: 13
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                class: "fa-sharp fa-solid fa-cart-shopping fa-xl"
+                            }, void 0, false, {
+                                fileName: "src/Pages/Header.jsx",
+                                lineNumber: 21,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
                             fileName: "src/Pages/Header.jsx",
                             lineNumber: 20,
                             columnNumber: 11
@@ -36208,7 +35983,7 @@ const SearchResults = ()=>{
         to: "/searchpage"
     }, void 0, false, {
         fileName: "src/Pages/SearchResults.jsx",
-        lineNumber: 18,
+        lineNumber: 19,
         columnNumber: 33
     }, undefined);
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36221,7 +35996,7 @@ const SearchResults = ()=>{
                     setSearchText: setSearchText
                 }, void 0, false, {
                     fileName: "src/Pages/SearchResults.jsx",
-                    lineNumber: 23,
+                    lineNumber: 24,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36234,12 +36009,12 @@ const SearchResults = ()=>{
                                     Dish: dish
                                 }, void 0, false, {
                                     fileName: "src/Pages/SearchResults.jsx",
-                                    lineNumber: 34,
+                                    lineNumber: 35,
                                     columnNumber: 23
                                 }, undefined)
                             }, index, false, {
                                 fileName: "src/Pages/SearchResults.jsx",
-                                lineNumber: 33,
+                                lineNumber: 34,
                                 columnNumber: 21
                             }, undefined);
                         }) : searchResturantResult?.RESTAURANT ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
@@ -36249,12 +36024,12 @@ const SearchResults = ()=>{
                                         Restaurant: searchResturantResult?.RESTAURANT?.cards[0]
                                     }, void 0, false, {
                                         fileName: "src/Pages/SearchResults.jsx",
-                                        lineNumber: 42,
+                                        lineNumber: 43,
                                         columnNumber: 23
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/Pages/SearchResults.jsx",
-                                    lineNumber: 40,
+                                    lineNumber: 41,
                                     columnNumber: 19
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
@@ -36265,7 +36040,7 @@ const SearchResults = ()=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Pages/SearchResults.jsx",
-                                    lineNumber: 47,
+                                    lineNumber: 48,
                                     columnNumber: 19
                                 }, undefined),
                                 searchResturantResult?.RESTAURANT?.cards[1]?.card?.card?.restaurants.map((restaurant, index)=>{
@@ -36274,12 +36049,12 @@ const SearchResults = ()=>{
                                             Restaurant: restaurant
                                         }, void 0, false, {
                                             fileName: "src/Pages/SearchResults.jsx",
-                                            lineNumber: 54,
+                                            lineNumber: 55,
                                             columnNumber: 27
                                         }, undefined)
                                     }, index, false, {
                                         fileName: "src/Pages/SearchResults.jsx",
-                                        lineNumber: 53,
+                                        lineNumber: 54,
                                         columnNumber: 25
                                     }, undefined);
                                 })
@@ -36298,38 +36073,38 @@ const SearchResults = ()=>{
                                         contentCenter: true
                                     }, index, false, {
                                         fileName: "src/Pages/SearchResults.jsx",
-                                        lineNumber: 66,
+                                        lineNumber: 67,
                                         columnNumber: 25
                                     }, undefined)
                                 }, void 0, false, {
                                     fileName: "src/Pages/SearchResults.jsx",
-                                    lineNumber: 65,
+                                    lineNumber: 66,
                                     columnNumber: 23
                                 }, undefined))
                         }, void 0, false, {
                             fileName: "src/Pages/SearchResults.jsx",
-                            lineNumber: 61,
+                            lineNumber: 62,
                             columnNumber: 17
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/Pages/SearchResults.jsx",
-                        lineNumber: 29,
+                        lineNumber: 30,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/Pages/SearchResults.jsx",
-                    lineNumber: 28,
+                    lineNumber: 29,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Pages/SearchResults.jsx",
-            lineNumber: 22,
+            lineNumber: 23,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/SearchResults.jsx",
-        lineNumber: 21,
+        lineNumber: 22,
         columnNumber: 7
     }, undefined);
 };
@@ -37095,6 +36870,521 @@ $RefreshReg$(_c, "SearchPageSearchBox");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","dl2Sr","8h89G"], "8h89G", "parcelRequireb877")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3PdSH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$99a4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$99a4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _checkOutBox = require("./CheckOutBox");
+const Cart = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "cart bg-[#e9ecee] w-full h-fit flex-col flex justify-center items-center py-14 px-10",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _checkOutBox.CheckOutBox), {}, void 0, false, {
+                fileName: "src/Pages/Cart.jsx",
+                lineNumber: 6,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Place-Order w-[1125px] p-4",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "w-full p-4 bg-[#60b246] rounded-sm text-white text-[20px]",
+                    children: "Place Order"
+                }, void 0, false, {
+                    fileName: "src/Pages/Cart.jsx",
+                    lineNumber: 8,
+                    columnNumber: 13
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/Cart.jsx",
+                lineNumber: 7,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/Cart.jsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Cart;
+exports.default = Cart;
+var _c;
+$RefreshReg$(_c, "Cart");
+
+  $parcel$ReactRefreshHelpers$99a4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CheckOutBox":"4TIou","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4TIou":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4550 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4550.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CheckOutBox", ()=>CheckOutBox);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _cartItem = require("./CartItem");
+var _cartItemDefault = parcelHelpers.interopDefault(_cartItem);
+var _constants = require("../Utilities/constants");
+var _s = $RefreshSig$();
+const CheckOutBox = ()=>{
+    _s();
+    const [cartItems, setCartItems] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        getCartItems(setCartItems);
+    }, []);
+    const getCartItems = (setState)=>{
+        if (JSON.parse(localStorage.getItem("orders"))) setState(JSON.parse(localStorage.getItem("orders")));
+        else setCartItems([]);
+    };
+    const handleUpdate = ()=>{
+        getCartItems(setCartItems);
+    };
+    let cartTotal = 0;
+    if (cartItems?.length <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+        children: "nithing in cart"
+    }, void 0, false, {
+        fileName: "src/Pages/CheckOutBox.jsx",
+        lineNumber: 20,
+        columnNumber: 38
+    }, undefined);
+    else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Checkout-Box rounded-sm w-[1100px] bg-white h-fit",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Restaurant-info w-[full] h-[100px] px-4 pt-4 flex justify-start items-center ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "image",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "Image rounded-md bg-no-repeat bg-center bg-contain h-[80px] w-[80px]",
+                            src: (0, _constants.IMAGE_URL) + cartItems[0]?.restaurant?.cloudinaryImageId
+                        }, void 0, false, {
+                            fileName: "src/Pages/CheckOutBox.jsx",
+                            lineNumber: 26,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 25,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "Restaurant-Info ml-4",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[18px] font-[900px] text-[#3e4152]",
+                                children: cartItems[0]?.restaurant?.name
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 32,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[12px] font-[100px]",
+                                children: cartItems[0]?.restaurant?.locality
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 36,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 31,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/CheckOutBox.jsx",
+                lineNumber: 24,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "billing-info w-full p-4",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                        children: cartItems?.map((item, index)=>{
+                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartItemDefault.default), {
+                                    updateParent: handleUpdate,
+                                    cartItem: item
+                                }, void 0, false, {
+                                    fileName: "src/Pages/CheckOutBox.jsx",
+                                    lineNumber: 46,
+                                    columnNumber: 19
+                                }, undefined)
+                            }, index, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 45,
+                                columnNumber: 17
+                            }, undefined);
+                        })
+                    }, void 0, false, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 42,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-full h-[60px] my-4 p-4 bg-[#f9f9f9] flex justify-start items-center",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-[20px] relative right-2",
+                                children: "❝"
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 52,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                placeholder: "Any suggstions we will pass it on to the restaurant...",
+                                className: "suggestion w-10/12 bg-[#f9f9f9]",
+                                type: "text"
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 53,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 51,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "no-contact-delivery border-[#535665] border-[.5px] p-3 flex justify-start items-start ",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "checkbox"
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 61,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "no-contact-info ml-3",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: " text-[#3e4152] font-[600] text-[14px]",
+                                        children: "Opt in for No-contact Delivery"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 63,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: " text-[13px] m-0 p-0 text-[#535665]",
+                                        children: "Unwell, or avoiding contact? Please select no-contact delivery. Partner will safely place the order outside your door (not for COD)"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 66,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 62,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 60,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "bill-details my-4",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                children: "Bill details"
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 74,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "flex justify-between my-1 text-[#535665] font-thin text-[13px]",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: [
+                                            "Item Total",
+                                            cartItems.map((item)=>{
+                                                cartTotal += item?.dish?.price * item?.qty;
+                                            }),
+                                            " "
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 76,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: cartTotal / 100
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 82,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 75,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "flex justify-between my-1 font-thin",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "text-[#535665] text-[13px]",
+                                        children: "Delivery Partner Fee"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 85,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: " text-[#60b246] font-thin text-[13px]",
+                                        children: "FREE"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 88,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 84,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 92,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "flex justify-between my-3 text-[#535665] text-[14px] font-thin",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: "Govt Taxes And Charges"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 94,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: "₹35.7"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 95,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 93,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
+                                className: "border-black border-[.5px] "
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 97,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "flex justify-between mt-3 font-[600] text-[13px] ",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: "To Pay"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 99,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: cartTotal / 100 + 35.7
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 100,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 98,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 73,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/CheckOutBox.jsx",
+                lineNumber: 41,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/CheckOutBox.jsx",
+        lineNumber: 23,
+        columnNumber: 7
+    }, undefined);
+};
+_s(CheckOutBox, "yMyLm0mTOdUD4xRL2vnEhQFbjeY=");
+_c = CheckOutBox;
+var _c;
+$RefreshReg$(_c, "CheckOutBox");
+
+  $parcel$ReactRefreshHelpers$4550.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CartItem":"g2qA5","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g2qA5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1f30 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1f30.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _helpers = require("../Utilities/helpers");
+var _s = $RefreshSig$();
+const CartItem = ({ cartItem , updateParent  })=>{
+    _s();
+    const [count, setCount] = (0, _react.useState)(cartItem?.qty);
+    console.log(cartItem);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Item-info flex justify-between h-fit p-2 items-center mt-3",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "name w-1/2 ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "text-[14px] text-[#282c3f]",
+                        children: cartItem?.dish?.name
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 11,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[10px] after:text-[10px] after:font-[900] after:ml-[3px] after:text-[#fc8019] after:content-['>']",
+                        children: "Customize"
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 12,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/CartItem.jsx",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "btns flex w-1/5 border-[#d4d5d9] border-[.5px]",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: " w-1/3 text-[20px] text-[#bebfc5]",
+                        onClick: ()=>{
+                            setCount((n)=>n - 1);
+                            (0, _helpers.decrement)(cartItem);
+                            updateParent();
+                        },
+                        children: "-"
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 15,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-1/3 text-[#60b246] text-[12px] flex justify-center items-center ",
+                        children: count
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "w-1/3 text-[20px] text-[#60b246]",
+                        onClick: ()=>{
+                            setCount((n)=>n + 1);
+                            (0, _helpers.addToCart)({
+                                dish: cartItem?.dish,
+                                restaurant: cartItem?.restaurant,
+                                qty: cartItem?.qty + 1
+                            });
+                            updateParent();
+                        },
+                        children: "+"
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/CartItem.jsx",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "price w-1/3 flex justify-end ",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "text-[#535665] text-[13px]",
+                    children: [
+                        "₹",
+                        cartItem?.dish?.price / 100 * cartItem?.qty
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/CartItem.jsx",
+                    lineNumber: 42,
+                    columnNumber: 7
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/CartItem.jsx",
+                lineNumber: 41,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/CartItem.jsx",
+        lineNumber: 9,
+        columnNumber: 5
+    }, undefined);
+};
+_s(CartItem, "4faNLjflZtroUHvcDNqX55bybcQ=");
+_c = CartItem;
+exports.default = CartItem;
+var _c;
+$RefreshReg$(_c, "CartItem");
+
+  $parcel$ReactRefreshHelpers$1f30.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/helpers":"4t9SJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","dl2Sr","8h89G"], "8h89G", "parcelRequireb877")
 
 //# sourceMappingURL=index.c3f022c4.js.map

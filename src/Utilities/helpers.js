@@ -27,18 +27,22 @@ export const getMoreRestaurants = (
 
 export const addToCart = (Dish) => {
   // is local storage empty || first order
-console.log(Dish);
+
   if (localStorage.getItem("orders")) {
     let Orders = JSON.parse(localStorage.getItem("orders"));
     //are orders from same restaurant
     if (Orders[0]?.restaurant?.id === Dish?.restaurant?.id) {
-      
       if (Orders.findIndex((item) => item.dish.id === Dish?.dish?.id) >= 0) {
         //inc qty of similar dish
-        console.log('adding similar dish');
-        let prevQty =Orders[Orders.findIndex((item) => item.dish.id === Dish?.dish?.id)].qty;
+
+        let prevIndex = Orders.findIndex(
+          (item) => item.dish.id === Dish?.dish?.id
+        );
+        let prevQty =
+          Orders[Orders.findIndex((item) => item.dish.id === Dish?.dish?.id)]
+            .qty;
         let newOrder = Orders.filter((item) => item.dish.id != Dish?.dish?.id);
-        newOrder.push({
+        newOrder.splice(prevIndex, 0, {
           dish: Dish.dish,
           qty: prevQty + 1,
           restaurant: Dish.restaurant,
@@ -47,7 +51,7 @@ console.log(Dish);
         localStorage.setItem("orders", JSON.stringify(newOrder));
       } else {
         // similar rest diff dish
-        console.log('similar rest diff dish');
+        console.log("similar rest diff dish");
         Orders.push(Dish);
         localStorage.clear();
         localStorage.setItem("orders", JSON.stringify(Orders));
@@ -55,7 +59,7 @@ console.log(Dish);
     } else {
       //ask to create new basket
       if (window.confirm("Start a fresh cart")) {
-        console.log('created new basket');
+
         localStorage.clear();
         localStorage.setItem("orders", JSON.stringify([Dish]));
       } else {
@@ -63,27 +67,42 @@ console.log(Dish);
       }
     }
   } else {
-    console.log('new Dish');
+
     localStorage.setItem("orders", JSON.stringify([Dish]));
   }
 };
 
 export const decrement = (updateItem) => {
-
-
-  let prevQty = updateItem?.qty;
-  console.log(updateItem?.qty);
   let CartItems = JSON.parse(localStorage.getItem("orders"));
-  let newCartItems = CartItems.filter(
-    (item) => item.dish.id != updateItem?.dish?.id
-  );
-  console.log(newCartItems);
-  localStorage.clear();
-  newCartItems.push({
-    dish: updateItem.dish,
-    qty: prevQty - 1,
-    restaurant: updateItem.restaurant,
-  });
-
-  localStorage.setItem("orders", JSON.stringify(newCartItems));
+  let prevQty = updateItem?.qty;
+  if(prevQty === 1){
+      let newCart = CartItems.filter(item=>
+        item.dish.id != updateItem?.dish?.id
+      )
+      if(newCart.length >=1){
+        localStorage.clear()
+        localStorage.setItem('orders', JSON.stringify(newCart))
+      }
+      else{
+        localStorage.clear()
+        console.log('local storage cleared');
+      }
+  }
+  else{
+    let prevIndex = CartItems.findIndex(
+      (item) => item.dish.id === updateItem?.dish?.id
+      );
+      let newCartItems = CartItems.filter(
+        (item) => item.dish.id != updateItem?.dish?.id
+        );
+        
+        localStorage.clear();
+        newCartItems.splice(prevIndex, 0, {
+          dish: updateItem.dish,
+          qty: prevQty - 1,
+          restaurant: updateItem.restaurant,
+        });
+        
+        localStorage.setItem("orders", JSON.stringify(newCartItems));
+      }
 };
