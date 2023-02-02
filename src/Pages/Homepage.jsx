@@ -10,15 +10,7 @@ import HomPageShimmer from "./HomPageShimmer";
 
 export const Homepage = () => {
   const [resturants, setResturants] = useState([]);
-  const [showRestaurant, setShowRestaurant] = useState(15);
-  const sucessCallback = (location) =>{
-    console.log(location)
-   }
-   const errCallback = (err)=>{
-    console.log(err);
-   }
-  navigator.geolocation.getCurrentPosition(sucessCallback,errCallback)
- 
+  const [showRestaurant, setShowRestaurant] = useState(15); 
   useRestaurant(resturants, setResturants);
   window.onscroll = () => {
     getMoreRestaurants(

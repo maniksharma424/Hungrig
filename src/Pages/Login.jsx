@@ -3,7 +3,6 @@ import { Users } from '../Backend/UsersData'
 import { useState } from 'react'
 import {Navigate,Link } from 'react-router-dom'
 
-console.log(Users)
 const Login = ()=> {
 const [username,setUsername] = useState('')
 const [password,setPassword] = useState('')
