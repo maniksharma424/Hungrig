@@ -31861,22 +31861,23 @@ var _searchPage = require("../Pages/SearchPage");
 var _searchPageDefault = parcelHelpers.interopDefault(_searchPage);
 var _searchResults = require("../Pages/SearchResults");
 var _searchResultsDefault = parcelHelpers.interopDefault(_searchResults);
+console.log("hi i am present");
 const App = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                 fileName: "src/Utilities/MyApp.js",
-                lineNumber: 15,
+                lineNumber: 17,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                 fileName: "src/Utilities/MyApp.js",
-                lineNumber: 16,
+                lineNumber: 18,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                 fileName: "src/Utilities/MyApp.js",
-                lineNumber: 17,
+                lineNumber: 19,
                 columnNumber: 13
             }, undefined)
         ]
@@ -31888,7 +31889,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
             fileName: "src/Utilities/MyApp.js",
-            lineNumber: 23,
+            lineNumber: 25,
             columnNumber: 13
         }, undefined),
         children: [
@@ -31896,7 +31897,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepage.Homepage), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 27,
+                    lineNumber: 29,
                     columnNumber: 21
                 }, undefined)
             },
@@ -31904,7 +31905,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartDefault.default), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 31,
+                    lineNumber: 33,
                     columnNumber: 21
                 }, undefined)
             },
@@ -31912,7 +31913,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/Login",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _loginDefault.default), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 35,
+                    lineNumber: 37,
                     columnNumber: 21
                 }, undefined)
             },
@@ -31920,7 +31921,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/signup",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signUp.SignUp), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 39,
+                    lineNumber: 41,
                     columnNumber: 21
                 }, undefined)
             },
@@ -31928,7 +31929,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/RestaurantPage",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantPageDefault.default), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 43,
+                    lineNumber: 45,
                     columnNumber: 21
                 }, undefined)
             },
@@ -31936,7 +31937,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/searchpage",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _searchPageDefault.default), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 47,
+                    lineNumber: 49,
                     columnNumber: 21
                 }, undefined)
             },
@@ -31944,7 +31945,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/searchResults",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _searchResultsDefault.default), {}, void 0, false, {
                     fileName: "src/Utilities/MyApp.js",
-                    lineNumber: 51,
+                    lineNumber: 53,
                     columnNumber: 13
                 }, undefined)
             }
@@ -34972,7 +34973,6 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _usersData = require("../Backend/UsersData");
 var _reactRouterDom = require("react-router-dom");
 var _s = $RefreshSig$();
-console.log((0, _usersData.Users));
 const Login = ()=>{
     _s();
     const [username, setUsername] = (0, _react.useState)("");
@@ -34984,7 +34984,7 @@ const Login = ()=>{
                 children: "Login"
             }, void 0, false, {
                 fileName: "src/Pages/Login.jsx",
-                lineNumber: 14,
+                lineNumber: 12,
                 columnNumber: 5
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -34998,13 +34998,13 @@ const Login = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/Pages/Login.jsx",
-                        lineNumber: 15,
+                        lineNumber: 13,
                         columnNumber: 20
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Pages/Login.jsx",
-                lineNumber: 15,
+                lineNumber: 13,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -35018,13 +35018,13 @@ const Login = ()=>{
                         }
                     }, void 0, false, {
                         fileName: "src/Pages/Login.jsx",
-                        lineNumber: 16,
+                        lineNumber: 14,
                         columnNumber: 20
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Pages/Login.jsx",
-                lineNumber: 16,
+                lineNumber: 14,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -35032,7 +35032,7 @@ const Login = ()=>{
                 children: "NewUser create an account"
             }, void 0, false, {
                 fileName: "src/Pages/Login.jsx",
-                lineNumber: 17,
+                lineNumber: 15,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -35048,14 +35048,14 @@ const Login = ()=>{
                 children: "log in"
             }, void 0, false, {
                 fileName: "src/Pages/Login.jsx",
-                lineNumber: 18,
+                lineNumber: 16,
                 columnNumber: 8
             }, undefined),
             loggedIn && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Navigate), {
                 to: "/home"
             }, void 0, false, {
                 fileName: "src/Pages/Login.jsx",
-                lineNumber: 32,
+                lineNumber: 30,
                 columnNumber: 23
             }, undefined)
         ]

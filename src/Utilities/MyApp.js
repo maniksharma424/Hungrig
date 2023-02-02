@@ -9,6 +9,8 @@ import Header from "../Pages/Header"
 import Footer from "../Pages/Footer"
 import SearchPage from "../Pages/SearchPage"
 import SearchResults from "../Pages/SearchResults"
+
+console.log('hi i am present');
 const App = ()=>{
     return(
         <>
