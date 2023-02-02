@@ -1,19 +1,27 @@
-import "../CSS/SuggestedResturantCard.css"
+import { Link } from "react-router-dom";
+import { IMAGE_URL } from "../Utilities/constants";
+import SearchResults from "./SearchResults";
 
-
-const SuggestedResturantCard = ({foodItem})=>{
-return(
+const SuggestedResturantCard = ({ foodItem }) => {
+  return (
     <>
-    
-        <div  className="Suggsted-Item">
-            <div className="Suggested-Item-Image" style={{"backgroundImage":`url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${foodItem?.cloudinaryId})`,"height":"100px","width":"100px"}}>
-            </div>
-            <div className="Suggested-Item-Info">
-                <p>{foodItem?.text}</p>
-                <p>{foodItem?.type}</p>
-            </div>
+    <Link state={{item:foodItem}} to='/searchResults' >
+      <div className="Suggsted-Item hover:cursor-pointer flex justify-start items-center px-5  my-[15px] ">
+        <div className="Suggested-Item-Image ">
+          <img
+            className="w-[65px] h-[60px] rounded-md bg-contain bg-no-repeat bg-center"
+            src={IMAGE_URL+ foodItem?.cloudinaryId}
+            />
         </div>
+        <div className="Suggested-Item-Info ml-5 ">
+          <p className="text-[15px]">{foodItem?.text}</p>
+          <p className="text-[10px] decoration-[#cacfe9]">
+            {foodItem?.type.toLowerCase()}
+          </p>
+        </div>
+      </div>
+            </Link>
     </>
-)
-}
-export default SuggestedResturantCard
+  );
+};
+export default SuggestedResturantCard;

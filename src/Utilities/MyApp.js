@@ -1,6 +1,6 @@
 
 import { Homepage } from "../Pages/Homepage"
-import { Cart } from "../Pages/Cart"
+import Cart from "../Pages/Cart"
 import Login from "../Pages/Login"
 import ResturantPage from "../Pages/ResturantPage"
 import { SignUp } from "../Pages/SignUp"
@@ -8,6 +8,7 @@ import { createBrowserRouter,Outlet } from "react-router-dom"
 import Header from "../Pages/Header"
 import Footer from "../Pages/Footer"
 import SearchPage from "../Pages/SearchPage"
+import SearchResults from "../Pages/SearchResults"
 const App = ()=>{
     return(
         <>
@@ -45,6 +46,9 @@ export const MyRouter = createBrowserRouter([{
             path:'/searchpage',
             element:<SearchPage/>
         }
+        ,
+        {path :"/searchResults",
+    element:<SearchResults/>}
     ]
     
     

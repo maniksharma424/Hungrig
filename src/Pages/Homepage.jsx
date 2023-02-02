@@ -1,40 +1,42 @@
-import React, { useEffect } from 'react'
-import Body from "./Body"
-import { handleFilterResturants,getResturants,getMoreResturants } from '../Utilities/utils'
-import { useState } from "react"
-import { ResturantContext } from '../Contexts/ContextResturant'
+import React, { useEffect, useRef } from "react";
+import Body from "./Body";
+import { useState } from "react";
+import { ResturantContext } from "../Contexts/ContextResturant";
+import Carousel from "./Carousel";
+import useRestaurant from "../customHooks/useRestaurant";
+import { getMoreRestaurants } from "../Utilities/helpers";
+import { ShimmerSimpleGallery } from "react-shimmer-effects";
+import HomPageShimmer from "./HomPageShimmer";
 
 export const Homepage = () => {
+  const [resturants, setResturants] = useState([]);
+  const [showRestaurant, setShowRestaurant] = useState(15);
+  const sucessCallback = (location) =>{
+    console.log(location)
+   }
+   const errCallback = (err)=>{
+    console.log(err);
+   }
+  navigator.geolocation.getCurrentPosition(sucessCallback,errCallback)
+ 
+  useRestaurant(resturants, setResturants);
+  window.onscroll = () => {
+    getMoreRestaurants(
+      resturants,
+      setResturants,
+      showRestaurant,
+      setShowRestaurant
+    );
+  };
 
-    const [allresturants,setAllResturants] = useState([])
-    const[filteredResturant,setFilteredResturant] = useState(allresturants)
-    const[offSet,setOffSet] = useState(15)
-    const[availableRestaurants,setAvailableRestaurants] = useState(0)
-
-    useEffect(()=>{
-      const controller = new AbortController()
-      const signal = controller.signal
-      getResturants(offSet,signal,setAllResturants,setFilteredResturant,setAvailableRestaurants)
-
-      return () => controller.abort()
-      },[])
-      
-      window.onscroll = function() {
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      getMoreResturants(offSet,setOffSet,allresturants,setAllResturants,filteredResturant,setFilteredResturant)
-        }
-      };
-
-      const filterResturants = (searchInput)=>{
-      handleFilterResturants(searchInput,allresturants,setFilteredResturant)
-      }
-
-
-     return (
-          <>
-          <ResturantContext.Provider value={filteredResturant}>
-          <Body size={availableRestaurants} filterResturants={filterResturants} />
-          </ResturantContext.Provider>
-          </>
-     )
-}
+  if (resturants.length <= 0) return <HomPageShimmer />;
+  else
+    return (
+      <div className="Homepage">
+        <ResturantContext.Provider value={resturants}>
+          <Carousel />
+          <Body />
+        </ResturantContext.Provider>
+      </div>
+    );
+};

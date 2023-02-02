@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import "../CSS/ResturantsCards.css"
 import{useState} from 'react'
 import {useContext} from "react" 
@@ -12,23 +13,27 @@ const Body = ({filterResturants,size})=>{
         <>
     <h1>All Resturants Near You</h1>
         <p>{size}</p>
+=======
+>>>>>>> tailwind
 
-        <div id="Available-Resturants-window" className="Available-Resturants">
-            <Link to='/searchpage'>
-                <input placeholder="search for Resturants"/>
-                {/* <input placeholder="search for Resturants" value={searchText} onChange={(e)=>{
-                setSearchText(e.target.value)
-                filterResturants(e.target.value)}}/> */}
-            </Link>
-            <ul>
-                {ResturantData?.map(resturant=>{
-                        return(<ResturantCard key={i++} resturant={resturant}/>)
-                    })
-                }
-            </ul>
-        </div>
-        </>
-    )
-}
+import { useContext } from "react";
+import { ResturantContext } from "../Contexts/ContextResturant";
+import { RestaurantCard } from "./Resturantcard";
 
-export default Body
+const Body = ()=> {
+  const ResturantData = useContext(ResturantContext);
+  return (
+    <div
+      id="Available-Resturants-window"
+      className="Available-Resturants  w-full flex  justify-center items-center"
+    >
+      <ul className="Restaurant-container px-16 flex flex-wrap justify-between border-none w-[90%] mt-[45px] ">
+        {ResturantData?.map((restaurant, index) => {
+          return <RestaurantCard key={index} restaurant={restaurant?.data?.data} />;   
+        })}
+      </ul>
+    </div>
+  );
+};
+
+export default Body;

@@ -1,73 +1,42 @@
-import { useState,useEffect } from "react"
-import { getSearchedResturants,getQueryData } from "../Utilities/utils"
-import SuggestedResturantCard from "./SuggestedResturantCard"
-import SearchResultResturantCard from "./SearchResultResturantCard"
-import SimilarRestaurnts from "./SimilarRestaurnts"
+import { useState } from "react";
+import { Popular_Cuisines } from "../Utilities/constants";
+import SuggestionResults from "./SuggestionResults";
+import SearchPageSearchBox from "./SearchPageSearchBox";
 
-const SearchPage = ()=>{
-    const [searchText,setSearchText]= useState('')
-    const[suggestedResturants,setSuggestedResturants] = useState([])
-    const[searchResturantResult,setSearchResturantResult] = useState([])
-    
-    return(
-        <>
-        <h1>i am search page</h1>
-            <div className="Resturant-Search-Page">
-                <input value={searchText} placeholder='search for resturants and food' onChange={(e)=>{
-                    setSearchText(e.target.value)
-                    setSearchResturantResult([])
+const SearchPage = () => {
+  const [searchText, setSearchText] = useState("");
+  const [suggestedResturants, setSuggestedResturants] = useState([]);
 
-                    getSearchedResturants(e.target.value,setSuggestedResturants)
-                }} />
-                <button onClick={()=>{setSearchText('')
-                        setSuggestedResturants([])
-                }}>x</button>
+  return (
+    <div className="Resturant-Search-Page  min-h-[700px] max-h-fit flex justify-center w-full">
+      <div className="Resturant-Search-Page-Body w-[700px] mt-[50px] ">
+        <SearchPageSearchBox
+          searchText={searchText}
+          setSearchText={setSearchText}
+          setSuggestedResturants={setSuggestedResturants}
+        />
+        {searchText === "" ? (
+          <>
+            <h1 className="text-[25px] font-[900] my-[50px] ml-[20px]">
+              Popular Cuisines
+            </h1>
+            <div className="popular-Cuisines flex justify-evenly">
+              {Popular_Cuisines?.map((cuisine, index) => {
+                return (
+                  <img
+                    key={index}
+                    className="cuisines-image w-[65px] h-[80px] rounded-md"
+                    src={`https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/${cuisine.imageId}`}
+                  />
+                );
+              })}
             </div>
-
-            { searchText === '' ?
-            (<h1>popular cuisines</h1>):
-            (searchResturantResult?.length <=0 ?
-                (<div className="Suggsted-Resturants">
-                        <ul>
-                            {suggestedResturants?.map((item,index)=>
-                                <li 
-                                onClick={()=>{getQueryData(item?.text,item?.metadata,setSearchResturantResult)}}
-                                    key={index}>
-                                    {<SuggestedResturantCard foodItem={item}/>}
-                                </li>
-                            )}
-                        </ul>
-                </div>
-                )
-            :
-            (
-                <div className="Searched-Resturant-Dishes">
-                    <h1>results</h1>
-                    <ul>
-                        {searchResturantResult?.DISH ?
-                        (searchResturantResult.DISH.cards.map((dish,index)=>{return <li key={index}><SearchResultResturantCard Dish={dish}/></li>})):
-                        (
-                        <ul className="Searched-Restaurant">
-                            <li>{<SearchResultResturantCard 
-                            Restaurant={searchResturantResult?.RESTAURANT?.cards[0]}/>}</li>
-                            <ul className="Similar-Restaurants">
-                                {searchResturantResult?.RESTAURANT?.cards[1]?.card?.card?.restaurants.map((restaurant,index)=>{return <li key={index}><SimilarRestaurnts Restaurant={restaurant}/></li>})}
-                            </ul>
-                        </ul>
-                            
-                        )
-                        }
-                    </ul>
-                </div>
-            )
-            )
-            }
-            
-        </>
-    )
-}
-export default SearchPage
-
-
-
-
+          </>
+        ) : (
+          <SuggestionResults suggestedResturants={suggestedResturants} />
+        )}
+      </div>
+    </div>
+  );
+};
+export default SearchPage;

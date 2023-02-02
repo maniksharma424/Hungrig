@@ -10,6 +10,7 @@
   height: 50px;
 }
 
+<<<<<<< HEAD
 .Resturant-Card {
   width: 18%;
   border-bottom: .5px solid #789;
@@ -32,24 +33,30 @@
   border-radius: 10px;
 }
 
+=======
+>>>>>>> tailwind
 .Resturant-info p {
   margin: 0;
   padding: 3px 2px;
   font-size: 20px;
 }
 
+<<<<<<< HEAD
 .Resturant-Cuisines {
   height: 45px;
   flex-wrap: wrap;
   display: flex;
 }
 
+=======
+>>>>>>> tailwind
 .Resturant-Cuisines p {
   margin: 0;
   padding-top: 0;
   font-size: 11px;
 }
 
+<<<<<<< HEAD
 .Resturant-Delivery-Info {
   justify-content: space-between;
   margin: 5px 0;
@@ -60,6 +67,8 @@
   margin: 0 5px;
 }
 
+=======
+>>>>>>> tailwind
 .Search-Result-Dish-Card {
   width: 400px;
   height: 250px;
@@ -107,6 +116,7 @@
   background-size: contain;
 }
 
+<<<<<<< HEAD
 .Header {
   justify-content: space-between;
   align-items: center;
@@ -174,5 +184,12 @@
   margin: 5px;
   padding: 10px;
 }
+=======
+
+
+
+
+
+>>>>>>> tailwind
 
 /*# sourceMappingURL=index.5f0a95c9.css.map */

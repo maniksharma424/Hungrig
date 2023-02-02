@@ -1,25 +1,6 @@
-//Get Resturants
-export const getResturants = async (
-  offSet,
-  signal,
-  setAllResturants,
-  setFilteredResturant,
-  setAvaialableRestaurants
-) => {
-  const resturantDataSwiggy = await fetch(
-    `https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=${offSet}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
-    signal
-  ).catch((err) => console.log(err));
-
-  const resturantDataJson = await resturantDataSwiggy?.json();
-  setAvaialableRestaurants(resturantDataJson?.data?.totalSize)
-
-  setAllResturants(resturantDataJson?.data?.cards);
-
-  setFilteredResturant(resturantDataJson?.data?.cards);
-};
-
 // get searchpage data / search resturants amd dishes data
+
+import { useState } from "react";
 
 const searchResturants = async (text, setState) => {
   const similarresturants = await fetch(
@@ -41,67 +22,8 @@ const debounce = (callback, delay) => {
 };
 export const getSearchedResturants = debounce(searchResturants, 500);
 
-// get QueryData(DishName or Resturant Name) Across All resturants Ans Dishes
-export const getQueryData = async (query, metaData, setState) => {
-  const queryData =
-    await fetch(`https://www.swiggy.com/dapi/restaurants/search/v3?lat=32.681881&lng=74.906294&str=${query}&trackingId=null&submitAction=SUGGESTION&metaData=${metaData}
-  `)
-      .then((res) => res.json())
-      .then((res) => res?.data?.cards[1]?.groupedCard?.cardGroupMap)
-      .catch((err) => console.log(err));
-
-  console.log({ ...queryData });
-
-  setState({ ...queryData });
-};
-
-// Get More Resturants On Scroll
-export const getMoreResturants = (
-  offSet,
-  setOffSet,
-  allresturants,
-  setAllResturants,
-  filteredResturant,
-  setFilteredResturant
-) => {
-  console.log("more data incomming");
-  setOffSet((n) => n + 16);
-  const getResturants = async () => {
-    const fetchResturants = await fetch(
-      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=${offSet}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
-    )
-      .then((res) => res.json())
-      .catch((err) => console.log(err));
-
-    const moreResturants = await fetchResturants.data.cards;
-    if (moreResturants) {
-      setAllResturants([...allresturants, ...moreResturants]);
-      setFilteredResturant([...filteredResturant, ...moreResturants]);
-    } else return null;
-  };
-  getResturants();
-};
-
-//get Menu of Resturant->ResturantPageData
-export const getResturantMenu = async (
-  signal,
-  resturantID,
-  setResturantData,
-  setMenu,
-  setFilteredMenu
-) => {
-  const response = await fetch(
-    `https://www.swiggy.com/dapi/menu/v4/full?lat=32.6938264&lng=74.9062622&menuId=${resturantID}`,
-    signal
-  )
-    .then((res) => res.json())
-    .catch((err) => console.log(err));
-  setResturantData(response.data);
-
-  setMenu(Object.values(response.data.menu.items));
-  setFilteredMenu(Object.values(response.data.menu.items));
-  console.log(response.data);
-};
+//-------------------------------------------------------------------------------
+//
 
 //handle SearchResult for menuItems in resturantPage
 export const handleFilterMenuItems = (DishName, state, setState) => {
@@ -126,18 +48,56 @@ export const handleFilterVegItems = (isVeg, state, setState) => {
   isVeg ? setState(state.filter((item) => item.isVeg >= 1)) : setState(state);
 };
 
+//-------------------------------------------------------------------------------
+//
+
 // add item to cart
-export const addToCart = (Cart, Item) => {
-  let cartItems = [];
-  if (JSON.parse(localStorage.getItem("cartItems"))) {
-    cartItems = JSON.parse(localStorage.getItem("cartItems"));
-    cartItems.map((cartItem) => {
-      cartItem.restaurant.id === Item.restaurant.id
-        ? Cart.push(Item)
-        : alert("you want to add items from another restaurant");
-    });
-  } else {
-    Cart.push(Item);
-  }
-  localStorage.setItem("cartItems", JSON.stringify(Cart));
-};
+// export const addToCart = (Item) => {
+//   const[cart,setCart] = useState([])
+ 
+//   // alreday items in cart
+//   if (localStorage.getItem("cartItems")) {
+//     setCart(JSON.parse(localStorage.getItem("cartItems")));
+//     // are items from same restaurants
+//     if (cart[0]?.restaurant?.id === Item?.restaurant?.id) {        
+//     // if same item added again
+//           //inc val
+//       if(cart.filter(item=>item?.info?.id === Item.info.id))
+//       {
+        
+//          setCart(cart.filter(item=>item.info.id !== Item.info.id))
+//           setCart(...cart,{"info":Item?.info,"retaurant":Item?.restaurant,"value":Item?.value+1})
+//           localStorage.clear();
+//           localStorage.setItem("cartItems", JSON.stringify(cart));
+//         }
+//         // different item from same restaurant
+//         else{
+//           // cart?.push(Item);
+//           setCart(...cart,Item)
+//           localStorage.clear();
+//           localStorage.setItem("cartItems", JSON.stringify(cart));
+//         }
+//     }
+//     // items from different restaurants
+//     else {
+//       //start fresh cart
+//       console.log(Item.restaurant.id);
+//       if (window.confirm("Start a fresh cart")) {
+//         localStorage.clear();
+//         localStorage.setItem("cartItems", JSON.stringify([Item]));
+//       } else {
+//         return null;
+//       }
+//     }
+//   }
+//   //empty cart add item
+//   else {
+    
+//     // cart.push(Item);
+//     setCart(Item)
+//     localStorage.setItem("cartItems", JSON.stringify(cart));
+//   }
+// };
+
+//-------------------------------------------------------------------------------
+//
