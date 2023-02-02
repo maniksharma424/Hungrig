@@ -1,20 +1,3 @@
-<<<<<<< HEAD
-import "../CSS/ResturantsCards.css"
-import{useState} from 'react'
-import {useContext} from "react" 
-import {ResturantContext} from "../Contexts/ContextResturant"
-import {ResturantCard} from "./Resturantcard.jsx"
-import {Link} from 'react-router-dom'
-let i = 50
-const Body = ({filterResturants,size})=>{
-    const[searchText,setSearchText]  = useState('')
-    const ResturantData = useContext(ResturantContext)
-    return(
-        <>
-    <h1>All Resturants Near You</h1>
-        <p>{size}</p>
-=======
->>>>>>> tailwind
 
 import { useContext } from "react";
 import { ResturantContext } from "../Contexts/ContextResturant";

@@ -31959,11 +31959,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","../Pages/Homepage":"6540u","../Pages/Login":"kZRb1","../Pages/ResturantPage":"GvK7j","../Pages/SignUp":"74Gz0","react-router-dom":"9xmpe","../Pages/Header":"2h5Kc","../Pages/Footer":"RI2Qh","../Pages/SearchPage":"h0jL8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Pages/Cart":"3PdSH"}],"6540u":[function(require,module,exports) {
-=======
-},{"react/jsx-dev-runtime":"iTorj","../Pages/Homepage":"6540u","../Pages/Login":"kZRb1","../Pages/ResturantPage":"GvK7j","../Pages/SignUp":"74Gz0","react-router-dom":"9xmpe","../Pages/Header":"2h5Kc","../Pages/Footer":"RI2Qh","../Pages/SearchPage":"h0jL8","../Pages/SearchResults":"v2HEr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Pages/Cart":"3PdSH"}],"6540u":[function(require,module,exports) {
->>>>>>> tailwind
+},{"react/jsx-dev-runtime":"iTorj","../Pages/Homepage":"6540u","../Pages/Cart":"3PdSH","../Pages/Login":"kZRb1","../Pages/ResturantPage":"GvK7j","../Pages/SignUp":"74Gz0","react-router-dom":"9xmpe","../Pages/Header":"2h5Kc","../Pages/Footer":"RI2Qh","../Pages/SearchPage":"h0jL8","../Pages/SearchResults":"v2HEr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6540u":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$16f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -31990,25 +31986,10 @@ var _homPageShimmerDefault = parcelHelpers.interopDefault(_homPageShimmer);
 var _s = $RefreshSig$();
 const Homepage = ()=>{
     _s();
-<<<<<<< HEAD
-    const [allresturants, setAllResturants] = (0, _react.useState)([]);
-    const [filteredResturant, setFilteredResturant] = (0, _react.useState)(allresturants);
-    const [offSet, setOffSet] = (0, _react.useState)(15);
-    const [availableRestaurants, setAvailableRestaurants] = (0, _react.useState)(0);
-    (0, _react.useEffect)(()=>{
-        const controller = new AbortController();
-        const signal = controller.signal;
-        (0, _utils.getResturants)(offSet, signal, setAllResturants, setFilteredResturant, setAvailableRestaurants);
-        return ()=>controller.abort();
-    }, []);
-    window.onscroll = function() {
-        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) (0, _utils.getMoreResturants)(offSet, setOffSet, allresturants, setAllResturants, filteredResturant, setFilteredResturant);
-=======
     const [resturants, setResturants] = (0, _react.useState)([]);
     const [showRestaurant, setShowRestaurant] = (0, _react.useState)(15);
     const sucessCallback = (location)=>{
         console.log(location);
->>>>>>> tailwind
     };
     const errCallback = (err)=>{
         console.log(err);
@@ -32026,21 +32007,6 @@ const Homepage = ()=>{
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "Homepage",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contextResturant.ResturantContext).Provider, {
-<<<<<<< HEAD
-            value: filteredResturant,
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {
-                size: availableRestaurants,
-                filterResturants: filterResturants
-            }, void 0, false, {
-                fileName: "src/Pages/Homepage.jsx",
-                lineNumber: 36,
-                columnNumber: 11
-            }, undefined)
-        }, void 0, false, {
-            fileName: "src/Pages/Homepage.jsx",
-            lineNumber: 35,
-            columnNumber: 11
-=======
             value: resturants,
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
@@ -32058,7 +32024,6 @@ const Homepage = ()=>{
             fileName: "src/Pages/Homepage.jsx",
             lineNumber: 36,
             columnNumber: 9
->>>>>>> tailwind
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
@@ -32066,15 +32031,11 @@ const Homepage = ()=>{
         columnNumber: 7
     }, undefined);
 };
-<<<<<<< HEAD
-_s(Homepage, "QzEn4u3R5kVZN8z67dKFHS5Ir3s=");
-=======
 _s(Homepage, "irv3kA3/mEseCiaOU473ATElL4c=", false, function() {
     return [
         (0, _useRestaurantDefault.default)
     ];
 });
->>>>>>> tailwind
 _c = Homepage;
 var _c;
 $RefreshReg$(_c, "Homepage");
@@ -32084,11 +32045,7 @@ $RefreshReg$(_c, "Homepage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Body":"jhV0B","../Contexts/ContextResturant":"LWyrD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Utilities/utils":"bIOxy"}],"jhV0B":[function(require,module,exports) {
-=======
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Body":"jhV0B","../Contexts/ContextResturant":"LWyrD","./Carousel":"63nrR","../customHooks/useRestaurant":"cTxpy","../Utilities/helpers":"4t9SJ","react-shimmer-effects":"5ORgO","./HomPageShimmer":"2D5qz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jhV0B":[function(require,module,exports) {
->>>>>>> tailwind
 var $parcel$ReactRefreshHelpers$e5ba = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -32102,73 +32059,9 @@ var _react = require("react");
 var _contextResturant = require("../Contexts/ContextResturant");
 var _resturantcard = require("./Resturantcard");
 var _s = $RefreshSig$();
-<<<<<<< HEAD
-let i = 50;
-const Body = ({ filterResturants , size  })=>{
-=======
 const Body = ()=>{
->>>>>>> tailwind
     _s();
     const ResturantData = (0, _react.useContext)((0, _contextResturant.ResturantContext));
-<<<<<<< HEAD
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "All Resturants Near You"
-            }, void 0, false, {
-                fileName: "src/Pages/Body.jsx",
-                lineNumber: 13,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: size
-            }, void 0, false, {
-                fileName: "src/Pages/Body.jsx",
-                lineNumber: 14,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                id: "Available-Resturants-window",
-                className: "Available-Resturants",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-                        to: "/searchpage",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                            placeholder: "search for Resturants"
-                        }, void 0, false, {
-                            fileName: "src/Pages/Body.jsx",
-                            lineNumber: 18,
-                            columnNumber: 17
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Pages/Body.jsx",
-                        lineNumber: 17,
-                        columnNumber: 13
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                        children: ResturantData?.map((resturant)=>{
-                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantcardJsx.ResturantCard), {
-                                resturant: resturant
-                            }, i++, false, {
-                                fileName: "src/Pages/Body.jsx",
-                                lineNumber: 25,
-                                columnNumber: 32
-                            }, undefined);
-                        })
-                    }, void 0, false, {
-                        fileName: "src/Pages/Body.jsx",
-                        lineNumber: 23,
-                        columnNumber: 13
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Pages/Body.jsx",
-                lineNumber: 16,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true);
-=======
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         id: "Available-Resturants-window",
         className: "Available-Resturants w-full flex justify-center items-center",
@@ -32193,7 +32086,6 @@ const Body = ()=>{
         lineNumber: 9,
         columnNumber: 5
     }, undefined);
->>>>>>> tailwind
 };
 _s(Body, "ifP3yLKaea6cGLQOuRrIyYGmOc0=");
 _c = Body;
@@ -32206,11 +32098,7 @@ $RefreshReg$(_c, "Body");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Contexts/ContextResturant":"LWyrD","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../CSS/ResturantsCards.css":"1QJUS","./Resturantcard.jsx":"7rXRs","react-router-dom":"9xmpe"}],"LWyrD":[function(require,module,exports) {
-=======
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Contexts/ContextResturant":"LWyrD","./Resturantcard":"7rXRs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"LWyrD":[function(require,module,exports) {
->>>>>>> tailwind
 var $parcel$ReactRefreshHelpers$5c5d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -32364,7 +32252,7 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"a1caaa0c0bb143d1":"786KC"}],"1QJUS":[function() {},{}],"7rXRs":[function(require,module,exports) {
+},{"a1caaa0c0bb143d1":"786KC"}],"7rXRs":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$7fe9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -32682,19 +32570,6 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getMoreRestaurants", ()=>getMoreRestaurants);
 parcelHelpers.export(exports, "addToCart", ()=>addToCart);
-<<<<<<< HEAD
-const getResturants = async (offSet, signal, setAllResturants, setFilteredResturant, setAvaialableRestaurants)=>{
-    const resturantDataSwiggy = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=${offSet}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`, signal).catch((err)=>console.log(err));
-    const resturantDataJson = await resturantDataSwiggy?.json();
-    setAvaialableRestaurants(resturantDataJson?.data?.totalSize);
-    setAllResturants(resturantDataJson?.data?.cards);
-    setFilteredResturant(resturantDataJson?.data?.cards);
-};
-// get searchpage data / search resturants amd dishes data
-const searchResturants = async (text, setState)=>{
-    const similarresturants = await fetch(`https://www.swiggy.com/dapi/restaurants/search/suggest?lat=32.681881&lng=74.906294&str=${text}&trackingId=null`).then((res)=>res.json()).catch((res)=>console.log(res));
-    setState(similarresturants?.data?.suggestions);
-=======
 parcelHelpers.export(exports, "decrement", ()=>decrement);
 const getMoreRestaurants = (restaurants, setResturants, showRestaurant, setshowRestaurant)=>{
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
@@ -32712,7 +32587,6 @@ const getMoreRestaurants = (restaurants, setResturants, showRestaurant, setshowR
         };
         getResturants();
     }
->>>>>>> tailwind
 };
 const addToCart = (Dish)=>{
     // is local storage empty || first order
@@ -32776,26 +32650,6 @@ const decrement = (updateItem)=>{
         localStorage.setItem("orders", JSON.stringify(newCartItems));
     }
 };
-<<<<<<< HEAD
-const getMoreResturants = (offSet, setOffSet, allresturants, setAllResturants, filteredResturant, setFilteredResturant)=>{
-    console.log("more data incomming");
-    setOffSet((n)=>n + 16);
-    const getResturants = async ()=>{
-        const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=${offSet}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>console.log(err));
-        const moreResturants = await fetchResturants.data.cards;
-        if (moreResturants) {
-            setAllResturants([
-                ...allresturants,
-                ...moreResturants
-            ]);
-            setFilteredResturant([
-                ...filteredResturant,
-                ...moreResturants
-            ]);
-        } else return null;
-    };
-    getResturants();
-=======
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ORgO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -32896,7 +32750,6 @@ var ShimmerButton = function ShimmerButton(_ref) {
             "shimmer shimmer-button": true
         }, "shimmer-button--" + size, true))
     });
->>>>>>> tailwind
 };
 ShimmerButton.propTypes = {
     size: (0, _propTypesDefault.default).oneOf([
@@ -34589,7 +34442,522 @@ $RefreshReg$(_c, "HomPageShimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kZRb1":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3PdSH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$99a4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$99a4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _checkOutBox = require("./CheckOutBox");
+const Cart = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "cart bg-[#e9ecee] w-full h-fit flex-col flex justify-center items-center py-14 px-10",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _checkOutBox.CheckOutBox), {}, void 0, false, {
+                fileName: "src/Pages/Cart.jsx",
+                lineNumber: 6,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Place-Order w-[1125px] p-4",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "w-full p-4 bg-[#60b246] rounded-sm text-white text-[20px]",
+                    children: "Place Order"
+                }, void 0, false, {
+                    fileName: "src/Pages/Cart.jsx",
+                    lineNumber: 8,
+                    columnNumber: 13
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/Cart.jsx",
+                lineNumber: 7,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/Cart.jsx",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Cart;
+exports.default = Cart;
+var _c;
+$RefreshReg$(_c, "Cart");
+
+  $parcel$ReactRefreshHelpers$99a4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CheckOutBox":"4TIou","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4TIou":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4550 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4550.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CheckOutBox", ()=>CheckOutBox);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _cartItem = require("./CartItem");
+var _cartItemDefault = parcelHelpers.interopDefault(_cartItem);
+var _constants = require("../Utilities/constants");
+var _s = $RefreshSig$();
+const CheckOutBox = ()=>{
+    _s();
+    const [cartItems, setCartItems] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        getCartItems(setCartItems);
+    }, []);
+    const getCartItems = (setState)=>{
+        if (JSON.parse(localStorage.getItem("orders"))) setState(JSON.parse(localStorage.getItem("orders")));
+        else setCartItems([]);
+    };
+    const handleUpdate = ()=>{
+        getCartItems(setCartItems);
+    };
+    let cartTotal = 0;
+    if (cartItems?.length <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+        children: "nithing in cart"
+    }, void 0, false, {
+        fileName: "src/Pages/CheckOutBox.jsx",
+        lineNumber: 20,
+        columnNumber: 38
+    }, undefined);
+    else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Checkout-Box rounded-sm w-[1100px] bg-white h-fit",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Restaurant-info w-[full] h-[100px] px-4 pt-4 flex justify-start items-center ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "image",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "Image rounded-md bg-no-repeat bg-center bg-contain h-[80px] w-[80px]",
+                            src: (0, _constants.IMAGE_URL) + cartItems[0]?.restaurant?.cloudinaryImageId
+                        }, void 0, false, {
+                            fileName: "src/Pages/CheckOutBox.jsx",
+                            lineNumber: 26,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 25,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "Restaurant-Info ml-4",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[18px] font-[900px] text-[#3e4152]",
+                                children: cartItems[0]?.restaurant?.name
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 32,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[12px] font-[100px]",
+                                children: cartItems[0]?.restaurant?.locality
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 36,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 31,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/CheckOutBox.jsx",
+                lineNumber: 24,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "billing-info w-full p-4",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                        children: cartItems?.map((item, index)=>{
+                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartItemDefault.default), {
+                                    updateParent: handleUpdate,
+                                    cartItem: item
+                                }, void 0, false, {
+                                    fileName: "src/Pages/CheckOutBox.jsx",
+                                    lineNumber: 46,
+                                    columnNumber: 19
+                                }, undefined)
+                            }, index, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 45,
+                                columnNumber: 17
+                            }, undefined);
+                        })
+                    }, void 0, false, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 42,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-full h-[60px] my-4 p-4 bg-[#f9f9f9] flex justify-start items-center",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-[20px] relative right-2",
+                                children: "❝"
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 52,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                placeholder: "Any suggstions we will pass it on to the restaurant...",
+                                className: "suggestion w-10/12 bg-[#f9f9f9]",
+                                type: "text"
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 53,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 51,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "no-contact-delivery border-[#535665] border-[.5px] p-3 flex justify-start items-start ",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                type: "checkbox"
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 61,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "no-contact-info ml-3",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: " text-[#3e4152] font-[600] text-[14px]",
+                                        children: "Opt in for No-contact Delivery"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 63,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: " text-[13px] m-0 p-0 text-[#535665]",
+                                        children: "Unwell, or avoiding contact? Please select no-contact delivery. Partner will safely place the order outside your door (not for COD)"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 66,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 62,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 60,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "bill-details my-4",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                children: "Bill details"
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 74,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "flex justify-between my-1 text-[#535665] font-thin text-[13px]",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: [
+                                            "Item Total",
+                                            cartItems.map((item)=>{
+                                                cartTotal += item?.dish?.price * item?.qty;
+                                            }),
+                                            " "
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 76,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: cartTotal / 100
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 82,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 75,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "flex justify-between my-1 font-thin",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "text-[#535665] text-[13px]",
+                                        children: "Delivery Partner Fee"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 85,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: " text-[#60b246] font-thin text-[13px]",
+                                        children: "FREE"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 88,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 84,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 92,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "flex justify-between my-3 text-[#535665] text-[14px] font-thin",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: "Govt Taxes And Charges"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 94,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: "₹35.7"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 95,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 93,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
+                                className: "border-black border-[.5px] "
+                            }, void 0, false, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 97,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "flex justify-between mt-3 font-[600] text-[13px] ",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: "To Pay"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 99,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        children: cartTotal / 100 + 35.7
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/CheckOutBox.jsx",
+                                        lineNumber: 100,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/CheckOutBox.jsx",
+                                lineNumber: 98,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/CheckOutBox.jsx",
+                        lineNumber: 73,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/CheckOutBox.jsx",
+                lineNumber: 41,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/CheckOutBox.jsx",
+        lineNumber: 23,
+        columnNumber: 7
+    }, undefined);
+};
+_s(CheckOutBox, "yMyLm0mTOdUD4xRL2vnEhQFbjeY=");
+_c = CheckOutBox;
+var _c;
+$RefreshReg$(_c, "CheckOutBox");
+
+  $parcel$ReactRefreshHelpers$4550.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CartItem":"g2qA5","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g2qA5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1f30 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1f30.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _helpers = require("../Utilities/helpers");
+var _s = $RefreshSig$();
+const CartItem = ({ cartItem , updateParent  })=>{
+    _s();
+    const [count, setCount] = (0, _react.useState)(cartItem?.qty);
+    console.log(cartItem);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Item-info flex justify-between h-fit p-2 items-center mt-3",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "name w-1/2 ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "text-[14px] text-[#282c3f]",
+                        children: cartItem?.dish?.name
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 11,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[10px] after:text-[10px] after:font-[900] after:ml-[3px] after:text-[#fc8019] after:content-['>']",
+                        children: "Customize"
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 12,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/CartItem.jsx",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "btns flex w-1/5 border-[#d4d5d9] border-[.5px]",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: " w-1/3 text-[20px] text-[#bebfc5]",
+                        onClick: ()=>{
+                            setCount((n)=>n - 1);
+                            (0, _helpers.decrement)(cartItem);
+                            updateParent();
+                        },
+                        children: "-"
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 15,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-1/3 text-[#60b246] text-[12px] flex justify-center items-center ",
+                        children: count
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 25,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "w-1/3 text-[20px] text-[#60b246]",
+                        onClick: ()=>{
+                            setCount((n)=>n + 1);
+                            (0, _helpers.addToCart)({
+                                dish: cartItem?.dish,
+                                restaurant: cartItem?.restaurant,
+                                qty: cartItem?.qty + 1
+                            });
+                            updateParent();
+                        },
+                        children: "+"
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/CartItem.jsx",
+                lineNumber: 14,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "price w-1/3 flex justify-end ",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "text-[#535665] text-[13px]",
+                    children: [
+                        "₹",
+                        cartItem?.dish?.price / 100 * cartItem?.qty
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/CartItem.jsx",
+                    lineNumber: 42,
+                    columnNumber: 7
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/CartItem.jsx",
+                lineNumber: 41,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/CartItem.jsx",
+        lineNumber: 9,
+        columnNumber: 5
+    }, undefined);
+};
+_s(CartItem, "4faNLjflZtroUHvcDNqX55bybcQ=");
+_c = CartItem;
+exports.default = CartItem;
+var _c;
+$RefreshReg$(_c, "CartItem");
+
+  $parcel$ReactRefreshHelpers$1f30.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/helpers":"4t9SJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"kZRb1":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1115 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36735,13 +37103,8 @@ $RefreshReg$(_c, "ResultDish");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../CSS/ResturantPage.css":"dOami","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA"}],"dOami":[function() {},{}],"k7iTA":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$fb03 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-=======
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/helpers":"4t9SJ","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ajT6S":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1300 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
->>>>>>> tailwind
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$1300.prelude(module);
@@ -37022,832 +37385,6 @@ $RefreshReg$(_c, "SearchPageSearchBox");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../CSS/Header.css":"dLUVn"}],"dLUVn":[function() {},{}],"RI2Qh":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$cfe0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-=======
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3PdSH":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$99a4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
->>>>>>> tailwind
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$99a4.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _checkOutBox = require("./CheckOutBox");
-const Cart = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "cart bg-[#e9ecee] w-full h-fit flex-col flex justify-center items-center py-14 px-10",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _checkOutBox.CheckOutBox), {}, void 0, false, {
-                fileName: "src/Pages/Cart.jsx",
-                lineNumber: 6,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "Place-Order w-[1125px] p-4",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    className: "w-full p-4 bg-[#60b246] rounded-sm text-white text-[20px]",
-                    children: "Place Order"
-                }, void 0, false, {
-                    fileName: "src/Pages/Cart.jsx",
-                    lineNumber: 8,
-                    columnNumber: 13
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Pages/Cart.jsx",
-                lineNumber: 7,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Pages/Cart.jsx",
-        lineNumber: 5,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Cart;
-exports.default = Cart;
-var _c;
-$RefreshReg$(_c, "Cart");
-
-  $parcel$ReactRefreshHelpers$99a4.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CheckOutBox":"4TIou","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4TIou":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$4550 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$4550.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "CheckOutBox", ()=>CheckOutBox);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _cartItem = require("./CartItem");
-var _cartItemDefault = parcelHelpers.interopDefault(_cartItem);
-var _constants = require("../Utilities/constants");
-var _s = $RefreshSig$();
-const CheckOutBox = ()=>{
-    _s();
-    const [cartItems, setCartItems] = (0, _react.useState)([]);
-    (0, _react.useEffect)(()=>{
-        getCartItems(setCartItems);
-    }, []);
-    const getCartItems = (setState)=>{
-        if (JSON.parse(localStorage.getItem("orders"))) setState(JSON.parse(localStorage.getItem("orders")));
-        else setCartItems([]);
-    };
-    const handleUpdate = ()=>{
-        getCartItems(setCartItems);
-    };
-    let cartTotal = 0;
-    if (cartItems?.length <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-        children: "nithing in cart"
-    }, void 0, false, {
-        fileName: "src/Pages/CheckOutBox.jsx",
-        lineNumber: 20,
-        columnNumber: 38
-    }, undefined);
-    else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "Checkout-Box rounded-sm w-[1100px] bg-white h-fit",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "Restaurant-info w-[full] h-[100px] px-4 pt-4 flex justify-start items-center ",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "image",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                            className: "Image rounded-md bg-no-repeat bg-center bg-contain h-[80px] w-[80px]",
-                            src: (0, _constants.IMAGE_URL) + cartItems[0]?.restaurant?.cloudinaryImageId
-                        }, void 0, false, {
-                            fileName: "src/Pages/CheckOutBox.jsx",
-                            lineNumber: 26,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Pages/CheckOutBox.jsx",
-                        lineNumber: 25,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "Restaurant-Info ml-4",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[18px] font-[900px] text-[#3e4152]",
-                                children: cartItems[0]?.restaurant?.name
-                            }, void 0, false, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 32,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[12px] font-[100px]",
-                                children: cartItems[0]?.restaurant?.locality
-                            }, void 0, false, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 36,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Pages/CheckOutBox.jsx",
-                        lineNumber: 31,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Pages/CheckOutBox.jsx",
-                lineNumber: 24,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "billing-info w-full p-4",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                        children: cartItems?.map((item, index)=>{
-                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartItemDefault.default), {
-                                    updateParent: handleUpdate,
-                                    cartItem: item
-                                }, void 0, false, {
-                                    fileName: "src/Pages/CheckOutBox.jsx",
-                                    lineNumber: 46,
-                                    columnNumber: 19
-                                }, undefined)
-                            }, index, false, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 45,
-                                columnNumber: 17
-                            }, undefined);
-                        })
-                    }, void 0, false, {
-                        fileName: "src/Pages/CheckOutBox.jsx",
-                        lineNumber: 42,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "w-full h-[60px] my-4 p-4 bg-[#f9f9f9] flex justify-start items-center",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "text-[20px] relative right-2",
-                                children: "❝"
-                            }, void 0, false, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 52,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                placeholder: "Any suggstions we will pass it on to the restaurant...",
-                                className: "suggestion w-10/12 bg-[#f9f9f9]",
-                                type: "text"
-                            }, void 0, false, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 53,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Pages/CheckOutBox.jsx",
-                        lineNumber: 51,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "no-contact-delivery border-[#535665] border-[.5px] p-3 flex justify-start items-start ",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                type: "checkbox"
-                            }, void 0, false, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 61,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "no-contact-info ml-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        className: " text-[#3e4152] font-[600] text-[14px]",
-                                        children: "Opt in for No-contact Delivery"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/CheckOutBox.jsx",
-                                        lineNumber: 63,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        className: " text-[13px] m-0 p-0 text-[#535665]",
-                                        children: "Unwell, or avoiding contact? Please select no-contact delivery. Partner will safely place the order outside your door (not for COD)"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/CheckOutBox.jsx",
-                                        lineNumber: 66,
-                                        columnNumber: 15
-                                    }, undefined)
-<<<<<<< HEAD
-                                }, void 0, false, {
-                                    fileName: "src/Pages/SearchPage.jsx",
-                                    lineNumber: 51,
-                                    columnNumber: 29
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                    className: "Similar-Restaurants",
-                                    children: searchResturantResult?.RESTAURANT?.cards[1]?.card?.card?.restaurants.map((restaurant, index)=>{
-                                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _similarRestaurntsDefault.default), {
-                                                Restaurant: restaurant
-                                            }, void 0, false, {
-                                                fileName: "src/Pages/SearchPage.jsx",
-                                                lineNumber: 54,
-                                                columnNumber: 151
-                                            }, undefined)
-                                        }, index, false, {
-                                            fileName: "src/Pages/SearchPage.jsx",
-                                            lineNumber: 54,
-                                            columnNumber: 135
-                                        }, undefined);
-                                    })
-                                }, void 0, false, {
-                                    fileName: "src/Pages/SearchPage.jsx",
-                                    lineNumber: 53,
-                                    columnNumber: 29
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/Pages/SearchPage.jsx",
-                            lineNumber: 50,
-                            columnNumber: 25
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "src/Pages/SearchPage.jsx",
-                        lineNumber: 46,
-                        columnNumber: 21
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Pages/SearchPage.jsx",
-                lineNumber: 44,
-                columnNumber: 17
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_s(SearchPage, "y475/OAlrRyzsprEUcylIbeTA8A=");
-_c = SearchPage;
-exports.default = SearchPage;
-var _c;
-$RefreshReg$(_c, "SearchPage");
-
-  $parcel$ReactRefreshHelpers$f723.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Utilities/utils":"bIOxy","./SuggestedResturantCard":"f1g2X","./SearchResultResturantCard":"fBD0X","./SimilarRestaurnts":"5sGqh"}],"f1g2X":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e352 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e352.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _suggestedResturantCardCss = require("../CSS/SuggestedResturantCard.css");
-const SuggestedResturantCard = ({ foodItem  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "Suggsted-Item",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "Suggested-Item-Image",
-                    style: {
-                        "backgroundImage": `url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${foodItem?.cloudinaryId})`,
-                        "height": "100px",
-                        "width": "100px"
-                    }
-                }, void 0, false, {
-                    fileName: "src/Pages/SuggestedResturantCard.jsx",
-                    lineNumber: 9,
-                    columnNumber: 13
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "Suggested-Item-Info",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: foodItem?.text
-                        }, void 0, false, {
-                            fileName: "src/Pages/SuggestedResturantCard.jsx",
-                            lineNumber: 12,
-                            columnNumber: 17
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: foodItem?.type
-                        }, void 0, false, {
-                            fileName: "src/Pages/SuggestedResturantCard.jsx",
-                            lineNumber: 13,
-                            columnNumber: 17
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Pages/SuggestedResturantCard.jsx",
-                    lineNumber: 11,
-                    columnNumber: 13
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/Pages/SuggestedResturantCard.jsx",
-            lineNumber: 8,
-            columnNumber: 9
-        }, undefined)
-    }, void 0, false);
-=======
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 62,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Pages/CheckOutBox.jsx",
-                        lineNumber: 60,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "bill-details my-4",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                                children: "Bill details"
-                            }, void 0, false, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 74,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "flex justify-between my-1 text-[#535665] font-thin text-[13px]",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        children: [
-                                            "Item Total",
-                                            cartItems.map((item)=>{
-                                                cartTotal += item?.dish?.price * item?.qty;
-                                            }),
-                                            " "
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "src/Pages/CheckOutBox.jsx",
-                                        lineNumber: 76,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        children: cartTotal / 100
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/CheckOutBox.jsx",
-                                        lineNumber: 82,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 75,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "flex justify-between my-1 font-thin",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        className: "text-[#535665] text-[13px]",
-                                        children: "Delivery Partner Fee"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/CheckOutBox.jsx",
-                                        lineNumber: 85,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        className: " text-[#60b246] font-thin text-[13px]",
-                                        children: "FREE"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/CheckOutBox.jsx",
-                                        lineNumber: 88,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 84,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 92,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "flex justify-between my-3 text-[#535665] text-[14px] font-thin",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        children: "Govt Taxes And Charges"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/CheckOutBox.jsx",
-                                        lineNumber: 94,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        children: "₹35.7"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/CheckOutBox.jsx",
-                                        lineNumber: 95,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 93,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
-                                className: "border-black border-[.5px] "
-                            }, void 0, false, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 97,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "flex justify-between mt-3 font-[600] text-[13px] ",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        children: "To Pay"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/CheckOutBox.jsx",
-                                        lineNumber: 99,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                        children: cartTotal / 100 + 35.7
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/CheckOutBox.jsx",
-                                        lineNumber: 100,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Pages/CheckOutBox.jsx",
-                                lineNumber: 98,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Pages/CheckOutBox.jsx",
-                        lineNumber: 73,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Pages/CheckOutBox.jsx",
-                lineNumber: 41,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Pages/CheckOutBox.jsx",
-        lineNumber: 23,
-        columnNumber: 7
-    }, undefined);
->>>>>>> tailwind
-};
-_s(CheckOutBox, "yMyLm0mTOdUD4xRL2vnEhQFbjeY=");
-_c = CheckOutBox;
-var _c;
-$RefreshReg$(_c, "CheckOutBox");
-
-  $parcel$ReactRefreshHelpers$4550.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CartItem":"g2qA5","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g2qA5":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1f30 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1f30.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _helpers = require("../Utilities/helpers");
-var _s = $RefreshSig$();
-const CartItem = ({ cartItem , updateParent  })=>{
-    _s();
-    const [count, setCount] = (0, _react.useState)(cartItem?.qty);
-    console.log(cartItem);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "Item-info flex justify-between h-fit p-2 items-center mt-3",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "name w-1/2 ",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                        className: "text-[14px] text-[#282c3f]",
-                        children: cartItem?.dish?.name
-                    }, void 0, false, {
-                        fileName: "src/Pages/CartItem.jsx",
-                        lineNumber: 11,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-[10px] after:text-[10px] after:font-[900] after:ml-[3px] after:text-[#fc8019] after:content-['>']",
-                        children: "Customize"
-                    }, void 0, false, {
-                        fileName: "src/Pages/CartItem.jsx",
-                        lineNumber: 12,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Pages/CartItem.jsx",
-                lineNumber: 10,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "btns flex w-1/5 border-[#d4d5d9] border-[.5px]",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: " w-1/3 text-[20px] text-[#bebfc5]",
-                        onClick: ()=>{
-                            setCount((n)=>n - 1);
-                            (0, _helpers.decrement)(cartItem);
-                            updateParent();
-                        },
-                        children: "-"
-                    }, void 0, false, {
-                        fileName: "src/Pages/CartItem.jsx",
-                        lineNumber: 15,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "w-1/3 text-[#60b246] text-[12px] flex justify-center items-center ",
-                        children: count
-                    }, void 0, false, {
-                        fileName: "src/Pages/CartItem.jsx",
-                        lineNumber: 25,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "w-1/3 text-[20px] text-[#60b246]",
-                        onClick: ()=>{
-                            setCount((n)=>n + 1);
-                            (0, _helpers.addToCart)({
-                                dish: cartItem?.dish,
-                                restaurant: cartItem?.restaurant,
-                                qty: cartItem?.qty + 1
-                            });
-                            updateParent();
-                        },
-                        children: "+"
-                    }, void 0, false, {
-                        fileName: "src/Pages/CartItem.jsx",
-                        lineNumber: 26,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-<<<<<<< HEAD
-                fileName: "src/Pages/SearchResultResturantCard.jsx",
-                lineNumber: 21,
-                columnNumber: 25
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Pages/SearchResultResturantCard.jsx",
-        lineNumber: 12,
-        columnNumber: 21
-    }, undefined);
-    if (Restaurant) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-        state: {
-            "id": Restaurant?.card?.card?.info?.id
-        },
-        to: "/restaurantPage",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "Search-Result-Restaurant-Card",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "Search-Result-Restaurant",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "Search-Result-Restaurant-Image",
-                            style: {
-                                "backgroundImage": `url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${Restaurant?.card?.card?.info?.cloudinaryImageId})`,
-                                "height": "150px",
-                                "width": "150px"
-                            }
-                        }, void 0, false, {
-                            fileName: "src/Pages/SearchResultResturantCard.jsx",
-                            lineNumber: 35,
-                            columnNumber: 31
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: Restaurant?.card?.card?.info?.aggregatedDiscountInfo.header
-                        }, void 0, false, {
-                            fileName: "src/Pages/SearchResultResturantCard.jsx",
-                            lineNumber: 36,
-                            columnNumber: 33
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Pages/SearchResultResturantCard.jsx",
-                    lineNumber: 34,
-                    columnNumber: 29
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "Search-Result-Restaurant-info",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: Restaurant?.card?.card?.info?.name
-                        }, void 0, false, {
-                            fileName: "src/Pages/SearchResultResturantCard.jsx",
-                            lineNumber: 39,
-                            columnNumber: 29
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: Restaurant?.card?.card?.info?.avgRating
-                                }, void 0, false, {
-                                    fileName: "src/Pages/SearchResultResturantCard.jsx",
-                                    lineNumber: 40,
-                                    columnNumber: 32
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: Restaurant?.card?.card?.info?.sla?.deliveryTime
-                                }, void 0, false, {
-                                    fileName: "src/Pages/SearchResultResturantCard.jsx",
-                                    lineNumber: 40,
-                                    columnNumber: 86
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: Restaurant?.card?.card?.info?.costForTwoMessage
-                                }, void 0, false, {
-                                    fileName: "src/Pages/SearchResultResturantCard.jsx",
-                                    lineNumber: 40,
-                                    columnNumber: 148
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "src/Pages/SearchResultResturantCard.jsx",
-                            lineNumber: 40,
-                            columnNumber: 29
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: Restaurant?.card?.card?.info?.cuisines.map((cuisine, index)=>{
-                                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                    children: [
-                                        cuisine,
-                                        ","
-                                    ]
-                                }, index, true, {
-                                    fileName: "src/Pages/SearchResultResturantCard.jsx",
-                                    lineNumber: 41,
-                                    columnNumber: 101
-                                }, undefined);
-                            })
-                        }, void 0, false, {
-                            fileName: "src/Pages/SearchResultResturantCard.jsx",
-                            lineNumber: 41,
-                            columnNumber: 29
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Pages/SearchResultResturantCard.jsx",
-                    lineNumber: 38,
-                    columnNumber: 29
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "src/Pages/SearchResultResturantCard.jsx",
-            lineNumber: 33,
-            columnNumber: 25
-        }, undefined)
-    }, void 0, false, {
-        fileName: "src/Pages/SearchResultResturantCard.jsx",
-        lineNumber: 32,
-        columnNumber: 21
-    }, undefined);
-    else return null;
-};
-_c = SearchResultResturantCard;
-exports.default = SearchResultResturantCard;
-var _c;
-$RefreshReg$(_c, "SearchResultResturantCard");
-
-  $parcel$ReactRefreshHelpers$425e.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../CSS/SearchResultResturantAndDishCard.css":"27Qi7","react-router-dom":"9xmpe","./Cart":"3PdSH","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"27Qi7":[function() {},{}],"5sGqh":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$ac75 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$ac75.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactRouterDom = require("react-router-dom");
-const SimilarRestaurnts = ({ Restaurant  })=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
-        to: "/RestaurantPage",
-        state: {
-            "id": Restaurant?.info?.id
-        },
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "Search-Result-Restaurant-Card",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "Search-Result-Restaurant",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "Search-Result-Restaurant-Image",
-                            style: {
-                                "backgroundImage": `url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/${Restaurant?.info?.cloudinaryImageId})`,
-                                "height": "150px",
-                                "width": "150px"
-                            }
-                        }, void 0, false, {
-                            fileName: "src/Pages/SimilarRestaurnts.jsx",
-                            lineNumber: 10,
-                            columnNumber: 31
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            children: Restaurant?.info?.aggregatedDiscountInfo.header
-                        }, void 0, false, {
-                            fileName: "src/Pages/SimilarRestaurnts.jsx",
-                            lineNumber: 11,
-                            columnNumber: 33
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Pages/SimilarRestaurnts.jsx",
-                    lineNumber: 9,
-                    columnNumber: 29
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "Search-Result-Restaurant-info",
-=======
-                fileName: "src/Pages/CartItem.jsx",
-                lineNumber: 14,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "price w-1/3 flex justify-end ",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                    className: "text-[#535665] text-[13px]",
->>>>>>> tailwind
-                    children: [
-                        "₹",
-                        cartItem?.dish?.price / 100 * cartItem?.qty
-                    ]
-                }, void 0, true, {
-                    fileName: "src/Pages/CartItem.jsx",
-                    lineNumber: 42,
-                    columnNumber: 7
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Pages/CartItem.jsx",
-                lineNumber: 41,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Pages/CartItem.jsx",
-        lineNumber: 9,
-        columnNumber: 5
-    }, undefined);
-};
-_s(CartItem, "4faNLjflZtroUHvcDNqX55bybcQ=");
-_c = CartItem;
-exports.default = CartItem;
-var _c;
-$RefreshReg$(_c, "CartItem");
-
-  $parcel$ReactRefreshHelpers$1f30.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/helpers":"4t9SJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","dl2Sr","8h89G"], "8h89G", "parcelRequireb877")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","dl2Sr","8h89G"], "8h89G", "parcelRequireb877")
 
 //# sourceMappingURL=index.c3f022c4.js.map
