@@ -9,10 +9,6 @@ import Footer from "../Pages/Footer";
 import SearchPage from "../Pages/SearchPage";
 import SearchResults from "../Pages/SearchResults";
 const App = () => {
-
-
-    
-
   return (
     <>
       <Header />

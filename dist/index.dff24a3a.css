@@ -690,6 +690,19 @@ img, video {
   width: 180px;
 }
 
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.w-\[\] {
+  width: ;
+}
+
+.w-\[410px\] {
+  width: 410px;
+}
+
 .flex-col {
   flex-direction: column;
 }
@@ -736,6 +749,10 @@ img, video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-scroll {
+  overflow: scroll;
 }
 
 .rounded-sm {
@@ -1014,6 +1031,10 @@ img, video {
 
 .pl-2 {
   padding-left: .5rem;
+}
+
+.pr-2 {
+  padding-right: .5rem;
 }
 
 .text-\[20px\] {

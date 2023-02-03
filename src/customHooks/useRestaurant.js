@@ -6,7 +6,7 @@ const useRestaurant = (Resturants, setRestaurants) => {
 
     navigator.geolocation.getCurrentPosition((cordinates) => {
       getResturants(signal, setRestaurants, cordinates);
-    },);
+    });
 
     return () => controller.abort();
   }, []);

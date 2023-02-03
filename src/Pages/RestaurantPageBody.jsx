@@ -4,8 +4,8 @@ import ResturantMenuItemCard from "./ResturantMenuItemCard";
 
 const RestaurantPageBody = ({resturantData,menu,filteredMenu,setFilteredMenu}) => {
   return (
-    <div className="Resturant-Menu-Body w-11/12    justify-evenly flex">
-    <div className="Resturant-Categories  sticky top-[310px] z-40 pr-16   h-fit flex flex-col">
+    <div className="Resturant-Menu-Body w-11/12    justify-start flex">
+    <div className="Resturant-Categories  w-[410px] overflow-scroll  sticky top-[310px] z-10 pr-2   h-fit flex flex-col">
       {resturantData?.menu?.widgets?.map((item) =>
         item.type === "category" ? (
           <button
@@ -20,7 +20,7 @@ const RestaurantPageBody = ({resturantData,menu,filteredMenu,setFilteredMenu}) =
         ) : null
       )}
     </div>
-    <div className="Resturant-Menu-Items border-[black] border-l-[1px]  relative right-[240px] ">
+    <div className="Resturant-Menu-Items border-[black] border-l-[1px]   ">
       {filteredMenu.map((item) => (
         <ResturantMenuItemCard
           key={item.id}

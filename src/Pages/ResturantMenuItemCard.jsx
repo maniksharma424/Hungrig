@@ -1,9 +1,8 @@
 import { IMAGE_URL } from "../Utilities/constants";
 import { addToCart } from "../Utilities/helpers";
 const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
-
-  return (
-    <div className="Food-Item-Card flex justify-between items-center h-fit w-[450px] relative left-[50px]  m-[20px] border-b-[1px] border-slate-500 border-opacity-50">
+return (
+    <div className="Food-Item-Card flex justify-between items-center h-fit w-[450px] relative   m-[20px] border-b-[1px] border-slate-500 border-opacity-50">
       <div className="Food-Item-Info  relative bottom-[20px]  w-2/3 h-1/3">
         {foodItem?.isVeg === 1 ? (
           <p className="text-[15px]">
@@ -26,7 +25,7 @@ const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
       <div className="Food-Item">
         <div
           className="Food-Item-Image" >
-          <img className="rounded-[6px] w-[100px] h-[90px]  bg-center bg-contain bg-no-repeat" src={IMAGE_URL+ foodItem?.cloudinaryImageId}/>
+          <img className=" rounded-lg w-[100px] h-[90px]  bg-center bg-contain bg-no-repeat"  src={IMAGE_URL+ foodItem?.cloudinaryImageId}/>
         </div>
         <div className="Food-Add-Btn">
           <button
