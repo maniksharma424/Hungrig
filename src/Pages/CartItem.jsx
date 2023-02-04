@@ -22,7 +22,9 @@ const CartItem = ({ cartItem, updateParent }) => {
         >
           -
         </button>
-        <div className="w-1/3 text-[#60b246] text-[12px] flex justify-center items-center ">{count}</div>
+        <div className="w-1/3 text-[#60b246] text-[12px] flex justify-center items-center ">
+          {cartItem.qty}
+          </div>
         <button
         className="w-1/3 text-[20px] text-[#60b246]"
           onClick={() => {

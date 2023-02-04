@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 const Header = () => {
   const [cartLength, setCartLength] = useState(() => {
-    return JSON.parse(localStorage.getItem("orders")).length;
+    return JSON.parse(localStorage.getItem("orders"))?.length;
   });
   return (
     <>

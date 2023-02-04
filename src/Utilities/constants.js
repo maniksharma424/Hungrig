@@ -51,3 +51,4 @@ export const carousel_Images = [
   },
 ];
 export const IMAGE_URL = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/'
+export const EMPTY_CART_IMG = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2'

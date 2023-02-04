@@ -31,6 +31,7 @@ return (
           <button
             className=" bg-white border-opacity-50 border-[1px] border-slate-500 p-1 px-4 text-green-600 shadow-xl relative left-[14px] bottom-[20px]"
             onClick={() => {
+              location.reload()
               console.log("added...");
               addToCart({
                 dish: foodItem,
