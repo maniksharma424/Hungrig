@@ -32304,7 +32304,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                 className: "restaurant-Cuisines mr-3 p-0",
                                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                     className: "pl-1 p-0 text-xs w-11/12 text-[#535665]",
-                                    children: restaurant?.cuisines.join(",")
+                                    children: restaurant?.cuisines?.join(",")
                                 }, void 0, false, {
                                     fileName: "src/Pages/Resturantcard.jsx",
                                     lineNumber: 19,

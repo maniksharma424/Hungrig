@@ -18,7 +18,7 @@ export const RestaurantCard = ({ restaurant }) => {
             </p>
             <div className="restaurant-Cuisines mr-3 p-0">
               <p className="pl-1 p-0 text-xs w-11/12 text-[#535665]">
-                {restaurant?.cuisines.join(",")}
+                {restaurant?.cuisines?.join(",")}
                 </p>
             </div>
             <div className="restaurant-Delivery-Info flex justify-between w-[256px] items-center h-10">
