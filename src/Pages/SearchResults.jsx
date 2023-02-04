@@ -16,6 +16,7 @@ const SearchResults = () => {
 
   const searchResturantResult = useSearchResult(item);
 
+
   if (searchText === "") return <Navigate to="/searchpage" />;
   else
     return (

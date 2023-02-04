@@ -5,7 +5,7 @@ export const RestaurantCard = ({ restaurant }) => {
   return (
     <>
       <li className=" restaurant-Card  w-72 h-80 border px-4  py-4 border-none mb-8 mt-4 hover:shadow-xl border-slate-500 hover:border-[.5px] hover:border-solid">
-        <Link state={{ id: restaurant?.id }} to="/RestaurantPage">
+        <Link state={{ id: restaurant?.id }} to="/restaurant-page">
           <div className="restaurant-Image">
             <img
               className="h-44 w-64 bg-center bg-no-repeat bg-contain"
@@ -17,14 +17,9 @@ export const RestaurantCard = ({ restaurant }) => {
               {restaurant.name}
             </p>
             <div className="restaurant-Cuisines mr-3 p-0">
-              {restaurant?.cuisines?.map((item, index) => (
-                <span
-                  className="Cuisine pl-1 p-0 text-xs w-11/12 text-[#535665]"
-                  key={index}
-                >
-                  {item}
-                </span>
-              ))}
+              <p className="pl-1 p-0 text-xs w-11/12 text-[#535665]">
+                {restaurant?.cuisines.join(",")}
+                </p>
             </div>
             <div className="restaurant-Delivery-Info flex justify-between w-[256px] items-center h-10">
               {restaurant?.avgRating >= 4 ? (

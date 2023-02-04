@@ -9,23 +9,24 @@ import { ShimmerSimpleGallery } from "react-shimmer-effects";
 import HomPageShimmer from "./HomPageShimmer";
 
 export const Homepage = () => {
-  const [resturants, setResturants] = useState([]);
+  const [restaurants, showRestaurants] = useState([]);
+  const[filterRestaurants,setFilterRestaurants] = useState()
   const [showRestaurant, setShowRestaurant] = useState(15); 
-  useRestaurant(resturants, setResturants);
+  useRestaurant(restaurants, showRestaurants);
   window.onscroll = () => {
     getMoreRestaurants(
-      resturants,
-      setResturants,
+      restaurants,
+      showRestaurants,
       showRestaurant,
       setShowRestaurant
     );
   };
 
-  if (resturants.length <= 0) return <HomPageShimmer />;
+  if (restaurants.length <= 0) return <HomPageShimmer />;
   else
     return (
       <div className="Homepage">
-        <ResturantContext.Provider value={resturants}>
+        <ResturantContext.Provider value={restaurants}>
           <Carousel />
           <Body />
         </ResturantContext.Provider>

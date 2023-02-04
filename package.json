@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MANIKSHARMA2000/namaste-react#readme",
   "devDependencies": {
+    "@babel/core": "^7.20.12",
     "buffer": "^5.7.1",
     "parcel": "^2.8.2",
     "postcss": "^8.4.21",

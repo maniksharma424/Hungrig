@@ -1,5 +1,9 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 const Header = () => {
+  const [cartLength, setCartLength] = useState(() => {
+    return JSON.parse(localStorage.getItem("orders")).length;
+  });
   return (
     <>
       <div className="Header sticky top-0  bg-white z-10 pt-3 pb-2  px-[130px] w-full flex justify-between items-center shadow-xl">
@@ -18,7 +22,12 @@ const Header = () => {
           </Link>
           <Link to="/login">Login</Link>
           <Link to="/cart">
-            <i class="fa-sharp fa-solid fa-cart-shopping fa-xl"></i>
+            <div>
+              <i class="fa-sharp fa-solid fa-cart-shopping fa-xl"></i>
+              <div className="cart-length border-black border-[1px] p-2">
+                {cartLength}
+              </div>
+            </div>
           </Link>
         </div>
       </div>

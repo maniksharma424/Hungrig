@@ -31,7 +31,7 @@ export const MyRouter = createBrowserRouter([
         element: <Cart />,
       },
       {
-        path: "/Login",
+        path: "/login",
         element: <Login />,
       },
       {
@@ -39,7 +39,7 @@ export const MyRouter = createBrowserRouter([
         element: <SignUp />,
       },
       {
-        path: "/RestaurantPage",
+        path: "/restaurant-page",
         element: <ResturantPage />,
       },
       {
