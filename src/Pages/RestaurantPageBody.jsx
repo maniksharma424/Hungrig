@@ -1,7 +1,7 @@
 import React from "react";
 import { handleCategoryMenu } from "../Utilities/utils";
 import ResturantMenuItemCard from "./ResturantMenuItemCard";
-import MiniCart from "./Minicart";
+import MiniCart from "./MiniCart";
 import { EMPTY_CART_IMG} from "../Utilities/constants";
 
 const RestaurantPageBody = ({

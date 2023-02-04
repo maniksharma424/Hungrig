@@ -35653,8 +35653,8 @@ var _reactDefault = parcelHelpers.interopDefault(_react);
 var _utils = require("../Utilities/utils");
 var _resturantMenuItemCard = require("./ResturantMenuItemCard");
 var _resturantMenuItemCardDefault = parcelHelpers.interopDefault(_resturantMenuItemCard);
-var _minicart = require("./Minicart");
-var _minicartDefault = parcelHelpers.interopDefault(_minicart);
+var _miniCart = require("./MiniCart");
+var _miniCartDefault = parcelHelpers.interopDefault(_miniCart);
 var _constants = require("../Utilities/constants");
 const RestaurantPageBody = ({ resturantData , menu , filteredMenu , setFilteredMenu  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35701,7 +35701,7 @@ const RestaurantPageBody = ({ resturantData , menu , filteredMenu , setFilteredM
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "mini-cart",
-                children: JSON.parse(localStorage.getItem("orders")) ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _minicartDefault.default), {}, void 0, false, {
+                children: JSON.parse(localStorage.getItem("orders")) ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _miniCartDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/RestaurantPageBody.jsx",
                     lineNumber: 24,
                     columnNumber: 55
@@ -35762,7 +35762,7 @@ $RefreshReg$(_c, "RestaurantPageBody");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Minicart":"efG2m","../Utilities/constants":"5t9MR"}],"k7iTA":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./MiniCart":"efG2m"}],"k7iTA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fb03 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
