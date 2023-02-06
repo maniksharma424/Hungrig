@@ -10,7 +10,7 @@ const SearchResultResturantCard = ({ Dish, Restaurant }) => {
     return (
       <Link
         state={{ id: Dish?.card?.card?.restaurant?.info?.id }}
-        to="/restaurantPage"
+        to="/restaurant-page"
       >
         <ResultDish Dish={Dish?.card?.card} />
       </Link>
@@ -19,7 +19,7 @@ const SearchResultResturantCard = ({ Dish, Restaurant }) => {
     return (
       <Link
         state={{ id: Restaurant?.card?.card?.info?.id }}
-        to="/restaurantPage"
+        to="/restaurant-page"
       >
         <ResultRestaurant Restaurant={Restaurant?.card?.card?.info} />
       </Link>

@@ -54,8 +54,9 @@ const ResultDish = ({Dish}) => {
           </div>
           <button
             className=" bg-white border-opacity-50 border-[1px] border-slate-500 p-1 px-4 text-green-600 shadow-md relative left-[14px] bottom-[15px]"
-            onClick={() => {
-              console.log("Added..");
+            onClick={(e) => {
+              e.preventDefault()
+              console.log('hii');
               addToCart( {
                 dish: Dish?.info,
                 restaurant: Dish?.restaurant?.info,

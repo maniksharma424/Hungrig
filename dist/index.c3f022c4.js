@@ -35762,7 +35762,7 @@ $RefreshReg$(_c, "RestaurantPageBody");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./MiniCart":"efG2m"}],"k7iTA":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA","./MiniCart":"efG2m","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"k7iTA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fb03 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37122,7 +37122,7 @@ const SearchResultResturantCard = ({ Dish , Restaurant  })=>{
         state: {
             id: Dish?.card?.card?.restaurant?.info?.id
         },
-        to: "/restaurantPage",
+        to: "/restaurant-page",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resultDishDefault.default), {
             Dish: Dish?.card?.card
         }, void 0, false, {
@@ -37139,7 +37139,7 @@ const SearchResultResturantCard = ({ Dish , Restaurant  })=>{
         state: {
             id: Restaurant?.card?.card?.info?.id
         },
-        to: "/restaurantPage",
+        to: "/restaurant-page",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resultRestaurantDefault.default), {
             Restaurant: Restaurant?.card?.card?.info
         }, void 0, false, {
@@ -37335,8 +37335,9 @@ const ResultDish = ({ Dish  })=>{
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: " bg-white border-opacity-50 border-[1px] border-slate-500 p-1 px-4 text-green-600 shadow-md relative left-[14px] bottom-[15px]",
-                        onClick: ()=>{
-                            console.log("Added..");
+                        onClick: (e)=>{
+                            e.preventDefault();
+                            console.log("hii");
                             (0, _helpers.addToCart)({
                                 dish: Dish?.info,
                                 restaurant: Dish?.restaurant?.info,
