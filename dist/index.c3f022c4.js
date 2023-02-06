@@ -31979,23 +31979,31 @@ var _carousel = require("./Carousel");
 var _carouselDefault = parcelHelpers.interopDefault(_carousel);
 var _useRestaurant = require("../customHooks/useRestaurant");
 var _useRestaurantDefault = parcelHelpers.interopDefault(_useRestaurant);
-var _helpers = require("../Utilities/helpers");
 var _reactShimmerEffects = require("react-shimmer-effects");
 var _homPageShimmer = require("./HomPageShimmer");
 var _homPageShimmerDefault = parcelHelpers.interopDefault(_homPageShimmer);
+var _helpers = require("../Utilities/helpers");
 var _s = $RefreshSig$();
 const Homepage = ()=>{
     _s();
     const [restaurants, showRestaurants] = (0, _react.useState)([]);
-    const [filterRestaurants, setFilterRestaurants] = (0, _react.useState)();
     const [showRestaurant, setShowRestaurant] = (0, _react.useState)(15);
     (0, _useRestaurantDefault.default)(restaurants, showRestaurants);
+    // window.onscroll = () => {
+    //   getMoreRestaurants(
+    //     restaurants,
+    //     showRestaurants,
+    //     showRestaurant,
+    //     setShowRestaurant
+    //   );
+    // };
     window.onscroll = ()=>{
-        (0, _helpers.getMoreRestaurants)(restaurants, showRestaurants, showRestaurant, setShowRestaurant);
+        console.log("scrolled");
+        (0, _helpers.getMoreRestaurant)(restaurants, showRestaurants, showRestaurant, setShowRestaurant);
     };
     if (restaurants.length <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homPageShimmerDefault.default), {}, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 18,
+        lineNumber: 26,
         columnNumber: 39
     }, undefined);
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32005,27 +32013,27 @@ const Homepage = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 20,
+                    lineNumber: 28,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 21,
+                    lineNumber: 29,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Pages/Homepage.jsx",
-            lineNumber: 19,
+            lineNumber: 27,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 18,
+        lineNumber: 26,
         columnNumber: 70
     }, undefined);
 };
-_s(Homepage, "Z1LYMAr9sK63vuC0WEr665VtvIs=", false, function() {
+_s(Homepage, "MTZSr+4ZYXLaxWhj+wnkrJXAj1g=", false, function() {
     return [
         (0, _useRestaurantDefault.default)
     ];
@@ -32625,11 +32633,12 @@ exports.default = useRestaurant;
 // get more Restaurants on scroll
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getMoreRestaurants", ()=>getMoreRestaurants);
+parcelHelpers.export(exports, "getMoreRestaurant", ()=>getMoreRestaurant);
 parcelHelpers.export(exports, "addToCart", ()=>addToCart);
 parcelHelpers.export(exports, "decrement", ()=>decrement);
-const getMoreRestaurants = (restaurants, setResturants, showRestaurant, setshowRestaurant)=>{
+const getRestaurants = (restaurants, setResturants, showRestaurant, setshowRestaurant)=>{
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        console.log("on bottom");
         setshowRestaurant((n)=>n + 16);
         const getResturants = async ()=>{
             const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=${showRestaurant}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>console.log(err));
@@ -32645,6 +32654,28 @@ const getMoreRestaurants = (restaurants, setResturants, showRestaurant, setshowR
         getResturants();
     }
 };
+const getMoreRestaurant = throttle(getRestaurants, 500);
+function throttle(cb, delay) {
+    let wait = false;
+    let storedArgs = null;
+    function checkStoredArgs() {
+        if (storedArgs == null) wait = false;
+        else {
+            cb(...storedArgs);
+            storedArgs = null;
+            setTimeout(checkStoredArgs, delay);
+        }
+    }
+    return (...args)=>{
+        if (wait) {
+            storedArgs = args;
+            return;
+        }
+        cb(...args);
+        wait = true;
+        setTimeout(checkStoredArgs, delay);
+    };
+}
 const addToCart = (Dish)=>{
     // is local storage empty || first order
     if (localStorage.getItem("orders")) {

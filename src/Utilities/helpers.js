@@ -1,11 +1,12 @@
 // get more Restaurants on scroll
-export const getMoreRestaurants = (
+const getRestaurants = (
   restaurants,
   setResturants,
   showRestaurant,
   setshowRestaurant
 ) => {
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    console.log("on bottom");
     setshowRestaurant((n) => n + 16);
 
     const getResturants = async () => {
@@ -24,6 +25,35 @@ export const getMoreRestaurants = (
     getResturants();
   } else null;
 };
+
+export const getMoreRestaurant = throttle(getRestaurants, 500);
+function throttle(cb, delay) {
+  let wait = false;
+  let storedArgs = null;
+
+  function checkStoredArgs() {
+    if (storedArgs == null) {
+      wait = false;
+    } else {
+      cb(...storedArgs);
+      storedArgs = null;
+      setTimeout(checkStoredArgs, delay);
+    }
+  }
+
+  return (...args) => {
+    if (wait) {
+      storedArgs = args;
+      return;
+    }
+
+    cb(...args);
+    wait = true;
+    setTimeout(checkStoredArgs, delay);
+  };
+}
+
+// Add an item to cart
 
 export const addToCart = (Dish) => {
   // is local storage empty || first order
@@ -59,7 +89,6 @@ export const addToCart = (Dish) => {
     } else {
       //ask to create new basket
       if (window.confirm("Start a fresh cart")) {
-
         localStorage.clear();
         localStorage.setItem("orders", JSON.stringify([Dish]));
       } else {
@@ -67,42 +96,41 @@ export const addToCart = (Dish) => {
       }
     }
   } else {
-
     localStorage.setItem("orders", JSON.stringify([Dish]));
   }
 };
 
+// Delete an item from Cart
+
 export const decrement = (updateItem) => {
   let CartItems = JSON.parse(localStorage.getItem("orders"));
   let prevQty = updateItem?.qty;
-  if(prevQty === 1){
-      let newCart = CartItems.filter(item=>
-        item.dish.id != updateItem?.dish?.id
-      )
-      if(newCart.length >=1){
-        localStorage.clear()
-        localStorage.setItem('orders', JSON.stringify(newCart))
-      }
-      else{
-        localStorage.clear()
-        console.log('local storage cleared');
-      }
-  }
-  else{
+  if (prevQty === 1) {
+    let newCart = CartItems.filter(
+      (item) => item.dish.id != updateItem?.dish?.id
+    );
+    if (newCart.length >= 1) {
+      localStorage.clear();
+      localStorage.setItem("orders", JSON.stringify(newCart));
+    } else {
+      localStorage.clear();
+      console.log("local storage cleared");
+    }
+  } else {
     let prevIndex = CartItems.findIndex(
       (item) => item.dish.id === updateItem?.dish?.id
-      );
-      let newCartItems = CartItems.filter(
-        (item) => item.dish.id != updateItem?.dish?.id
-        );
-        
-        localStorage.clear();
-        newCartItems.splice(prevIndex, 0, {
-          dish: updateItem.dish,
-          qty: prevQty - 1,
-          restaurant: updateItem.restaurant,
-        });
-        
-        localStorage.setItem("orders", JSON.stringify(newCartItems));
-      }
+    );
+    let newCartItems = CartItems.filter(
+      (item) => item.dish.id != updateItem?.dish?.id
+    );
+
+    localStorage.clear();
+    newCartItems.splice(prevIndex, 0, {
+      dish: updateItem.dish,
+      qty: prevQty - 1,
+      restaurant: updateItem.restaurant,
+    });
+
+    localStorage.setItem("orders", JSON.stringify(newCartItems));
+  }
 };
