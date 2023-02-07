@@ -8,26 +8,35 @@ import Header from "../Pages/Header";
 import Footer from "../Pages/Footer";
 import SearchPage from "../Pages/SearchPage";
 import SearchResults from "../Pages/SearchResults";
+import LandingPage from "../Pages/LandingPage";
+import ErrorElement from "../Pages/ErrorElement";
+import LocationProvider from "../Pages/LocationProvider";
 const App = () => {
   return (
-    <>
+    <LocationProvider>
       <Header />
       <Outlet />
-
-        <Footer />
-
-    </>
+      <Footer />
+    </LocationProvider>
   );
 };
 export const MyRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorElement />,
+
     children: [
       {
         path: "/",
+        element: <LandingPage />,
+      },
+
+      {
+        path: "/homePage",
         element: <Homepage />,
       },
+
       {
         path: "/cart",
         element: <Cart />,
