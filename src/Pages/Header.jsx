@@ -10,7 +10,6 @@ const Header = () => {
     );
     return length;
   });
-  
 
   const address = useAddress();
   console.log(address);
@@ -25,24 +24,30 @@ const Header = () => {
               alt=" logo"
             />
           </Link>
-          <div className="address text-[10px]">
-          {address ? <p>Delivering to {address?.display_name}</p>:<p>Allow location </p>}
+          <div className="address">
+            
+            {address?.display_name ? (
+              <span className="text-[13px] font-[900]">📍 {address?.address?.suburb} <span className="text-[10px] font-[100]">{address?.address?.city} ,<span>{address?.address?.country}</span></span></span>
+            ) : (
+              <p className="text-[12px] font-[100]">Fetching Location ... </p>
+            )}
           </div>
-          
         </div>
         <div className="Header-Links w-1/3 flex  justify-around">
-          
           <Link to="/searchpage">
             <i class="fa-solid fa-magnifying-glass"></i> Search
           </Link>
           <Link to="/aboutUs">AboutUs</Link>
-          
+
           <Link to="/cart">
             <div>
               <i class="fa-sharp fa-solid fa-cart-shopping fa-xl"></i>
-              <div className="cart-length rounded-[10px] bottom-10 right-[165px] bg-white h-5 w-5 m-0 pt-[2px] pl-[6px] font-[700]  absolute text-[10px]  border-[#fc8019] border-[1px] text-[#fc8019] ">
-                {cartLength}
-              </div>
+
+              {cartLength === 0 ? null : (
+                <div className="cart-length rounded-[10px] bottom-10 right-[165px] bg-white h-5 w-5 m-0 pt-[2px] pl-[6px] font-[700]  absolute text-[10px]  border-[#fc8019] border-[1px] text-[#fc8019] ">
+                  {cartLength}
+                </div>
+              )}
             </div>
           </Link>
         </div>
