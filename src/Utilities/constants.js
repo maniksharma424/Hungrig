@@ -52,4 +52,9 @@ export const carousel_Images = [
 ];
 export const IMAGE_URL = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/'
 export const EMPTY_CART_IMG = 'https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2'
-export const states = [  "Andhra Pradesh",  "Arunachal Pradesh",  "Assam",  "Bihar",  "Chhattisgarh",  "Goa",  "Gujarat",  "Haryana",  "Himachal Pradesh",  "Jharkhand",  "Karnataka",  "Kerala",  "Madhya Pradesh",  "Maharashtra",  "Manipur",  "Meghalaya",  "Mizoram",  "Nagaland",  "Odisha",  "Punjab",  "Rajasthan",  "Sikkim",  "Tamil Nadu",  "Telangana",  "Tripura",  "Uttar Pradesh",  "Uttarakhand",  "West Bengal"]
+export const MIN_ORDER_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_210,h_398/4x_-_No_min_order_x0bxuf"
+export const TRACK_ORDER_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_224,h_412/4x_Live_order_zzotwy"
+export const FAST_DEL_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_248,h_376/4x_-_Super_fast_delivery_awv7sn"
+export const SERVICES_IMG_CLASSNAME = "img-1 w-[270px] h-[333px] flex flex-col items-center justify-centre"
+export const LANDING_PAGE_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_1340/Lunch1_vlksgq"
+export const CITY_NAMES =['Delhi', 'Mumbai', ,'Bangalore', 'Kolkata', 'Hyderabad', 'Ahmedabad', 'Chennai', 'Pune', 'Jaipur',"Jammu", 'Surat','Srinagar',              'Lucknow', 'Nagpur', 'Visakhapatnam', 'Bhopal', 'Patna', 'Ludhiana', 'Agra', 'Nashik', 'Vadodara', 'Ghaziabad',              'Rajkot', 'Meerut', 'Amritsar', 'Varanasi', 'Aurangabad', 'Jabalpur', 'Gwalior', 'Vijayawada', 'Jodhpur','Mount Tabu','Patna','Bihar','Kanpur']

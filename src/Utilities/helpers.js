@@ -5,7 +5,7 @@ const getRestaurants = (
   showRestaurant,
   setshowRestaurant
 ) => {
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
     console.log("on bottom");
     setshowRestaurant((n) => n + 16);
 

@@ -40,7 +40,7 @@ const RestaurantPageBody = ({
         {JSON.parse(localStorage.getItem("orders")) ? (
           <MiniCart />
         ) : (
-          <div className="mini-Checkout-Box sticky ml-[115px] z-50 top-[340px]    w-[300px] bg-white h-fit p-3 ">
+          <div className="mini-Checkout-Box sticky ml-[115px] z-[1] top-[340px]    w-[300px] bg-white h-fit p-3 ">
             <p className="w-full px-4 text-[25px] font-[700] text-[#7e808c]">
               Cart Empty
             </p>

@@ -3,6 +3,7 @@ import { locationContext } from "../Utilities/MyApp";
 export const useAddress = () => {
   const [address, setAddress] = useState({});
   const cordinates = useContext(locationContext);
+
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
@@ -21,6 +22,6 @@ export const useAddress = () => {
     return controller.abort();
   }, [cordinates]);
 
-  if(address.display_name) return address;
-  else null
+  if(address?.display_name) return address;
+  else "Location Denied"
 };

@@ -12,15 +12,15 @@ import ErrorElement from "../Pages/ErrorElement";
 import { createContext, useEffect, useState } from "react";
 
 export const locationContext = createContext();
-
+export const getLocation = (setState) => {
+  navigator.geolocation.getCurrentPosition(
+    (pos) => setState(pos.coords),
+    (err) => alert('allow location to see rest near u')
+  );
+};
 const App = () => {
   const [location, setLocation] = useState({});
-  const getLocation = (setState) => {
-    navigator.geolocation.getCurrentPosition(
-      (pos) => setState(pos.coords),
-      (err) => console.log(err)
-    );
-  };
+  
 
   useEffect(() => {
     getLocation(setLocation);
