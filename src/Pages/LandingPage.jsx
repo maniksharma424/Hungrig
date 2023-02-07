@@ -1,23 +1,9 @@
-import React, { useEffect, useState,useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { locationContext } from "./LocationProvider";
+import { locationContext } from "../Utilities/MyApp";
 
 const LandingPage = () => {
-//   const [location, setlocation] = useState({});
-//   const getLocation = () => {
-//     navigator.geolocation.getCurrentPosition(
-//       (pos) => setlocation(pos.coords),
-//       (err) => console.log(err)
-//     );
-//   };
-//   useEffect(() => {
-//     getLocation();
-//   }, []);
-
-//   console.log(location);
-//   console.log(Object.keys(location).length);
-const location = useContext(locationContext)
-
+  const location = useContext(locationContext);
 
   return (
     <div className="container ">
@@ -35,7 +21,7 @@ const location = useContext(locationContext)
         >
           Locate Me
         </button>
-        {JSON.stringify(location) === JSON.stringify({}) === 0 ? (
+        {(JSON.stringify(location) === JSON.stringify({})) === 0 ? (
           <button className="w-[200px] p-3 h-[50px] border-black border-[1px]">
             Find Food
           </button>

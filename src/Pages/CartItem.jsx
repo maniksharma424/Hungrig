@@ -6,7 +6,7 @@ const CartItem = ({ cartItem, updateParent }) => {
   const [count, setCount] = useState(cartItem?.qty);
   console.log(cartItem);
   return (
-    <div className="Item-info flex justify-between h-fit p-2 items-center  mt-3">
+    <div className="Item-info flex justify-between h-fit  items-center  mt-3">
       <div className="name w-1/2  ">
         <span className="text-[14px] text-[#282c3f]">{cartItem?.dish?.name}</span>
         <p className="text-[10px] after:text-[10px]  after:font-[900] after:ml-[3px] after:text-[#fc8019] after:content-['>']">Customize</p>
@@ -15,6 +15,7 @@ const CartItem = ({ cartItem, updateParent }) => {
         <button
         className=" w-1/3 text-[20px] text-[#bebfc5]"
           onClick={() => {
+
             setCount((n) => n - 1);
             decrement(cartItem);
             updateParent();
@@ -28,6 +29,8 @@ const CartItem = ({ cartItem, updateParent }) => {
         <button
         className="w-1/3 text-[20px] text-[#60b246]"
           onClick={() => {
+
+
             setCount((n) => n + 1);
             addToCart({
               dish: cartItem?.dish,
