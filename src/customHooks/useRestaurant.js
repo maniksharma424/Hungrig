@@ -1,29 +1,29 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { locationContext } from "../Utilities/MyApp";
 
 const useRestaurant = (Resturants, setRestaurants) => {
+  const cordinates = useContext(locationContext);
+
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
 
-    navigator.geolocation.getCurrentPosition((cordinates) => {
-      getResturants(signal, setRestaurants, cordinates);
-    });
+    getResturants(signal, setRestaurants);
 
     return () => controller.abort();
-  }, []);
+  }, [cordinates]);
 
-  const getResturants = async (signal, setRestaurants, cordinates) => {
+  const getResturants = async (signal, setRestaurants) => {
     console.log(cordinates);
 
     const resturantDataSwiggy = await fetch(
-      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates.coords.latitude}&lng=${cordinates.coords.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
+      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates.latitude}&lng=${cordinates.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
       signal
-    ).catch((err) => console.log(err));
-
-    const resturantDataJson = await resturantDataSwiggy
-      ?.json()
+    )
+      .then((res) => res.json())
       .catch((err) => console.log(err));
-    setRestaurants(resturantDataJson?.data?.cards);
+
+    setRestaurants(resturantDataSwiggy?.data?.cards);
   };
   return Resturants;
 };

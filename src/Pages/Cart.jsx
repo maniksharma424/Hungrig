@@ -1,6 +1,7 @@
 import React from 'react'
 import { CheckOutBox } from './CheckOutBox'
 const Cart = () => {
+  
   return (
     <div className='cart bg-[#e9ecee] w-full h-fit flex-col flex justify-center items-center  py-14 px-10'>
         <CheckOutBox/>

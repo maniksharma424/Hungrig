@@ -1,7 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { locationContext } from "../Utilities/MyApp";
 const useRestaurantPage = (resturantID, setMenu, setFilteredMenu) => {
   const [resturantData, setResturantData] = useState([]);
-
+  const cordinates = useContext(locationContext);
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
@@ -24,7 +25,7 @@ const useRestaurantPage = (resturantID, setMenu, setFilteredMenu) => {
     setFilteredMenu
   ) => {
     const response = await fetch(
-      `https://www.swiggy.com/dapi/menu/v4/full?lat=32.6938264&lng=74.9062622&menuId=${resturantID}`,
+      `https://www.swiggy.com/dapi/menu/v4/full?$lat=${cordinates.latitude}&lng=${cordinates.longitude}&menuId=${resturantID}`,
       signal
     )
       .then((res) => res.json())

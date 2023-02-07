@@ -1,45 +1,64 @@
 import { Homepage } from "../Pages/Homepage";
 import Cart from "../Pages/Cart";
-import Login from "../Pages/Login";
+import About from "../Pages/About";
 import ResturantPage from "../Pages/ResturantPage";
-import { SignUp } from "../Pages/SignUp";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import Header from "../Pages/Header";
 import Footer from "../Pages/Footer";
 import SearchPage from "../Pages/SearchPage";
 import SearchResults from "../Pages/SearchResults";
+import LandingPage from "../Pages/LandingPage";
+import ErrorElement from "../Pages/ErrorElement";
+import { createContext, useEffect, useState } from "react";
+
+export const locationContext = createContext();
+
 const App = () => {
+  const [location, setLocation] = useState({});
+  const getLocation = (setState) => {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => setState(pos.coords),
+      (err) => console.log(err)
+    );
+  };
+
+  useEffect(() => {
+    getLocation(setLocation);
+  }, []);
   return (
-    <>
+    <locationContext.Provider value={location}>
       <Header />
       <Outlet />
-
-        <Footer />
-
-    </>
+      <Footer />
+    </locationContext.Provider>
   );
 };
 export const MyRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    errorElement: <ErrorElement />,
+
     children: [
       {
         path: "/",
+        element: <LandingPage />,
+      },
+
+      {
+        path: "/homePage",
         element: <Homepage />,
       },
+
       {
         path: "/cart",
         element: <Cart />,
       },
       {
-        path: "/login",
-        element: <Login />,
+        path: "/aboutUs",
+        element: <About />,
       },
-      {
-        path: "/signup",
-        element: <SignUp />,
-      },
+
       {
         path: "/restaurant-page",
         element: <ResturantPage />,

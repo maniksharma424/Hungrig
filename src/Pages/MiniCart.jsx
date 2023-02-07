@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import CartItem from "./CartItem";
 
 
@@ -41,7 +42,9 @@ const MiniCart = () => {
             {cartItems?.map((item, index) => {
               return (
                 <li key={index}>
+                  <button className=" p-0 m-0 w-[250px]" onClick={()=>location.reload()}>
                   <CartItem updateParent={handleUpdate} cartItem={item} />
+                  </button>
                 </li>
               );
             })}
@@ -54,9 +57,11 @@ const MiniCart = () => {
               <span className="text-[16px] font-[700]">₹{cartTotal / 100}</span>
             </p>
           </div>
+          <Link to='/cart'>
           <button className=" w-full bg-[#60b246] text-white py-2">
             Checkout
           </button>
+          </Link>
         </div>
       </div>
     );
