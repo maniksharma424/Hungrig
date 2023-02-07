@@ -46,7 +46,7 @@ const Header = () => {
               {cartLength === 0 ? null : (
                 <div className="cart-length rounded-[10px] bottom-10 right-[165px] bg-white h-5 w-5 m-0 pt-[2px] pl-[6px] font-[700]  absolute text-[10px]  border-[#fc8019] border-[1px] text-[#fc8019] ">
                   {cartLength}
-                </div>
+                </div> 
               )}
             </div>
           </Link>
