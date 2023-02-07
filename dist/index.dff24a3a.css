@@ -728,10 +728,6 @@ img, video {
   width: 0;
 }
 
-.w-0 {
-  width: 0;
-}
-
 .w-\[100px\] {
   width: 100px;
 }
@@ -993,13 +989,6 @@ img, video {
   padding: 10px;
 }
 
-<<<<<<< HEAD
-.p-8 {
-  padding: 2rem;
-}
-
-=======
->>>>>>> updating
 .px-16 {
   padding-left: 4rem;
   padding-right: 4rem;
@@ -1183,13 +1172,6 @@ img, video {
   font-size: 9px;
 }
 
-<<<<<<< HEAD
-.text-\[27px\] {
-  font-size: 27px;
-}
-
-=======
->>>>>>> updating
 .font-\[900px\] {
   font-weight: 900px;
 }
