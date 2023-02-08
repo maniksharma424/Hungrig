@@ -4,6 +4,8 @@ import { useState } from "react";
 import { ResturantContext } from "../Contexts/ContextResturant";
 import Carousel from "./Carousel";
 import useRestaurant from "../customHooks/useRestaurant";
+import { useContext } from "react";
+import { locationContext } from "../Utilities/MyApp";
 
 import HomPageShimmer from "./HomPageShimmer";
 import { getMoreRestaurant } from "../Utilities/helpers";
@@ -11,6 +13,8 @@ import { getMoreRestaurant } from "../Utilities/helpers";
 export const Homepage = () => {
   const [restaurants, showRestaurants] = useState([]);
   const [showRestaurant, setShowRestaurant] = useState(15);
+  const cordinates = useContext(locationContext)
+
 
   useRestaurant(restaurants, showRestaurants);
 
@@ -22,7 +26,8 @@ export const Homepage = () => {
           restaurants,
           showRestaurants,
           showRestaurant,
-          setShowRestaurant
+          setShowRestaurant,
+          cordinates
         );
       });
 
