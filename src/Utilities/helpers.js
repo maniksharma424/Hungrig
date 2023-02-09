@@ -34,7 +34,7 @@ export const getRestaurants = (
 
           const newArray = restaurants.slice(0, -12);
           setRestaurants(newArray);
-          flag = true;
+
 
       }
     };
