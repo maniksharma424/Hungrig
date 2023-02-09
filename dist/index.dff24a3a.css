@@ -1409,6 +1409,11 @@ img, video {
   color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
+.text-\[\#8a584b\] {
+  --tw-text-opacity: 1;
+  color: rgb(138 88 75 / var(--tw-text-opacity));
+}
+
 .text-\[\#ed5e0e\] {
   --tw-text-opacity: 1;
   color: rgb(237 94 14 / var(--tw-text-opacity));

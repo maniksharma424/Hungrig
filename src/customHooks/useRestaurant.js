@@ -1,9 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { locationContext } from "../Utilities/MyApp";
+import { ShimmerThumbnail } from "react-shimmer-effects";
 
 const useRestaurant = (Resturants, setRestaurants) => {
   const cordinates = useContext(locationContext);
-
+  
   useEffect(() => {
     const controller = new AbortController();
     const signal = controller.signal;
@@ -23,7 +24,7 @@ const useRestaurant = (Resturants, setRestaurants) => {
       .then((res) => res.json())
       .catch((err) => console.log(err));
 
-    setRestaurants(resturantDataSwiggy?.data?.cards);
+    setRestaurants([...resturantDataSwiggy?.data?.cards,...Array(12).fill(<ShimmerThumbnail height={200} width={250}/>)]);
   };
   return Resturants;
 };
