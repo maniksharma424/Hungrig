@@ -32009,19 +32009,21 @@ var _useRestaurantDefault = parcelHelpers.interopDefault(_useRestaurant);
 var _homPageShimmer = require("./HomPageShimmer");
 var _homPageShimmerDefault = parcelHelpers.interopDefault(_homPageShimmer);
 var _helpers = require("../Utilities/helpers");
+var _myApp = require("../Utilities/MyApp");
 var _s = $RefreshSig$();
 const Homepage = ()=>{
     _s();
     const [restaurants, showRestaurants] = (0, _react.useState)([]);
     const [showRestaurant, setShowRestaurant] = (0, _react.useState)(15);
+    const cordinates = (0, _react.useContext)((0, _myApp.locationContext));
     (0, _useRestaurantDefault.default)(restaurants, showRestaurants);
     typeof restaurants === "undefined" || (window.onscroll = ()=>{
         console.log("scrolled");
-        (0, _helpers.getMoreRestaurant)(restaurants, showRestaurants, showRestaurant, setShowRestaurant);
+        (0, _helpers.getMoreRestaurant)(restaurants, showRestaurants, showRestaurant, setShowRestaurant, cordinates);
     });
     if (restaurants?.length <= 0 || typeof restaurants === "undefined") return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homPageShimmerDefault.default), {}, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 17,
+        lineNumber: 19,
         columnNumber: 78
     }, undefined);
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32031,27 +32033,27 @@ const Homepage = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 19,
+                    lineNumber: 21,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 20,
+                    lineNumber: 22,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Pages/Homepage.jsx",
-            lineNumber: 18,
+            lineNumber: 20,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 17,
+        lineNumber: 19,
         columnNumber: 109
     }, undefined);
 };
-_s(Homepage, "MTZSr+4ZYXLaxWhj+wnkrJXAj1g=", false, function() {
+_s(Homepage, "n+Tm/YWUVj4XjG4JJxbRkoOx0Y8=", false, function() {
     return [
         (0, _useRestaurantDefault.default)
     ];
@@ -32065,7 +32067,7 @@ $RefreshReg$(_c, "Homepage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Body":"jhV0B","../Contexts/ContextResturant":"LWyrD","./Carousel":"63nrR","../customHooks/useRestaurant":"cTxpy","./HomPageShimmer":"2D5qz","../Utilities/helpers":"4t9SJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jhV0B":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Body":"jhV0B","../Contexts/ContextResturant":"LWyrD","./Carousel":"63nrR","../customHooks/useRestaurant":"cTxpy","./HomPageShimmer":"2D5qz","../Utilities/helpers":"4t9SJ","../Utilities/MyApp":"aw7YL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jhV0B":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e5ba = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34517,12 +34519,12 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "getMoreRestaurant", ()=>getMoreRestaurant);
 parcelHelpers.export(exports, "addToCart", ()=>addToCart);
 parcelHelpers.export(exports, "decrement", ()=>decrement);
-const getRestaurants = (restaurants, setRestaurants, showRestaurant, setshowRestaurant)=>{
+const getRestaurants = (restaurants, setRestaurants, showRestaurant, setshowRestaurant, cordinates)=>{
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
         console.log("on bottom");
         const getResturants = async ()=>{
             // this is updating branch in master branch cordinates are added to fetch request
-            const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=${showRestaurant}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>console.log(err));
+            const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${showRestaurant}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>console.log(err));
             const moreResturants = await fetchResturants?.data?.cards;
             if (moreResturants) {
                 setRestaurants((prevItems)=>[

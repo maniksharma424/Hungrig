@@ -3,7 +3,8 @@ const getRestaurants = (
   restaurants,
   setRestaurants,
   showRestaurant,
-  setshowRestaurant
+  setshowRestaurant,
+  cordinates
 ) => {
 
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
@@ -13,7 +14,7 @@ const getRestaurants = (
     const getResturants = async () => {
       // this is updating branch in master branch cordinates are added to fetch request
       const fetchResturants = await fetch(
-        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=${showRestaurant}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
+        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${showRestaurant}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
       )
         .then((res) => res.json())
         .catch((err) => console.log(err));
