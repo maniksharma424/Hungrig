@@ -5,6 +5,8 @@ import { ResturantContext } from "../Contexts/ContextResturant";
 import Carousel from "./Carousel";
 import useRestaurant from "../customHooks/useRestaurant";
 
+
+
 import HomPageShimmer from "./HomPageShimmer";
 import { getMoreRestaurant } from "../Utilities/helpers";
 
@@ -34,6 +36,7 @@ export const Homepage = () => {
         <ResturantContext.Provider value={restaurants}>
           <Carousel />
           <Body />
+          
         </ResturantContext.Provider>
       </div>
     );

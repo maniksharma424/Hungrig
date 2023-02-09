@@ -1,15 +1,17 @@
 // get more Restaurants on scroll
 const getRestaurants = (
   restaurants,
-  setResturants,
+  setRestaurants,
   showRestaurant,
   setshowRestaurant
 ) => {
+
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
     console.log("on bottom");
-    setshowRestaurant((n) => n + 16);
+    
 
     const getResturants = async () => {
+      // this is updating branch in master branch cordinates are added to fetch request
       const fetchResturants = await fetch(
         `https://www.swiggy.com/dapi/restaurants/list/v5?lat=32.6938264&lng=74.9062622&offset=${showRestaurant}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
       )
@@ -18,9 +20,20 @@ const getRestaurants = (
 
       const moreResturants = await fetchResturants?.data?.cards;
       if (moreResturants) {
-        setResturants([...restaurants, ...moreResturants]);
+        setRestaurants((prevItems) => [
+          ...prevItems.slice(0, prevItems.length - 12),
+          ...moreResturants,
+          ...prevItems.slice(prevItems.length - 12),
+        ]);
+        setshowRestaurant((n) => n + 16);
         console.log(moreResturants);
-      } else return null;
+      } else {
+
+          const newArray = restaurants.slice(0, -12);
+          setRestaurants(newArray);
+          flag = true;
+
+      }
     };
     getResturants();
   } else null;
