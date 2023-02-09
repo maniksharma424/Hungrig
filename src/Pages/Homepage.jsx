@@ -4,7 +4,6 @@ import { useState } from "react";
 import { ResturantContext } from "../Contexts/ContextResturant";
 import Carousel from "./Carousel";
 import useRestaurant from "../customHooks/useRestaurant";
-import { useContext } from "react";
 import { locationContext } from "../Utilities/MyApp";
 
 
