@@ -32067,7 +32067,7 @@ $RefreshReg$(_c, "Homepage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Body":"jhV0B","../Contexts/ContextResturant":"LWyrD","./Carousel":"63nrR","../customHooks/useRestaurant":"cTxpy","./HomPageShimmer":"2D5qz","../Utilities/helpers":"4t9SJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Utilities/MyApp":"aw7YL"}],"jhV0B":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Body":"jhV0B","../Contexts/ContextResturant":"LWyrD","./Carousel":"63nrR","../customHooks/useRestaurant":"cTxpy","./HomPageShimmer":"2D5qz","../Utilities/helpers":"4t9SJ","../Utilities/MyApp":"aw7YL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jhV0B":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e5ba = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
