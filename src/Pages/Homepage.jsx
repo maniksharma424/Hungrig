@@ -1,16 +1,13 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import Body from "./Body";
-import { useState } from "react";
+
 import { ResturantContext } from "../Contexts/ContextResturant";
 import Carousel from "./Carousel";
 import useRestaurant from "../customHooks/useRestaurant";
 import { locationContext } from "../Utilities/MyApp";
-
-
-
 import HomPageShimmer from "./HomPageShimmer";
 import { getMoreRestaurant } from "../Utilities/helpers";
-import { locationContext } from "../Utilities/MyApp";
+
 
 export const Homepage = () => {
   const [restaurants, showRestaurants] = useState([]);
