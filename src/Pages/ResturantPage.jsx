@@ -9,7 +9,7 @@ import RestaurantPageShimmer from "./RestaurantPageShimmer";
 const ResturantPage = () => {
   const [menu, setMenu] = useState([]);
   const [filteredMenu, setFilteredMenu] = useState([]);
-
+scrollTo(0,0)
   const location = useLocation();
   const resturantID = location.state.id;
   const resturantData = useRestaurantPage(

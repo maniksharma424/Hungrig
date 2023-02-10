@@ -34634,65 +34634,7 @@ $parcel$ReactRefreshHelpers$99a4.prelude(module);
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-<<<<<<< HEAD
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _checkOutBox = require("./CheckOutBox");
-const Cart = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "cart bg-[#e9ecee] w-full h-fit flex-col flex justify-center items-center py-14 px-10",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _checkOutBox.CheckOutBox), {}, void 0, false, {
-                fileName: "src/Pages/Cart.jsx",
-                lineNumber: 5,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "Place-Order w-[1125px] p-4",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    className: "w-full p-4 bg-[#60b246] rounded-sm text-white text-[20px]",
-                    children: "Place Order"
-                }, void 0, false, {
-                    fileName: "src/Pages/Cart.jsx",
-                    lineNumber: 7,
-                    columnNumber: 13
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Pages/Cart.jsx",
-                lineNumber: 6,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Pages/Cart.jsx",
-        lineNumber: 4,
-        columnNumber: 10
-    }, undefined);
-};
-_c = Cart;
-exports.default = Cart;
-var _c;
-$RefreshReg$(_c, "Cart");
-
-  $parcel$ReactRefreshHelpers$99a4.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./CheckOutBox":"4TIou"}],"4TIou":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$4550 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$4550.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "CheckOutBox", ()=>CheckOutBox);
-=======
 parcelHelpers.export(exports, "Cart", ()=>Cart);
->>>>>>> updating
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _cartItem = require("./CartItem");
@@ -35301,12 +35243,13 @@ const ResturantPage = ()=>{
     _s();
     const [menu, setMenu] = (0, _react.useState)([]);
     const [filteredMenu, setFilteredMenu] = (0, _react.useState)([]);
+    scrollTo(0, 0);
     const location = (0, _reactRouterDom.useLocation)();
     const resturantID = location.state.id;
     const resturantData = (0, _useRestaurantPageDefault.default)(resturantID, setMenu, setFilteredMenu);
     if (resturantData <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantPageShimmerDefault.default), {}, void 0, false, {
         fileName: "src/Pages/ResturantPage.jsx",
-        lineNumber: 14,
+        lineNumber: 15,
         columnNumber: 34
     }, undefined);
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -35316,7 +35259,7 @@ const ResturantPage = ()=>{
                 resturantData: resturantData
             }, void 0, false, {
                 fileName: "src/Pages/ResturantPage.jsx",
-                lineNumber: 15,
+                lineNumber: 16,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantPageSearchboxDefault.default), {
@@ -35324,7 +35267,7 @@ const ResturantPage = ()=>{
                 setFilteredMenu: setFilteredMenu
             }, void 0, false, {
                 fileName: "src/Pages/ResturantPage.jsx",
-                lineNumber: 17,
+                lineNumber: 18,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantPageBodyDefault.default), {
@@ -35334,13 +35277,13 @@ const ResturantPage = ()=>{
                 setFilteredMenu: setFilteredMenu
             }, void 0, false, {
                 fileName: "src/Pages/ResturantPage.jsx",
-                lineNumber: 19,
+                lineNumber: 20,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Pages/ResturantPage.jsx",
-        lineNumber: 14,
+        lineNumber: 15,
         columnNumber: 72
     }, undefined);
 };
