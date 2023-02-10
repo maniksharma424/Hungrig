@@ -10,24 +10,13 @@ import { getMoreRestaurant } from "../Utilities/helpers";
 
 
 export const Homepage = () => {
-  const [restaurants, showRestaurants] = useState([]);
-  const [showRestaurant, setShowRestaurant] = useState(31);
-  const cordinates = useContext(locationContext)
+  const [restaurants, setRestaurants] = useState([]);
 
-  useRestaurant(restaurants, showRestaurants);
+  
 
-  typeof restaurants === "undefined"
-    ? null
-    : (window.onscroll = () => {
-        console.log("scrolled");
-        getMoreRestaurant(
-          restaurants,
-          showRestaurants,
-          showRestaurant,
-          setShowRestaurant,
-          cordinates
-        );
-      });
+
+  useRestaurant(restaurants, setRestaurants);
+ 
 
   if (restaurants?.length <= 0 || typeof restaurants === "undefined")
     return <HomPageShimmer />;

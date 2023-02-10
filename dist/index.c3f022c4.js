@@ -32012,17 +32012,11 @@ var _helpers = require("../Utilities/helpers");
 var _s = $RefreshSig$();
 const Homepage = ()=>{
     _s();
-    const [restaurants, showRestaurants] = (0, _react.useState)([]);
-    const [showRestaurant, setShowRestaurant] = (0, _react.useState)(31);
-    const cordinates = (0, _react.useContext)((0, _myApp.locationContext));
-    (0, _useRestaurantDefault.default)(restaurants, showRestaurants);
-    typeof restaurants === "undefined" || (window.onscroll = ()=>{
-        console.log("scrolled");
-        (0, _helpers.getMoreRestaurant)(restaurants, showRestaurants, showRestaurant, setShowRestaurant, cordinates);
-    });
+    const [restaurants, setRestaurants] = (0, _react.useState)([]);
+    (0, _useRestaurantDefault.default)(restaurants, setRestaurants);
     if (restaurants?.length <= 0 || typeof restaurants === "undefined") return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homPageShimmerDefault.default), {}, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 18,
+        lineNumber: 12,
         columnNumber: 78
     }, undefined);
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32032,27 +32026,27 @@ const Homepage = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 20,
+                    lineNumber: 14,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 21,
+                    lineNumber: 15,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Pages/Homepage.jsx",
-            lineNumber: 19,
+            lineNumber: 13,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 18,
+        lineNumber: 12,
         columnNumber: 109
     }, undefined);
 };
-_s(Homepage, "hQrfSPm8/VsxsR21P4IyP0NM8LQ=", false, function() {
+_s(Homepage, "mUtUUFHnWR2bOXVrmAp6WKT2Z9U=", false, function() {
     return [
         (0, _useRestaurantDefault.default)
     ];
@@ -34374,19 +34368,74 @@ var _react = require("react");
 var _myApp = require("../Utilities/MyApp");
 var _reactShimmerEffects = require("react-shimmer-effects");
 var _s = $RefreshSig$();
-const useRestaurant = (Resturants, setRestaurants)=>{
+// import { getMoreRestaurant } from "../Utilities/helpers";
+const useRestaurant = (resturants, setRestaurants)=>{
     _s();
+    const [offset, setOffset] = (0, _react.useState)(31);
+    const [flag, setflag] = (0, _react.useState)(true);
+    console.log("userestaurant called");
+    console.log(offset);
     const cordinates = (0, _react.useContext)((0, _myApp.locationContext));
     (0, _react.useEffect)(()=>{
         const controller = new AbortController();
         const signal = controller.signal;
         getResturants(signal, setRestaurants);
-        return ()=>controller.abort();
+        return ()=>{
+            controller.abort();
+            window.onscroll = null;
+        };
     }, [
         cordinates
     ]);
+    const removeListener = ()=>{
+        console.log("sliced");
+        window.onscroll = null;
+        const newArray = resturants.slice(0, -12);
+        setRestaurants(newArray);
+        setflag(false);
+    };
+    const usegetRestaurants = (setRestaurants, offset, setOffset, cordinates, removeListener)=>{
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
+            console.log("on bottom");
+            console.log(cordinates);
+            console.log(offset);
+            const getResturants = async ()=>{
+                // this is updating branch in master branch cordinates are added to fetch request
+                const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offset}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>console.log(err));
+                const moreResturants = await fetchResturants?.data?.cards;
+                if (moreResturants) {
+                    setRestaurants((prevItems)=>[
+                            ...prevItems.slice(0, prevItems.length - 12),
+                            ...moreResturants,
+                            ...prevItems.slice(prevItems.length - 12)
+                        ]);
+                    setOffset(offset + 16);
+                    console.log("setting states");
+                    console.log(moreResturants);
+                } else removeListener();
+            };
+            getResturants();
+        }
+    };
+    const getMoreRestaurant = throttle(usegetRestaurants, 1000);
+    function throttle(fn, wait) {
+        let lastCall = 0;
+        return function(...args) {
+            const now = Date.now();
+            if (now - lastCall < wait) return;
+            lastCall = now;
+            fn(...args);
+        };
+    }
+    const setEvenlistener = ()=>{
+        if (offset >= 31 & flag === true) window.onscroll = ()=>{
+            console.log("scrolled");
+            getMoreRestaurant(setRestaurants, offset, setOffset, cordinates, removeListener);
+        };
+        else return;
+    };
+    setEvenlistener();
     const getResturants = async (signal, setRestaurants)=>{
-        console.log(cordinates);
         const resturantDataSwiggy = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates.latitude}&lng=${cordinates.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`, signal).then((res)=>res.json()).catch((err)=>console.log(err));
         setRestaurants([
             ...resturantDataSwiggy?.data?.cards,
@@ -34395,14 +34444,13 @@ const useRestaurant = (Resturants, setRestaurants)=>{
                 width: 250
             }, void 0, false, {
                 fileName: "src/customHooks/useRestaurant.js",
-                lineNumber: 15,
+                lineNumber: 74,
                 columnNumber: 76
             }, undefined))
         ]);
     };
-    return Resturants;
 };
-_s(useRestaurant, "n+P49TNFty7iqyewpnitcdbzbWs=");
+_s(useRestaurant, "bw7ScJ10EHNUHxznwYzGPLiZIWw=");
 exports.default = useRestaurant;
 
   $parcel$ReactRefreshHelpers$056a.postlude(module);
@@ -34511,57 +34559,58 @@ $RefreshReg$(_c, "HomPageShimmer");
 }
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4t9SJ":[function(require,module,exports) {
 // get more Restaurants on scroll
+// const usegetRestaurants = (
+//   setRestaurants,
+//   offset,
+//   setOffset,
+//   cordinates,
+//   removeListener,
+// ) => {
+//   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
+//     console.log("on bottom");
+//     console.log(cordinates);
+//   console.log(offset);
+//     const getResturants = async () => {
+//       // this is updating branch in master branch cordinates are added to fetch request
+//       const fetchResturants = await fetch(
+//         `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offset}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
+//       )
+//         .then((res) => res.json())
+//         .catch((err) => console.log(err));
+//       const moreResturants = await fetchResturants?.data?.cards;
+//       if (moreResturants) {
+//        await  setRestaurants((prevItems) => [
+//           ...prevItems.slice(0, prevItems.length - 12),
+//           ...moreResturants,
+//           ...prevItems.slice(prevItems.length - 12),
+//         ]);
+//        await  setOffset(offset+16);
+//         console.log('setting states');
+//         console.log(moreResturants);
+//       } else {
+//             removeListener()
+//       }
+//     };
+//     getResturants();
+//   } else null;
+// };
+// export const getMoreRestaurant = throttle(usegetRestaurants, 500);
+// function throttle(fn, wait) {
+//   let lastCall = 0;
+//   return function (...args) {
+//     const now = Date.now();
+//     if (now - lastCall < wait) {
+//       return;
+//     }
+//     lastCall = now;
+//     fn(...args);
+//   };
+// }
+// Add an item to cart
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getRestaurants", ()=>getRestaurants);
-parcelHelpers.export(exports, "getMoreRestaurant", ()=>getMoreRestaurant);
 parcelHelpers.export(exports, "addToCart", ()=>addToCart);
 parcelHelpers.export(exports, "decrement", ()=>decrement);
-const getRestaurants = (restaurants, setRestaurants, showRestaurant, setshowRestaurant, cordinates)=>{
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
-        console.log("on bottom");
-        const getResturants = async ()=>{
-            // this is updating branch in master branch cordinates are added to fetch request
-            const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${showRestaurant}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>console.log(err));
-            const moreResturants = await fetchResturants?.data?.cards;
-            if (moreResturants) {
-                setRestaurants((prevItems)=>[
-                        ...prevItems.slice(0, prevItems.length - 12),
-                        ...moreResturants,
-                        ...prevItems.slice(prevItems.length - 12)
-                    ]);
-                setshowRestaurant((n)=>n + 16);
-                console.log(moreResturants);
-            } else {
-                const newArray = restaurants.slice(0, -12);
-                setRestaurants(newArray);
-            }
-        };
-        getResturants();
-    }
-};
-const getMoreRestaurant = throttle(getRestaurants, 500);
-function throttle(cb, delay) {
-    let wait = false;
-    let storedArgs = null;
-    function checkStoredArgs() {
-        if (storedArgs == null) wait = false;
-        else {
-            cb(...storedArgs);
-            storedArgs = null;
-            setTimeout(checkStoredArgs, delay);
-        }
-    }
-    return (...args)=>{
-        if (wait) {
-            storedArgs = args;
-            return;
-        }
-        cb(...args);
-        wait = true;
-        setTimeout(checkStoredArgs, delay);
-    };
-}
 const addToCart = (Dish)=>{
     // is local storage empty || first order
     if (localStorage.getItem("orders")) {

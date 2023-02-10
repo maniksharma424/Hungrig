@@ -1,72 +1,63 @@
 
-// get more Restaurants on scroll
-export const getRestaurants = (
-  restaurants,
-  setRestaurants,
-  showRestaurant,
-  setshowRestaurant,
-  cordinates
-) => {
 
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
-    console.log("on bottom");
+// get more Restaurants on scroll
+// const usegetRestaurants = (
+//   setRestaurants,
+//   offset,
+//   setOffset,
+//   cordinates,
+//   removeListener,
+// ) => {
+
+//   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
+    
+//     console.log("on bottom");
+//     console.log(cordinates);
+//   console.log(offset);
     
 
-    const getResturants = async () => {
-      // this is updating branch in master branch cordinates are added to fetch request
-      const fetchResturants = await fetch(
-        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${showRestaurant}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
-      )
-        .then((res) => res.json())
-        .catch((err) => console.log(err));
+//     const getResturants = async () => {
+//       // this is updating branch in master branch cordinates are added to fetch request
+//       const fetchResturants = await fetch(
+//         `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offset}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
+//       )
+//         .then((res) => res.json())
+//         .catch((err) => console.log(err));
 
-      const moreResturants = await fetchResturants?.data?.cards;
-      if (moreResturants) {
-        setRestaurants((prevItems) => [
-          ...prevItems.slice(0, prevItems.length - 12),
-          ...moreResturants,
-          ...prevItems.slice(prevItems.length - 12),
-        ]);
-        setshowRestaurant((n) => n + 16);
-        console.log(moreResturants);
-      } else {
+//       const moreResturants = await fetchResturants?.data?.cards;
+//       if (moreResturants) {
+//        await  setRestaurants((prevItems) => [
+//           ...prevItems.slice(0, prevItems.length - 12),
+//           ...moreResturants,
+//           ...prevItems.slice(prevItems.length - 12),
+//         ]);
+//        await  setOffset(offset+16);
+//         console.log('setting states');
+        
+        
+//         console.log(moreResturants);
+//       } else {
+            
+//             removeListener()
 
-          const newArray = restaurants.slice(0, -12);
-          setRestaurants(newArray);
+//       }
+//     };
+//     getResturants();
+//   } else null;
+// };
 
-
-      }
-    };
-    getResturants();
-  } else null;
-};
-
-export const getMoreRestaurant = throttle(getRestaurants, 500);
-function throttle(cb, delay) {
-  let wait = false;
-  let storedArgs = null;
-
-  function checkStoredArgs() {
-    if (storedArgs == null) {
-      wait = false;
-    } else {
-      cb(...storedArgs);
-      storedArgs = null;
-      setTimeout(checkStoredArgs, delay);
-    }
-  }
-
-  return (...args) => {
-    if (wait) {
-      storedArgs = args;
-      return;
-    }
-
-    cb(...args);
-    wait = true;
-    setTimeout(checkStoredArgs, delay);
-  };
-}
+// export const getMoreRestaurant = throttle(usegetRestaurants, 500);
+// function throttle(fn, wait) {
+//   let lastCall = 0;
+//   return function (...args) {
+//     const now = Date.now();
+//     if (now - lastCall < wait) {
+//       return;
+//     }
+//     lastCall = now;
+//     fn(...args);
+//   };
+// }
 
 // Add an item to cart
 
