@@ -43,7 +43,7 @@ const CartItem = ({ cartItem, updateParent }) => {
           +
         </button>
       </div>
-      <div className="price w-1/3 flex justify-end ">
+      <div className="price w-1/5 flex justify-end  ">
       <p className="text-[#535665] text-[13px]">₹{(cartItem?.dish?.price / 100) * cartItem?.qty}</p>
       </div>
     </div>

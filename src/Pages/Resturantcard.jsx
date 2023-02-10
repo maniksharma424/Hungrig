@@ -8,7 +8,7 @@ export const RestaurantCard = ({ restaurant }) => {
 
   if(restaurant?.name) return (
     <>
-      <li className=" restaurant-Card  w-72 h-80 border px-4  py-4 border-none mb-8 mt-4 hover:shadow-xl border-slate-500 hover:border-[.5px] hover:border-solid">
+      <li className=" restaurant-Card  w-[230px] h-fit px-3  py-4  mb-8 mt-4 hover:shadow-xl hover:border-slate-500 hover:border-[.5px] hover:border-solid">
         <Link state={{ id: restaurant?.id }} to="/restaurant-page">
           <img
             className="h-0 w-0"
@@ -20,23 +20,21 @@ export const RestaurantCard = ({ restaurant }) => {
           <div className="restaurant-Image">
             {isLoaded ? (
               <img
-                className="h-44 w-64 bg-center bg-no-repeat bg-contain"
+                className="h-34 w-56 bg-center bg-no-repeat bg-contain"
                 src={IMAGE_URL + restaurant?.cloudinaryImageId}
               />
             ) : (
-              <div className="h-44 w-64 bg-[#E5F1D3]" />
+              <div className=" h-32 w-[210px] bg-[#E5F1D3]" />
             )}
           </div>
           <div className="restaurant-data flex flex-col justify-start content-evenly ">
-            <p className="Restaurnat-Name p-0 pb-0 text-lg text-[#3e4152]">
+            <p className="Restaurnat-Name p-0 pb-0 text-md text-[#3e4152]">
               {restaurant?.name}
             </p>
-            <div className="restaurant-Cuisines  mr-3 p-0">
-              <span className="pl-1 p-0 text-xs w-11/12 text-[#535665]">
+            <div className="restaurant-Cuisines  text-xs  text-[#535665]  w-[200px] overflow-clip ">
                 {restaurant?.cuisines?.join(",")}
-              </span>
             </div>
-            <div className="restaurant-Delivery-Info flex justify-between w-[256px]  items-center h-10">
+            <div className="restaurant-Delivery-Info flex justify-between w-full  items-center h-10">
               {restaurant?.avgRating >= 4 ? (
                 <span className="Rating text-white pr-1 pl-1 text-xs p-0.5 decoration-slate-50  bg-green-600">
                   <i className="fa-regular fa-star fa-small"></i>{" "}
@@ -76,6 +74,6 @@ export const RestaurantCard = ({ restaurant }) => {
     </>
   );
    if (restaurant === undefined) return(Array(1).fill(
-    <li className=" restaurant-Card  w-72 h-80 border px-4  py-4 border-none mb-8 mt-4 ">
-   <ShimmerThumbnail height={200} width={250}/></li>))
+    <li className=" restaurant-Card  w-[220px] h-82 m-1 mb-4 mt-8 ">
+   <ShimmerThumbnail height={150} width={220}/></li>))
 };

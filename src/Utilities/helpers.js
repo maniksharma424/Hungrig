@@ -1,5 +1,4 @@
 
-
 // get more Restaurants on scroll
 export const getRestaurants = (
   restaurants,
