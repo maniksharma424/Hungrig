@@ -632,8 +632,8 @@ img, video {
   height: 90px;
 }
 
-.h-44 {
-  height: 11rem;
+.h-32 {
+  height: 8rem;
 }
 
 .h-10 {
@@ -793,8 +793,8 @@ img, video {
   width: 100px;
 }
 
-.w-64 {
-  width: 16rem;
+.w-\[210px\] {
+  width: 210px;
 }
 
 .w-\[200px\] {

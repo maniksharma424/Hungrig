@@ -1,32 +1,38 @@
-import React, { useContext } from "react";
+import React, { useContext,useState } from "react";
 import Body from "./Body";
-import { useState } from "react";
+
 import { ResturantContext } from "../Contexts/ContextResturant";
 import Carousel from "./Carousel";
 import useRestaurant from "../customHooks/useRestaurant";
+import { locationContext } from "../Utilities/MyApp";
 import HomPageShimmer from "./HomPageShimmer";
 import { getMoreRestaurant } from "../Utilities/helpers";
-import { locationContext } from "../Utilities/MyApp";
+
 
 export const Homepage = () => {
   const [restaurants, setRestaurants] = useState([]);
-  const [offSet, setOffSet] = useState(31);
+  const [showRestaurant, setShowRestaurant] = useState(31);
+
   const cordinates = useContext(locationContext)
+
+  
+  console.log(showRestaurant);
+  useRestaurant(restaurants, setRestaurants,showRestaurant,
+    setShowRestaurant,);
+
+
+
+ 
+       
+
 
 
   
-  const ab = ()=>{
-    console.log("scrolled");
-    getMoreRestaurant(
-      setRestaurants,
-      offSet,
-      setOffSet,
-      cordinates
-      )}
-    useRestaurant(restaurants, setRestaurants,ab);
-  //  window.addEventListener('scroll',ab)
+ 
+       
 
 
+      
 
   if (restaurants?.length <= 0 || typeof restaurants === "undefined")
     return <HomPageShimmer />;

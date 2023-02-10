@@ -24,7 +24,7 @@ export const RestaurantCard = ({ restaurant }) => {
                 src={IMAGE_URL + restaurant?.cloudinaryImageId}
               />
             ) : (
-              <div className="h-44 w-64 bg-[#E5F1D3]" />
+              <div className=" h-32 w-[210px] bg-[#E5F1D3]" />
             )}
           </div>
           <div className="restaurant-data flex flex-col justify-start content-evenly ">

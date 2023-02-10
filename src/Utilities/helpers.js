@@ -1,34 +1,48 @@
-// get more Restaurants on scroll
-const getRestaurants = (
+export const getRestaurants = (
+  restaurants,
   setRestaurants,
-  offSet,
-  setOffSet,
+  showRestaurant,
+  setshowRestaurant,
   cordinates,
 
-) => {
-  
 
-  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 930) {
+) => {
+
+  if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
     console.log("on bottom");
-    
     const getResturants = async () => {
       // this is updating branch in master branch cordinates are added to fetch request
       const fetchResturants = await fetch(
-        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offSet}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
-      ).then((res) => res.json()).catch((err) => console.log(err));
+        `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${showRestaurant}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
+      )
+        .then((res) => res.json())
+        .catch((err) => console.log(err));
+        
 
       const moreResturants = await fetchResturants?.data?.cards;
+      
+      
       if (moreResturants) {
+        
         setRestaurants((prevItems) => [
-          ...prevItems.slice(0, prevItems.length - 12),
+          ...prevItems.slice(0, prevItems.length - 6),
           ...moreResturants,
-          ...prevItems.slice(prevItems.length - 12),
+          ...prevItems.slice(prevItems.length - 6),
         ]);
-        setOffSet((n) => n + 16);
+        setshowRestaurant((n) => n + 16);
+       
+        
         console.log(moreResturants);
-        console.log(offSet);
+        
       } else {
-        window.removeEventListener('scroll',this)
+              null
+          // const newArray = restaurants.slice(0, -12);
+          // setRestaurants(newArray);
+          
+
+          
+
+
       }
     };
     getResturants();
