@@ -1,15 +1,17 @@
+
+// get more Restaurants on scroll
 export const getRestaurants = (
   restaurants,
   setRestaurants,
   showRestaurant,
   setshowRestaurant,
-  cordinates,
-
-
+  cordinates
 ) => {
 
   if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
     console.log("on bottom");
+    
+
     const getResturants = async () => {
       // this is updating branch in master branch cordinates are added to fetch request
       const fetchResturants = await fetch(
@@ -17,30 +19,20 @@ export const getRestaurants = (
       )
         .then((res) => res.json())
         .catch((err) => console.log(err));
-        
 
       const moreResturants = await fetchResturants?.data?.cards;
-      
-      
       if (moreResturants) {
-        
         setRestaurants((prevItems) => [
-          ...prevItems.slice(0, prevItems.length - 6),
+          ...prevItems.slice(0, prevItems.length - 12),
           ...moreResturants,
-          ...prevItems.slice(prevItems.length - 6),
+          ...prevItems.slice(prevItems.length - 12),
         ]);
         setshowRestaurant((n) => n + 16);
-       
-        
         console.log(moreResturants);
-        
       } else {
-              null
-          // const newArray = restaurants.slice(0, -12);
-          // setRestaurants(newArray);
-          
 
-          
+          const newArray = restaurants.slice(0, -12);
+          setRestaurants(newArray);
 
 
       }

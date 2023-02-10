@@ -32012,14 +32012,17 @@ var _helpers = require("../Utilities/helpers");
 var _s = $RefreshSig$();
 const Homepage = ()=>{
     _s();
-    const [restaurants, setRestaurants] = (0, _react.useState)([]);
+    const [restaurants, showRestaurants] = (0, _react.useState)([]);
     const [showRestaurant, setShowRestaurant] = (0, _react.useState)(31);
     const cordinates = (0, _react.useContext)((0, _myApp.locationContext));
-    console.log(showRestaurant);
-    (0, _useRestaurantDefault.default)(restaurants, setRestaurants, showRestaurant, setShowRestaurant);
+    (0, _useRestaurantDefault.default)(restaurants, showRestaurants);
+    typeof restaurants === "undefined" || (window.onscroll = ()=>{
+        console.log("scrolled");
+        (0, _helpers.getMoreRestaurant)(restaurants, showRestaurants, showRestaurant, setShowRestaurant, cordinates);
+    });
     if (restaurants?.length <= 0 || typeof restaurants === "undefined") return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homPageShimmerDefault.default), {}, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 15,
+        lineNumber: 18,
         columnNumber: 78
     }, undefined);
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32029,27 +32032,27 @@ const Homepage = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 17,
+                    lineNumber: 20,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {}, void 0, false, {
                     fileName: "src/Pages/Homepage.jsx",
-                    lineNumber: 18,
+                    lineNumber: 21,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Pages/Homepage.jsx",
-            lineNumber: 16,
+            lineNumber: 19,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 15,
+        lineNumber: 18,
         columnNumber: 109
     }, undefined);
 };
-_s(Homepage, "KjdIEzOZ0m7ATcu/CArHYI0dcoQ=", false, function() {
+_s(Homepage, "hQrfSPm8/VsxsR21P4IyP0NM8LQ=", false, function() {
     return [
         (0, _useRestaurantDefault.default)
     ];
@@ -34370,24 +34373,15 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _myApp = require("../Utilities/MyApp");
 var _reactShimmerEffects = require("react-shimmer-effects");
-var _helpers = require("../Utilities/helpers");
 var _s = $RefreshSig$();
-const useRestaurant = (Resturants, setRestaurants, showRestaurant, setShowRestaurant)=>{
+const useRestaurant = (Resturants, setRestaurants)=>{
     _s();
     const cordinates = (0, _react.useContext)((0, _myApp.locationContext));
     (0, _react.useEffect)(()=>{
         const controller = new AbortController();
         const signal = controller.signal;
         getResturants(signal, setRestaurants);
-        window.addEventListener("scroll", ()=>{
-            (0, _helpers.getMoreRestaurant)(Resturants, setRestaurants, showRestaurant, setShowRestaurant, cordinates);
-        });
-        return ()=>{
-            controller.abort();
-            window.removeEventListener("scroll", ()=>{
-                (0, _helpers.getMoreRestaurant)();
-            });
-        };
+        return ()=>controller.abort();
     }, [
         cordinates
     ]);
@@ -34396,13 +34390,13 @@ const useRestaurant = (Resturants, setRestaurants, showRestaurant, setShowRestau
         const resturantDataSwiggy = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates.latitude}&lng=${cordinates.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`, signal).then((res)=>res.json()).catch((err)=>console.log(err));
         setRestaurants([
             ...resturantDataSwiggy?.data?.cards,
-            ...Array(6).fill(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerThumbnail), {
+            ...Array(12).fill(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerThumbnail), {
                 height: 200,
                 width: 250
             }, void 0, false, {
                 fileName: "src/customHooks/useRestaurant.js",
-                lineNumber: 24,
-                columnNumber: 75
+                lineNumber: 15,
+                columnNumber: 76
             }, undefined))
         ]);
     };
@@ -34416,119 +34410,7 @@ exports.default = useRestaurant;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/MyApp":"aw7YL","react-shimmer-effects":"5ORgO","../Utilities/helpers":"4t9SJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4t9SJ":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getRestaurants", ()=>getRestaurants);
-parcelHelpers.export(exports, "getMoreRestaurant", ()=>getMoreRestaurant);
-parcelHelpers.export(exports, "addToCart", ()=>addToCart);
-parcelHelpers.export(exports, "decrement", ()=>decrement);
-const getRestaurants = (restaurants, setRestaurants, showRestaurant, setshowRestaurant, cordinates)=>{
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
-        console.log("on bottom");
-        const getResturants = async ()=>{
-            // this is updating branch in master branch cordinates are added to fetch request
-            const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${showRestaurant}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>console.log(err));
-            const moreResturants = await fetchResturants?.data?.cards;
-            if (moreResturants) {
-                setRestaurants((prevItems)=>[
-                        ...prevItems.slice(0, prevItems.length - 6),
-                        ...moreResturants,
-                        ...prevItems.slice(prevItems.length - 6)
-                    ]);
-                setshowRestaurant((n)=>n + 16);
-                console.log(moreResturants);
-            }
-        };
-        getResturants();
-    }
-};
-const getMoreRestaurant = throttle(getRestaurants, 500);
-function throttle(cb, delay) {
-    let wait = false;
-    let storedArgs = null;
-    function checkStoredArgs() {
-        if (storedArgs == null) wait = false;
-        else {
-            cb(...storedArgs);
-            storedArgs = null;
-            setTimeout(checkStoredArgs, delay);
-        }
-    }
-    return (...args)=>{
-        if (wait) {
-            storedArgs = args;
-            return;
-        }
-        cb(...args);
-        wait = true;
-        setTimeout(checkStoredArgs, delay);
-    };
-}
-const addToCart = (Dish)=>{
-    // is local storage empty || first order
-    if (localStorage.getItem("orders")) {
-        let Orders = JSON.parse(localStorage.getItem("orders"));
-        //are orders from same restaurant
-        if (Orders[0]?.restaurant?.id === Dish?.restaurant?.id) {
-            if (Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id) >= 0) {
-                //inc qty of similar dish
-                let prevIndex = Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id);
-                let prevQty = Orders[Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id)].qty;
-                let newOrder = Orders.filter((item)=>item.dish.id != Dish?.dish?.id);
-                newOrder.splice(prevIndex, 0, {
-                    dish: Dish.dish,
-                    qty: prevQty + 1,
-                    restaurant: Dish.restaurant
-                });
-                localStorage.clear();
-                localStorage.setItem("orders", JSON.stringify(newOrder));
-            } else {
-                // similar rest diff dish
-                console.log("similar rest diff dish");
-                Orders.push(Dish);
-                localStorage.clear();
-                localStorage.setItem("orders", JSON.stringify(Orders));
-            }
-        } else {
-            //ask to create new basket
-            if (window.confirm("Start a fresh cart")) {
-                localStorage.clear();
-                localStorage.setItem("orders", JSON.stringify([
-                    Dish
-                ]));
-            } else return null;
-        }
-    } else localStorage.setItem("orders", JSON.stringify([
-        Dish
-    ]));
-};
-const decrement = (updateItem)=>{
-    let CartItems = JSON.parse(localStorage.getItem("orders"));
-    let prevQty = updateItem?.qty;
-    if (prevQty === 1) {
-        let newCart = CartItems.filter((item)=>item.dish.id != updateItem?.dish?.id);
-        if (newCart.length >= 1) {
-            localStorage.clear();
-            localStorage.setItem("orders", JSON.stringify(newCart));
-        } else {
-            localStorage.clear();
-            console.log("local storage cleared");
-        }
-    } else {
-        let prevIndex = CartItems.findIndex((item)=>item.dish.id === updateItem?.dish?.id);
-        let newCartItems = CartItems.filter((item)=>item.dish.id != updateItem?.dish?.id);
-        localStorage.clear();
-        newCartItems.splice(prevIndex, 0, {
-            dish: updateItem.dish,
-            qty: prevQty - 1,
-            restaurant: updateItem.restaurant
-        });
-        localStorage.setItem("orders", JSON.stringify(newCartItems));
-    }
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2D5qz":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/MyApp":"aw7YL","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2D5qz":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2b17 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34627,7 +34509,123 @@ $RefreshReg$(_c, "HomPageShimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3PdSH":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4t9SJ":[function(require,module,exports) {
+// get more Restaurants on scroll
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getRestaurants", ()=>getRestaurants);
+parcelHelpers.export(exports, "getMoreRestaurant", ()=>getMoreRestaurant);
+parcelHelpers.export(exports, "addToCart", ()=>addToCart);
+parcelHelpers.export(exports, "decrement", ()=>decrement);
+const getRestaurants = (restaurants, setRestaurants, showRestaurant, setshowRestaurant, cordinates)=>{
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 600) {
+        console.log("on bottom");
+        const getResturants = async ()=>{
+            // this is updating branch in master branch cordinates are added to fetch request
+            const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${showRestaurant}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>console.log(err));
+            const moreResturants = await fetchResturants?.data?.cards;
+            if (moreResturants) {
+                setRestaurants((prevItems)=>[
+                        ...prevItems.slice(0, prevItems.length - 12),
+                        ...moreResturants,
+                        ...prevItems.slice(prevItems.length - 12)
+                    ]);
+                setshowRestaurant((n)=>n + 16);
+                console.log(moreResturants);
+            } else {
+                const newArray = restaurants.slice(0, -12);
+                setRestaurants(newArray);
+            }
+        };
+        getResturants();
+    }
+};
+const getMoreRestaurant = throttle(getRestaurants, 500);
+function throttle(cb, delay) {
+    let wait = false;
+    let storedArgs = null;
+    function checkStoredArgs() {
+        if (storedArgs == null) wait = false;
+        else {
+            cb(...storedArgs);
+            storedArgs = null;
+            setTimeout(checkStoredArgs, delay);
+        }
+    }
+    return (...args)=>{
+        if (wait) {
+            storedArgs = args;
+            return;
+        }
+        cb(...args);
+        wait = true;
+        setTimeout(checkStoredArgs, delay);
+    };
+}
+const addToCart = (Dish)=>{
+    // is local storage empty || first order
+    if (localStorage.getItem("orders")) {
+        let Orders = JSON.parse(localStorage.getItem("orders"));
+        //are orders from same restaurant
+        if (Orders[0]?.restaurant?.id === Dish?.restaurant?.id) {
+            if (Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id) >= 0) {
+                //inc qty of similar dish
+                let prevIndex = Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id);
+                let prevQty = Orders[Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id)].qty;
+                let newOrder = Orders.filter((item)=>item.dish.id != Dish?.dish?.id);
+                newOrder.splice(prevIndex, 0, {
+                    dish: Dish.dish,
+                    qty: prevQty + 1,
+                    restaurant: Dish.restaurant
+                });
+                localStorage.clear();
+                localStorage.setItem("orders", JSON.stringify(newOrder));
+            } else {
+                // similar rest diff dish
+                console.log("similar rest diff dish");
+                Orders.push(Dish);
+                localStorage.clear();
+                localStorage.setItem("orders", JSON.stringify(Orders));
+            }
+        } else {
+            //ask to create new basket
+            if (window.confirm("Start a fresh cart")) {
+                localStorage.clear();
+                localStorage.setItem("orders", JSON.stringify([
+                    Dish
+                ]));
+            } else return null;
+        }
+    } else localStorage.setItem("orders", JSON.stringify([
+        Dish
+    ]));
+};
+const decrement = (updateItem)=>{
+    let CartItems = JSON.parse(localStorage.getItem("orders"));
+    let prevQty = updateItem?.qty;
+    if (prevQty === 1) {
+        let newCart = CartItems.filter((item)=>item.dish.id != updateItem?.dish?.id);
+        if (newCart.length >= 1) {
+            localStorage.clear();
+            localStorage.setItem("orders", JSON.stringify(newCart));
+        } else {
+            localStorage.clear();
+            console.log("local storage cleared");
+        }
+    } else {
+        let prevIndex = CartItems.findIndex((item)=>item.dish.id === updateItem?.dish?.id);
+        let newCartItems = CartItems.filter((item)=>item.dish.id != updateItem?.dish?.id);
+        localStorage.clear();
+        newCartItems.splice(prevIndex, 0, {
+            dish: updateItem.dish,
+            qty: prevQty - 1,
+            restaurant: updateItem.restaurant
+        });
+        localStorage.setItem("orders", JSON.stringify(newCartItems));
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3PdSH":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$99a4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
