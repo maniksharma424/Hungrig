@@ -32014,7 +32014,7 @@ var _s = $RefreshSig$();
 const Homepage = ()=>{
     _s();
     const [restaurants, showRestaurants] = (0, _react.useState)([]);
-    const [showRestaurant, setShowRestaurant] = (0, _react.useState)(15);
+    const [showRestaurant, setShowRestaurant] = (0, _react.useState)(31);
     const cordinates = (0, _react.useContext)((0, _myApp.locationContext));
     (0, _useRestaurantDefault.default)(restaurants, showRestaurants);
     typeof restaurants === "undefined" || (window.onscroll = ()=>{
@@ -32053,7 +32053,7 @@ const Homepage = ()=>{
         columnNumber: 109
     }, undefined);
 };
-_s(Homepage, "n+Tm/YWUVj4XjG4JJxbRkoOx0Y8=", false, function() {
+_s(Homepage, "hQrfSPm8/VsxsR21P4IyP0NM8LQ=", false, function() {
     return [
         (0, _useRestaurantDefault.default)
     ];

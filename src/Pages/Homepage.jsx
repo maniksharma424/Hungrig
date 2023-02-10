@@ -11,7 +11,7 @@ import { getMoreRestaurant } from "../Utilities/helpers";
 
 export const Homepage = () => {
   const [restaurants, showRestaurants] = useState([]);
-  const [showRestaurant, setShowRestaurant] = useState(15);
+  const [showRestaurant, setShowRestaurant] = useState(31);
   const cordinates = useContext(locationContext)
 
   useRestaurant(restaurants, showRestaurants);
