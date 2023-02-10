@@ -1,5 +1,5 @@
 import { Homepage } from "../Pages/Homepage";
-import Cart from "../Pages/Cart";
+import { Cart } from "../Pages/Cart";
 import About from "../Pages/About";
 import ResturantPage from "../Pages/ResturantPage";
 import { createBrowserRouter, Outlet } from "react-router-dom";

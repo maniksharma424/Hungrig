@@ -38,11 +38,11 @@ const MiniCart = () => {
           cartTotal += item?.dish?.price * item?.qty;
         })}{" "}
         <div className="billing-info  w-full px-4">
-          <ul>
+          <ul >
             {cartItems?.map((item, index) => {
               return (
                 <li key={index}>
-                  <button className=" p-0 m-0 w-[250px]" onClick={()=>location.reload()}>
+                  <button className=" p-0 m-0 w-[230px]" onClick={()=>location.reload()}>
                   <CartItem updateParent={handleUpdate} cartItem={item} />
                   </button>
                 </li>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { useAddress } from "../customHooks/useAddress";
 
 const Header = () => {
@@ -19,21 +19,20 @@ const Header = () => {
         <div className="header-logo w-2/3  flex items-center ">
           <Link to="/homePage">
             <img
-              className="logo w-[110px] h-[60px]"
+              className="logo w-[90px] h-[50px]"
               src="https://1000logos.net/wp-content/uploads/2021/05/Swiggy-logo.png"
               alt=" logo"
             />
           </Link>
           <div className="address">
-            
             {address?.display_name ? (
-              <span className="text-[13px] font-[900]">📍 {address?.address?.suburb} <span className="text-[10px] font-[100]">{address?.address?.city} ,<span>{address?.address?.country}</span></span></span>
+              <span className="text-[11px] font-[900]">📍 {address?.address?.suburb} <span className="text-[9px] font-[100]">{address?.address?.city} ,<span>{address?.address?.country}</span></span></span>
             ) : (
-              <p className="text-[12px] font-[100]">Fetching Location ... </p>
+              <p className="text-[10px] font-[100]">Fetching Location ... </p>
             )}
           </div>
         </div>
-        <div className="Header-Links w-1/3 flex  justify-around">
+        <div className="Header-Links w-1/3 flex text-[13px]  justify-around">
           <Link to="/searchpage">
             <i class="fa-solid fa-magnifying-glass"></i> Search
           </Link>

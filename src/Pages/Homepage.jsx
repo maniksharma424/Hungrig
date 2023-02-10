@@ -4,32 +4,29 @@ import { useState } from "react";
 import { ResturantContext } from "../Contexts/ContextResturant";
 import Carousel from "./Carousel";
 import useRestaurant from "../customHooks/useRestaurant";
-
-
-
 import HomPageShimmer from "./HomPageShimmer";
 import { getMoreRestaurant } from "../Utilities/helpers";
 import { locationContext } from "../Utilities/MyApp";
 
 export const Homepage = () => {
-  const [restaurants, showRestaurants] = useState([]);
-  const [showRestaurant, setShowRestaurant] = useState(15);
+  const [restaurants, setRestaurants] = useState([]);
+  const [offSet, setOffSet] = useState(31);
   const cordinates = useContext(locationContext)
 
-  useRestaurant(restaurants, showRestaurants);
 
-  typeof restaurants === "undefined"
-    ? null
-    : (window.onscroll = () => {
-        console.log("scrolled");
-        getMoreRestaurant(
-          restaurants,
-          showRestaurants,
-          showRestaurant,
-          setShowRestaurant,
-          cordinates
-        );
-      });
+  
+  const ab = ()=>{
+    console.log("scrolled");
+    getMoreRestaurant(
+      setRestaurants,
+      offSet,
+      setOffSet,
+      cordinates
+      )}
+    useRestaurant(restaurants, setRestaurants,ab);
+  //  window.addEventListener('scroll',ab)
+
+
 
   if (restaurants?.length <= 0 || typeof restaurants === "undefined")
     return <HomPageShimmer />;

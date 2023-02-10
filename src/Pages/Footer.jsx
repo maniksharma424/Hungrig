@@ -3,7 +3,7 @@ import { CITY_NAMES, states } from '../Utilities/constants';
 
 
 const Footer = () => (
-<div className="footer w-full bg-black p-10">
+<div className="footer w-full bg-black p-10 mt-[130px]">
 
     <div className="container w-full text-[13px] text-white">
       <div className="city-names">
