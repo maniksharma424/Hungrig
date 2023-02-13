@@ -40,7 +40,7 @@ Open your favorite code editor and run locally!
 
 
 ## Author
-[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/maniksharma424.svg?style=social&label=Follow%20%40iarjunbharti)](https://twitter.com/maniksharma424)
+[![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/maniksharma424.svg?style=social&label=Follow%20%40maniksharma424)](https://twitter.com/maniksharma424)
 <br />
 Let's connect :)
 
