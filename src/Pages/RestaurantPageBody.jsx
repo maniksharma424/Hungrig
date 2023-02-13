@@ -1,8 +1,7 @@
-
 import { handleCategoryMenu } from "../Utilities/utils";
 import ResturantMenuItemCard from "./ResturantMenuItemCard";
 import MiniCart from "./MiniCart";
-import { EMPTY_CART_IMG} from "../Utilities/constants";
+import { EMPTY_CART_IMG } from "../Utilities/constants";
 
 const RestaurantPageBody = ({
   resturantData,
@@ -16,7 +15,7 @@ const RestaurantPageBody = ({
         {resturantData?.menu?.widgets?.map((item) =>
           item.type === "category" ? (
             <button
-              className=" flex justify-end p-2  hover:text-[#fc8019] active:text-[#fc8019]"
+              className=" flex justify-end p-2 text-[15px]   hover:text-[#fc8019] active:text-[#fc8019]"
               key={item.id}
               onClick={() => {
                 handleCategoryMenu(item.name, menu, setFilteredMenu);

@@ -35763,7 +35763,7 @@ const RestaurantPageBody = ({ resturantData , menu , filteredMenu , setFilteredM
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "Resturant-Categories w-[410px] overflow-scroll sticky top-[310px] z-10 pr-2 h-fit flex flex-col",
                 children: resturantData?.menu?.widgets?.map((item)=>item.type === "category" ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: " flex justify-end p-2 hover:text-[#fc8019] active:text-[#fc8019]",
+                        className: " flex justify-end p-2 text-[15px] hover:text-[#fc8019] active:text-[#fc8019]",
                         onClick: ()=>{
                             (0, _utils.handleCategoryMenu)(item.name, menu, setFilteredMenu);
                         },
