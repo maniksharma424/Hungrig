@@ -35195,18 +35195,34 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constants = require("../Utilities/constants");
 const About = ()=>{
+    async function makeSameOriginRequest(url, method = "GET") {
+        try {
+            const response = await fetch(url, {
+                method: method,
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                mode: "cors"
+            });
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            return await response.json();
+        } catch (error) {
+            console.error(error);
+        }
+    }
+    makeSameOriginRequest("https://www.swiggy.com/dapi/restaurants/list/v5?lat= 28.550421&lng=77.121765&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: " py-32 text-[18px] tracking-wide font-[100] px-36",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
             children: (0, _constants.ABOUT_US)
         }, void 0, false, {
             fileName: "src/Pages/About.jsx",
-            lineNumber: 4,
+            lineNumber: 22,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/About.jsx",
-        lineNumber: 3,
+        lineNumber: 21,
         columnNumber: 10
     }, undefined);
 };
@@ -35320,218 +35336,225 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constants = require("../Utilities/constants");
 const RestaurantPageBanner = ({ resturantData  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "Resturant-banner sticky top-0 z-20 bg-[#171a29] px-12 py-12 h-245 flex justify-around items-center ",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "Resturant-Image",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                    className: "w-[254px] h-[165px] bg-centre bg-contain bg-no-repeat",
-                    src: (0, _constants.IMAGE_URL) + resturantData?.cloudinaryImageId
+        className: "Resturant-banner sticky top-0 z-20 bg-[#171a29] px-12 py-12 h-245 ",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "flex justify-around items-center px-16",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "Resturant-Image",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        className: "w-[230px] h-[135px] bg-centre bg-contain bg-no-repeat",
+                        src: (0, _constants.IMAGE_URL) + resturantData?.cloudinaryImageId
+                    }, void 0, false, {
+                        fileName: "src/Pages/RestaurantPageBanner.jsx",
+                        lineNumber: 8,
+                        columnNumber: 11
+                    }, undefined)
                 }, void 0, false, {
                     fileName: "src/Pages/RestaurantPageBanner.jsx",
                     lineNumber: 7,
-                    columnNumber: 11
-                }, undefined)
-            }, void 0, false, {
-                fileName: "src/Pages/RestaurantPageBanner.jsx",
-                lineNumber: 6,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "Resturant-Info relative h-[165px] flex flex-col justify-between right-[60px] text-white ",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: " text-[25px]",
-                        children: resturantData?.name
-                    }, void 0, false, {
-                        fileName: "src/Pages/RestaurantPageBanner.jsx",
-                        lineNumber: 10,
-                        columnNumber: 11
-                    }, undefined),
-                    resturantData?.cuisines?.map((item, index)=>{
-                        return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            className: "text-[13px] text-[#686b78]",
-                            children: [
-                                item,
-                                " "
-                            ]
-                        }, index, true, {
-                            fileName: "src/Pages/RestaurantPageBanner.jsx",
-                            lineNumber: 12,
-                            columnNumber: 16
-                        }, undefined);
-                    }),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                        className: "text-[13px] text-[#686b78]",
-                        children: resturantData?.locality
-                    }, void 0, false, {
-                        fileName: "src/Pages/RestaurantPageBanner.jsx",
-                        lineNumber: 16,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                        className: "flex justify-start items-center w-[350px] h-[60px]",
-                        children: [
-                            resturantData?.avgRating >= 2.5 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                className: "mr-11 px-2 text-[18px] relative right-[5px]",
-                                children: [
-                                    " ",
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                        className: "fa-regular fa-star fa-small"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                        lineNumber: 22,
-                                        columnNumber: 17
-                                    }, undefined),
-                                    " ",
-                                    resturantData?.avgRating,
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        className: "text-[10px] text-[#686b78]",
-                                        children: "Rating"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                        lineNumber: 24,
-                                        columnNumber: 17
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                lineNumber: 20,
-                                columnNumber: 48
-                            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                className: "mr-11 px-2",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                            className: "fa-regular fa-star fa-small"
-                                        }, void 0, false, {
-                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                            lineNumber: 27,
-                                            columnNumber: 19
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                        lineNumber: 26,
-                                        columnNumber: 17
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        className: "text-xs text-[#686b78]",
-                                        children: " --too few Rating-"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                        lineNumber: 29,
-                                        columnNumber: 17
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                lineNumber: 25,
-                                columnNumber: 23
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                className: "mr-11 px-2",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        children: [
-                                            resturantData?.sla?.deliveryTime,
-                                            " Mins"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                        lineNumber: 33,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        className: "text-[10px] text-[#686b78]",
-                                        children: "Delivery Time"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                        lineNumber: 34,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                lineNumber: 32,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                className: "mr-11 px-2",
-                                children: [
-                                    "₹ ",
-                                    resturantData?.costForTwo / 100,
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        className: "text-[10px] text-[#686b78]",
-                                        children: "Cost for two"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                        lineNumber: 38,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                lineNumber: 36,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "src/Pages/RestaurantPageBanner.jsx",
-                        lineNumber: 19,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Pages/RestaurantPageBanner.jsx",
-                lineNumber: 9,
-                columnNumber: 9
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "Resturant-Offers text-[white]",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("fieldset", {
-                    className: "border-[1px] w-[400px] h-[200px]",
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "Resturant-Info relative h-[145px] flex flex-col justify-between right-[60px] text-white ",
                     children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("legend", {
-                            className: "text-[18px] p-2",
-                            children: "OFFERS"
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: " text-[25px]",
+                            children: resturantData?.name
                         }, void 0, false, {
                             fileName: "src/Pages/RestaurantPageBanner.jsx",
-                            lineNumber: 44,
-                            columnNumber: 13
+                            lineNumber: 11,
+                            columnNumber: 11
                         }, undefined),
-                        resturantData?.aggregatedDiscountInfoV2?.descriptionList?.map((item, index)=>{
-                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "p-4",
+                        resturantData?.cuisines?.map((item, index)=>{
+                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-[13px] text-[#686b78]",
                                 children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                        class: "fa-solid fa-tags fa-lg"
-                                    }, void 0, false, {
-                                        fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                        lineNumber: 47,
-                                        columnNumber: 21
-                                    }, undefined),
-                                    " ",
-                                    item.meta
+                                    item,
+                                    " "
                                 ]
                             }, index, true, {
                                 fileName: "src/Pages/RestaurantPageBanner.jsx",
-                                lineNumber: 46,
+                                lineNumber: 13,
                                 columnNumber: 18
                             }, undefined);
-                        })
+                        }),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "text-[13px] text-[#686b78]",
+                            children: resturantData?.locality
+                        }, void 0, false, {
+                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                            lineNumber: 17,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                            className: "flex justify-start items-center w-[350px] h-[60px]",
+                            children: [
+                                resturantData?.avgRating >= 2.5 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    className: "mr-11 px-2 text-[18px] relative right-[5px]",
+                                    children: [
+                                        " ",
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                            className: "fa-regular fa-star fa-small"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 23,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        " ",
+                                        resturantData?.avgRating,
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            className: "text-[10px] text-[#686b78]",
+                                            children: "Rating"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 25,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                    lineNumber: 21,
+                                    columnNumber: 48
+                                }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    className: "mr-11 px-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                className: "fa-regular fa-star fa-small"
+                                            }, void 0, false, {
+                                                fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                                lineNumber: 28,
+                                                columnNumber: 19
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 27,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            className: "text-xs text-[#686b78]",
+                                            children: " --too few Rating-"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 30,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                    lineNumber: 26,
+                                    columnNumber: 23
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    className: "mr-11 px-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: [
+                                                resturantData?.sla?.deliveryTime,
+                                                " Mins"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 34,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            className: "text-[10px] text-[#686b78]",
+                                            children: "Delivery Time"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 35,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                    lineNumber: 33,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    className: "mr-11 px-2",
+                                    children: [
+                                        "₹ ",
+                                        resturantData?.costForTwo / 100,
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            className: "text-[10px] text-[#686b78]",
+                                            children: "Cost for two"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 39,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                    lineNumber: 37,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                            lineNumber: 20,
+                            columnNumber: 11
+                        }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Pages/RestaurantPageBanner.jsx",
+                    lineNumber: 10,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "Resturant-Offers text-[white]",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("fieldset", {
+                        className: "border-[1px] w-[340px] h-[145px]",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("legend", {
+                                className: "text-[18px] p-2",
+                                children: "OFFERS"
+                            }, void 0, false, {
+                                fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                lineNumber: 45,
+                                columnNumber: 13
+                            }, undefined),
+                            resturantData?.aggregatedDiscountInfoV2?.descriptionList?.map((item, index)=>{
+                                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "p-1 px-2 text-[14px]",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                            class: "fa-solid fa-tags fa-lg"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 48,
+                                            columnNumber: 21
+                                        }, undefined),
+                                        " ",
+                                        item.meta
+                                    ]
+                                }, index, true, {
+                                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                    lineNumber: 47,
+                                    columnNumber: 20
+                                }, undefined);
+                            })
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/RestaurantPageBanner.jsx",
+                        lineNumber: 44,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/Pages/RestaurantPageBanner.jsx",
                     lineNumber: 43,
-                    columnNumber: 11
+                    columnNumber: 9
                 }, undefined)
-            }, void 0, false, {
-                fileName: "src/Pages/RestaurantPageBanner.jsx",
-                lineNumber: 42,
-                columnNumber: 9
-            }, undefined)
-        ]
-    }, void 0, true, {
+            ]
+        }, void 0, true, {
+            fileName: "src/Pages/RestaurantPageBanner.jsx",
+            lineNumber: 6,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
         fileName: "src/Pages/RestaurantPageBanner.jsx",
         lineNumber: 5,
         columnNumber: 10
