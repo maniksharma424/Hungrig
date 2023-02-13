@@ -1,31 +1,47 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {FAST_DEL_IMG,LANDING_PAGE_IMG,MIN_ORDER_IMG,SERVICES_IMG_CLASSNAME,TRACK_ORDER_IMG,
+import {
+  FAST_DEL_IMG,
+  LANDING_PAGE_IMG,
+  MIN_ORDER_IMG,
+  SERVICES_IMG_CLASSNAME,
+  TRACK_ORDER_IMG,
 } from "../Utilities/constants";
-import { getLocation, locationContext } from "../Utilities/MyApp";
+import {locationContext } from "../Utilities/MyApp";
+const TEXTS = ["Hungry", "Cooking Gone Wrong", "Movie marathon", "Game night",'Unexpected Guests'];
 
 const LandingPage = () => {
+  const [text, setText] = useState("Unexpected Guests");
   const location = useContext(locationContext);
+  useEffect(() => {
+    let timer = 0;
+    let i = 0;
+   timer =  setInterval(() => {
+      setText(TEXTS[i])
+      i>= 4 ? i = 0:i++
+    }, 2000);
 
+return ()=> clearInterval(timer)
+  }, []);
 
   return (
     <div className="LandingPage w-full">
       <div className="upper-box flex  ">
         <div className="locationBox w-[850px] h-[550px] ">
           <div className="flex flex-col p-12 w-10/12 h-full">
-            <p className="text-[40px] font-[900] mt-10">Unexpected Guests ? </p>
+            <p className="text-[40px] font-[900] mt-10">{text} ? </p>
             <p className="text-[24px] text-[#686b78] ">
               Order food from your favourite restaurant near you
             </p>
             <div className="btn flex my-10  ">
               <button
                 onClick={() => {
-                  getLocation();
+                  location.latitude ?alert(`kindly explore restaurants`):alert('allow access to location')
                 }}
                 className="w-[170px] p-3 h-[50px]  text-[#686b78] 
               border-[#686b78] border-[1px] mr-10 "
               >
-               📍 Locate Me
+                📍 Locate Me
               </button>
               {!location.latitude ? (
                 <button
@@ -58,7 +74,6 @@ const LandingPage = () => {
             className="w-full h-full bg-center bg-contain bg-no-repeat"
             src={LANDING_PAGE_IMG}
             alt="image"
-
           />
         </div>
       </div>
@@ -69,7 +84,6 @@ const LandingPage = () => {
             className="h-[199px] w-[115px] bg-center bg-contain bg-no-repeat"
             src={MIN_ORDER_IMG}
             alt="image"
-
           />
           <p className="text-[20px] font-[900] text-white">No minimum order</p>
           <p className="text-[#e0cbc1] text-[15px]">
@@ -84,7 +98,6 @@ const LandingPage = () => {
             className="h-[199px] w-[115px] bg-center bg-contain bg-no-repeat"
             src={TRACK_ORDER_IMG}
             alt="image"
-
           />
           <p className="text-[20px] font-[900] text-white">
             Live Order Tracking
@@ -101,7 +114,6 @@ const LandingPage = () => {
             className="h-[199px] w-[115px] bg-center bg-contain bg-no-repeat"
             src={FAST_DEL_IMG}
             alt="image"
-
           />
           <p className="text-[20px] font-[900] text-white">
             Lightning-Fast Delivery

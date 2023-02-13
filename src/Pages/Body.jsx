@@ -9,7 +9,7 @@ const Body = ()=> {
   return (
     <div
       id="Available-Resturants-window"
-      className="Available-Resturants  w-full flex  justify-center items-center"
+      className="Available-Resturants  w-full flex  justify-center items-center "
     >
       <ul className="Restaurant-container px-16 flex flex-wrap justify-start border-none w-[90%] mt-[45px] ">
         {ResturantData?.map((restaurant, index) => {

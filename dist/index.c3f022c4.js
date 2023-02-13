@@ -32081,7 +32081,7 @@ const Body = ()=>{
     const ResturantData = (0, _react.useContext)((0, _contextResturant.ResturantContext));
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         id: "Available-Resturants-window",
-        className: "Available-Resturants w-full flex justify-center items-center",
+        className: "Available-Resturants w-full flex justify-center items-center ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
             className: "Restaurant-container px-16 flex flex-wrap justify-start border-none w-[90%] mt-[45px] ",
             children: ResturantData?.map((restaurant, index)=>{
@@ -34406,7 +34406,7 @@ const useRestaurant = (resturants, setRestaurants)=>{
         setflag(false);
     };
     const fetchMoreRestaurants = (setRestaurants, offset, setOffset, cordinates, removeListener)=>{
-        if (window.scrollY + window.innerHeight > document.body.offsetHeight - 900 && window.scrollY + window.innerHeight <= document.body.offsetHeight) {
+        if (window.scrollY + window.innerHeight > document.body.offsetHeight - 980 && window.scrollY + window.innerHeight <= document.body.offsetHeight) {
             const getResturants = async ()=>{
                 const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offset}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>{
                     throw new Error("Something Went Wrong");
@@ -35220,7 +35220,7 @@ $RefreshReg$(_c, "About");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"GvK7j":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Utilities/constants":"5t9MR"}],"GvK7j":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8ffb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37141,16 +37141,16 @@ const SearchResults = ()=>{
                                 })
                             ]
                         }, void 0, true) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "p-[10px] flex flex-wrap justify-around absolute w-[700px] items-center top-[200px]",
-                            children: Array(5).fill(1).map((val, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                    className: "w-[300px] h-[300px] mb-4",
+                            className: "p-[10px] flex flex-wrap justify-between absolute w-[700px] items-center top-[200px]",
+                            children: Array(4).fill(1).map((val, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    className: "w-[300px] h-[250px] mb-4",
                                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerPostItem), {
                                         card: true,
                                         title: true,
                                         cta: true,
                                         imageType: "thumbnail",
-                                        imageWidth: 50,
-                                        imageHeight: 50,
+                                        imageWidth: 40,
+                                        imageHeight: 40,
                                         contentCenter: true
                                     }, index, false, {
                                         fileName: "src/Pages/SearchResults.jsx",
@@ -37690,7 +37690,7 @@ $RefreshReg$(_c, "ResultDish");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Utilities/helpers":"4t9SJ","../Utilities/constants":"5t9MR","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ajT6S":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/helpers":"4t9SJ","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ajT6S":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1300 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37925,9 +37925,26 @@ var _reactRouterDom = require("react-router-dom");
 var _constants = require("../Utilities/constants");
 var _myApp = require("../Utilities/MyApp");
 var _s = $RefreshSig$();
+const TEXTS = [
+    "Hungry",
+    "Cooking Gone Wrong",
+    "Movie marathon",
+    "Game night",
+    "Unexpected Guests"
+];
 const LandingPage = ()=>{
     _s();
+    const [text, setText] = (0, _react.useState)("Unexpected Guests");
     const location = (0, _react.useContext)((0, _myApp.locationContext));
+    (0, _react.useEffect)(()=>{
+        let timer = 0;
+        let i = 0;
+        timer = setInterval(()=>{
+            setText(TEXTS[i]);
+            i >= 4 ? i = 0 : i++;
+        }, 2000);
+        return ()=>clearInterval(timer);
+    }, []);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "LandingPage w-full",
         children: [
@@ -37941,10 +37958,13 @@ const LandingPage = ()=>{
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                     className: "text-[40px] font-[900] mt-10",
-                                    children: "Unexpected Guests ? "
-                                }, void 0, false, {
+                                    children: [
+                                        text,
+                                        " ? "
+                                    ]
+                                }, void 0, true, {
                                     fileName: "src/Pages/LandingPage.jsx",
-                                    lineNumber: 11,
+                                    lineNumber: 22,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -37952,7 +37972,7 @@ const LandingPage = ()=>{
                                     children: "Order food from your favourite restaurant near you"
                                 }, void 0, false, {
                                     fileName: "src/Pages/LandingPage.jsx",
-                                    lineNumber: 12,
+                                    lineNumber: 23,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -37960,13 +37980,13 @@ const LandingPage = ()=>{
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                             onClick: ()=>{
-                                                (0, _myApp.getLocation)();
+                                                location.latitude ? alert(`kindly explore restaurants`) : alert("allow access to location");
                                             },
                                             className: "w-[170px] p-3 h-[50px] text-[#686b78] border-[#686b78] border-[1px] mr-10 ",
                                             children: "\uD83D\uDCCD Locate Me"
                                         }, void 0, false, {
                                             fileName: "src/Pages/LandingPage.jsx",
-                                            lineNumber: 16,
+                                            lineNumber: 27,
                                             columnNumber: 15
                                         }, undefined),
                                         !location.latitude ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -37977,7 +37997,7 @@ const LandingPage = ()=>{
                                             children: "Find Food"
                                         }, void 0, false, {
                                             fileName: "src/Pages/LandingPage.jsx",
-                                            lineNumber: 22,
+                                            lineNumber: 33,
                                             columnNumber: 37
                                         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                             to: "/homePage",
@@ -37986,18 +38006,18 @@ const LandingPage = ()=>{
                                                 children: "Find Food"
                                             }, void 0, false, {
                                                 fileName: "src/Pages/LandingPage.jsx",
-                                                lineNumber: 27,
+                                                lineNumber: 38,
                                                 columnNumber: 19
                                             }, undefined)
                                         }, void 0, false, {
                                             fileName: "src/Pages/LandingPage.jsx",
-                                            lineNumber: 26,
+                                            lineNumber: 37,
                                             columnNumber: 29
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Pages/LandingPage.jsx",
-                                    lineNumber: 15,
+                                    lineNumber: 26,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38005,7 +38025,7 @@ const LandingPage = ()=>{
                                     children: "Popular cities in india"
                                 }, void 0, false, {
                                     fileName: "src/Pages/LandingPage.jsx",
-                                    lineNumber: 32,
+                                    lineNumber: 43,
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38013,18 +38033,18 @@ const LandingPage = ()=>{
                                     children: "Ahmedabad Bangalore Chennai Jammu Delhi Gurgaon Hyderabad Kolkata Mumbai Pune and more"
                                 }, void 0, false, {
                                     fileName: "src/Pages/LandingPage.jsx",
-                                    lineNumber: 35,
+                                    lineNumber: 46,
                                     columnNumber: 13
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/Pages/LandingPage.jsx",
-                            lineNumber: 10,
+                            lineNumber: 21,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/Pages/LandingPage.jsx",
-                        lineNumber: 9,
+                        lineNumber: 20,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -38035,18 +38055,18 @@ const LandingPage = ()=>{
                             alt: "image"
                         }, void 0, false, {
                             fileName: "src/Pages/LandingPage.jsx",
-                            lineNumber: 42,
+                            lineNumber: 53,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/Pages/LandingPage.jsx",
-                        lineNumber: 41,
+                        lineNumber: 52,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Pages/LandingPage.jsx",
-                lineNumber: 8,
+                lineNumber: 19,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -38061,7 +38081,7 @@ const LandingPage = ()=>{
                                 alt: "image"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 48,
+                                lineNumber: 59,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38069,7 +38089,7 @@ const LandingPage = ()=>{
                                 children: "No minimum order"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 49,
+                                lineNumber: 60,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38077,7 +38097,7 @@ const LandingPage = ()=>{
                                 children: "Order in for yourself or for the group,"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 50,
+                                lineNumber: 61,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38085,13 +38105,13 @@ const LandingPage = ()=>{
                                 children: "with no restrictions on order value"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 53,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Pages/LandingPage.jsx",
-                        lineNumber: 47,
+                        lineNumber: 58,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -38103,7 +38123,7 @@ const LandingPage = ()=>{
                                 alt: "image"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 58,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38111,7 +38131,7 @@ const LandingPage = ()=>{
                                 children: "Live Order Tracking"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 59,
+                                lineNumber: 70,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38119,7 +38139,7 @@ const LandingPage = ()=>{
                                 children: "Know where your order is at all times,"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 62,
+                                lineNumber: 73,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38127,13 +38147,13 @@ const LandingPage = ()=>{
                                 children: "from the restaurant to your doorstep"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 65,
+                                lineNumber: 76,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Pages/LandingPage.jsx",
-                        lineNumber: 57,
+                        lineNumber: 68,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -38145,7 +38165,7 @@ const LandingPage = ()=>{
                                 alt: "image"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 70,
+                                lineNumber: 81,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38153,7 +38173,7 @@ const LandingPage = ()=>{
                                 children: "Lightning-Fast Delivery"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 71,
+                                lineNumber: 82,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38161,7 +38181,7 @@ const LandingPage = ()=>{
                                 children: "Experience Swiggy's superfast delivery"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 74,
+                                lineNumber: 85,
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -38169,29 +38189,29 @@ const LandingPage = ()=>{
                                 children: "for food delivered fresh and on time"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
-                                lineNumber: 77,
+                                lineNumber: 88,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Pages/LandingPage.jsx",
-                        lineNumber: 69,
+                        lineNumber: 80,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Pages/LandingPage.jsx",
-                lineNumber: 46,
+                lineNumber: 57,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Pages/LandingPage.jsx",
-        lineNumber: 7,
+        lineNumber: 18,
         columnNumber: 10
     }, undefined);
 };
-_s(LandingPage, "q722S4GWRYKO+blzGd9oiNHiRtA=");
+_s(LandingPage, "0EAjE1ChLRJc+N4q1ErIZTTT21U=");
 _c = LandingPage;
 exports.default = LandingPage;
 var _c;
