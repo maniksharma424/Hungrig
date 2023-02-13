@@ -34,13 +34,13 @@ const Header = () => {
         </div>
         <div className="Header-Links w-1/3 flex text-[13px]  justify-around">
           <Link to="/searchpage">
-            <i class="fa-solid fa-magnifying-glass"></i> Search
+            <i className="fa-solid fa-magnifying-glass"></i> Search
           </Link>
           <Link to="/aboutUs">AboutUs</Link>
 
           <Link to="/cart">
             <div>
-              <i class="fa-sharp fa-solid fa-cart-shopping fa-xl"></i>
+              <i className="fa-sharp fa-solid fa-cart-shopping fa-xl"></i>
 
               {cartLength === 0 ? null : (
                 <div className="cart-length rounded-[10px] bottom-10 right-[165px] bg-white h-5 w-5 m-0 pt-[2px] pl-[6px] font-[700]  absolute text-[10px]  border-[#fc8019] border-[1px] text-[#fc8019] ">

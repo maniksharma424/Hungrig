@@ -27,11 +27,11 @@ const SearchResults = () => {
             setSearchText={setSearchText}
           />
 
-          <div className="Searched-Resturant-Dishes  bg-gray-100 ">
+          <div className="Searched-Resturant-Dishes  bg-gray-50 ">
             <ul className=" searched-Dish flex  justify-evenly m-2  flex-wrap ">
               {searchResturantResult?.DISH ? (
                 searchResturantResult.DISH.cards.map((dish, index) => {
-                  return (
+                  if(index > 0) return (
                     <li key={index}>
                       <SearchResultResturantCard Dish={dish} />
                     </li>
@@ -46,7 +46,7 @@ const SearchResults = () => {
                       />
                     }
                   </li>
-                  <h1 className="absolute top-[470px] text-[20px] font-[700] text-[#3e4152] left-[410px]">
+                  <h1 className="absolute top-[450px] text-[20px] font-[700] text-[#3e4152] left-[395px]">
                     More Results Like This{" "}
                   </h1>
                   {searchResturantResult?.RESTAURANT?.cards[1]?.card?.card?.restaurants.map(

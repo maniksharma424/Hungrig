@@ -61,7 +61,7 @@ export const RestaurantCard = ({ restaurant }) => {
             <hr />
             <div className="coupon p-1 text-[13px] text-[#8a584b] flex justify-center items-center font-[500]">
               <p>
-              <i class="fa-sharp fa-solid fa-tags"></i> {' '}
+              <i className="fa-sharp fa-solid fa-tags"></i> {' '}
                 {
                   restaurant?.aggregatedDiscountInfo?.shortDescriptionList[0]
                     ?.meta
@@ -75,5 +75,6 @@ export const RestaurantCard = ({ restaurant }) => {
   );
    if (restaurant === undefined) return(Array(1).fill(
     <li className=" restaurant-Card  w-[220px] h-82 m-1 mb-4 mt-8 ">
-   <ShimmerThumbnail height={150} width={220}/></li>))
+   <ShimmerThumbnail height={150} width={220}/>
+   </li>))
 };

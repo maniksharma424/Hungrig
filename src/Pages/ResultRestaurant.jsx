@@ -3,15 +3,15 @@ import { IMAGE_URL } from "../Utilities/constants";
 
 const ResultRestaurant = ({ Restaurant }) => {
   return (
-    <div className="Search-Result-Restaurant? pl-2 rounded-md my-9 mb-24 flex flex-wrap justify-start items-center  p-1 bg-white w-[390px] h-[150px] border-[1px] ">
+    <div className="Search-Result-Restaurant? pl-2 rounded-md my-9 mb-24 flex flex-wrap justify-start items-center relative right-[115px]  p-1 bg-white w-[385px] h-[150px] border-[1px] ">
       <div className="Search-Result-Restaurant?-Image w-[100px]">
         <img
           className="Image bg-no-repeat bg-contain bg-center relative top-[10px] h-[90px] w-[90px] rounded-md"
           src={IMAGE_URL + Restaurant?.cloudinaryImageId}
         />
-        <p className=" bg-white border-opacity-50 border-[1px] text-[12px]  font-[900] w-[55px] py-[2px] px-[4px]  text-[#ed5e0e] rounded-md shadow-md relative left-[17px] bottom-[5px]">
+        <div className=" bg-white border-opacity-50 border-[1px] text-[8px]  font-[900] w-7/12 h-fit p-0.5  text-[#ed5e0e] rounded-md shadow-md relative left-[13px] bottom-[5px]">
           {Restaurant?.aggregatedDiscountInfo.header}
-        </p>
+        </div>
       </div>
       <div className="Search-Result-Restaurant?-info  flex flex-col overflow-hidden  flex-wrap w-[250px] h-[100px] ">
         <p className="text-[15px] font-[700] text-[#3e4152]">

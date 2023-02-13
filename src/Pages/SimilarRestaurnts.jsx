@@ -5,18 +5,18 @@ import { IMAGE_URL } from "../Utilities/constants";
 const SimilarRestaurnts = ({ Restaurant }) => {
   console.log(Restaurant);
   return (
-    <Link to="/RestaurantPage" state={{ id: Restaurant?.info?.id }}>
+    <Link to="/restaurant-page" state={{ id: Restaurant?.info?.id }}>
       <div className="Search-Result-Restaurant-Card  border-[1px] w-[300px] h-[150px] flex justify-around items-center p-2 my-2 rounded-md bg-white overflow-hidden">
         <div className="Search-Result-Restaurant">
           <div className="Search-Result-Restaurant-Image w-[100px] ">
             <img
               className="h-[80px] w-[80px] bg-contain bg-center bg-no-repeat rounded-md"
-              src={IMAGE_URL+Restaurant?.info?.cloudinaryImageId}
+              src={IMAGE_URL + Restaurant?.info?.cloudinaryImageId}
             />
           </div>
-          <p className=" bg-white border-opacity-50 border-[1px] text-[12px] font-[900] w-[55px]  px-[4px]  text-[#ed5e0e] rounded-md shadow-md relative left-[10px] bottom-[15px]">
+          <div className="  bg-white border-opacity-50 border-[1px] text-[9px]  font-[900] w-fit py-[2px] px-[4px]  text-[#ed5e0e] rounded-md shadow-md relative left-[14px] flex justify-center items-center bottom-[8px] h-fit p-0.5">
             {Restaurant?.info?.aggregatedDiscountInfo.header}
-          </p>
+          </div>
         </div>
         <div className="Search-Result-Restaurant-info w-[180px]">
           <p className="text-[15px] font-[600] text-[#3e4152]">

@@ -60,3 +60,15 @@ export const LANDING_PAGE_IMG = "https://res.cloudinary.com/swiggy/image/upload/
 export const CITY_NAMES =['Delhi', 'Mumbai', ,'Bangalore', 'Kolkata', 'Hyderabad', 'Ahmedabad', 'Chennai', 'Pune', 'Jaipur',"Jammu", 'Surat','Srinagar',              'Lucknow', 'Nagpur', 'Visakhapatnam', 'Bhopal', 'Patna', 'Ludhiana', 'Agra', 'Nashik', 'Vadodara', 'Ghaziabad',              'Rajkot', 'Meerut', 'Amritsar', 'Varanasi', 'Aurangabad', 'Jabalpur', 'Gwalior', 'Vijayawada', 'Jodhpur','Mount Tabu','Patna','Bihar','Kanpur'
 
 ]
+export const ABOUT_US = `Manik Sharma is an aspiring front-end developer who specializes in JavaScript and React. He has a passion for web development and a deep understanding of the latest technologies and trends in the industry. With a focus on user experience and accessibility, Manik brings creativity and technical expertise to every project he works on.
+
+Manik has extensive experience in JavaScript, a versatile programming language that is widely used for front-end development. He has a strong understanding of the language's core concepts and is skilled in using JavaScript to create dynamic and interactive web experiences.
+
+In addition to JavaScript, Manik also has expertise in React, a popular JavaScript library for building user interfaces. He has a deep understanding of React's component-based architecture and is skilled in using the library to build complex and scalable applications. He is familiar with the latest developments in React, including the use of Hooks and the development of reactive user interfaces.
+
+Manik is committed to creating accessible and user-friendly web experiences. He understands the importance of accessibility for people with disabilities and is skilled in implementing accessibility features such as keyboard navigation and alternative text for images.
+
+Manik is a proactive problem-solver and a dedicated team player. He is always striving to improve his skills and stay up-to-date with the latest developments in front-end development. He is driven by a passion for creating visually stunning
+
+
+.`

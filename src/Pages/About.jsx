@@ -1,10 +1,11 @@
 import React from "react";
+import { ABOUT_US } from "../Utilities/constants";
 
 const About = () => {
   return (
-    <>
-      <h1>About</h1>
-    </>
+    <div className=" py-32 text-[18px] tracking-wide font-[100] px-36">
+      <h1>{ABOUT_US}</h1>
+    </div>
   );
 };
 

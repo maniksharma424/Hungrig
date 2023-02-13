@@ -20,8 +20,6 @@ const MiniCart = () => {
   let cartTotal = 0;
   let totalitems = 0;
 
-  if (cartItems?.length <= 0) return <p>nithing in cart</p>;
-  else
     return (
       <div className="mini-Checkout-Box sticky ml-[115px] z-[1] top-[340px]    w-[300px] bg-white h-fit p-3">
         <div className="Restaurant-info w-[full] px-4  flex justify-start items-center  ">

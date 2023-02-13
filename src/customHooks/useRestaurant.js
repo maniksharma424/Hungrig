@@ -40,8 +40,7 @@ const useRestaurant = (resturants, setRestaurants) => {
     removeListener
   ) => {
     if (
-      window.innerHeight + window.scrollY >=
-      document.body.offsetHeight - 600
+      (window.scrollY + window.innerHeight >   document.body.offsetHeight - 900) && (window.scrollY + window.innerHeight <=  document.body.offsetHeight)
     ) {
       console.log("on bottom");
       console.log(cordinates);

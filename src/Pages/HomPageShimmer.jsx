@@ -15,8 +15,8 @@ const HomPageShimmer = () => {
         id="Available-Resturants-window"
         className="Available-Resturants  w-full flex  justify-center items-center"
       >
-        <div className="shiimer-body  w-11/12 relative left-[20px] top-[100px]">
-          <ShimmerSimpleGallery card imageHeight={200} caption />
+        <div className="shiimer-body  w-[1200px] px-6 py-28">
+          <ShimmerSimpleGallery card imageHeight={150} caption />
         </div>
       </div>
     </div>
