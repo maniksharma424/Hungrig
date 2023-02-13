@@ -44,4 +44,3 @@ Open your favorite code editor and run locally!
 <br />
 Let's connect :)
 
-hello fakeSea app
