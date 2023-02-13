@@ -30,7 +30,7 @@ Open your favorite code editor and run locally!
 - Cart Management
 - GeoCoding
 
-<img width="600" height='500' alt="Screenshot 2023-02-13 at 9 29 31 PM" src="https://user-images.githubusercontent.com/115614705/218512412-be1d4973-780d-4396-b8e6-77faaa6a4887.png">
+<img width="1000" height='500' alt="Screenshot 2023-02-13 at 9 29 31 PM" src="https://user-images.githubusercontent.com/115614705/218512412-be1d4973-780d-4396-b8e6-77faaa6a4887.png">
 
 
 
