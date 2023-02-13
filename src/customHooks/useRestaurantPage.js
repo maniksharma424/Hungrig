@@ -29,12 +29,12 @@ const useRestaurantPage = (resturantID, setMenu, setFilteredMenu) => {
       signal
     )
       .then((res) => res.json())
-      .catch((err) => console.log(err));
+      .catch((err) => {throw new Error('Something Went Wrong')});
     setResturantData(response?.data);
 
     setMenu(Object.values(response?.data?.menu?.items));
     setFilteredMenu(Object.values(response?.data?.menu?.items));
-    console.log(response.data);
+
   };
   return resturantData;
 };

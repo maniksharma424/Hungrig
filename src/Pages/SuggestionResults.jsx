@@ -1,6 +1,5 @@
 import React from "react";
 import SuggestedResturantCard from "./SuggestedResturantCard";
-import { getQueryData } from "../Utilities/utils";
 import { ShimmerCategoryList } from "react-shimmer-effects";
 const SuggestionResults = ({
   suggestedResturants,

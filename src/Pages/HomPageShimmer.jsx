@@ -1,6 +1,6 @@
 import React from "react";
-import { ShimmerThumbnail } from "react-shimmer-effects";
-import {  ShimmerSimpleGallery } from "react-shimmer-effects";
+import { ShimmerThumbnail,ShimmerSimpleGallery } from "react-shimmer-effects";
+
 
 const HomPageShimmer = () => {
   return (

@@ -18,6 +18,7 @@ scrollTo(0,0)
     setFilteredMenu
   );
 
+
   if (resturantData <= 0) return <RestaurantPageShimmer />;
   else
     return (

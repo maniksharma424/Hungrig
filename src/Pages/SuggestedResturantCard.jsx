@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { IMAGE_URL } from "../Utilities/constants";
-import SearchResults from "./SearchResults";
+
 
 const SuggestedResturantCard = ({ foodItem }) => {
   return (

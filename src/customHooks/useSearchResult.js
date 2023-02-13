@@ -16,9 +16,7 @@ export const useSearchResult = (item)=>{
         `)
             .then((res) => res.json())
             .then((res) => res?.data?.cards[1]?.groupedCard?.cardGroupMap)
-            .catch((err) => console.log(err));
-      
-        console.log({ ...queryData });
+            .catch((err) => {throw new Error('Something Went Wrong')});
       
         setState({ ...queryData });
       };

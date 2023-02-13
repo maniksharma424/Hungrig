@@ -1,4 +1,3 @@
-import React from "react";
 import { ABOUT_US } from "../Utilities/constants";
 
 const About = () => {

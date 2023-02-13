@@ -1,5 +1,3 @@
-import React from "react";
-
 import { addToCart } from "../Utilities/helpers";
 import { IMAGE_URL } from "../Utilities/constants";
 import { useState } from "react";
@@ -67,7 +65,6 @@ const ResultDish = ({ Dish }) => {
           className=" bg-white border-opacity-50 border-[1px] border-slate-500 px-4 text-green-600 shadow-md relative left-[9px] bottom-[15px]"
           onClick={(e) => {
             e.preventDefault();
-            console.log("hii");
             addToCart({
               dish: Dish?.info,
               restaurant: Dish?.restaurant?.info,

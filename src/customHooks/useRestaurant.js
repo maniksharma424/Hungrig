@@ -1,14 +1,10 @@
 import { useState, useEffect, useContext } from "react";
 import { locationContext } from "../Utilities/MyApp";
 import { ShimmerThumbnail } from "react-shimmer-effects";
-// import { getMoreRestaurant } from "../Utilities/helpers";
 
 const useRestaurant = (resturants, setRestaurants) => {
   const [offset, setOffset] = useState(31);
   const [flag, setflag] = useState(true);
-
-  console.log("userestaurant called");
-  console.log(offset);
 
   const cordinates = useContext(locationContext);
 
@@ -25,14 +21,13 @@ const useRestaurant = (resturants, setRestaurants) => {
   }, [cordinates]);
 
   const removeListener = () => {
-    console.log("sliced");
     window.onscroll = null;
     const newArray = resturants.slice(0, -12);
     setRestaurants(newArray);
     setflag(false);
   };
 
-  const usegetRestaurants = (
+  const fetchMoreRestaurants = (
     setRestaurants,
     offset,
     setOffset,
@@ -40,19 +35,17 @@ const useRestaurant = (resturants, setRestaurants) => {
     removeListener
   ) => {
     if (
-      (window.scrollY + window.innerHeight >   document.body.offsetHeight - 900) && (window.scrollY + window.innerHeight <=  document.body.offsetHeight)
+      window.scrollY + window.innerHeight > document.body.offsetHeight - 900 &&
+      window.scrollY + window.innerHeight <= document.body.offsetHeight
     ) {
-      console.log("on bottom");
-      console.log(cordinates);
-      console.log(offset);
-
       const getResturants = async () => {
-        // this is updating branch in master branch cordinates are added to fetch request
         const fetchResturants = await fetch(
           `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offset}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
         )
           .then((res) => res.json())
-          .catch((err) => console.log(err));
+          .catch((err) => {
+            throw new Error("Something Went Wrong");
+          });
 
         const moreResturants = await fetchResturants?.data?.cards;
         if (moreResturants) {
@@ -62,9 +55,6 @@ const useRestaurant = (resturants, setRestaurants) => {
             ...prevItems.slice(prevItems.length - 12),
           ]);
           setOffset(offset + 16);
-          console.log("setting states");
-
-          console.log(moreResturants);
         } else {
           removeListener();
         }
@@ -73,7 +63,7 @@ const useRestaurant = (resturants, setRestaurants) => {
     } else null;
   };
 
-  const getMoreRestaurant = throttle(usegetRestaurants, 1000);
+  const getMoreRestaurant = throttle(fetchMoreRestaurants, 1000);
   function throttle(fn, wait) {
     let lastCall = 0;
     return function (...args) {
@@ -88,8 +78,6 @@ const useRestaurant = (resturants, setRestaurants) => {
   const setEvenlistener = () => {
     if ((offset >= 31) & (flag === true)) {
       window.onscroll = () => {
-        console.log("scrolled");
-
         getMoreRestaurant(
           setRestaurants,
           offset,
@@ -110,7 +98,9 @@ const useRestaurant = (resturants, setRestaurants) => {
       signal
     )
       .then((res) => res.json())
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        throw new Error("Something Went Wrong");
+      });
 
     setRestaurants([
       ...resturantDataSwiggy?.data?.cards,

@@ -1,11 +1,8 @@
 import SimilarRestaurnts from "./SimilarRestaurnts";
 import SearchResultResturantCard from "./SearchResultResturantCard";
 import { ShimmerPostItem } from "react-shimmer-effects";
-import { useLocation } from "react-router-dom";
-
+import { useLocation,Navigate  } from "react-router-dom";
 import { useState } from "react";
-
-import { Navigate } from "react-router-dom";
 import { useSearchResult } from "../customHooks/useSearchResult";
 import SearchPageSearchBox from "./SearchPageSearchBox";
 const SearchResults = () => {

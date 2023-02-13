@@ -1,6 +1,6 @@
 import React from 'react';
-import { CITY_NAMES, states } from '../Utilities/constants';
-
+import { CITY_NAMES } from '../Utilities/constants';
+ 
 
 const Footer = () => (
 <div className="footer w-full bg-black p-10 ">
@@ -14,7 +14,7 @@ const Footer = () => (
         </ul>
       </div>
           <hr className='bg-white mb-5' />
-      <span className='p-1 ml-[500px]'>&copy; {new Date().getFullYear()} Food Villa</span>
+      <span className='p-1 ml-[450px]'>&copy; {new Date().getFullYear()} Food Villa</span>
       <span className='p-1'>
         Built with <span role="img" aria-label="love"> ❤️ </span>by Manik Sharma 
       </span>

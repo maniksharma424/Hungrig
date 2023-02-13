@@ -14,14 +14,14 @@ import { createContext, useEffect, useState } from "react";
 export const locationContext = createContext();
 export const getLocation = (setState) => {
   navigator.geolocation.getCurrentPosition(
-    (pos) => setState(pos.coords),
-    (err) => alert('allow location to see rest near u')
+    (pos) => {setState(pos.coords)
+    return pos.coords},
+    (err) => { throw new Error('allow location to see rest near u')}
   );
 };
 const App = () => {
   const [location, setLocation] = useState({});
   
-
   useEffect(() => {
     getLocation(setLocation);
   }, []);

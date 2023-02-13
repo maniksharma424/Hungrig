@@ -14,7 +14,7 @@ export const useAddress = () => {
         signal
       )
         .then((res) => res.json())
-        .catch((err) => null);
+        .catch((err) => {throw new Error('Something Went Wrong')});
       setAddress(location);
     };
     getAddress();

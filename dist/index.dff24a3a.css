@@ -467,6 +467,10 @@ img, video {
   left: 12px;
 }
 
+.top-\[\] {
+  top: ;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -625,6 +629,14 @@ img, video {
 
 .ml-2 {
   margin-left: .5rem;
+}
+
+.ml-\[470px\] {
+  margin-left: 470px;
+}
+
+.ml-\[450px\] {
+  margin-left: 450px;
 }
 
 .flex {

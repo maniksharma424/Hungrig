@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import { decrement } from "../Utilities/helpers";
-import { addToCart } from "../Utilities/helpers";
+import  { useState } from "react";
+import { addToCart,decrement } from "../Utilities/helpers";
 
 const CartItem = ({ cartItem, updateParent }) => {
   const [count, setCount] = useState(cartItem?.qty);
-  console.log(cartItem);
+
   return (
     <div className="Item-info flex justify-between h-fit  items-center  mt-3">
       <div className="name w-1/2  ">

@@ -1,11 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import {
-  FAST_DEL_IMG,
-  LANDING_PAGE_IMG,
-  MIN_ORDER_IMG,
-  SERVICES_IMG_CLASSNAME,
-  TRACK_ORDER_IMG,
+import {FAST_DEL_IMG,LANDING_PAGE_IMG,MIN_ORDER_IMG,SERVICES_IMG_CLASSNAME,TRACK_ORDER_IMG,
 } from "../Utilities/constants";
 import { getLocation, locationContext } from "../Utilities/MyApp";
 
@@ -62,8 +57,8 @@ const LandingPage = () => {
           <img
             className="w-full h-full bg-center bg-contain bg-no-repeat"
             src={LANDING_PAGE_IMG}
-            alt=""
-            srcset=""
+            alt="image"
+
           />
         </div>
       </div>
@@ -73,8 +68,8 @@ const LandingPage = () => {
           <img
             className="h-[199px] w-[115px] bg-center bg-contain bg-no-repeat"
             src={MIN_ORDER_IMG}
-            alt=""
-            srcset=""
+            alt="image"
+
           />
           <p className="text-[20px] font-[900] text-white">No minimum order</p>
           <p className="text-[#e0cbc1] text-[15px]">
@@ -88,8 +83,8 @@ const LandingPage = () => {
           <img
             className="h-[199px] w-[115px] bg-center bg-contain bg-no-repeat"
             src={TRACK_ORDER_IMG}
-            alt=""
-            srcset=""
+            alt="image"
+
           />
           <p className="text-[20px] font-[900] text-white">
             Live Order Tracking
@@ -105,8 +100,8 @@ const LandingPage = () => {
           <img
             className="h-[199px] w-[115px] bg-center bg-contain bg-no-repeat"
             src={FAST_DEL_IMG}
-            alt=""
-            srcset=""
+            alt="image"
+
           />
           <p className="text-[20px] font-[900] text-white">
             Lightning-Fast Delivery

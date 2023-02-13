@@ -1,4 +1,3 @@
-import React from "react";
 import {ShimmerThumbnail,ShimmerButton,ShimmerBadge,ShimmerSectionHeader,ShimmerPostItem,
 } from "react-shimmer-effects";
 
@@ -30,7 +29,7 @@ const RestaurantPageShimmer = () => {
             ))}
         </div>
         <div className="body relative   top-[50px] w-[500px] h-[700px]">
-          {Array(4)
+          {Array(2)
             .fill(1)
             .map((item, index) => (
               <ShimmerPostItem

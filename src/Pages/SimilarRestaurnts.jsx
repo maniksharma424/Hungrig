@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { IMAGE_URL } from "../Utilities/constants";
 
 const SimilarRestaurnts = ({ Restaurant }) => {
-  console.log(Restaurant);
   return (
     <Link to="/restaurant-page" state={{ id: Restaurant?.info?.id }}>
       <div className="Search-Result-Restaurant-Card  border-[1px] w-[300px] h-[150px] flex justify-around items-center p-2 my-2 rounded-md bg-white overflow-hidden">

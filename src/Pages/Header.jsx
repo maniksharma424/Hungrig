@@ -12,7 +12,7 @@ const Header = () => {
   });
 
   const address = useAddress();
-  console.log(address);
+
   return (
     <>
       <div className="Header sticky top-0  bg-white z-10 pt-3 pb-2  px-[130px] w-full flex justify-between items-center shadow-xl">

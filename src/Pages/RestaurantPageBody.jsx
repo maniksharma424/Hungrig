@@ -1,4 +1,4 @@
-import React from "react";
+
 import { handleCategoryMenu } from "../Utilities/utils";
 import ResturantMenuItemCard from "./ResturantMenuItemCard";
 import MiniCart from "./MiniCart";

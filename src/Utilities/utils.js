@@ -1,13 +1,13 @@
 // get searchpage data / search resturants amd dishes data
 
-import { useState } from "react";
+
 
 const searchResturants = async (text, setState) => {
   const similarresturants = await fetch(
     `https://www.swiggy.com/dapi/restaurants/search/suggest?lat=32.681881&lng=74.906294&str=${text}&trackingId=null`
   )
     .then((res) => res.json())
-    .catch((res) => console.log(res));
+    .catch((res) => {throw new Error('Something Went Wrong')});
   setState(similarresturants?.data?.suggestions);
 };
 const debounce = (callback, delay) => {

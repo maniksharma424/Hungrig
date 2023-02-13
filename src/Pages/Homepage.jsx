@@ -1,12 +1,12 @@
-import React, { useContext,useState } from "react";
+import {useState } from "react"
 import Body from "./Body";
 
 import { ResturantContext } from "../Contexts/ContextResturant";
 import Carousel from "./Carousel";
 import useRestaurant from "../customHooks/useRestaurant";
-import { locationContext } from "../Utilities/MyApp";
+
 import HomPageShimmer from "./HomPageShimmer";
-import { getMoreRestaurant } from "../Utilities/helpers";
+
 
 
 export const Homepage = () => {
