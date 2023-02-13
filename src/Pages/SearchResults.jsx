@@ -57,19 +57,19 @@ const SearchResults = () => {
                   )}
                 </>
               ) : (
-                <div className="p-[10px] flex flex-wrap justify-around absolute w-[700px] items-center top-[200px]">
-                  {Array(5)
+                <div className="p-[10px] flex flex-wrap justify-between absolute w-[700px] items-center top-[200px]">
+                  {Array(4)
                     .fill(1)
                     .map((val, index) => (
-                      <li className="w-[300px] h-[300px] mb-4">
+                      <li className="w-[300px] h-[250px] mb-4">
                         <ShimmerPostItem
                           key={index}
                           card
                           title
                           cta
                           imageType="thumbnail"
-                          imageWidth={50}
-                          imageHeight={50}
+                          imageWidth={40}
+                          imageHeight={40}
                           contentCenter
                         />
                       </li>

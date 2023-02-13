@@ -35,7 +35,7 @@ const useRestaurant = (resturants, setRestaurants) => {
     removeListener
   ) => {
     if (
-      window.scrollY + window.innerHeight > document.body.offsetHeight - 900 &&
+      window.scrollY + window.innerHeight > document.body.offsetHeight - 980 &&
       window.scrollY + window.innerHeight <= document.body.offsetHeight
     ) {
       const getResturants = async () => {
