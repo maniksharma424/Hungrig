@@ -2,42 +2,45 @@ import { useState, useEffect } from "react";
 import CartItem from "./CartItem";
 import { IMAGE_URL } from "../Utilities/constants";
 import EmptyCart from "./EmptyCart";
+import { useSelector } from "react-redux";
+import Store from "../Utilities/Store";
 export const Cart = () => {
-  const [cartItems, setCartItems] = useState([]);
-  useEffect(() => {
-    getCartItems(setCartItems);
-  }, []);
-  const getCartItems = (setState) => {
-    if (JSON.parse(localStorage.getItem("orders"))) {
-      setState(JSON.parse(localStorage.getItem("orders")));
-    } else setCartItems([]);
-  };
-  const handleUpdate = () => {
-    getCartItems(setCartItems);
-  };
-  let cartTotal = 0;
+  // const [cartItems, setCartItems] = useState([]);
+  // useEffect(() => {
+  //   getCartItems(setCartItems);
+  // }, []);
+  // const getCartItems = (setState) => {
+  //   if (JSON.parse(localStorage.getItem("orders"))) {
+  //     setState(JSON.parse(localStorage.getItem("orders")));
+  //   } else setCartItems([]);
+  // };
+  // const handleUpdate = () => {
+  //   getCartItems(setCartItems);
+  // };
+  // let cartTotal = 0;
+  
+  const cartItems = useSelector(Store=>Store.cart.items)
 
   if (cartItems?.length <= 0) return <EmptyCart/>;
-  else
-    return (
 
-
-      <div className='cart w-full h-fit flex-col flex justify-center items-center  py-14 px-10'>
+  return (
+    <div className="cart w-full h-fit flex-col flex justify-center items-center  py-14 px-10">
       <div className="Checkout-Box rounded-sm  w-[1120px] bg-white h-fit">
         <div className="Restaurant-info w-[full] h-[100px] px-4 pt-4 flex justify-start items-center  ">
           <div className="image">
             <img
               className="Image rounded-md bg-no-repeat bg-center bg-contain h-[80px] w-[80px]"
-              src={IMAGE_URL + cartItems[0]?.restaurant?.cloudinaryImageId}
+              // src={IMAGE_URL + cartItems[0]?.restaurant?.cloudinaryImageId}
             />
+            /*{" "}
           </div>
           <div className="Restaurant-Info ml-4">
             <p className="text-[18px] font-[900px] text-[#3e4152]">
-              {cartItems[0]?.restaurant?.name}
+              {/* {cartItems[0]?.restaurant?.name} */}
             </p>
 
             <p className="text-[12px] font-[100px]">
-              {cartItems[0]?.restaurant?.locality}
+              {/* {cartItems[0]?.restaurant?.locality} */}
             </p>
           </div>
         </div>
@@ -46,7 +49,7 @@ export const Cart = () => {
             {cartItems?.map((item, index) => {
               return (
                 <li key={index}>
-                  <CartItem updateParent={handleUpdate} cartItem={item} />
+                  <CartItem cartItem={item} />
                 </li>
               );
             })}
@@ -77,12 +80,12 @@ export const Cart = () => {
             <h1>Bill details</h1>
             <p className="flex justify-between my-1 text-[#535665] font-thin text-[13px]">
               <span>
-                Item Total
+                {/* Item Total
                 {cartItems.map((item) => {
                   cartTotal += item?.dish?.price * item?.qty;
-                })}{" "}
+                })}{" "} */}
               </span>
-              <span>{cartTotal / 100}</span>
+              {/* <span>{cartTotal / 100}</span> */}
             </p>
             <p className="flex justify-between my-1 font-thin">
               <span className="text-[#535665] text-[13px]">
@@ -100,15 +103,16 @@ export const Cart = () => {
             <hr className="border-black border-[.5px] " />
             <p className="flex justify-between mt-3 font-[600] text-[13px] ">
               <span>To Pay</span>
-              <span>{cartTotal / 100 + 35.7}</span>
+              {/* <span>{cartTotal / 100 + 35.7}</span> */}
             </p>
           </div>
         </div>
         <div className="Place-Order w-[1125px]    p-4">
-            <button className='w-full p-4 bg-[#60b246] rounded-sm text-white text-[20px]'>Place Order</button>
+          <button className="w-full p-4 bg-[#60b246] rounded-sm text-white text-[20px]">
+            Place Order
+          </button>
         </div>
       </div>
-      </div>
-
-    );
+    </div>
+  );
 };

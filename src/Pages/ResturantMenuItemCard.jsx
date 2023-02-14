@@ -1,8 +1,11 @@
 import { IMAGE_URL } from "../Utilities/constants";
-import { addToCart } from "../Utilities/helpers";
+import { addToCart } from "../Utilities/CartSlice";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const dispatch = useDispatch()
+
   return (
     <div className="Food-Item-Card flex justify-between items-center h-fit w-[450px] relative   m-[20px] border-b-[1px] border-slate-500 border-opacity-50">
       <div className="Food-Item-Info  relative bottom-[20px]  w-2/3 h-1/3">
@@ -53,13 +56,15 @@ const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
           <button
             className=" bg-white border-opacity-50 border-[1px] border-slate-500 p-1 px-4 text-green-600 shadow-xl relative left-[14px] bottom-[20px]"
             onClick={() => {
-              location.reload();
+              // location.reload();
 
-              addToCart({
-                dish: foodItem,
-                restaurant: RestaurantData,
-                qty: 1,
-              });
+              // addToCart({
+              //   dish: foodItem,
+              //   restaurant: RestaurantData,
+              //   qty: 1,
+              // });
+              dispatch(addToCart({info:foodItem,
+              restaurant:RestaurantData}))
             }}
           >
             ADD

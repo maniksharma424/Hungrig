@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import { IMAGE_URL } from "../Utilities/constants";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { ShimmerThumbnail } from "react-shimmer-effects";
 
 export const RestaurantCard = ({ restaurant }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+
 
   if(restaurant?.name) return (
     <>

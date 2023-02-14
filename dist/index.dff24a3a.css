@@ -1493,6 +1493,11 @@ img, video {
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
 .decoration-slate-50 {
   text-decoration-color: #f8fafc;
 }
