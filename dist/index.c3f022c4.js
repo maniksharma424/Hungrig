@@ -35976,7 +35976,7 @@ const ResturantMenuItemCard = ({ foodItem , RestaurantData  })=>{
                             }, void 0, false, {
                                 fileName: "src/Pages/ResturantMenuItemCard.jsx",
                                 lineNumber: 30,
-                                columnNumber: 9
+                                columnNumber: 11
                             }, undefined),
                             isLoaded ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                                 className: "rounded-lg w-[100px] h-[90px] bg-center bg-contain bg-no-repeat",

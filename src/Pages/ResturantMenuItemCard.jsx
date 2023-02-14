@@ -29,24 +29,20 @@ const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
       </div>
       <div className="Food-Item">
         <div className="Food-Item-Image">
-        <img
-              className="h-0 w-0"
-              src={IMAGE_URL + foodItem?.cloudinaryImageId}
-              onLoad={() => {
-                setIsLoaded(true);
-              }}
-            />
+          <img
+            className="h-0 w-0"
+            src={IMAGE_URL + foodItem?.cloudinaryImageId}
+            onLoad={() => {
+              setIsLoaded(true);
+            }}
+          />
           {isLoaded ? (
             <img
               className="rounded-lg w-[100px] h-[90px]  bg-center bg-contain bg-no-repeat"
               src={IMAGE_URL + foodItem?.cloudinaryImageId}
-             
             />
           ) : (
-            <div
-              className="rounded-lg w-[100px] h-[90px] border-none bg-[#E5F1D3]"
-              
-            />
+            <div className="rounded-lg w-[100px] h-[90px] border-none bg-[#E5F1D3]" />
           )}
         </div>
         <div className="Food-Add-Btn">
