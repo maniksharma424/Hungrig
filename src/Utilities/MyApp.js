@@ -11,6 +11,7 @@ import LandingPage from "../Pages/LandingPage";
 import ErrorElement from "../Pages/ErrorElement";
 import { createContext, useEffect, useState } from "react";
 
+
 export const locationContext = createContext();
 export const getLocation = (setState) => {
   navigator.geolocation.getCurrentPosition(

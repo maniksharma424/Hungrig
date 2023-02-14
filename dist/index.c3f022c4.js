@@ -35195,34 +35195,18 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _constants = require("../Utilities/constants");
 const About = ()=>{
-    async function makeSameOriginRequest(url, method = "GET") {
-        try {
-            const response = await fetch(url, {
-                method: method,
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                mode: "cors"
-            });
-            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-            return await response.json();
-        } catch (error) {
-            console.error(error);
-        }
-    }
-    makeSameOriginRequest("https://www.swiggy.com/dapi/restaurants/list/v5?lat= 28.550421&lng=77.121765&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING");
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: " py-32 text-[18px] tracking-wide font-[100] px-36",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
             children: (0, _constants.ABOUT_US)
         }, void 0, false, {
             fileName: "src/Pages/About.jsx",
-            lineNumber: 22,
+            lineNumber: 4,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/About.jsx",
-        lineNumber: 21,
+        lineNumber: 3,
         columnNumber: 10
     }, undefined);
 };
