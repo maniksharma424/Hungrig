@@ -14,7 +14,7 @@ const Footer = () => (
         </ul>
       </div>
           <hr className='bg-white mb-5' />
-      <span className='p-1 ml-[450px]'>&copy; {new Date().getFullYear()} Food Villa</span>
+      <span className='p-1 ml-[450px]'>&copy; {new Date().getFullYear()} Swiggy</span>
       <span className='p-1'>
         Built with <span role="img" aria-label="love"> ❤️ </span>by Manik Sharma 
       </span>

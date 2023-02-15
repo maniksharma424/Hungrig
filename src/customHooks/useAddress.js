@@ -23,5 +23,5 @@ export const useAddress = () => {
   }, [cordinates]);
 
   if(address?.display_name) return address;
-  else "Location Denied"
+  else null
 };

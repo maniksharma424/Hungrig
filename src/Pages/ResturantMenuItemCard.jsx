@@ -44,7 +44,7 @@ const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
             />
           ) : (
             <div
-              className="rounded-lg w-[100px] h-[90px] border-none bg-[#E5F1D3]"
+              className="rounded-lg w-[100px] h-[90px] border-none bg-[#e8e9e6]"
               
             />
           )}

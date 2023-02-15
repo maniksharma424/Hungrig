@@ -11,6 +11,7 @@ const RestaurantPageBanner = ({ resturantData }) => {
           />
         </div>
         <div className="Resturant-Info relative h-[145px] flex flex-col justify-between right-[60px] text-white ">
+
           <p className=" text-[25px]">{resturantData?.name}</p>
           {resturantData?.cuisines?.map((item, index) => {
             return (

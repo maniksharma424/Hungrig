@@ -20,6 +20,24 @@ const useRestaurant = (resturants, setRestaurants) => {
     };
   }, [cordinates]);
 
+  // getting Restaurants on homepage didMount
+  const getResturants = async (signal, setRestaurants) => {
+    const resturantDataSwiggy = await fetch(
+      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates.latitude}&lng=${cordinates.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
+      signal
+    )
+      .then((res) => res.json())
+      .catch((err) => {
+        throw new Error("Something Went Wrong");
+      });
+
+    setRestaurants([
+      ...resturantDataSwiggy?.data?.cards,
+      ...Array(12).fill(<ShimmerThumbnail height={200} width={250} />),
+    ]);
+  };
+
+  // remove scroll listener on changing page
   const removeListener = () => {
     window.onscroll = null;
     const newArray = resturants.slice(0, -12);
@@ -27,6 +45,7 @@ const useRestaurant = (resturants, setRestaurants) => {
     setflag(false);
   };
 
+  // fetch more restaurants on scroll
   const fetchMoreRestaurants = (
     setRestaurants,
     offset,
@@ -63,6 +82,7 @@ const useRestaurant = (resturants, setRestaurants) => {
     } else null;
   };
 
+  // throttled fetch more Restaurants
   const getMoreRestaurant = throttle(fetchMoreRestaurants, 1000);
   function throttle(fn, wait) {
     let lastCall = 0;
@@ -75,6 +95,8 @@ const useRestaurant = (resturants, setRestaurants) => {
       fn(...args);
     };
   }
+
+  // setting event listener only on component did mount
   const setEvenlistener = () => {
     if ((offset >= 31) & (flag === true)) {
       window.onscroll = () => {
@@ -91,22 +113,6 @@ const useRestaurant = (resturants, setRestaurants) => {
     }
   };
   setEvenlistener();
-
-  const getResturants = async (signal, setRestaurants) => {
-    const resturantDataSwiggy = await fetch(
-      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates.latitude}&lng=${cordinates.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
-      signal
-    )
-      .then((res) => res.json())
-      .catch((err) => {
-        throw new Error("Something Went Wrong");
-      });
-
-    setRestaurants([
-      ...resturantDataSwiggy?.data?.cards,
-      ...Array(12).fill(<ShimmerThumbnail height={200} width={250} />),
-    ]);
-  };
 };
 
 export default useRestaurant;
