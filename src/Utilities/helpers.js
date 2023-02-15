@@ -1,8 +1,7 @@
 
-
 // Add an item to cart
 
- const addToCart = (Dish) => {
+export const addToCart = (Dish) => {
   // is local storage empty || first order
 
   if (localStorage.getItem("orders")) {
