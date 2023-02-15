@@ -10,9 +10,6 @@ import SearchResults from "../Pages/SearchResults";
 import LandingPage from "../Pages/LandingPage";
 import ErrorElement from "../Pages/ErrorElement";
 import { createContext, useEffect, useState } from "react";
-import { Provider } from 'react-redux'
-import Store from "./Store";
-
 
 export const locationContext = createContext();
 export const getLocation = (setState) => {
@@ -29,13 +26,11 @@ const App = () => {
     getLocation(setLocation);
   }, []);
   return (
-    <Provider store={Store}>
     <locationContext.Provider value={location}>
       <Header />
       <Outlet />
       <Footer />
     </locationContext.Provider>
-    </Provider>
   );
 };
 export const MyRouter = createBrowserRouter([
