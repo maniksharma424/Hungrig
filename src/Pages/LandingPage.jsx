@@ -131,3 +131,4 @@ return ()=> clearInterval(timer)
 };
 
 export default LandingPage;
+// review

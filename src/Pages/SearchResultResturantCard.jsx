@@ -28,3 +28,4 @@ const SearchResultResturantCard = ({ Dish, Restaurant }) => {
 };
 
 export default SearchResultResturantCard;
+// review
