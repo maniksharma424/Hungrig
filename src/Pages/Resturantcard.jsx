@@ -3,6 +3,7 @@ import { IMAGE_URL } from "../Utilities/constants";
 import { useState } from "react";
 
 import { ShimmerThumbnail } from "react-shimmer-effects";
+// for review
 
 export const RestaurantCard = ({ restaurant }) => {
   const [isLoaded, setIsLoaded] = useState(false);
