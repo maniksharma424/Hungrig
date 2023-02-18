@@ -53,10 +53,13 @@ const useRestaurant = (resturants, setRestaurants) => {
     cordinates,
     removeListener
   ) => {
-    if (
-      window.scrollY + window.innerHeight > document.body.offsetHeight - 980 &&
-      window.scrollY + window.innerHeight <= document.body.offsetHeight
-    ) {
+    // if (
+    //   window.scrollY + window.innerHeight > document.body.offsetHeight - 980 &&
+    //   window.scrollY + window.innerHeight <= document.body.offsetHeight
+    // )
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1200
+      && window.innerHeight + window.scrollY < document.body.offsetHeight ) 
+     {
       const getResturants = async () => {
         const fetchResturants = await fetch(
           `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offset}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
