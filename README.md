@@ -2,7 +2,7 @@
 <img src="https://cdn.iconscout.com/icon/free/png-256/swiggy-1613371-1369418.png" width=100 height=100/> 
 
 # Swiggy
-
+Disclaimer-Enable chrome CORS /Allow CORS in your browser
 Order food from your favourite restaurants across town in couple of steps hassle free. 
 <br>
 FoodVilla is an Indian multinational restaurant aggregator and food delivery Provider Information, menus and user-reviews of restaurants at your fingertips as well as food delivery options from partner restaurants in select cities.
