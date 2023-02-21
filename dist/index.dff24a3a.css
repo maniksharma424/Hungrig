@@ -580,10 +580,6 @@ img, video {
   height: 300px;
 }
 
-.h-\[50px\] {
-  height: 50px;
-}
-
 .h-5 {
   height: 1.25rem;
 }
@@ -594,6 +590,10 @@ img, video {
 
 .h-full {
   height: 100%;
+}
+
+.h-\[50px\] {
+  height: 50px;
 }
 
 .h-\[450px\] {
@@ -660,6 +660,10 @@ img, video {
   height: 333px;
 }
 
+.h-\[500px\] {
+  height: 500px;
+}
+
 .max-h-fit {
   max-height: -moz-fit-content;
   max-height: fit-content;
@@ -721,8 +725,8 @@ img, video {
   width: 66.6667%;
 }
 
-.w-\[90px\] {
-  width: 90px;
+.w-\[100px\] {
+  width: 100px;
 }
 
 .w-5 {
@@ -801,10 +805,6 @@ img, video {
   width: 0;
 }
 
-.w-\[100px\] {
-  width: 100px;
-}
-
 .w-\[210px\] {
   width: 210px;
 }
@@ -823,6 +823,10 @@ img, video {
 
 .w-\[385px\] {
   width: 385px;
+}
+
+.w-\[90px\] {
+  width: 90px;
 }
 
 .w-7\/12 {
@@ -1011,6 +1015,10 @@ img, video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-\[\] {
+  background-color: ;
+}
+
 .bg-\[\#f5a666\] {
   --tw-bg-opacity: 1;
   background-color: rgb(245 166 102 / var(--tw-bg-opacity));
@@ -1054,6 +1062,10 @@ img, video {
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
+}
+
+.bg-\[url\(\'\/src\/asset\/logo\.jpeg\'\)\] {
+  background-image: url("logo.e4b41bb0.jpeg");
 }
 
 .bg-contain {

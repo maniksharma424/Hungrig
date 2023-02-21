@@ -34387,10 +34387,6 @@ const useRestaurant = (resturants, setRestaurants)=>{
     };
     // fetch more restaurants on scroll
     const fetchMoreRestaurants = (setRestaurants, offset, setOffset, cordinates, removeListener)=>{
-        // if (
-        //   window.scrollY + window.innerHeight > document.body.offsetHeight - 980 &&
-        //   window.scrollY + window.innerHeight <= document.body.offsetHeight
-        // )
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1200 && window.innerHeight + window.scrollY < document.body.offsetHeight) {
             const getResturants = async ()=>{
                 const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offset}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>{
@@ -36407,10 +36403,8 @@ const Header = ()=>{
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/homePage",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "logo w-[90px] h-[50px]",
-                                src: "https://1000logos.net/wp-content/uploads/2021/05/Swiggy-logo.png",
-                                alt: " logo"
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "logo w-[100px] h-[80px] bg-no-repeat bg-contain bg-center bg-[url('/src/asset/logo.jpeg')]"
                             }, void 0, false, {
                                 fileName: "src/Pages/Header.jsx",
                                 lineNumber: 15,
@@ -36438,14 +36432,14 @@ const Header = ()=>{
                                                 children: address?.address?.country
                                             }, void 0, false, {
                                                 fileName: "src/Pages/Header.jsx",
-                                                lineNumber: 18,
-                                                columnNumber: 175
+                                                lineNumber: 22,
+                                                columnNumber: 19
                                             }, undefined)
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/Header.jsx",
-                                        lineNumber: 18,
-                                        columnNumber: 109
+                                        lineNumber: 20,
+                                        columnNumber: 17
                                     }, undefined)
                                 ]
                             }, void 0, true, {
@@ -36457,8 +36451,8 @@ const Header = ()=>{
                                 children: "Fetching Location ... "
                             }, void 0, false, {
                                 fileName: "src/Pages/Header.jsx",
-                                lineNumber: 18,
-                                columnNumber: 232
+                                lineNumber: 24,
+                                columnNumber: 25
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Pages/Header.jsx",
@@ -36481,14 +36475,14 @@ const Header = ()=>{
                                     className: "fa-solid fa-magnifying-glass"
                                 }, void 0, false, {
                                     fileName: "src/Pages/Header.jsx",
-                                    lineNumber: 23,
+                                    lineNumber: 29,
                                     columnNumber: 13
                                 }, undefined),
                                 " Search"
                             ]
                         }, void 0, true, {
                             fileName: "src/Pages/Header.jsx",
-                            lineNumber: 22,
+                            lineNumber: 28,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -36496,7 +36490,7 @@ const Header = ()=>{
                             children: "AboutUs"
                         }, void 0, false, {
                             fileName: "src/Pages/Header.jsx",
-                            lineNumber: 25,
+                            lineNumber: 31,
                             columnNumber: 11
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
@@ -36507,7 +36501,7 @@ const Header = ()=>{
                                         className: "fa-sharp fa-solid fa-cart-shopping fa-xl"
                                     }, void 0, false, {
                                         fileName: "src/Pages/Header.jsx",
-                                        lineNumber: 29,
+                                        lineNumber: 35,
                                         columnNumber: 15
                                     }, undefined),
                                     cartLength === 0 ? null : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -36515,24 +36509,24 @@ const Header = ()=>{
                                         children: cartLength
                                     }, void 0, false, {
                                         fileName: "src/Pages/Header.jsx",
-                                        lineNumber: 31,
+                                        lineNumber: 37,
                                         columnNumber: 42
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/Pages/Header.jsx",
-                                lineNumber: 28,
+                                lineNumber: 34,
                                 columnNumber: 13
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Pages/Header.jsx",
-                            lineNumber: 27,
+                            lineNumber: 33,
                             columnNumber: 11
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Pages/Header.jsx",
-                    lineNumber: 21,
+                    lineNumber: 27,
                     columnNumber: 9
                 }, undefined)
             ]
