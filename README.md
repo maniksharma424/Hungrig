@@ -2,7 +2,7 @@
 
 
 # Hungrig
-ungrig
+
 Disclaimer-Enable chrome CORS /Allow CORS in your browser
 <br>
 Order food from your favourite restaurants across town in couple of steps hassle free. 
