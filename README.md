@@ -1,7 +1,8 @@
+<img width="100" heigth="100" alt="Screenshot 2023-02-21 at 3 11 23 PM" src="https://user-images.githubusercontent.com/115614705/220307906-a1565e47-989c-4158-9f51-f1af345ecd73.png">
 
-<img src="https://cdn.iconscout.com/icon/free/png-256/swiggy-1613371-1369418.png" width=100 height=100/> 
 
-# Swiggy
+# Hungrig
+ungrig
 Disclaimer-Enable chrome CORS /Allow CORS in your browser
 <br>
 Order food from your favourite restaurants across town in couple of steps hassle free. 
@@ -31,7 +32,7 @@ Open your favorite code editor and run locally!
 - Cart Management
 - GeoCoding
 
-<img width="1000" height='500' alt="Screenshot 2023-02-13 at 9 29 31 PM" src="https://user-images.githubusercontent.com/115614705/218512412-be1d4973-780d-4396-b8e6-77faaa6a4887.png">
+<img width="1000" height="500" alt="Screenshot 2023-02-21 at 3 03 40 PM" src="https://user-images.githubusercontent.com/115614705/220306200-232d14d7-0887-42a7-9d85-d13005d8c874.png">
 
 
 
@@ -47,5 +48,6 @@ Open your favorite code editor and run locally!
 [![Twitter URL](https://img.shields.io/twitter/url/https/twitter.com/maniksharma424.svg?style=social&label=Follow%20%40maniksharma424)](https://twitter.com/maniksharma424)
 <br />
 Let's connect :)
+
 
 
