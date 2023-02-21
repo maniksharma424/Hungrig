@@ -7,6 +7,10 @@ module.exports = {
     extend: {
       'lBlack':'#171a29'
     },
+    backgroundImage: {
+      'logo': "url('/src/asset/logo.jpeg')",
+
+    }
   },
   plugins: [
     

@@ -53,10 +53,6 @@ const useRestaurant = (resturants, setRestaurants) => {
     cordinates,
     removeListener
   ) => {
-    // if (
-    //   window.scrollY + window.innerHeight > document.body.offsetHeight - 980 &&
-    //   window.scrollY + window.innerHeight <= document.body.offsetHeight
-    // )
     if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1200
       && window.innerHeight + window.scrollY < document.body.offsetHeight ) 
      {
