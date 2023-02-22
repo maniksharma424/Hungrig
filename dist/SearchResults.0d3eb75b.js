@@ -1403,7 +1403,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "useSearchResult", ()=>useSearchResult);
 var _react = require("react");
-var _myApp = require("../Utilities/MyApp");
+var _myApp = require("../MyApp");
 var _s = $RefreshSig$();
 const useSearchResult = (item)=>{
     _s();
@@ -1431,7 +1431,7 @@ _s(useSearchResult, "vKlZJPzIxvX+MmEvEH7yUK1WxGY=");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","../Utilities/MyApp":"aw7YL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lhdeY":[function(require,module,exports) {
+},{"react":"21dqq","../MyApp":"91nZZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lhdeY":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$d680 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

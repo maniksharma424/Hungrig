@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { locationContext } from "../Utilities/MyApp";
+import { locationContext } from "../MyApp";
 export const useSearchResult = (item) => {
   const cordinates = useContext(locationContext)
   const [searchResturantResult, setSearchResturantResult] = useState([]);

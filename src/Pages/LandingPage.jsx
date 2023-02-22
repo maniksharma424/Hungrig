@@ -8,7 +8,7 @@ import {
   SERVICES_IMG_CLASSNAME,
   TRACK_ORDER_IMG,
 } from "../Utilities/constants";
-import { locationContext } from "../Utilities/MyApp";
+import { locationContext } from "../MyApp";
 import ModalContent from "./ModalContent";
 import { TEXTS, STYLE } from "../Utilities/constants";
 
