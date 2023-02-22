@@ -2,6 +2,8 @@ import { handleCategoryMenu } from "../Utilities/utils";
 import ResturantMenuItemCard from "./ResturantMenuItemCard";
 import MiniCart from "./MiniCart";
 import { EMPTY_CART_IMG } from "../Utilities/constants";
+import { useSelector } from "react-redux";
+
 
 const RestaurantPageBody = ({
   resturantData,
@@ -9,6 +11,7 @@ const RestaurantPageBody = ({
   filteredMenu,
   setFilteredMenu,
 }) => {
+  const cartItems = useSelector(store=>store.cart.items)
   return (
     <div className="Resturant-Menu-Body w-11/12    justify-start flex">
       <div className="Resturant-Categories  w-[410px] overflow-scroll  sticky top-[310px] z-10 pr-2   h-fit flex flex-col">
@@ -36,7 +39,7 @@ const RestaurantPageBody = ({
         ))}
       </div>
       <div className="mini-cart">
-        {JSON.parse(localStorage.getItem("orders")) ? (
+        {cartItems?.length >0 ? (
           <MiniCart />
         ) : (
           <div className="mini-Checkout-Box sticky ml-[115px] z-[1] top-[340px]    w-[300px] bg-white h-fit p-3 ">

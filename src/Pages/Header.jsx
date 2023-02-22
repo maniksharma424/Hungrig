@@ -1,24 +1,21 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import { useAddress } from "../customHooks/useAddress";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-  const [cartLength] = useState(() => {
-    let length = 0;
-    JSON.parse(localStorage.getItem("orders"))?.map(
-      (item) => (length += item.qty)
-    );
-    return length;
-  });
-
   const address = useAddress();
+  const cartItems = useSelector((store) => store?.cart?.items);
+  let totalItems = 0;
+  cartItems?.map((item) => {
+    totalItems += item.qty;
+  });
 
   return (
     <>
-      <div className="Header sticky top-0  bg-white z-10 pt-3 pb-2  px-[130px] w-full flex justify-between items-center shadow-xl">
+      <div className="Header sticky top-0  bg-white z-10 pt-3 pb-1  px-[130px] w-full flex justify-between items-center shadow-xl">
         <div className="header-logo w-2/3  flex items-center ">
           <Link to="/homePage">
-            <div className="logo w-[100px] h-[80px] bg-no-repeat bg-contain bg-center bg-[url('/src/asset/logo.jpeg')]"></div>
+            <div className="logo w-[100px] h-[60px] bg-no-repeat bg-contain bg-center bg-[url('/src/asset/logo.jpeg')]"></div>
           </Link>
           <div className="address">
             {address?.display_name ? (
@@ -39,16 +36,14 @@ const Header = () => {
             <i className="fa-solid fa-magnifying-glass"></i> Search
           </Link>
           <Link to="/aboutUs">AboutUs</Link>
-
+          {totalItems > 0 ? (
+            <div className="rounded-[10px] bottom-9 right-[165px] bg-white h-5 w-5 m-0 pt-[2px] pl-[6px] font-[700]  absolute text-[10px]  border-[#fc8019] border-[1px] text-[#fc8019] ">
+              {totalItems}
+            </div>
+          ) : null}
           <Link to="/cart">
             <div>
               <i className="fa-sharp fa-solid fa-cart-shopping fa-xl"></i>
-
-              {cartLength === 0 ? null : (
-                <div className="cart-length rounded-[10px] bottom-10 right-[165px] bg-white h-5 w-5 m-0 pt-[2px] pl-[6px] font-[700]  absolute text-[10px]  border-[#fc8019] border-[1px] text-[#fc8019] ">
-                  {cartLength}
-                </div>
-              )}
             </div>
           </Link>
         </div>

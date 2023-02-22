@@ -990,13 +990,15 @@ try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _helpers = require("../Utilities/helpers");
 var _constants = require("../Utilities/constants");
 var _react = require("react");
+var _reactRedux = require("react-redux");
+var _cartSlice = require("../Utilities/cartSlice");
 var _s = $RefreshSig$();
 const ResultDish = ({ Dish  })=>{
     _s();
     const [isLoaded, setIsLoaded] = (0, _react.useState)(false);
+    const dispatch = (0, _reactRedux.useDispatch)();
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "Search-Result-Dish-Card bg-white w-[300px] p-2 m-4 rounded-lg h-[200px] flex hover:cursor-pointer justify-evenly ",
         children: [
@@ -1011,7 +1013,7 @@ const ResultDish = ({ Dish  })=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/Pages/ResultDish.jsx",
-                        lineNumber: 10,
+                        lineNumber: 12,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -1026,7 +1028,7 @@ const ResultDish = ({ Dish  })=>{
                                                 className: "fa-regular fa-star fa-small"
                                             }, void 0, false, {
                                                 fileName: "src/Pages/ResultDish.jsx",
-                                                lineNumber: 17,
+                                                lineNumber: 19,
                                                 columnNumber: 17
                                             }, undefined),
                                             " ",
@@ -1034,7 +1036,7 @@ const ResultDish = ({ Dish  })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/ResultDish.jsx",
-                                        lineNumber: 16,
+                                        lineNumber: 18,
                                         columnNumber: 55
                                     }, undefined) : Dish?.restaurant?.info?.avgRating > 2.8 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "Rating text-white pr-1 pl-1 p-0.5 text-[10px] py-[3px] px-[2px] bg-[#db7c38]",
@@ -1043,7 +1045,7 @@ const ResultDish = ({ Dish  })=>{
                                                 className: "fa-regular fa-star fa-small"
                                             }, void 0, false, {
                                                 fileName: "src/Pages/ResultDish.jsx",
-                                                lineNumber: 20,
+                                                lineNumber: 22,
                                                 columnNumber: 17
                                             }, undefined),
                                             " ",
@@ -1051,7 +1053,7 @@ const ResultDish = ({ Dish  })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/ResultDish.jsx",
-                                        lineNumber: 19,
+                                        lineNumber: 21,
                                         columnNumber: 67
                                     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "Rating text-slate-400 text-[10px] py-[3px] px-[2px] ",
@@ -1060,7 +1062,7 @@ const ResultDish = ({ Dish  })=>{
                                                 className: "fa-regular fa-star fa-small"
                                             }, void 0, false, {
                                                 fileName: "src/Pages/ResultDish.jsx",
-                                                lineNumber: 23,
+                                                lineNumber: 25,
                                                 columnNumber: 17
                                             }, undefined),
                                             " ",
@@ -1068,13 +1070,13 @@ const ResultDish = ({ Dish  })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/ResultDish.jsx",
-                                        lineNumber: 22,
+                                        lineNumber: 24,
                                         columnNumber: 25
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/Pages/ResultDish.jsx",
-                                lineNumber: 14,
+                                lineNumber: 16,
                                 columnNumber: 11
                             }, undefined),
                             " ",
@@ -1086,18 +1088,18 @@ const ResultDish = ({ Dish  })=>{
                                 ]
                             }, void 0, true, {
                                 fileName: "src/Pages/ResultDish.jsx",
-                                lineNumber: 27,
+                                lineNumber: 29,
                                 columnNumber: 11
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Pages/ResultDish.jsx",
-                        lineNumber: 13,
+                        lineNumber: 15,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {}, void 0, false, {
                         fileName: "src/Pages/ResultDish.jsx",
-                        lineNumber: 31,
+                        lineNumber: 33,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -1105,7 +1107,7 @@ const ResultDish = ({ Dish  })=>{
                         children: Dish?.info?.name
                     }, void 0, false, {
                         fileName: "src/Pages/ResultDish.jsx",
-                        lineNumber: 32,
+                        lineNumber: 34,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -1116,7 +1118,7 @@ const ResultDish = ({ Dish  })=>{
                         ]
                     }, void 0, true, {
                         fileName: "src/Pages/ResultDish.jsx",
-                        lineNumber: 33,
+                        lineNumber: 35,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -1124,13 +1126,13 @@ const ResultDish = ({ Dish  })=>{
                         children: Dish?.info?.description
                     }, void 0, false, {
                         fileName: "src/Pages/ResultDish.jsx",
-                        lineNumber: 34,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Pages/ResultDish.jsx",
-                lineNumber: 9,
+                lineNumber: 11,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -1145,7 +1147,7 @@ const ResultDish = ({ Dish  })=>{
                                 src: (0, _constants.IMAGE_URL) + Dish?.info?.imageId
                             }, void 0, false, {
                                 fileName: "src/Pages/ResultDish.jsx",
-                                lineNumber: 40,
+                                lineNumber: 42,
                                 columnNumber: 11
                             }, undefined),
                             isLoaded ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -1153,52 +1155,56 @@ const ResultDish = ({ Dish  })=>{
                                 src: (0, _constants.IMAGE_URL) + Dish?.info?.imageId
                             }, void 0, false, {
                                 fileName: "src/Pages/ResultDish.jsx",
-                                lineNumber: 41,
+                                lineNumber: 43,
                                 columnNumber: 23
                             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: " h-[80px] w-[80px] rounded-md bg-slate-200",
                                 src: (0, _constants.IMAGE_URL) + Dish?.info?.imageId
                             }, void 0, false, {
                                 fileName: "src/Pages/ResultDish.jsx",
-                                lineNumber: 41,
+                                lineNumber: 43,
                                 columnNumber: 152
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Pages/ResultDish.jsx",
-                        lineNumber: 39,
+                        lineNumber: 41,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: " bg-white border-opacity-50 border-[1px] border-slate-500 px-4 text-green-600 shadow-md relative left-[9px] bottom-[15px]",
                         onClick: (e)=>{
                             e.preventDefault();
-                            (0, _helpers.addToCart)({
+                            dispatch((0, _cartSlice.addItem)({
                                 dish: Dish?.info,
                                 restaurant: Dish?.restaurant?.info,
                                 qty: 1
-                            });
+                            }));
                         },
                         children: "Add"
                     }, void 0, false, {
                         fileName: "src/Pages/ResultDish.jsx",
-                        lineNumber: 43,
+                        lineNumber: 45,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Pages/ResultDish.jsx",
-                lineNumber: 38,
+                lineNumber: 40,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Pages/ResultDish.jsx",
-        lineNumber: 8,
+        lineNumber: 10,
         columnNumber: 10
     }, undefined);
 };
-_s(ResultDish, "IYJBVyHsXBw9t28YX/YBiMCcttM=");
+_s(ResultDish, "M/HMtkLavUfSTVTLFmznY/FjuOI=", false, function() {
+    return [
+        (0, _reactRedux.useDispatch)
+    ];
+});
 _c = ResultDish;
 exports.default = ResultDish;
 var _c;
@@ -1209,7 +1215,7 @@ $RefreshReg$(_c, "ResultDish");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Utilities/helpers":"4t9SJ","../Utilities/constants":"5t9MR","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ajT6S":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","../Utilities/cartSlice":"9wB3I"}],"ajT6S":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1300 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -1414,7 +1420,7 @@ const useSearchResult = (item)=>{
     }, []);
     // seacrh for restaurants,dishes
     const getQueryData = async (query, metaData, setState)=>{
-        const queryData = await fetch(`https://www.swiggy.com/dapi/restaurants/search/v3?lat=${cordinates.latitude}&lng=${cordinates.longitude}&str=${query}&trackingId=null&submitAction=SUGGESTION&metaData=${metaData}
+        const queryData = await fetch(`https://www.swiggy.com/dapi/restaurants/search/v3?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&str=${query}&trackingId=null&submitAction=SUGGESTION&metaData=${metaData}
         `).then((res)=>res.json()).then((res)=>res?.data?.cards[1]?.groupedCard?.cardGroupMap).catch((err)=>{
             throw new Error("Something Went Wrong");
         });
