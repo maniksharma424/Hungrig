@@ -71,3 +71,14 @@ Manik is a proactive problem-solver and a dedicated team player. He is always st
 
 .`
 export const ERROR_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/empty_404_3x_rgdw87"
+export const TEXTS = [
+  "Hungry",
+  "Cooking Gone Wrong",
+  "Movie marathon",
+  "Game night",
+  "Unexpected Guests",
+];
+export const STYLE = {
+  modalOn: "Landing-Page w-full opacity-70",
+  modalOff: "Landing-Page w-full",
+};
