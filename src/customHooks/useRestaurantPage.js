@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { locationContext } from "../Utilities/MyApp";
+import { locationContext } from "../MyApp";
 const useRestaurantPage = (resturantID, setMenu, setFilteredMenu) => {
   const [resturantData, setResturantData] = useState([]);
   const cordinates = useContext(locationContext);

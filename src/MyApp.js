@@ -1,13 +1,14 @@
-import { Homepage } from "../Pages/Homepage";
-import { Cart } from "../Pages/Cart";
-import About from "../Pages/About";
-import ResturantPage from "../Pages/ResturantPage";
+import { Homepage } from "./Pages/Homepage";
+import { Cart } from "./Pages/Cart";
+import About from "./Pages/About";
+import ResturantPage from "./Pages/ResturantPage";
 import { createBrowserRouter, Outlet } from "react-router-dom";
-import Header from "../Pages/Header";
-import Footer from "../Pages/Footer";
-import LandingPage from "../Pages/LandingPage";
-import Error from "../Pages/Error";
+import Header from "./Pages/Header";
+import Footer from "./Pages/Footer";
+import LandingPage from "./Pages/LandingPage";
+import Error from "./Pages/Error";
 import { createContext, lazy, Suspense, useEffect, useState } from "react";
+
 
 export const locationContext = createContext();
 export const getLocation = (setState) => {
@@ -22,8 +23,8 @@ export const getLocation = (setState) => {
   );
 };
 
-const SearchPage = lazy(() => import("../Pages/SearchPage"));
-const SearchResults = lazy(() => import("../Pages/SearchResults"));
+const SearchPage = lazy(() => import("./Pages/SearchPage"));
+const SearchResults = lazy(() => import("./Pages/SearchResults"));
 
 const App = () => {
   const [location, setLocation] = useState({});

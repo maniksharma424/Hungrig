@@ -2905,39 +2905,29 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _client = require("react-dom/client");
 var _clientDefault = parcelHelpers.interopDefault(_client);
+var _reactRouterDom = require("react-router-dom");
 var _myApp = require("./MyApp");
-var _myAppDefault = parcelHelpers.interopDefault(_myApp);
-const Main = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _myAppDefault.default), {}, void 0, false, {
-            fileName: "src/Main.js",
-            lineNumber: 7,
-            columnNumber: 13
-        }, undefined)
-    }, void 0, false);
-};
-_c = Main;
 const root = (0, _clientDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.StrictMode), {
-    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Main, {}, void 0, false, {
+    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.RouterProvider), {
+        router: (0, _myApp.MyRouter)
+    }, void 0, false, {
         fileName: "src/Main.js",
-        lineNumber: 13,
+        lineNumber: 6,
         columnNumber: 25
     }, undefined)
 }, void 0, false, {
     fileName: "src/Main.js",
-    lineNumber: 13,
+    lineNumber: 6,
     columnNumber: 13
 }, undefined));
-var _c;
-$RefreshReg$(_c, "Main");
 
   $parcel$ReactRefreshHelpers$e70f.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","./MyApp":"91nZZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom/client":"lOjBx","react-router-dom":"9xmpe","./MyApp":"91nZZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("7fd9a1f44b3eda05");
 
@@ -27122,30 +27112,4698 @@ module.exports = require("b0826cc88230544a");
     /* global __REACT_DEVTOOLS_GLOBAL_HOOK__ */ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== "undefined" && typeof __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop === "function") __REACT_DEVTOOLS_GLOBAL_HOOK__.registerInternalModuleStop(new Error());
 })();
 
-},{}],"91nZZ":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$cb96 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$cb96.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+},{}],"9xmpe":[function(require,module,exports) {
+/**
+ * React Router DOM v6.6.1
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const App = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {}, void 0, false);
-};
-_c = App;
-exports.default = App;
-var _c;
-$RefreshReg$(_c, "App");
-
-  $parcel$ReactRefreshHelpers$cb96.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
+parcelHelpers.export(exports, "AbortedDeferredError", ()=>(0, _reactRouter.AbortedDeferredError));
+parcelHelpers.export(exports, "Await", ()=>(0, _reactRouter.Await));
+parcelHelpers.export(exports, "MemoryRouter", ()=>(0, _reactRouter.MemoryRouter));
+parcelHelpers.export(exports, "Navigate", ()=>(0, _reactRouter.Navigate));
+parcelHelpers.export(exports, "NavigationType", ()=>(0, _reactRouter.NavigationType));
+parcelHelpers.export(exports, "Outlet", ()=>(0, _reactRouter.Outlet));
+parcelHelpers.export(exports, "Route", ()=>(0, _reactRouter.Route));
+parcelHelpers.export(exports, "Router", ()=>(0, _reactRouter.Router));
+parcelHelpers.export(exports, "RouterProvider", ()=>(0, _reactRouter.RouterProvider));
+parcelHelpers.export(exports, "Routes", ()=>(0, _reactRouter.Routes));
+parcelHelpers.export(exports, "UNSAFE_DataRouterContext", ()=>(0, _reactRouter.UNSAFE_DataRouterContext));
+parcelHelpers.export(exports, "UNSAFE_DataRouterStateContext", ()=>(0, _reactRouter.UNSAFE_DataRouterStateContext));
+parcelHelpers.export(exports, "UNSAFE_DataStaticRouterContext", ()=>(0, _reactRouter.UNSAFE_DataStaticRouterContext));
+parcelHelpers.export(exports, "UNSAFE_LocationContext", ()=>(0, _reactRouter.UNSAFE_LocationContext));
+parcelHelpers.export(exports, "UNSAFE_NavigationContext", ()=>(0, _reactRouter.UNSAFE_NavigationContext));
+parcelHelpers.export(exports, "UNSAFE_RouteContext", ()=>(0, _reactRouter.UNSAFE_RouteContext));
+parcelHelpers.export(exports, "UNSAFE_enhanceManualRouteObjects", ()=>(0, _reactRouter.UNSAFE_enhanceManualRouteObjects));
+parcelHelpers.export(exports, "createMemoryRouter", ()=>(0, _reactRouter.createMemoryRouter));
+parcelHelpers.export(exports, "createPath", ()=>(0, _reactRouter.createPath));
+parcelHelpers.export(exports, "createRoutesFromChildren", ()=>(0, _reactRouter.createRoutesFromChildren));
+parcelHelpers.export(exports, "createRoutesFromElements", ()=>(0, _reactRouter.createRoutesFromElements));
+parcelHelpers.export(exports, "defer", ()=>(0, _reactRouter.defer));
+parcelHelpers.export(exports, "generatePath", ()=>(0, _reactRouter.generatePath));
+parcelHelpers.export(exports, "isRouteErrorResponse", ()=>(0, _reactRouter.isRouteErrorResponse));
+parcelHelpers.export(exports, "json", ()=>(0, _reactRouter.json));
+parcelHelpers.export(exports, "matchPath", ()=>(0, _reactRouter.matchPath));
+parcelHelpers.export(exports, "matchRoutes", ()=>(0, _reactRouter.matchRoutes));
+parcelHelpers.export(exports, "parsePath", ()=>(0, _reactRouter.parsePath));
+parcelHelpers.export(exports, "redirect", ()=>(0, _reactRouter.redirect));
+parcelHelpers.export(exports, "renderMatches", ()=>(0, _reactRouter.renderMatches));
+parcelHelpers.export(exports, "resolvePath", ()=>(0, _reactRouter.resolvePath));
+parcelHelpers.export(exports, "useActionData", ()=>(0, _reactRouter.useActionData));
+parcelHelpers.export(exports, "useAsyncError", ()=>(0, _reactRouter.useAsyncError));
+parcelHelpers.export(exports, "useAsyncValue", ()=>(0, _reactRouter.useAsyncValue));
+parcelHelpers.export(exports, "useHref", ()=>(0, _reactRouter.useHref));
+parcelHelpers.export(exports, "useInRouterContext", ()=>(0, _reactRouter.useInRouterContext));
+parcelHelpers.export(exports, "useLoaderData", ()=>(0, _reactRouter.useLoaderData));
+parcelHelpers.export(exports, "useLocation", ()=>(0, _reactRouter.useLocation));
+parcelHelpers.export(exports, "useMatch", ()=>(0, _reactRouter.useMatch));
+parcelHelpers.export(exports, "useMatches", ()=>(0, _reactRouter.useMatches));
+parcelHelpers.export(exports, "useNavigate", ()=>(0, _reactRouter.useNavigate));
+parcelHelpers.export(exports, "useNavigation", ()=>(0, _reactRouter.useNavigation));
+parcelHelpers.export(exports, "useNavigationType", ()=>(0, _reactRouter.useNavigationType));
+parcelHelpers.export(exports, "useOutlet", ()=>(0, _reactRouter.useOutlet));
+parcelHelpers.export(exports, "useOutletContext", ()=>(0, _reactRouter.useOutletContext));
+parcelHelpers.export(exports, "useParams", ()=>(0, _reactRouter.useParams));
+parcelHelpers.export(exports, "useResolvedPath", ()=>(0, _reactRouter.useResolvedPath));
+parcelHelpers.export(exports, "useRevalidator", ()=>(0, _reactRouter.useRevalidator));
+parcelHelpers.export(exports, "useRouteError", ()=>(0, _reactRouter.useRouteError));
+parcelHelpers.export(exports, "useRouteLoaderData", ()=>(0, _reactRouter.useRouteLoaderData));
+parcelHelpers.export(exports, "useRoutes", ()=>(0, _reactRouter.useRoutes));
+parcelHelpers.export(exports, "BrowserRouter", ()=>BrowserRouter);
+parcelHelpers.export(exports, "Form", ()=>Form);
+parcelHelpers.export(exports, "HashRouter", ()=>HashRouter);
+parcelHelpers.export(exports, "Link", ()=>Link);
+parcelHelpers.export(exports, "NavLink", ()=>NavLink);
+parcelHelpers.export(exports, "ScrollRestoration", ()=>ScrollRestoration);
+parcelHelpers.export(exports, "UNSAFE_useScrollRestoration", ()=>useScrollRestoration);
+parcelHelpers.export(exports, "createBrowserRouter", ()=>createBrowserRouter);
+parcelHelpers.export(exports, "createHashRouter", ()=>createHashRouter);
+parcelHelpers.export(exports, "createSearchParams", ()=>createSearchParams);
+parcelHelpers.export(exports, "unstable_HistoryRouter", ()=>HistoryRouter);
+parcelHelpers.export(exports, "useBeforeUnload", ()=>useBeforeUnload);
+parcelHelpers.export(exports, "useFetcher", ()=>useFetcher);
+parcelHelpers.export(exports, "useFetchers", ()=>useFetchers);
+parcelHelpers.export(exports, "useFormAction", ()=>useFormAction);
+parcelHelpers.export(exports, "useLinkClickHandler", ()=>useLinkClickHandler);
+parcelHelpers.export(exports, "useSearchParams", ()=>useSearchParams);
+parcelHelpers.export(exports, "useSubmit", ()=>useSubmit);
+var _react = require("react");
+var _reactRouter = require("react-router");
+var _router = require("@remix-run/router");
+function _extends() {
+    _extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gkKU3":[function(require,module,exports) {
+function _objectWithoutPropertiesLoose(source, excluded) {
+    if (source == null) return {};
+    var target = {};
+    var sourceKeys = Object.keys(source);
+    var key, i;
+    for(i = 0; i < sourceKeys.length; i++){
+        key = sourceKeys[i];
+        if (excluded.indexOf(key) >= 0) continue;
+        target[key] = source[key];
+    }
+    return target;
+}
+const defaultMethod = "get";
+const defaultEncType = "application/x-www-form-urlencoded";
+function isHtmlElement(object) {
+    return object != null && typeof object.tagName === "string";
+}
+function isButtonElement(object) {
+    return isHtmlElement(object) && object.tagName.toLowerCase() === "button";
+}
+function isFormElement(object) {
+    return isHtmlElement(object) && object.tagName.toLowerCase() === "form";
+}
+function isInputElement(object) {
+    return isHtmlElement(object) && object.tagName.toLowerCase() === "input";
+}
+function isModifiedEvent(event) {
+    return !!(event.metaKey || event.altKey || event.ctrlKey || event.shiftKey);
+}
+function shouldProcessLinkClick(event, target) {
+    return event.button === 0 && (!target || target === "_self") && // Let browser handle "target=_blank" etc.
+    !isModifiedEvent(event) // Ignore clicks with modifier keys
+    ;
+}
+/**
+ * Creates a URLSearchParams object using the given initializer.
+ *
+ * This is identical to `new URLSearchParams(init)` except it also
+ * supports arrays as values in the object form of the initializer
+ * instead of just strings. This is convenient when you need multiple
+ * values for a given key, but don't want to use an array initializer.
+ *
+ * For example, instead of:
+ *
+ *   let searchParams = new URLSearchParams([
+ *     ['sort', 'name'],
+ *     ['sort', 'price']
+ *   ]);
+ *
+ * you can do:
+ *
+ *   let searchParams = createSearchParams({
+ *     sort: ['name', 'price']
+ *   });
+ */ function createSearchParams(init) {
+    if (init === void 0) init = "";
+    return new URLSearchParams(typeof init === "string" || Array.isArray(init) || init instanceof URLSearchParams ? init : Object.keys(init).reduce((memo, key)=>{
+        let value = init[key];
+        return memo.concat(Array.isArray(value) ? value.map((v)=>[
+                key,
+                v
+            ]) : [
+            [
+                key,
+                value
+            ]
+        ]);
+    }, []));
+}
+function getSearchParamsForLocation(locationSearch, defaultSearchParams) {
+    let searchParams = createSearchParams(locationSearch);
+    for (let key of defaultSearchParams.keys())if (!searchParams.has(key)) defaultSearchParams.getAll(key).forEach((value)=>{
+        searchParams.append(key, value);
+    });
+    return searchParams;
+}
+function getFormSubmissionInfo(target, defaultAction, options) {
+    let method;
+    let action;
+    let encType;
+    let formData;
+    if (isFormElement(target)) {
+        let submissionTrigger = options.submissionTrigger;
+        method = options.method || target.getAttribute("method") || defaultMethod;
+        action = options.action || target.getAttribute("action") || defaultAction;
+        encType = options.encType || target.getAttribute("enctype") || defaultEncType;
+        formData = new FormData(target);
+        if (submissionTrigger && submissionTrigger.name) formData.append(submissionTrigger.name, submissionTrigger.value);
+    } else if (isButtonElement(target) || isInputElement(target) && (target.type === "submit" || target.type === "image")) {
+        let form = target.form;
+        if (form == null) throw new Error('Cannot submit a <button> or <input type="submit"> without a <form>');
+         // <button>/<input type="submit"> may override attributes of <form>
+        method = options.method || target.getAttribute("formmethod") || form.getAttribute("method") || defaultMethod;
+        action = options.action || target.getAttribute("formaction") || form.getAttribute("action") || defaultAction;
+        encType = options.encType || target.getAttribute("formenctype") || form.getAttribute("enctype") || defaultEncType;
+        formData = new FormData(form); // Include name + value from a <button>, appending in case the button name
+        // matches an existing input name
+        if (target.name) formData.append(target.name, target.value);
+    } else if (isHtmlElement(target)) throw new Error('Cannot submit element that is not <form>, <button>, or <input type="submit|image">');
+    else {
+        method = options.method || defaultMethod;
+        action = options.action || defaultAction;
+        encType = options.encType || defaultEncType;
+        if (target instanceof FormData) formData = target;
+        else {
+            formData = new FormData();
+            if (target instanceof URLSearchParams) for (let [name, value] of target)formData.append(name, value);
+            else if (target != null) for (let name1 of Object.keys(target))formData.append(name1, target[name1]);
+        }
+    }
+    let { protocol , host  } = window.location;
+    let url = new URL(action, protocol + "//" + host);
+    return {
+        url,
+        method: method.toLowerCase(),
+        encType,
+        formData
+    };
+}
+const _excluded = [
+    "onClick",
+    "relative",
+    "reloadDocument",
+    "replace",
+    "state",
+    "target",
+    "to",
+    "preventScrollReset"
+], _excluded2 = [
+    "aria-current",
+    "caseSensitive",
+    "className",
+    "end",
+    "style",
+    "to",
+    "children"
+], _excluded3 = [
+    "reloadDocument",
+    "replace",
+    "method",
+    "action",
+    "onSubmit",
+    "fetcherKey",
+    "routeId",
+    "relative"
+];
+//#region Routers
+////////////////////////////////////////////////////////////////////////////////
+function createBrowserRouter(routes, opts) {
+    return (0, _router.createRouter)({
+        basename: opts == null ? void 0 : opts.basename,
+        history: (0, _router.createBrowserHistory)({
+            window: opts == null ? void 0 : opts.window
+        }),
+        hydrationData: (opts == null ? void 0 : opts.hydrationData) || parseHydrationData(),
+        routes: (0, _reactRouter.UNSAFE_enhanceManualRouteObjects)(routes)
+    }).initialize();
+}
+function createHashRouter(routes, opts) {
+    return (0, _router.createRouter)({
+        basename: opts == null ? void 0 : opts.basename,
+        history: (0, _router.createHashHistory)({
+            window: opts == null ? void 0 : opts.window
+        }),
+        hydrationData: (opts == null ? void 0 : opts.hydrationData) || parseHydrationData(),
+        routes: (0, _reactRouter.UNSAFE_enhanceManualRouteObjects)(routes)
+    }).initialize();
+}
+function parseHydrationData() {
+    var _window;
+    let state = (_window = window) == null ? void 0 : _window.__staticRouterHydrationData;
+    if (state && state.errors) state = _extends({}, state, {
+        errors: deserializeErrors(state.errors)
+    });
+    return state;
+}
+function deserializeErrors(errors) {
+    if (!errors) return null;
+    let entries = Object.entries(errors);
+    let serialized = {};
+    for (let [key, val] of entries){
+        // Hey you!  If you change this, please change the corresponding logic in
+        // serializeErrors in react-router-dom/server.tsx :)
+        if (val && val.__type === "RouteErrorResponse") serialized[key] = new (0, _router.ErrorResponse)(val.status, val.statusText, val.data, val.internal === true);
+        else if (val && val.__type === "Error") {
+            let error = new Error(val.message); // Wipe away the client-side stack trace.  Nothing to fill it in with
+            // because we don't serialize SSR stack traces for security reasons
+            error.stack = "";
+            serialized[key] = error;
+        } else serialized[key] = val;
+    }
+    return serialized;
+}
+/**
+ * A `<Router>` for use in web browsers. Provides the cleanest URLs.
+ */ function BrowserRouter(_ref) {
+    let { basename , children , window: window1  } = _ref;
+    let historyRef = _react.useRef();
+    if (historyRef.current == null) historyRef.current = (0, _router.createBrowserHistory)({
+        window: window1,
+        v5Compat: true
+    });
+    let history = historyRef.current;
+    let [state, setState] = _react.useState({
+        action: history.action,
+        location: history.location
+    });
+    _react.useLayoutEffect(()=>history.listen(setState), [
+        history
+    ]);
+    return /*#__PURE__*/ _react.createElement((0, _reactRouter.Router), {
+        basename: basename,
+        children: children,
+        location: state.location,
+        navigationType: state.action,
+        navigator: history
+    });
+}
+/**
+ * A `<Router>` for use in web browsers. Stores the location in the hash
+ * portion of the URL so it is not sent to the server.
+ */ function HashRouter(_ref2) {
+    let { basename , children , window: window1  } = _ref2;
+    let historyRef = _react.useRef();
+    if (historyRef.current == null) historyRef.current = (0, _router.createHashHistory)({
+        window: window1,
+        v5Compat: true
+    });
+    let history = historyRef.current;
+    let [state, setState] = _react.useState({
+        action: history.action,
+        location: history.location
+    });
+    _react.useLayoutEffect(()=>history.listen(setState), [
+        history
+    ]);
+    return /*#__PURE__*/ _react.createElement((0, _reactRouter.Router), {
+        basename: basename,
+        children: children,
+        location: state.location,
+        navigationType: state.action,
+        navigator: history
+    });
+}
+/**
+ * A `<Router>` that accepts a pre-instantiated history object. It's important
+ * to note that using your own history object is highly discouraged and may add
+ * two versions of the history library to your bundles unless you use the same
+ * version of the history library that React Router uses internally.
+ */ function HistoryRouter(_ref3) {
+    let { basename , children , history  } = _ref3;
+    const [state, setState] = _react.useState({
+        action: history.action,
+        location: history.location
+    });
+    _react.useLayoutEffect(()=>history.listen(setState), [
+        history
+    ]);
+    return /*#__PURE__*/ _react.createElement((0, _reactRouter.Router), {
+        basename: basename,
+        children: children,
+        location: state.location,
+        navigationType: state.action,
+        navigator: history
+    });
+}
+HistoryRouter.displayName = "unstable_HistoryRouter";
+/**
+ * The public API for rendering a history-aware <a>.
+ */ const Link = /*#__PURE__*/ _react.forwardRef(function LinkWithRef(_ref4, ref) {
+    let { onClick , relative , reloadDocument , replace , state , target , to , preventScrollReset  } = _ref4, rest = _objectWithoutPropertiesLoose(_ref4, _excluded);
+    let href = (0, _reactRouter.useHref)(to, {
+        relative
+    });
+    let internalOnClick = useLinkClickHandler(to, {
+        replace,
+        state,
+        target,
+        preventScrollReset,
+        relative
+    });
+    function handleClick(event) {
+        if (onClick) onClick(event);
+        if (!event.defaultPrevented) internalOnClick(event);
+    }
+    return(/*#__PURE__*/ // eslint-disable-next-line jsx-a11y/anchor-has-content
+    _react.createElement("a", _extends({}, rest, {
+        href: href,
+        onClick: reloadDocument ? onClick : handleClick,
+        ref: ref,
+        target: target
+    })));
+});
+Link.displayName = "Link";
+/**
+ * A <Link> wrapper that knows if it's "active" or not.
+ */ const NavLink = /*#__PURE__*/ _react.forwardRef(function NavLinkWithRef(_ref5, ref) {
+    let { "aria-current": ariaCurrentProp = "page" , caseSensitive =false , className: classNameProp = "" , end =false , style: styleProp , to , children  } = _ref5, rest = _objectWithoutPropertiesLoose(_ref5, _excluded2);
+    let path = (0, _reactRouter.useResolvedPath)(to, {
+        relative: rest.relative
+    });
+    let location = (0, _reactRouter.useLocation)();
+    let routerState = _react.useContext((0, _reactRouter.UNSAFE_DataRouterStateContext));
+    let { navigator  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
+    let toPathname = navigator.encodeLocation ? navigator.encodeLocation(path).pathname : path.pathname;
+    let locationPathname = location.pathname;
+    let nextLocationPathname = routerState && routerState.navigation && routerState.navigation.location ? routerState.navigation.location.pathname : null;
+    if (!caseSensitive) {
+        locationPathname = locationPathname.toLowerCase();
+        nextLocationPathname = nextLocationPathname ? nextLocationPathname.toLowerCase() : null;
+        toPathname = toPathname.toLowerCase();
+    }
+    let isActive = locationPathname === toPathname || !end && locationPathname.startsWith(toPathname) && locationPathname.charAt(toPathname.length) === "/";
+    let isPending = nextLocationPathname != null && (nextLocationPathname === toPathname || !end && nextLocationPathname.startsWith(toPathname) && nextLocationPathname.charAt(toPathname.length) === "/");
+    let ariaCurrent = isActive ? ariaCurrentProp : undefined;
+    let className;
+    if (typeof classNameProp === "function") className = classNameProp({
+        isActive,
+        isPending
+    });
+    else // If the className prop is not a function, we use a default `active`
+    // class for <NavLink />s that are active. In v5 `active` was the default
+    // value for `activeClassName`, but we are removing that API and can still
+    // use the old default behavior for a cleaner upgrade path and keep the
+    // simple styling rules working as they currently do.
+    className = [
+        classNameProp,
+        isActive ? "active" : null,
+        isPending ? "pending" : null
+    ].filter(Boolean).join(" ");
+    let style = typeof styleProp === "function" ? styleProp({
+        isActive,
+        isPending
+    }) : styleProp;
+    return /*#__PURE__*/ _react.createElement(Link, _extends({}, rest, {
+        "aria-current": ariaCurrent,
+        className: className,
+        ref: ref,
+        style: style,
+        to: to
+    }), typeof children === "function" ? children({
+        isActive,
+        isPending
+    }) : children);
+});
+NavLink.displayName = "NavLink";
+/**
+ * A `@remix-run/router`-aware `<form>`. It behaves like a normal form except
+ * that the interaction with the server is with `fetch` instead of new document
+ * requests, allowing components to add nicer UX to the page as the form is
+ * submitted and returns with data.
+ */ const Form = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+    return /*#__PURE__*/ _react.createElement(FormImpl, _extends({}, props, {
+        ref: ref
+    }));
+});
+Form.displayName = "Form";
+const FormImpl = /*#__PURE__*/ _react.forwardRef((_ref6, forwardedRef)=>{
+    let { reloadDocument , replace , method =defaultMethod , action , onSubmit , fetcherKey , routeId , relative  } = _ref6, props = _objectWithoutPropertiesLoose(_ref6, _excluded3);
+    let submit = useSubmitImpl(fetcherKey, routeId);
+    let formMethod = method.toLowerCase() === "get" ? "get" : "post";
+    let formAction = useFormAction(action, {
+        relative
+    });
+    let submitHandler = (event)=>{
+        onSubmit && onSubmit(event);
+        if (event.defaultPrevented) return;
+        event.preventDefault();
+        let submitter = event.nativeEvent.submitter;
+        let submitMethod = (submitter == null ? void 0 : submitter.getAttribute("formmethod")) || method;
+        submit(submitter || event.currentTarget, {
+            method: submitMethod,
+            replace,
+            relative
+        });
+    };
+    return /*#__PURE__*/ _react.createElement("form", _extends({
+        ref: forwardedRef,
+        method: formMethod,
+        action: formAction,
+        onSubmit: reloadDocument ? onSubmit : submitHandler
+    }, props));
+});
+FormImpl.displayName = "FormImpl";
+/**
+ * This component will emulate the browser's scroll restoration on location
+ * changes.
+ */ function ScrollRestoration(_ref7) {
+    let { getKey , storageKey  } = _ref7;
+    useScrollRestoration({
+        getKey,
+        storageKey
+    });
+    return null;
+}
+ScrollRestoration.displayName = "ScrollRestoration";
+////////////////////////////////////////////////////////////////////////////////
+//#region Hooks
+////////////////////////////////////////////////////////////////////////////////
+var DataRouterHook;
+(function(DataRouterHook) {
+    DataRouterHook["UseScrollRestoration"] = "useScrollRestoration";
+    DataRouterHook["UseSubmitImpl"] = "useSubmitImpl";
+    DataRouterHook["UseFetcher"] = "useFetcher";
+})(DataRouterHook || (DataRouterHook = {}));
+var DataRouterStateHook;
+(function(DataRouterStateHook) {
+    DataRouterStateHook["UseFetchers"] = "useFetchers";
+    DataRouterStateHook["UseScrollRestoration"] = "useScrollRestoration";
+})(DataRouterStateHook || (DataRouterStateHook = {}));
+function getDataRouterConsoleError(hookName) {
+    return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
+}
+function useDataRouterContext(hookName) {
+    let ctx = _react.useContext((0, _reactRouter.UNSAFE_DataRouterContext));
+    !ctx && (0, _router.invariant)(false, getDataRouterConsoleError(hookName));
+    return ctx;
+}
+function useDataRouterState(hookName) {
+    let state = _react.useContext((0, _reactRouter.UNSAFE_DataRouterStateContext));
+    !state && (0, _router.invariant)(false, getDataRouterConsoleError(hookName));
+    return state;
+}
+/**
+ * Handles the click behavior for router `<Link>` components. This is useful if
+ * you need to create custom `<Link>` components with the same click behavior we
+ * use in our exported `<Link>`.
+ */ function useLinkClickHandler(to, _temp) {
+    let { target , replace: replaceProp , state , preventScrollReset , relative  } = _temp === void 0 ? {} : _temp;
+    let navigate = (0, _reactRouter.useNavigate)();
+    let location = (0, _reactRouter.useLocation)();
+    let path = (0, _reactRouter.useResolvedPath)(to, {
+        relative
+    });
+    return _react.useCallback((event)=>{
+        if (shouldProcessLinkClick(event, target)) {
+            event.preventDefault(); // If the URL hasn't changed, a regular <a> will do a replace instead of
+            // a push, so do the same here unless the replace prop is explicitly set
+            let replace = replaceProp !== undefined ? replaceProp : (0, _reactRouter.createPath)(location) === (0, _reactRouter.createPath)(path);
+            navigate(to, {
+                replace,
+                state,
+                preventScrollReset,
+                relative
+            });
+        }
+    }, [
+        location,
+        navigate,
+        path,
+        replaceProp,
+        state,
+        target,
+        to,
+        preventScrollReset,
+        relative
+    ]);
+}
+/**
+ * A convenient wrapper for reading and writing search parameters via the
+ * URLSearchParams interface.
+ */ function useSearchParams(defaultInit) {
+    warning(typeof URLSearchParams !== "undefined", "You cannot use the `useSearchParams` hook in a browser that does not support the URLSearchParams API. If you need to support Internet Explorer 11, we recommend you load a polyfill such as https://github.com/ungap/url-search-params\n\nIf you're unsure how to load polyfills, we recommend you check out https://polyfill.io/v3/ which provides some recommendations about how to load polyfills only for users that need them, instead of for every user.");
+    let defaultSearchParamsRef = _react.useRef(createSearchParams(defaultInit));
+    let location = (0, _reactRouter.useLocation)();
+    let searchParams = _react.useMemo(()=>getSearchParamsForLocation(location.search, defaultSearchParamsRef.current), [
+        location.search
+    ]);
+    let navigate = (0, _reactRouter.useNavigate)();
+    let setSearchParams = _react.useCallback((nextInit, navigateOptions)=>{
+        const newSearchParams = createSearchParams(typeof nextInit === "function" ? nextInit(searchParams) : nextInit);
+        navigate("?" + newSearchParams, navigateOptions);
+    }, [
+        navigate,
+        searchParams
+    ]);
+    return [
+        searchParams,
+        setSearchParams
+    ];
+}
+/**
+ * Returns a function that may be used to programmatically submit a form (or
+ * some arbitrary data) to the server.
+ */ function useSubmit() {
+    return useSubmitImpl();
+}
+function useSubmitImpl(fetcherKey, routeId) {
+    let { router  } = useDataRouterContext(DataRouterHook.UseSubmitImpl);
+    let defaultAction = useFormAction();
+    return _react.useCallback(function(target, options) {
+        if (options === void 0) options = {};
+        if (typeof document === "undefined") throw new Error("You are calling submit during the server render. Try calling submit within a `useEffect` or callback instead.");
+        let { method , encType , formData , url  } = getFormSubmissionInfo(target, defaultAction, options);
+        let href = url.pathname + url.search;
+        let opts = {
+            replace: options.replace,
+            formData,
+            formMethod: method,
+            formEncType: encType
+        };
+        if (fetcherKey) {
+            !(routeId != null) && (0, _router.invariant)(false, "No routeId available for useFetcher()");
+            router.fetch(fetcherKey, routeId, href, opts);
+        } else router.navigate(href, opts);
+    }, [
+        defaultAction,
+        router,
+        fetcherKey,
+        routeId
+    ]);
+}
+function useFormAction(action, _temp2) {
+    let { relative  } = _temp2 === void 0 ? {} : _temp2;
+    let { basename  } = _react.useContext((0, _reactRouter.UNSAFE_NavigationContext));
+    let routeContext = _react.useContext((0, _reactRouter.UNSAFE_RouteContext));
+    !routeContext && (0, _router.invariant)(false, "useFormAction must be used inside a RouteContext");
+    let [match] = routeContext.matches.slice(-1); // Shallow clone path so we can modify it below, otherwise we modify the
+    // object referenced by useMemo inside useResolvedPath
+    let path = _extends({}, (0, _reactRouter.useResolvedPath)(action ? action : ".", {
+        relative
+    })); // Previously we set the default action to ".". The problem with this is that
+    // `useResolvedPath(".")` excludes search params and the hash of the resolved
+    // URL. This is the intended behavior of when "." is specifically provided as
+    // the form action, but inconsistent w/ browsers when the action is omitted.
+    // https://github.com/remix-run/remix/issues/927
+    let location = (0, _reactRouter.useLocation)();
+    if (action == null) {
+        // Safe to write to these directly here since if action was undefined, we
+        // would have called useResolvedPath(".") which will never include a search
+        // or hash
+        path.search = location.search;
+        path.hash = location.hash; // When grabbing search params from the URL, remove the automatically
+        // inserted ?index param so we match the useResolvedPath search behavior
+        // which would not include ?index
+        if (match.route.index) {
+            let params = new URLSearchParams(path.search);
+            params.delete("index");
+            path.search = params.toString() ? "?" + params.toString() : "";
+        }
+    }
+    if ((!action || action === ".") && match.route.index) path.search = path.search ? path.search.replace(/^\?/, "?index&") : "?index";
+     // If we're operating within a basename, prepend it to the pathname prior
+    // to creating the form action.  If this is a root navigation, then just use
+    // the raw basename which allows the basename to have full control over the
+    // presence of a trailing slash on root actions
+    if (basename !== "/") path.pathname = path.pathname === "/" ? basename : (0, _router.joinPaths)([
+        basename,
+        path.pathname
+    ]);
+    return (0, _reactRouter.createPath)(path);
+}
+function createFetcherForm(fetcherKey, routeId) {
+    let FetcherForm = /*#__PURE__*/ _react.forwardRef((props, ref)=>{
+        return /*#__PURE__*/ _react.createElement(FormImpl, _extends({}, props, {
+            ref: ref,
+            fetcherKey: fetcherKey,
+            routeId: routeId
+        }));
+    });
+    FetcherForm.displayName = "fetcher.Form";
+    return FetcherForm;
+}
+let fetcherId = 0;
+/**
+ * Interacts with route loaders and actions without causing a navigation. Great
+ * for any interaction that stays on the same page.
+ */ function useFetcher() {
+    var _route$matches;
+    let { router  } = useDataRouterContext(DataRouterHook.UseFetcher);
+    let route = _react.useContext((0, _reactRouter.UNSAFE_RouteContext));
+    !route && (0, _router.invariant)(false, "useFetcher must be used inside a RouteContext");
+    let routeId = (_route$matches = route.matches[route.matches.length - 1]) == null ? void 0 : _route$matches.route.id;
+    !(routeId != null) && (0, _router.invariant)(false, 'useFetcher can only be used on routes that contain a unique "id"');
+    let [fetcherKey] = _react.useState(()=>String(++fetcherId));
+    let [Form] = _react.useState(()=>{
+        !routeId && (0, _router.invariant)(false, "No routeId available for fetcher.Form()");
+        return createFetcherForm(fetcherKey, routeId);
+    });
+    let [load] = _react.useState(()=>(href)=>{
+            !router && (0, _router.invariant)(false, "No router available for fetcher.load()");
+            !routeId && (0, _router.invariant)(false, "No routeId available for fetcher.load()");
+            router.fetch(fetcherKey, routeId, href);
+        });
+    let submit = useSubmitImpl(fetcherKey, routeId);
+    let fetcher = router.getFetcher(fetcherKey);
+    let fetcherWithComponents = _react.useMemo(()=>_extends({
+            Form,
+            submit,
+            load
+        }, fetcher), [
+        fetcher,
+        Form,
+        submit,
+        load
+    ]);
+    _react.useEffect(()=>{
+        // Is this busted when the React team gets real weird and calls effects
+        // twice on mount?  We really just need to garbage collect here when this
+        // fetcher is no longer around.
+        return ()=>{
+            if (!router) {
+                console.warn("No fetcher available to clean up from useFetcher()");
+                return;
+            }
+            router.deleteFetcher(fetcherKey);
+        };
+    }, [
+        router,
+        fetcherKey
+    ]);
+    return fetcherWithComponents;
+}
+/**
+ * Provides all fetchers currently on the page. Useful for layouts and parent
+ * routes that need to provide pending/optimistic UI regarding the fetch.
+ */ function useFetchers() {
+    let state = useDataRouterState(DataRouterStateHook.UseFetchers);
+    return [
+        ...state.fetchers.values()
+    ];
+}
+const SCROLL_RESTORATION_STORAGE_KEY = "react-router-scroll-positions";
+let savedScrollPositions = {};
+/**
+ * When rendered inside a RouterProvider, will restore scroll positions on navigations
+ */ function useScrollRestoration(_temp3) {
+    let { getKey , storageKey  } = _temp3 === void 0 ? {} : _temp3;
+    let { router  } = useDataRouterContext(DataRouterHook.UseScrollRestoration);
+    let { restoreScrollPosition , preventScrollReset  } = useDataRouterState(DataRouterStateHook.UseScrollRestoration);
+    let location = (0, _reactRouter.useLocation)();
+    let matches = (0, _reactRouter.useMatches)();
+    let navigation = (0, _reactRouter.useNavigation)(); // Trigger manual scroll restoration while we're active
+    _react.useEffect(()=>{
+        window.history.scrollRestoration = "manual";
+        return ()=>{
+            window.history.scrollRestoration = "auto";
+        };
+    }, []); // Save positions on unload
+    useBeforeUnload(_react.useCallback(()=>{
+        if (navigation.state === "idle") {
+            let key = (getKey ? getKey(location, matches) : null) || location.key;
+            savedScrollPositions[key] = window.scrollY;
+        }
+        sessionStorage.setItem(storageKey || SCROLL_RESTORATION_STORAGE_KEY, JSON.stringify(savedScrollPositions));
+        window.history.scrollRestoration = "auto";
+    }, [
+        storageKey,
+        getKey,
+        navigation.state,
+        location,
+        matches
+    ])); // Read in any saved scroll locations
+    if (typeof document !== "undefined") {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        _react.useLayoutEffect(()=>{
+            try {
+                let sessionPositions = sessionStorage.getItem(storageKey || SCROLL_RESTORATION_STORAGE_KEY);
+                if (sessionPositions) savedScrollPositions = JSON.parse(sessionPositions);
+            } catch (e) {}
+        }, [
+            storageKey
+        ]); // Enable scroll restoration in the router
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        _react.useLayoutEffect(()=>{
+            let disableScrollRestoration = router == null ? void 0 : router.enableScrollRestoration(savedScrollPositions, ()=>window.scrollY, getKey);
+            return ()=>disableScrollRestoration && disableScrollRestoration();
+        }, [
+            router,
+            getKey
+        ]); // Restore scrolling when state.restoreScrollPosition changes
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        _react.useLayoutEffect(()=>{
+            // Explicit false means don't do anything (used for submissions)
+            if (restoreScrollPosition === false) return;
+             // been here before, scroll to it
+            if (typeof restoreScrollPosition === "number") {
+                window.scrollTo(0, restoreScrollPosition);
+                return;
+            } // try to scroll to the hash
+            if (location.hash) {
+                let el = document.getElementById(location.hash.slice(1));
+                if (el) {
+                    el.scrollIntoView();
+                    return;
+                }
+            } // Opt out of scroll reset if this link requested it
+            if (preventScrollReset === true) return;
+             // otherwise go to the top on new locations
+            window.scrollTo(0, 0);
+        }, [
+            location,
+            restoreScrollPosition,
+            preventScrollReset
+        ]);
+    }
+}
+/**
+ * Setup a callback to be fired on the window's `beforeunload` event. This is
+ * useful for saving some data to `window.localStorage` just before the page
+ * refreshes.
+ *
+ * Note: The `callback` argument should be a function created with
+ * `React.useCallback()`.
+ */ function useBeforeUnload(callback) {
+    _react.useEffect(()=>{
+        window.addEventListener("beforeunload", callback);
+        return ()=>{
+            window.removeEventListener("beforeunload", callback);
+        };
+    }, [
+        callback
+    ]);
+} //#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region Utils
+////////////////////////////////////////////////////////////////////////////////
+function warning(cond, message) {
+    if (!cond) {
+        // eslint-disable-next-line no-console
+        if (typeof console !== "undefined") console.warn(message);
+        try {
+            // Welcome to debugging React Router!
+            //
+            // This error is thrown as a convenience so you can more easily
+            // find the source for a warning that appears in the console by
+            // enabling "pause on exceptions" in your JavaScript debugger.
+            throw new Error(message); // eslint-disable-next-line no-empty
+        } catch (e) {}
+    }
+} //#endregion
+
+},{"react":"21dqq","react-router":"dbWyW","@remix-run/router":"5ncDG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dbWyW":[function(require,module,exports) {
+/**
+ * React Router v6.6.1
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "AbortedDeferredError", ()=>(0, _router.AbortedDeferredError));
+parcelHelpers.export(exports, "NavigationType", ()=>(0, _router.Action));
+parcelHelpers.export(exports, "createPath", ()=>(0, _router.createPath));
+parcelHelpers.export(exports, "defer", ()=>(0, _router.defer));
+parcelHelpers.export(exports, "generatePath", ()=>(0, _router.generatePath));
+parcelHelpers.export(exports, "isRouteErrorResponse", ()=>(0, _router.isRouteErrorResponse));
+parcelHelpers.export(exports, "json", ()=>(0, _router.json));
+parcelHelpers.export(exports, "matchPath", ()=>(0, _router.matchPath));
+parcelHelpers.export(exports, "matchRoutes", ()=>(0, _router.matchRoutes));
+parcelHelpers.export(exports, "parsePath", ()=>(0, _router.parsePath));
+parcelHelpers.export(exports, "redirect", ()=>(0, _router.redirect));
+parcelHelpers.export(exports, "resolvePath", ()=>(0, _router.resolvePath));
+parcelHelpers.export(exports, "Await", ()=>Await);
+parcelHelpers.export(exports, "MemoryRouter", ()=>MemoryRouter);
+parcelHelpers.export(exports, "Navigate", ()=>Navigate);
+parcelHelpers.export(exports, "Outlet", ()=>Outlet);
+parcelHelpers.export(exports, "Route", ()=>Route);
+parcelHelpers.export(exports, "Router", ()=>Router);
+parcelHelpers.export(exports, "RouterProvider", ()=>RouterProvider);
+parcelHelpers.export(exports, "Routes", ()=>Routes);
+parcelHelpers.export(exports, "UNSAFE_DataRouterContext", ()=>DataRouterContext);
+parcelHelpers.export(exports, "UNSAFE_DataRouterStateContext", ()=>DataRouterStateContext);
+parcelHelpers.export(exports, "UNSAFE_DataStaticRouterContext", ()=>DataStaticRouterContext);
+parcelHelpers.export(exports, "UNSAFE_LocationContext", ()=>LocationContext);
+parcelHelpers.export(exports, "UNSAFE_NavigationContext", ()=>NavigationContext);
+parcelHelpers.export(exports, "UNSAFE_RouteContext", ()=>RouteContext);
+parcelHelpers.export(exports, "UNSAFE_enhanceManualRouteObjects", ()=>enhanceManualRouteObjects);
+parcelHelpers.export(exports, "createMemoryRouter", ()=>createMemoryRouter);
+parcelHelpers.export(exports, "createRoutesFromChildren", ()=>createRoutesFromChildren);
+parcelHelpers.export(exports, "createRoutesFromElements", ()=>createRoutesFromChildren);
+parcelHelpers.export(exports, "renderMatches", ()=>renderMatches);
+parcelHelpers.export(exports, "useActionData", ()=>useActionData);
+parcelHelpers.export(exports, "useAsyncError", ()=>useAsyncError);
+parcelHelpers.export(exports, "useAsyncValue", ()=>useAsyncValue);
+parcelHelpers.export(exports, "useHref", ()=>useHref);
+parcelHelpers.export(exports, "useInRouterContext", ()=>useInRouterContext);
+parcelHelpers.export(exports, "useLoaderData", ()=>useLoaderData);
+parcelHelpers.export(exports, "useLocation", ()=>useLocation);
+parcelHelpers.export(exports, "useMatch", ()=>useMatch);
+parcelHelpers.export(exports, "useMatches", ()=>useMatches);
+parcelHelpers.export(exports, "useNavigate", ()=>useNavigate);
+parcelHelpers.export(exports, "useNavigation", ()=>useNavigation);
+parcelHelpers.export(exports, "useNavigationType", ()=>useNavigationType);
+parcelHelpers.export(exports, "useOutlet", ()=>useOutlet);
+parcelHelpers.export(exports, "useOutletContext", ()=>useOutletContext);
+parcelHelpers.export(exports, "useParams", ()=>useParams);
+parcelHelpers.export(exports, "useResolvedPath", ()=>useResolvedPath);
+parcelHelpers.export(exports, "useRevalidator", ()=>useRevalidator);
+parcelHelpers.export(exports, "useRouteError", ()=>useRouteError);
+parcelHelpers.export(exports, "useRouteLoaderData", ()=>useRouteLoaderData);
+parcelHelpers.export(exports, "useRoutes", ()=>useRoutes);
+var _router = require("@remix-run/router");
+var _react = require("react");
+function _extends() {
+    _extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ /**
+ * inlined Object.is polyfill to avoid requiring consumers ship their own
+ * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+ */ function isPolyfill(x, y) {
+    return x === y && (x !== 0 || 1 / x === 1 / y) || x !== x && y !== y // eslint-disable-line no-self-compare
+    ;
+}
+const is = typeof Object.is === "function" ? Object.is : isPolyfill; // Intentionally not using named imports because Rollup uses dynamic
+// dispatch for CommonJS interop named imports.
+const { useState , useEffect , useLayoutEffect , useDebugValue  } = _react;
+let didWarnOld18Alpha = false;
+let didWarnUncachedGetSnapshot = false; // Disclaimer: This shim breaks many of the rules of React, and only works
+// because of a very particular set of implementation details and assumptions
+// -- change any one of them and it will break. The most important assumption
+// is that updates are always synchronous, because concurrent rendering is
+// only available in versions of React that also have a built-in
+// useSyncExternalStore API. And we only use this shim when the built-in API
+// does not exist.
+//
+// Do not assume that the clever hacks used by this hook also work in general.
+// The point of this shim is to replace the need for hacks by other libraries.
+function useSyncExternalStore$2(subscribe, getSnapshot, // React do not expose a way to check if we're hydrating. So users of the shim
+// will need to track that themselves and return the correct value
+// from `getSnapshot`.
+getServerSnapshot) {
+    if (!didWarnOld18Alpha) {
+        if ("startTransition" in _react) {
+            didWarnOld18Alpha = true;
+            console.error("You are using an outdated, pre-release alpha of React 18 that does not support useSyncExternalStore. The use-sync-external-store shim will not work correctly. Upgrade to a newer pre-release.");
+        }
+    }
+    // breaks the rules of React, and only works here because of specific
+    // implementation details, most importantly that updates are
+    // always synchronous.
+    const value = getSnapshot();
+    if (!didWarnUncachedGetSnapshot) {
+        const cachedValue = getSnapshot();
+        if (!is(value, cachedValue)) {
+            console.error("The result of getSnapshot should be cached to avoid an infinite loop");
+            didWarnUncachedGetSnapshot = true;
+        }
+    }
+    // re-render whenever the subscribed state changes by updating an some
+    // arbitrary useState hook. Then, during render, we call getSnapshot to read
+    // the current value.
+    //
+    // Because we don't actually use the state returned by the useState hook, we
+    // can save a bit of memory by storing other stuff in that slot.
+    //
+    // To implement the early bailout, we need to track some things on a mutable
+    // object. Usually, we would put that in a useRef hook, but we can stash it in
+    // our useState hook instead.
+    //
+    // To force a re-render, we call forceUpdate({inst}). That works because the
+    // new object always fails an equality check.
+    const [{ inst  }, forceUpdate] = useState({
+        inst: {
+            value,
+            getSnapshot
+        }
+    }); // Track the latest getSnapshot function with a ref. This needs to be updated
+    // in the layout phase so we can access it during the tearing check that
+    // happens on subscribe.
+    useLayoutEffect(()=>{
+        inst.value = value;
+        inst.getSnapshot = getSnapshot; // Whenever getSnapshot or subscribe changes, we need to check in the
+        // commit phase if there was an interleaved mutation. In concurrent mode
+        // this can happen all the time, but even in synchronous mode, an earlier
+        // effect may have mutated the store.
+        if (checkIfSnapshotChanged(inst)) // Force a re-render.
+        forceUpdate({
+            inst
+        });
+         // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [
+        subscribe,
+        value,
+        getSnapshot
+    ]);
+    useEffect(()=>{
+        // Check for changes right before subscribing. Subsequent changes will be
+        // detected in the subscription handler.
+        if (checkIfSnapshotChanged(inst)) // Force a re-render.
+        forceUpdate({
+            inst
+        });
+        const handleStoreChange = ()=>{
+            // TODO: Because there is no cross-renderer API for batching updates, it's
+            // up to the consumer of this library to wrap their subscription event
+            // with unstable_batchedUpdates. Should we try to detect when this isn't
+            // the case and print a warning in development?
+            // The store changed. Check if the snapshot changed since the last time we
+            // read from the store.
+            if (checkIfSnapshotChanged(inst)) // Force a re-render.
+            forceUpdate({
+                inst
+            });
+        }; // Subscribe to the store and return a clean-up function.
+        return subscribe(handleStoreChange); // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [
+        subscribe
+    ]);
+    useDebugValue(value);
+    return value;
+}
+function checkIfSnapshotChanged(inst) {
+    const latestGetSnapshot = inst.getSnapshot;
+    const prevValue = inst.value;
+    try {
+        const nextValue = latestGetSnapshot();
+        return !is(prevValue, nextValue);
+    } catch (error) {
+        return true;
+    }
+}
+/**
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ * @flow
+ */ function useSyncExternalStore$1(subscribe, getSnapshot, getServerSnapshot) {
+    // Note: The shim does not use getServerSnapshot, because pre-18 versions of
+    // React do not expose a way to check if we're hydrating. So users of the shim
+    // will need to track that themselves and return the correct value
+    // from `getSnapshot`.
+    return getSnapshot();
+}
+/**
+ * Inlined into the react-router repo since use-sync-external-store does not
+ * provide a UMD-compatible package, so we need this to be able to distribute
+ * UMD react-router bundles
+ */ const canUseDOM = !!(typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined");
+const isServerEnvironment = !canUseDOM;
+const shim = isServerEnvironment ? useSyncExternalStore$1 : useSyncExternalStore$2;
+const useSyncExternalStore = "useSyncExternalStore" in _react ? ((module)=>module.useSyncExternalStore)(_react) : shim;
+// Contexts for data routers
+const DataStaticRouterContext = /*#__PURE__*/ _react.createContext(null);
+DataStaticRouterContext.displayName = "DataStaticRouterContext";
+const DataRouterContext = /*#__PURE__*/ _react.createContext(null);
+DataRouterContext.displayName = "DataRouter";
+const DataRouterStateContext = /*#__PURE__*/ _react.createContext(null);
+DataRouterStateContext.displayName = "DataRouterState";
+const AwaitContext = /*#__PURE__*/ _react.createContext(null);
+AwaitContext.displayName = "Await";
+const NavigationContext = /*#__PURE__*/ _react.createContext(null);
+NavigationContext.displayName = "Navigation";
+const LocationContext = /*#__PURE__*/ _react.createContext(null);
+LocationContext.displayName = "Location";
+const RouteContext = /*#__PURE__*/ _react.createContext({
+    outlet: null,
+    matches: []
+});
+RouteContext.displayName = "Route";
+const RouteErrorContext = /*#__PURE__*/ _react.createContext(null);
+RouteErrorContext.displayName = "RouteError";
+/**
+ * Returns the full href for the given "to" value. This is useful for building
+ * custom links that are also accessible and preserve right-click behavior.
+ *
+ * @see https://reactrouter.com/hooks/use-href
+ */ function useHref(to, _temp) {
+    let { relative  } = _temp === void 0 ? {} : _temp;
+    !useInRouterContext() && (0, _router.invariant)(false, // router loaded. We can help them understand how to avoid that.
+    "useHref() may be used only in the context of a <Router> component.");
+    let { basename , navigator  } = _react.useContext(NavigationContext);
+    let { hash , pathname , search  } = useResolvedPath(to, {
+        relative
+    });
+    let joinedPathname = pathname; // If we're operating within a basename, prepend it to the pathname prior
+    // to creating the href.  If this is a root navigation, then just use the raw
+    // basename which allows the basename to have full control over the presence
+    // of a trailing slash on root links
+    if (basename !== "/") joinedPathname = pathname === "/" ? basename : (0, _router.joinPaths)([
+        basename,
+        pathname
+    ]);
+    return navigator.createHref({
+        pathname: joinedPathname,
+        search,
+        hash
+    });
+}
+/**
+ * Returns true if this component is a descendant of a <Router>.
+ *
+ * @see https://reactrouter.com/hooks/use-in-router-context
+ */ function useInRouterContext() {
+    return _react.useContext(LocationContext) != null;
+}
+/**
+ * Returns the current location object, which represents the current URL in web
+ * browsers.
+ *
+ * Note: If you're using this it may mean you're doing some of your own
+ * "routing" in your app, and we'd like to know what your use case is. We may
+ * be able to provide something higher-level to better suit your needs.
+ *
+ * @see https://reactrouter.com/hooks/use-location
+ */ function useLocation() {
+    !useInRouterContext() && (0, _router.invariant)(false, // router loaded. We can help them understand how to avoid that.
+    "useLocation() may be used only in the context of a <Router> component.");
+    return _react.useContext(LocationContext).location;
+}
+/**
+ * Returns the current navigation action which describes how the router came to
+ * the current location, either by a pop, push, or replace on the history stack.
+ *
+ * @see https://reactrouter.com/hooks/use-navigation-type
+ */ function useNavigationType() {
+    return _react.useContext(LocationContext).navigationType;
+}
+/**
+ * Returns a PathMatch object if the given pattern matches the current URL.
+ * This is useful for components that need to know "active" state, e.g.
+ * <NavLink>.
+ *
+ * @see https://reactrouter.com/hooks/use-match
+ */ function useMatch(pattern) {
+    !useInRouterContext() && (0, _router.invariant)(false, // router loaded. We can help them understand how to avoid that.
+    "useMatch() may be used only in the context of a <Router> component.");
+    let { pathname  } = useLocation();
+    return _react.useMemo(()=>(0, _router.matchPath)(pattern, pathname), [
+        pathname,
+        pattern
+    ]);
+}
+/**
+ * The interface for the navigate() function returned from useNavigate().
+ */ /**
+ * Returns an imperative method for changing the location. Used by <Link>s, but
+ * may also be used by other elements to change the location.
+ *
+ * @see https://reactrouter.com/hooks/use-navigate
+ */ function useNavigate() {
+    !useInRouterContext() && (0, _router.invariant)(false, // router loaded. We can help them understand how to avoid that.
+    "useNavigate() may be used only in the context of a <Router> component.");
+    let { basename , navigator  } = _react.useContext(NavigationContext);
+    let { matches  } = _react.useContext(RouteContext);
+    let { pathname: locationPathname  } = useLocation();
+    let routePathnamesJson = JSON.stringify((0, _router.UNSAFE_getPathContributingMatches)(matches).map((match)=>match.pathnameBase));
+    let activeRef = _react.useRef(false);
+    _react.useEffect(()=>{
+        activeRef.current = true;
+    });
+    let navigate = _react.useCallback(function(to, options) {
+        if (options === void 0) options = {};
+        (0, _router.warning)(activeRef.current, "You should call navigate() in a React.useEffect(), not when your component is first rendered.");
+        if (!activeRef.current) return;
+        if (typeof to === "number") {
+            navigator.go(to);
+            return;
+        }
+        let path = (0, _router.resolveTo)(to, JSON.parse(routePathnamesJson), locationPathname, options.relative === "path"); // If we're operating within a basename, prepend it to the pathname prior
+        // to handing off to history.  If this is a root navigation, then we
+        // navigate to the raw basename which allows the basename to have full
+        // control over the presence of a trailing slash on root links
+        if (basename !== "/") path.pathname = path.pathname === "/" ? basename : (0, _router.joinPaths)([
+            basename,
+            path.pathname
+        ]);
+        (!!options.replace ? navigator.replace : navigator.push)(path, options.state, options);
+    }, [
+        basename,
+        navigator,
+        routePathnamesJson,
+        locationPathname
+    ]);
+    return navigate;
+}
+const OutletContext = /*#__PURE__*/ _react.createContext(null);
+/**
+ * Returns the context (if provided) for the child route at this level of the route
+ * hierarchy.
+ * @see https://reactrouter.com/hooks/use-outlet-context
+ */ function useOutletContext() {
+    return _react.useContext(OutletContext);
+}
+/**
+ * Returns the element for the child route at this level of the route
+ * hierarchy. Used internally by <Outlet> to render child routes.
+ *
+ * @see https://reactrouter.com/hooks/use-outlet
+ */ function useOutlet(context) {
+    let outlet = _react.useContext(RouteContext).outlet;
+    if (outlet) return /*#__PURE__*/ _react.createElement(OutletContext.Provider, {
+        value: context
+    }, outlet);
+    return outlet;
+}
+/**
+ * Returns an object of key/value pairs of the dynamic params from the current
+ * URL that were matched by the route path.
+ *
+ * @see https://reactrouter.com/hooks/use-params
+ */ function useParams() {
+    let { matches  } = _react.useContext(RouteContext);
+    let routeMatch = matches[matches.length - 1];
+    return routeMatch ? routeMatch.params : {};
+}
+/**
+ * Resolves the pathname of the given `to` value against the current location.
+ *
+ * @see https://reactrouter.com/hooks/use-resolved-path
+ */ function useResolvedPath(to, _temp2) {
+    let { relative  } = _temp2 === void 0 ? {} : _temp2;
+    let { matches  } = _react.useContext(RouteContext);
+    let { pathname: locationPathname  } = useLocation();
+    let routePathnamesJson = JSON.stringify((0, _router.UNSAFE_getPathContributingMatches)(matches).map((match)=>match.pathnameBase));
+    return _react.useMemo(()=>(0, _router.resolveTo)(to, JSON.parse(routePathnamesJson), locationPathname, relative === "path"), [
+        to,
+        routePathnamesJson,
+        locationPathname,
+        relative
+    ]);
+}
+/**
+ * Returns the element of the route that matched the current location, prepared
+ * with the correct context to render the remainder of the route tree. Route
+ * elements in the tree must render an <Outlet> to render their child route's
+ * element.
+ *
+ * @see https://reactrouter.com/hooks/use-routes
+ */ function useRoutes(routes, locationArg) {
+    !useInRouterContext() && (0, _router.invariant)(false, // router loaded. We can help them understand how to avoid that.
+    "useRoutes() may be used only in the context of a <Router> component.");
+    let { navigator  } = _react.useContext(NavigationContext);
+    let dataRouterStateContext = _react.useContext(DataRouterStateContext);
+    let { matches: parentMatches  } = _react.useContext(RouteContext);
+    let routeMatch = parentMatches[parentMatches.length - 1];
+    let parentParams = routeMatch ? routeMatch.params : {};
+    let parentPathname = routeMatch ? routeMatch.pathname : "/";
+    let parentPathnameBase = routeMatch ? routeMatch.pathnameBase : "/";
+    let parentRoute = routeMatch && routeMatch.route;
+    {
+        // You won't get a warning about 2 different <Routes> under a <Route>
+        // without a trailing *, but this is a best-effort warning anyway since we
+        // cannot even give the warning unless they land at the parent route.
+        //
+        // Example:
+        //
+        // <Routes>
+        //   {/* This route path MUST end with /* because otherwise
+        //       it will never match /blog/post/123 */}
+        //   <Route path="blog" element={<Blog />} />
+        //   <Route path="blog/feed" element={<BlogFeed />} />
+        // </Routes>
+        //
+        // function Blog() {
+        //   return (
+        //     <Routes>
+        //       <Route path="post/:id" element={<Post />} />
+        //     </Routes>
+        //   );
+        // }
+        let parentPath = parentRoute && parentRoute.path || "";
+        warningOnce(parentPathname, !parentRoute || parentPath.endsWith("*"), "You rendered descendant <Routes> (or called `useRoutes()`) at " + ('"' + parentPathname + '" (under <Route path="' + parentPath + '">) but the ') + 'parent route path has no trailing "*". This means if you navigate ' + "deeper, the parent won't match anymore and therefore the child " + "routes will never render.\n\n" + ('Please change the parent <Route path="' + parentPath + '"> to <Route ') + ('path="' + (parentPath === "/" ? "*" : parentPath + "/*") + '">.'));
+    }
+    let locationFromContext = useLocation();
+    let location;
+    if (locationArg) {
+        var _parsedLocationArg$pa;
+        let parsedLocationArg = typeof locationArg === "string" ? (0, _router.parsePath)(locationArg) : locationArg;
+        !(parentPathnameBase === "/" || ((_parsedLocationArg$pa = parsedLocationArg.pathname) == null ? void 0 : _parsedLocationArg$pa.startsWith(parentPathnameBase))) && (0, _router.invariant)(false, "When overriding the location using `<Routes location>` or `useRoutes(routes, location)`, the location pathname must begin with the portion of the URL pathname that was " + ('matched by all parent routes. The current pathname base is "' + parentPathnameBase + '" ') + ('but pathname "' + parsedLocationArg.pathname + '" was given in the `location` prop.'));
+        location = parsedLocationArg;
+    } else location = locationFromContext;
+    let pathname = location.pathname || "/";
+    let remainingPathname = parentPathnameBase === "/" ? pathname : pathname.slice(parentPathnameBase.length) || "/";
+    let matches = (0, _router.matchRoutes)(routes, {
+        pathname: remainingPathname
+    });
+    (0, _router.warning)(parentRoute || matches != null, 'No routes matched location "' + location.pathname + location.search + location.hash + '" ');
+    (0, _router.warning)(matches == null || matches[matches.length - 1].route.element !== undefined, 'Matched leaf route at location "' + location.pathname + location.search + location.hash + '" does not have an element. ' + 'This means it will render an <Outlet /> with a null value by default resulting in an "empty" page.');
+    let renderedMatches = _renderMatches(matches && matches.map((match)=>Object.assign({}, match, {
+            params: Object.assign({}, parentParams, match.params),
+            pathname: (0, _router.joinPaths)([
+                parentPathnameBase,
+                navigator.encodeLocation ? navigator.encodeLocation(match.pathname).pathname : match.pathname
+            ]),
+            pathnameBase: match.pathnameBase === "/" ? parentPathnameBase : (0, _router.joinPaths)([
+                parentPathnameBase,
+                navigator.encodeLocation ? navigator.encodeLocation(match.pathnameBase).pathname : match.pathnameBase
+            ])
+        })), parentMatches, dataRouterStateContext || undefined); // When a user passes in a `locationArg`, the associated routes need to
+    // be wrapped in a new `LocationContext.Provider` in order for `useLocation`
+    // to use the scoped location instead of the global location.
+    if (locationArg && renderedMatches) return /*#__PURE__*/ _react.createElement(LocationContext.Provider, {
+        value: {
+            location: _extends({
+                pathname: "/",
+                search: "",
+                hash: "",
+                state: null,
+                key: "default"
+            }, location),
+            navigationType: (0, _router.Action).Pop
+        }
+    }, renderedMatches);
+    return renderedMatches;
+}
+function DefaultErrorElement() {
+    let error = useRouteError();
+    let message = (0, _router.isRouteErrorResponse)(error) ? error.status + " " + error.statusText : error instanceof Error ? error.message : JSON.stringify(error);
+    let stack = error instanceof Error ? error.stack : null;
+    let lightgrey = "rgba(200,200,200, 0.5)";
+    let preStyles = {
+        padding: "0.5rem",
+        backgroundColor: lightgrey
+    };
+    let codeStyles = {
+        padding: "2px 4px",
+        backgroundColor: lightgrey
+    };
+    return /*#__PURE__*/ _react.createElement(_react.Fragment, null, /*#__PURE__*/ _react.createElement("h2", null, "Unhandled Thrown Error!"), /*#__PURE__*/ _react.createElement("h3", {
+        style: {
+            fontStyle: "italic"
+        }
+    }, message), stack ? /*#__PURE__*/ _react.createElement("pre", {
+        style: preStyles
+    }, stack) : null, /*#__PURE__*/ _react.createElement("p", null, "\uD83D\uDCBF Hey developer \uD83D\uDC4B"), /*#__PURE__*/ _react.createElement("p", null, "You can provide a way better UX than this when your app throws errors by providing your own\xa0", /*#__PURE__*/ _react.createElement("code", {
+        style: codeStyles
+    }, "errorElement"), " props on\xa0", /*#__PURE__*/ _react.createElement("code", {
+        style: codeStyles
+    }, "<Route>")));
+}
+class RenderErrorBoundary extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            location: props.location,
+            error: props.error
+        };
+    }
+    static getDerivedStateFromError(error) {
+        return {
+            error: error
+        };
+    }
+    static getDerivedStateFromProps(props, state) {
+        // When we get into an error state, the user will likely click "back" to the
+        // previous page that didn't have an error. Because this wraps the entire
+        // application, that will have no effect--the error page continues to display.
+        // This gives us a mechanism to recover from the error when the location changes.
+        //
+        // Whether we're in an error state or not, we update the location in state
+        // so that when we are in an error state, it gets reset when a new location
+        // comes in and the user recovers from the error.
+        if (state.location !== props.location) return {
+            error: props.error,
+            location: props.location
+        };
+         // If we're not changing locations, preserve the location but still surface
+        // any new errors that may come through. We retain the existing error, we do
+        // this because the error provided from the app state may be cleared without
+        // the location changing.
+        return {
+            error: props.error || state.error,
+            location: state.location
+        };
+    }
+    componentDidCatch(error, errorInfo) {
+        console.error("React Router caught the following error during render", error, errorInfo);
+    }
+    render() {
+        return this.state.error ? /*#__PURE__*/ _react.createElement(RouteContext.Provider, {
+            value: this.props.routeContext
+        }, /*#__PURE__*/ _react.createElement(RouteErrorContext.Provider, {
+            value: this.state.error,
+            children: this.props.component
+        })) : this.props.children;
+    }
+}
+function RenderedRoute(_ref) {
+    let { routeContext , match , children  } = _ref;
+    let dataStaticRouterContext = _react.useContext(DataStaticRouterContext); // Track how deep we got in our render pass to emulate SSR componentDidCatch
+    // in a DataStaticRouter
+    if (dataStaticRouterContext && match.route.errorElement) dataStaticRouterContext._deepestRenderedBoundaryId = match.route.id;
+    return /*#__PURE__*/ _react.createElement(RouteContext.Provider, {
+        value: routeContext
+    }, children);
+}
+function _renderMatches(matches, parentMatches, dataRouterState) {
+    if (parentMatches === void 0) parentMatches = [];
+    if (matches == null) {
+        if (dataRouterState != null && dataRouterState.errors) // Don't bail if we have data router errors so we can render them in the
+        // boundary.  Use the pre-matched (or shimmed) matches
+        matches = dataRouterState.matches;
+        else return null;
+    }
+    let renderedMatches = matches; // If we have data errors, trim matches to the highest error boundary
+    let errors = dataRouterState == null ? void 0 : dataRouterState.errors;
+    if (errors != null) {
+        let errorIndex = renderedMatches.findIndex((m)=>m.route.id && (errors == null ? void 0 : errors[m.route.id]));
+        !(errorIndex >= 0) && (0, _router.invariant)(false, "Could not find a matching route for the current errors: " + errors);
+        renderedMatches = renderedMatches.slice(0, Math.min(renderedMatches.length, errorIndex + 1));
+    }
+    return renderedMatches.reduceRight((outlet, match, index)=>{
+        let error = match.route.id ? errors == null ? void 0 : errors[match.route.id] : null; // Only data routers handle errors
+        let errorElement = dataRouterState ? match.route.errorElement || /*#__PURE__*/ _react.createElement(DefaultErrorElement, null) : null;
+        let matches = parentMatches.concat(renderedMatches.slice(0, index + 1));
+        let getChildren = ()=>/*#__PURE__*/ _react.createElement(RenderedRoute, {
+                match: match,
+                routeContext: {
+                    outlet,
+                    matches
+                }
+            }, error ? errorElement : match.route.element !== undefined ? match.route.element : outlet); // Only wrap in an error boundary within data router usages when we have an
+        // errorElement on this route.  Otherwise let it bubble up to an ancestor
+        // errorElement
+        return dataRouterState && (match.route.errorElement || index === 0) ? /*#__PURE__*/ _react.createElement(RenderErrorBoundary, {
+            location: dataRouterState.location,
+            component: errorElement,
+            error: error,
+            children: getChildren(),
+            routeContext: {
+                outlet: null,
+                matches
+            }
+        }) : getChildren();
+    }, null);
+}
+var DataRouterHook;
+(function(DataRouterHook) {
+    DataRouterHook["UseRevalidator"] = "useRevalidator";
+})(DataRouterHook || (DataRouterHook = {}));
+var DataRouterStateHook;
+(function(DataRouterStateHook) {
+    DataRouterStateHook["UseLoaderData"] = "useLoaderData";
+    DataRouterStateHook["UseActionData"] = "useActionData";
+    DataRouterStateHook["UseRouteError"] = "useRouteError";
+    DataRouterStateHook["UseNavigation"] = "useNavigation";
+    DataRouterStateHook["UseRouteLoaderData"] = "useRouteLoaderData";
+    DataRouterStateHook["UseMatches"] = "useMatches";
+    DataRouterStateHook["UseRevalidator"] = "useRevalidator";
+})(DataRouterStateHook || (DataRouterStateHook = {}));
+function getDataRouterConsoleError(hookName) {
+    return hookName + " must be used within a data router.  See https://reactrouter.com/routers/picking-a-router.";
+}
+function useDataRouterContext(hookName) {
+    let ctx = _react.useContext(DataRouterContext);
+    !ctx && (0, _router.invariant)(false, getDataRouterConsoleError(hookName));
+    return ctx;
+}
+function useDataRouterState(hookName) {
+    let state = _react.useContext(DataRouterStateContext);
+    !state && (0, _router.invariant)(false, getDataRouterConsoleError(hookName));
+    return state;
+}
+function useRouteContext(hookName) {
+    let route = _react.useContext(RouteContext);
+    !route && (0, _router.invariant)(false, getDataRouterConsoleError(hookName));
+    return route;
+}
+function useCurrentRouteId(hookName) {
+    let route = useRouteContext(hookName);
+    let thisRoute = route.matches[route.matches.length - 1];
+    !thisRoute.route.id && (0, _router.invariant)(false, hookName + ' can only be used on routes that contain a unique "id"');
+    return thisRoute.route.id;
+}
+/**
+ * Returns the current navigation, defaulting to an "idle" navigation when
+ * no navigation is in progress
+ */ function useNavigation() {
+    let state = useDataRouterState(DataRouterStateHook.UseNavigation);
+    return state.navigation;
+}
+/**
+ * Returns a revalidate function for manually triggering revalidation, as well
+ * as the current state of any manual revalidations
+ */ function useRevalidator() {
+    let dataRouterContext = useDataRouterContext(DataRouterHook.UseRevalidator);
+    let state = useDataRouterState(DataRouterStateHook.UseRevalidator);
+    return {
+        revalidate: dataRouterContext.router.revalidate,
+        state: state.revalidation
+    };
+}
+/**
+ * Returns the active route matches, useful for accessing loaderData for
+ * parent/child routes or the route "handle" property
+ */ function useMatches() {
+    let { matches , loaderData  } = useDataRouterState(DataRouterStateHook.UseMatches);
+    return _react.useMemo(()=>matches.map((match)=>{
+            let { pathname , params  } = match; // Note: This structure matches that created by createUseMatchesMatch
+            // in the @remix-run/router , so if you change this please also change
+            // that :)  Eventually we'll DRY this up
+            return {
+                id: match.route.id,
+                pathname,
+                params,
+                data: loaderData[match.route.id],
+                handle: match.route.handle
+            };
+        }), [
+        matches,
+        loaderData
+    ]);
+}
+/**
+ * Returns the loader data for the nearest ancestor Route loader
+ */ function useLoaderData() {
+    let state = useDataRouterState(DataRouterStateHook.UseLoaderData);
+    let routeId = useCurrentRouteId(DataRouterStateHook.UseLoaderData);
+    if (state.errors && state.errors[routeId] != null) {
+        console.error("You cannot `useLoaderData` in an errorElement (routeId: " + routeId + ")");
+        return undefined;
+    }
+    return state.loaderData[routeId];
+}
+/**
+ * Returns the loaderData for the given routeId
+ */ function useRouteLoaderData(routeId) {
+    let state = useDataRouterState(DataRouterStateHook.UseRouteLoaderData);
+    return state.loaderData[routeId];
+}
+/**
+ * Returns the action data for the nearest ancestor Route action
+ */ function useActionData() {
+    let state = useDataRouterState(DataRouterStateHook.UseActionData);
+    let route = _react.useContext(RouteContext);
+    !route && (0, _router.invariant)(false, "useActionData must be used inside a RouteContext");
+    return Object.values((state == null ? void 0 : state.actionData) || {})[0];
+}
+/**
+ * Returns the nearest ancestor Route error, which could be a loader/action
+ * error or a render error.  This is intended to be called from your
+ * errorElement to display a proper error message.
+ */ function useRouteError() {
+    var _state$errors;
+    let error = _react.useContext(RouteErrorContext);
+    let state = useDataRouterState(DataRouterStateHook.UseRouteError);
+    let routeId = useCurrentRouteId(DataRouterStateHook.UseRouteError); // If this was a render error, we put it in a RouteError context inside
+    // of RenderErrorBoundary
+    if (error) return error;
+     // Otherwise look for errors from our data router state
+    return (_state$errors = state.errors) == null ? void 0 : _state$errors[routeId];
+}
+/**
+ * Returns the happy-path data from the nearest ancestor <Await /> value
+ */ function useAsyncValue() {
+    let value = _react.useContext(AwaitContext);
+    return value == null ? void 0 : value._data;
+}
+/**
+ * Returns the error from the nearest ancestor <Await /> value
+ */ function useAsyncError() {
+    let value = _react.useContext(AwaitContext);
+    return value == null ? void 0 : value._error;
+}
+const alreadyWarned = {};
+function warningOnce(key, cond, message) {
+    if (!cond && !alreadyWarned[key]) {
+        alreadyWarned[key] = true;
+        (0, _router.warning)(false, message);
+    }
+}
+/**
+ * Given a Remix Router instance, render the appropriate UI
+ */ function RouterProvider(_ref) {
+    let { fallbackElement , router  } = _ref;
+    // Sync router state to our component state to force re-renders
+    let state = useSyncExternalStore(router.subscribe, ()=>router.state, // but we pass our serialized hydration data into the router so state here
+    // is already synced with what the server saw
+    ()=>router.state);
+    let navigator = _react.useMemo(()=>{
+        return {
+            createHref: router.createHref,
+            encodeLocation: router.encodeLocation,
+            go: (n)=>router.navigate(n),
+            push: (to, state, opts)=>router.navigate(to, {
+                    state,
+                    preventScrollReset: opts == null ? void 0 : opts.preventScrollReset
+                }),
+            replace: (to, state, opts)=>router.navigate(to, {
+                    replace: true,
+                    state,
+                    preventScrollReset: opts == null ? void 0 : opts.preventScrollReset
+                })
+        };
+    }, [
+        router
+    ]);
+    let basename = router.basename || "/";
+    return /*#__PURE__*/ _react.createElement(DataRouterContext.Provider, {
+        value: {
+            router,
+            navigator,
+            static: false,
+            // Do we need this?
+            basename
+        }
+    }, /*#__PURE__*/ _react.createElement(DataRouterStateContext.Provider, {
+        value: state
+    }, /*#__PURE__*/ _react.createElement(Router, {
+        basename: router.basename,
+        location: router.state.location,
+        navigationType: router.state.historyAction,
+        navigator: navigator
+    }, router.state.initialized ? /*#__PURE__*/ _react.createElement(Routes, null) : fallbackElement)));
+}
+/**
+ * A <Router> that stores all entries in memory.
+ *
+ * @see https://reactrouter.com/router-components/memory-router
+ */ function MemoryRouter(_ref2) {
+    let { basename , children , initialEntries , initialIndex  } = _ref2;
+    let historyRef = _react.useRef();
+    if (historyRef.current == null) historyRef.current = (0, _router.createMemoryHistory)({
+        initialEntries,
+        initialIndex,
+        v5Compat: true
+    });
+    let history = historyRef.current;
+    let [state, setState] = _react.useState({
+        action: history.action,
+        location: history.location
+    });
+    _react.useLayoutEffect(()=>history.listen(setState), [
+        history
+    ]);
+    return /*#__PURE__*/ _react.createElement(Router, {
+        basename: basename,
+        children: children,
+        location: state.location,
+        navigationType: state.action,
+        navigator: history
+    });
+}
+/**
+ * Changes the current location.
+ *
+ * Note: This API is mostly useful in React.Component subclasses that are not
+ * able to use hooks. In functional components, we recommend you use the
+ * `useNavigate` hook instead.
+ *
+ * @see https://reactrouter.com/components/navigate
+ */ function Navigate(_ref3) {
+    let { to , replace , state , relative  } = _ref3;
+    !useInRouterContext() && (0, _router.invariant)(false, // the router loaded. We can help them understand how to avoid that.
+    "<Navigate> may be used only in the context of a <Router> component.");
+    (0, _router.warning)(!_react.useContext(NavigationContext).static, "<Navigate> must not be used on the initial render in a <StaticRouter>. This is a no-op, but you should modify your code so the <Navigate> is only ever rendered in response to some user interaction or state change.");
+    let dataRouterState = _react.useContext(DataRouterStateContext);
+    let navigate = useNavigate();
+    _react.useEffect(()=>{
+        // Avoid kicking off multiple navigations if we're in the middle of a
+        // data-router navigation, since components get re-rendered when we enter
+        // a submitting/loading state
+        if (dataRouterState && dataRouterState.navigation.state !== "idle") return;
+        navigate(to, {
+            replace,
+            state,
+            relative
+        });
+    });
+    return null;
+}
+/**
+ * Renders the child route's element, if there is one.
+ *
+ * @see https://reactrouter.com/components/outlet
+ */ function Outlet(props) {
+    return useOutlet(props.context);
+}
+/**
+ * Declares an element that should be rendered at a certain URL path.
+ *
+ * @see https://reactrouter.com/components/route
+ */ function Route(_props) {
+    (0, _router.invariant)(false, "A <Route> is only ever to be used as the child of <Routes> element, never rendered directly. Please wrap your <Route> in a <Routes>.");
+}
+/**
+ * Provides location context for the rest of the app.
+ *
+ * Note: You usually won't render a <Router> directly. Instead, you'll render a
+ * router that is more specific to your environment such as a <BrowserRouter>
+ * in web browsers or a <StaticRouter> for server rendering.
+ *
+ * @see https://reactrouter.com/router-components/router
+ */ function Router(_ref4) {
+    let { basename: basenameProp = "/" , children =null , location: locationProp , navigationType =(0, _router.Action).Pop , navigator , static: staticProp = false  } = _ref4;
+    !!useInRouterContext() && (0, _router.invariant)(false, "You cannot render a <Router> inside another <Router>. You should never have more than one in your app."); // Preserve trailing slashes on basename, so we can let the user control
+    // the enforcement of trailing slashes throughout the app
+    let basename = basenameProp.replace(/^\/*/, "/");
+    let navigationContext = _react.useMemo(()=>({
+            basename,
+            navigator,
+            static: staticProp
+        }), [
+        basename,
+        navigator,
+        staticProp
+    ]);
+    if (typeof locationProp === "string") locationProp = (0, _router.parsePath)(locationProp);
+    let { pathname ="/" , search ="" , hash ="" , state =null , key ="default"  } = locationProp;
+    let location = _react.useMemo(()=>{
+        let trailingPathname = (0, _router.stripBasename)(pathname, basename);
+        if (trailingPathname == null) return null;
+        return {
+            pathname: trailingPathname,
+            search,
+            hash,
+            state,
+            key
+        };
+    }, [
+        basename,
+        pathname,
+        search,
+        hash,
+        state,
+        key
+    ]);
+    (0, _router.warning)(location != null, '<Router basename="' + basename + '"> is not able to match the URL ' + ('"' + pathname + search + hash + '" because it does not start with the ') + "basename, so the <Router> won't render anything.");
+    if (location == null) return null;
+    return /*#__PURE__*/ _react.createElement(NavigationContext.Provider, {
+        value: navigationContext
+    }, /*#__PURE__*/ _react.createElement(LocationContext.Provider, {
+        children: children,
+        value: {
+            location,
+            navigationType
+        }
+    }));
+}
+/**
+ * A container for a nested tree of <Route> elements that renders the branch
+ * that best matches the current location.
+ *
+ * @see https://reactrouter.com/components/routes
+ */ function Routes(_ref5) {
+    let { children , location  } = _ref5;
+    let dataRouterContext = _react.useContext(DataRouterContext); // When in a DataRouterContext _without_ children, we use the router routes
+    // directly.  If we have children, then we're in a descendant tree and we
+    // need to use child routes.
+    let routes = dataRouterContext && !children ? dataRouterContext.router.routes : createRoutesFromChildren(children);
+    return useRoutes(routes, location);
+}
+/**
+ * Component to use for rendering lazily loaded data from returning defer()
+ * in a loader function
+ */ function Await(_ref6) {
+    let { children , errorElement , resolve  } = _ref6;
+    return /*#__PURE__*/ _react.createElement(AwaitErrorBoundary, {
+        resolve: resolve,
+        errorElement: errorElement
+    }, /*#__PURE__*/ _react.createElement(ResolveAwait, null, children));
+}
+var AwaitRenderStatus;
+(function(AwaitRenderStatus) {
+    AwaitRenderStatus[AwaitRenderStatus["pending"] = 0] = "pending";
+    AwaitRenderStatus[AwaitRenderStatus["success"] = 1] = "success";
+    AwaitRenderStatus[AwaitRenderStatus["error"] = 2] = "error";
+})(AwaitRenderStatus || (AwaitRenderStatus = {}));
+const neverSettledPromise = new Promise(()=>{});
+class AwaitErrorBoundary extends _react.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            error: null
+        };
+    }
+    static getDerivedStateFromError(error) {
+        return {
+            error
+        };
+    }
+    componentDidCatch(error, errorInfo) {
+        console.error("<Await> caught the following error during render", error, errorInfo);
+    }
+    render() {
+        let { children , errorElement , resolve  } = this.props;
+        let promise = null;
+        let status = AwaitRenderStatus.pending;
+        if (!(resolve instanceof Promise)) {
+            // Didn't get a promise - provide as a resolved promise
+            status = AwaitRenderStatus.success;
+            promise = Promise.resolve();
+            Object.defineProperty(promise, "_tracked", {
+                get: ()=>true
+            });
+            Object.defineProperty(promise, "_data", {
+                get: ()=>resolve
+            });
+        } else if (this.state.error) {
+            // Caught a render error, provide it as a rejected promise
+            status = AwaitRenderStatus.error;
+            let renderError = this.state.error;
+            promise = Promise.reject().catch(()=>{}); // Avoid unhandled rejection warnings
+            Object.defineProperty(promise, "_tracked", {
+                get: ()=>true
+            });
+            Object.defineProperty(promise, "_error", {
+                get: ()=>renderError
+            });
+        } else if (resolve._tracked) {
+            // Already tracked promise - check contents
+            promise = resolve;
+            status = promise._error !== undefined ? AwaitRenderStatus.error : promise._data !== undefined ? AwaitRenderStatus.success : AwaitRenderStatus.pending;
+        } else {
+            // Raw (untracked) promise - track it
+            status = AwaitRenderStatus.pending;
+            Object.defineProperty(resolve, "_tracked", {
+                get: ()=>true
+            });
+            promise = resolve.then((data)=>Object.defineProperty(resolve, "_data", {
+                    get: ()=>data
+                }), (error)=>Object.defineProperty(resolve, "_error", {
+                    get: ()=>error
+                }));
+        }
+        if (status === AwaitRenderStatus.error && promise._error instanceof (0, _router.AbortedDeferredError)) // Freeze the UI by throwing a never resolved promise
+        throw neverSettledPromise;
+        if (status === AwaitRenderStatus.error && !errorElement) // No errorElement, throw to the nearest route-level error boundary
+        throw promise._error;
+        if (status === AwaitRenderStatus.error) // Render via our errorElement
+        return /*#__PURE__*/ _react.createElement(AwaitContext.Provider, {
+            value: promise,
+            children: errorElement
+        });
+        if (status === AwaitRenderStatus.success) // Render children with resolved value
+        return /*#__PURE__*/ _react.createElement(AwaitContext.Provider, {
+            value: promise,
+            children: children
+        });
+         // Throw to the suspense boundary
+        throw promise;
+    }
+}
+/**
+ * @private
+ * Indirection to leverage useAsyncValue for a render-prop API on <Await>
+ */ function ResolveAwait(_ref7) {
+    let { children  } = _ref7;
+    let data = useAsyncValue();
+    if (typeof children === "function") return children(data);
+    return /*#__PURE__*/ _react.createElement(_react.Fragment, null, children);
+} ///////////////////////////////////////////////////////////////////////////////
+// UTILS
+///////////////////////////////////////////////////////////////////////////////
+/**
+ * Creates a route config from a React "children" object, which is usually
+ * either a `<Route>` element or an array of them. Used internally by
+ * `<Routes>` to create a route config from its children.
+ *
+ * @see https://reactrouter.com/utils/create-routes-from-children
+ */ function createRoutesFromChildren(children, parentPath) {
+    if (parentPath === void 0) parentPath = [];
+    let routes = [];
+    _react.Children.forEach(children, (element, index)=>{
+        if (!/*#__PURE__*/ _react.isValidElement(element)) // Ignore non-elements. This allows people to more easily inline
+        // conditionals in their route config.
+        return;
+        if (element.type === _react.Fragment) {
+            // Transparently support React.Fragment and its children.
+            routes.push.apply(routes, createRoutesFromChildren(element.props.children, parentPath));
+            return;
+        }
+        !(element.type === Route) && (0, _router.invariant)(false, "[" + (typeof element.type === "string" ? element.type : element.type.name) + "] is not a <Route> component. All component children of <Routes> must be a <Route> or <React.Fragment>");
+        !(!element.props.index || !element.props.children) && (0, _router.invariant)(false, "An index route cannot have child routes.");
+        let treePath = [
+            ...parentPath,
+            index
+        ];
+        let route = {
+            id: element.props.id || treePath.join("-"),
+            caseSensitive: element.props.caseSensitive,
+            element: element.props.element,
+            index: element.props.index,
+            path: element.props.path,
+            loader: element.props.loader,
+            action: element.props.action,
+            errorElement: element.props.errorElement,
+            hasErrorBoundary: element.props.errorElement != null,
+            shouldRevalidate: element.props.shouldRevalidate,
+            handle: element.props.handle
+        };
+        if (element.props.children) route.children = createRoutesFromChildren(element.props.children, treePath);
+        routes.push(route);
+    });
+    return routes;
+}
+/**
+ * Renders the result of `matchRoutes()` into a React element.
+ */ function renderMatches(matches) {
+    return _renderMatches(matches);
+}
+/**
+ * @private
+ * Walk the route tree and add hasErrorBoundary if it's not provided, so that
+ * users providing manual route arrays can just specify errorElement
+ */ function enhanceManualRouteObjects(routes) {
+    return routes.map((route)=>{
+        let routeClone = _extends({}, route);
+        if (routeClone.hasErrorBoundary == null) routeClone.hasErrorBoundary = routeClone.errorElement != null;
+        if (routeClone.children) routeClone.children = enhanceManualRouteObjects(routeClone.children);
+        return routeClone;
+    });
+}
+function createMemoryRouter(routes, opts) {
+    return (0, _router.createRouter)({
+        basename: opts == null ? void 0 : opts.basename,
+        history: (0, _router.createMemoryHistory)({
+            initialEntries: opts == null ? void 0 : opts.initialEntries,
+            initialIndex: opts == null ? void 0 : opts.initialIndex
+        }),
+        hydrationData: opts == null ? void 0 : opts.hydrationData,
+        routes: enhanceManualRouteObjects(routes)
+    }).initialize();
+} ///////////////////////////////////////////////////////////////////////////////
+
+},{"@remix-run/router":"5ncDG","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ncDG":[function(require,module,exports) {
+/**
+ * @remix-run/router v1.2.1
+ *
+ * Copyright (c) Remix Software Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.md file in the root directory of this source tree.
+ *
+ * @license MIT
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "AbortedDeferredError", ()=>AbortedDeferredError);
+parcelHelpers.export(exports, "Action", ()=>Action);
+parcelHelpers.export(exports, "ErrorResponse", ()=>ErrorResponse);
+parcelHelpers.export(exports, "IDLE_FETCHER", ()=>IDLE_FETCHER);
+parcelHelpers.export(exports, "IDLE_NAVIGATION", ()=>IDLE_NAVIGATION);
+parcelHelpers.export(exports, "UNSAFE_convertRoutesToDataRoutes", ()=>convertRoutesToDataRoutes);
+parcelHelpers.export(exports, "UNSAFE_getPathContributingMatches", ()=>getPathContributingMatches);
+parcelHelpers.export(exports, "createBrowserHistory", ()=>createBrowserHistory);
+parcelHelpers.export(exports, "createHashHistory", ()=>createHashHistory);
+parcelHelpers.export(exports, "createMemoryHistory", ()=>createMemoryHistory);
+parcelHelpers.export(exports, "createPath", ()=>createPath);
+parcelHelpers.export(exports, "createRouter", ()=>createRouter);
+parcelHelpers.export(exports, "createStaticHandler", ()=>createStaticHandler);
+parcelHelpers.export(exports, "defer", ()=>defer);
+parcelHelpers.export(exports, "generatePath", ()=>generatePath);
+parcelHelpers.export(exports, "getStaticContextFromError", ()=>getStaticContextFromError);
+parcelHelpers.export(exports, "getToPathname", ()=>getToPathname);
+parcelHelpers.export(exports, "invariant", ()=>invariant);
+parcelHelpers.export(exports, "isRouteErrorResponse", ()=>isRouteErrorResponse);
+parcelHelpers.export(exports, "joinPaths", ()=>joinPaths);
+parcelHelpers.export(exports, "json", ()=>json);
+parcelHelpers.export(exports, "matchPath", ()=>matchPath);
+parcelHelpers.export(exports, "matchRoutes", ()=>matchRoutes);
+parcelHelpers.export(exports, "normalizePathname", ()=>normalizePathname);
+parcelHelpers.export(exports, "parsePath", ()=>parsePath);
+parcelHelpers.export(exports, "redirect", ()=>redirect);
+parcelHelpers.export(exports, "resolvePath", ()=>resolvePath);
+parcelHelpers.export(exports, "resolveTo", ()=>resolveTo);
+parcelHelpers.export(exports, "stripBasename", ()=>stripBasename);
+parcelHelpers.export(exports, "warning", ()=>warning);
+function _extends() {
+    _extends = Object.assign ? Object.assign.bind() : function(target) {
+        for(var i = 1; i < arguments.length; i++){
+            var source = arguments[i];
+            for(var key in source)if (Object.prototype.hasOwnProperty.call(source, key)) target[key] = source[key];
+        }
+        return target;
+    };
+    return _extends.apply(this, arguments);
+}
+////////////////////////////////////////////////////////////////////////////////
+//#region Types and Constants
+////////////////////////////////////////////////////////////////////////////////
+/**
+ * Actions represent the type of change to a location value.
+ */ var Action;
+(function(Action) {
+    /**
+   * A POP indicates a change to an arbitrary index in the history stack, such
+   * as a back or forward navigation. It does not describe the direction of the
+   * navigation, only that the current index changed.
+   *
+   * Note: This is the default action for newly created history objects.
+   */ Action["Pop"] = "POP";
+    /**
+   * A PUSH indicates a new entry being added to the history stack, such as when
+   * a link is clicked and a new page loads. When this happens, all subsequent
+   * entries in the stack are lost.
+   */ Action["Push"] = "PUSH";
+    /**
+   * A REPLACE indicates the entry at the current index in the history stack
+   * being replaced by a new one.
+   */ Action["Replace"] = "REPLACE";
+})(Action || (Action = {}));
+const PopStateEventType = "popstate";
+/**
+ * Memory history stores the current location in memory. It is designed for use
+ * in stateful non-browser environments like tests and React Native.
+ */ function createMemoryHistory(options) {
+    if (options === void 0) options = {};
+    let { initialEntries =[
+        "/"
+    ] , initialIndex , v5Compat =false  } = options;
+    let entries; // Declare so we can access from createMemoryLocation
+    entries = initialEntries.map((entry, index)=>createMemoryLocation(entry, typeof entry === "string" ? null : entry.state, index === 0 ? "default" : undefined));
+    let index = clampIndex(initialIndex == null ? entries.length - 1 : initialIndex);
+    let action = Action.Pop;
+    let listener = null;
+    function clampIndex(n) {
+        return Math.min(Math.max(n, 0), entries.length - 1);
+    }
+    function getCurrentLocation() {
+        return entries[index];
+    }
+    function createMemoryLocation(to, state, key) {
+        if (state === void 0) state = null;
+        let location = createLocation(entries ? getCurrentLocation().pathname : "/", to, state, key);
+        warning$1(location.pathname.charAt(0) === "/", "relative pathnames are not supported in memory history: " + JSON.stringify(to));
+        return location;
+    }
+    let history = {
+        get index () {
+            return index;
+        },
+        get action () {
+            return action;
+        },
+        get location () {
+            return getCurrentLocation();
+        },
+        createHref (to) {
+            return typeof to === "string" ? to : createPath(to);
+        },
+        encodeLocation (to) {
+            let path = typeof to === "string" ? parsePath(to) : to;
+            return {
+                pathname: path.pathname || "",
+                search: path.search || "",
+                hash: path.hash || ""
+            };
+        },
+        push (to, state) {
+            action = Action.Push;
+            let nextLocation = createMemoryLocation(to, state);
+            index += 1;
+            entries.splice(index, entries.length, nextLocation);
+            if (v5Compat && listener) listener({
+                action,
+                location: nextLocation
+            });
+        },
+        replace (to, state) {
+            action = Action.Replace;
+            let nextLocation = createMemoryLocation(to, state);
+            entries[index] = nextLocation;
+            if (v5Compat && listener) listener({
+                action,
+                location: nextLocation
+            });
+        },
+        go (delta) {
+            action = Action.Pop;
+            index = clampIndex(index + delta);
+            if (listener) listener({
+                action,
+                location: getCurrentLocation()
+            });
+        },
+        listen (fn) {
+            listener = fn;
+            return ()=>{
+                listener = null;
+            };
+        }
+    };
+    return history;
+}
+/**
+ * Browser history stores the location in regular URLs. This is the standard for
+ * most web apps, but it requires some configuration on the server to ensure you
+ * serve the same app at multiple URLs.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createbrowserhistory
+ */ function createBrowserHistory(options) {
+    if (options === void 0) options = {};
+    function createBrowserLocation(window1, globalHistory) {
+        let { pathname , search , hash  } = window1.location;
+        return createLocation("", {
+            pathname,
+            search,
+            hash
+        }, globalHistory.state && globalHistory.state.usr || null, globalHistory.state && globalHistory.state.key || "default");
+    }
+    function createBrowserHref(window1, to) {
+        return typeof to === "string" ? to : createPath(to);
+    }
+    return getUrlBasedHistory(createBrowserLocation, createBrowserHref, null, options);
+}
+/**
+ * Hash history stores the location in window.location.hash. This makes it ideal
+ * for situations where you don't want to send the location to the server for
+ * some reason, either because you do cannot configure it or the URL space is
+ * reserved for something else.
+ *
+ * @see https://github.com/remix-run/history/tree/main/docs/api-reference.md#createhashhistory
+ */ function createHashHistory(options) {
+    if (options === void 0) options = {};
+    function createHashLocation(window1, globalHistory) {
+        let { pathname ="/" , search ="" , hash =""  } = parsePath(window1.location.hash.substr(1));
+        return createLocation("", {
+            pathname,
+            search,
+            hash
+        }, globalHistory.state && globalHistory.state.usr || null, globalHistory.state && globalHistory.state.key || "default");
+    }
+    function createHashHref(window1, to) {
+        let base = window1.document.querySelector("base");
+        let href = "";
+        if (base && base.getAttribute("href")) {
+            let url = window1.location.href;
+            let hashIndex = url.indexOf("#");
+            href = hashIndex === -1 ? url : url.slice(0, hashIndex);
+        }
+        return href + "#" + (typeof to === "string" ? to : createPath(to));
+    }
+    function validateHashLocation(location, to) {
+        warning$1(location.pathname.charAt(0) === "/", "relative pathnames are not supported in hash history.push(" + JSON.stringify(to) + ")");
+    }
+    return getUrlBasedHistory(createHashLocation, createHashHref, validateHashLocation, options);
+}
+function invariant(value, message) {
+    if (value === false || value === null || typeof value === "undefined") throw new Error(message);
+}
+function warning$1(cond, message) {
+    if (!cond) {
+        // eslint-disable-next-line no-console
+        if (typeof console !== "undefined") console.warn(message);
+        try {
+            // Welcome to debugging history!
+            //
+            // This error is thrown as a convenience so you can more easily
+            // find the source for a warning that appears in the console by
+            // enabling "pause on exceptions" in your JavaScript debugger.
+            throw new Error(message); // eslint-disable-next-line no-empty
+        } catch (e) {}
+    }
+}
+function createKey() {
+    return Math.random().toString(36).substr(2, 8);
+}
+/**
+ * For browser-based histories, we combine the state and key into an object
+ */ function getHistoryState(location) {
+    return {
+        usr: location.state,
+        key: location.key
+    };
+}
+/**
+ * Creates a Location object with a unique key from the given Path
+ */ function createLocation(current, to, state, key) {
+    if (state === void 0) state = null;
+    let location = _extends({
+        pathname: typeof current === "string" ? current : current.pathname,
+        search: "",
+        hash: ""
+    }, typeof to === "string" ? parsePath(to) : to, {
+        state,
+        // TODO: This could be cleaned up.  push/replace should probably just take
+        // full Locations now and avoid the need to run through this flow at all
+        // But that's a pretty big refactor to the current test suite so going to
+        // keep as is for the time being and just let any incoming keys take precedence
+        key: to && to.key || key || createKey()
+    });
+    return location;
+}
+/**
+ * Creates a string URL path from the given pathname, search, and hash components.
+ */ function createPath(_ref) {
+    let { pathname ="/" , search ="" , hash =""  } = _ref;
+    if (search && search !== "?") pathname += search.charAt(0) === "?" ? search : "?" + search;
+    if (hash && hash !== "#") pathname += hash.charAt(0) === "#" ? hash : "#" + hash;
+    return pathname;
+}
+/**
+ * Parses a string URL path into its separate pathname, search, and hash components.
+ */ function parsePath(path) {
+    let parsedPath = {};
+    if (path) {
+        let hashIndex = path.indexOf("#");
+        if (hashIndex >= 0) {
+            parsedPath.hash = path.substr(hashIndex);
+            path = path.substr(0, hashIndex);
+        }
+        let searchIndex = path.indexOf("?");
+        if (searchIndex >= 0) {
+            parsedPath.search = path.substr(searchIndex);
+            path = path.substr(0, searchIndex);
+        }
+        if (path) parsedPath.pathname = path;
+    }
+    return parsedPath;
+}
+function createClientSideURL(location) {
+    // window.location.origin is "null" (the literal string value) in Firefox
+    // under certain conditions, notably when serving from a local HTML file
+    // See https://bugzilla.mozilla.org/show_bug.cgi?id=878297
+    let base = typeof window !== "undefined" && typeof window.location !== "undefined" && window.location.origin !== "null" ? window.location.origin : window.location.href;
+    let href = typeof location === "string" ? location : createPath(location);
+    invariant(base, "No window.location.(origin|href) available to create URL for href: " + href);
+    return new URL(href, base);
+}
+function getUrlBasedHistory(getLocation, createHref, validateLocation, options) {
+    if (options === void 0) options = {};
+    let { window: window1 = document.defaultView , v5Compat =false  } = options;
+    let globalHistory = window1.history;
+    let action = Action.Pop;
+    let listener = null;
+    function handlePop() {
+        action = Action.Pop;
+        if (listener) listener({
+            action,
+            location: history.location
+        });
+    }
+    function push(to, state) {
+        action = Action.Push;
+        let location = createLocation(history.location, to, state);
+        if (validateLocation) validateLocation(location, to);
+        let historyState = getHistoryState(location);
+        let url = history.createHref(location); // try...catch because iOS limits us to 100 pushState calls :/
+        try {
+            globalHistory.pushState(historyState, "", url);
+        } catch (error) {
+            // They are going to lose state here, but there is no real
+            // way to warn them about it since the page will refresh...
+            window1.location.assign(url);
+        }
+        if (v5Compat && listener) listener({
+            action,
+            location: history.location
+        });
+    }
+    function replace(to, state) {
+        action = Action.Replace;
+        let location = createLocation(history.location, to, state);
+        if (validateLocation) validateLocation(location, to);
+        let historyState = getHistoryState(location);
+        let url = history.createHref(location);
+        globalHistory.replaceState(historyState, "", url);
+        if (v5Compat && listener) listener({
+            action,
+            location: history.location
+        });
+    }
+    let history = {
+        get action () {
+            return action;
+        },
+        get location () {
+            return getLocation(window1, globalHistory);
+        },
+        listen (fn) {
+            if (listener) throw new Error("A history only accepts one active listener");
+            window1.addEventListener(PopStateEventType, handlePop);
+            listener = fn;
+            return ()=>{
+                window1.removeEventListener(PopStateEventType, handlePop);
+                listener = null;
+            };
+        },
+        createHref (to) {
+            return createHref(window1, to);
+        },
+        encodeLocation (to) {
+            // Encode a Location the same way window.location would
+            let url = createClientSideURL(typeof to === "string" ? to : createPath(to));
+            return {
+                pathname: url.pathname,
+                search: url.search,
+                hash: url.hash
+            };
+        },
+        push,
+        replace,
+        go (n) {
+            return globalHistory.go(n);
+        }
+    };
+    return history;
+} //#endregion
+var ResultType;
+(function(ResultType) {
+    ResultType["data"] = "data";
+    ResultType["deferred"] = "deferred";
+    ResultType["redirect"] = "redirect";
+    ResultType["error"] = "error";
+})(ResultType || (ResultType = {}));
+function isIndexRoute(route) {
+    return route.index === true;
+} // Walk the route tree generating unique IDs where necessary so we are working
+// solely with AgnosticDataRouteObject's within the Router
+function convertRoutesToDataRoutes(routes, parentPath, allIds) {
+    if (parentPath === void 0) parentPath = [];
+    if (allIds === void 0) allIds = new Set();
+    return routes.map((route, index)=>{
+        let treePath = [
+            ...parentPath,
+            index
+        ];
+        let id = typeof route.id === "string" ? route.id : treePath.join("-");
+        invariant(route.index !== true || !route.children, "Cannot specify children on an index route");
+        invariant(!allIds.has(id), 'Found a route id collision on id "' + id + '".  Route ' + "id's must be globally unique within Data Router usages");
+        allIds.add(id);
+        if (isIndexRoute(route)) {
+            let indexRoute = _extends({}, route, {
+                id
+            });
+            return indexRoute;
+        } else {
+            let pathOrLayoutRoute = _extends({}, route, {
+                id,
+                children: route.children ? convertRoutesToDataRoutes(route.children, treePath, allIds) : undefined
+            });
+            return pathOrLayoutRoute;
+        }
+    });
+}
+/**
+ * Matches the given routes to a location and returns the match data.
+ *
+ * @see https://reactrouter.com/utils/match-routes
+ */ function matchRoutes(routes, locationArg, basename) {
+    if (basename === void 0) basename = "/";
+    let location = typeof locationArg === "string" ? parsePath(locationArg) : locationArg;
+    let pathname = stripBasename(location.pathname || "/", basename);
+    if (pathname == null) return null;
+    let branches = flattenRoutes(routes);
+    rankRouteBranches(branches);
+    let matches = null;
+    for(let i = 0; matches == null && i < branches.length; ++i)matches = matchRouteBranch(branches[i], // or from router.navigate, but we want to match against the unencoded
+    // paths in the route definitions.  Memory router locations won't be
+    // encoded here but there also shouldn't be anything to decode so this
+    // should be a safe operation.  This avoids needing matchRoutes to be
+    // history-aware.
+    safelyDecodeURI(pathname));
+    return matches;
+}
+function flattenRoutes(routes, branches, parentsMeta, parentPath) {
+    if (branches === void 0) branches = [];
+    if (parentsMeta === void 0) parentsMeta = [];
+    if (parentPath === void 0) parentPath = "";
+    let flattenRoute = (route, index, relativePath)=>{
+        let meta = {
+            relativePath: relativePath === undefined ? route.path || "" : relativePath,
+            caseSensitive: route.caseSensitive === true,
+            childrenIndex: index,
+            route
+        };
+        if (meta.relativePath.startsWith("/")) {
+            invariant(meta.relativePath.startsWith(parentPath), 'Absolute route path "' + meta.relativePath + '" nested under path ' + ('"' + parentPath + '" is not valid. An absolute child route path ') + "must start with the combined path of all its parent routes.");
+            meta.relativePath = meta.relativePath.slice(parentPath.length);
+        }
+        let path = joinPaths([
+            parentPath,
+            meta.relativePath
+        ]);
+        let routesMeta = parentsMeta.concat(meta); // Add the children before adding this route to the array so we traverse the
+        // route tree depth-first and child routes appear before their parents in
+        // the "flattened" version.
+        if (route.children && route.children.length > 0) {
+            invariant(// @ts-expect-error
+            route.index !== true, "Index routes must not have child routes. Please remove " + ('all child routes from route path "' + path + '".'));
+            flattenRoutes(route.children, branches, routesMeta, path);
+        } // Routes without a path shouldn't ever match by themselves unless they are
+        // index routes, so don't add them to the list of possible branches.
+        if (route.path == null && !route.index) return;
+        branches.push({
+            path,
+            score: computeScore(path, route.index),
+            routesMeta
+        });
+    };
+    routes.forEach((route, index)=>{
+        var _route$path;
+        // coarse-grain check for optional params
+        if (route.path === "" || !((_route$path = route.path) != null && _route$path.includes("?"))) flattenRoute(route, index);
+        else for (let exploded of explodeOptionalSegments(route.path))flattenRoute(route, index, exploded);
+    });
+    return branches;
+}
+/**
+ * Computes all combinations of optional path segments for a given path,
+ * excluding combinations that are ambiguous and of lower priority.
+ *
+ * For example, `/one/:two?/three/:four?/:five?` explodes to:
+ * - `/one/three`
+ * - `/one/:two/three`
+ * - `/one/three/:four`
+ * - `/one/three/:five`
+ * - `/one/:two/three/:four`
+ * - `/one/:two/three/:five`
+ * - `/one/three/:four/:five`
+ * - `/one/:two/three/:four/:five`
+ */ function explodeOptionalSegments(path) {
+    let segments = path.split("/");
+    if (segments.length === 0) return [];
+    let [first, ...rest] = segments; // Optional path segments are denoted by a trailing `?`
+    let isOptional = first.endsWith("?"); // Compute the corresponding required segment: `foo?` -> `foo`
+    let required = first.replace(/\?$/, "");
+    if (rest.length === 0) // Intepret empty string as omitting an optional segment
+    // `["one", "", "three"]` corresponds to omitting `:two` from `/one/:two?/three` -> `/one/three`
+    return isOptional ? [
+        required,
+        ""
+    ] : [
+        required
+    ];
+    let restExploded = explodeOptionalSegments(rest.join("/"));
+    let result = []; // All child paths with the prefix.  Do this for all children before the
+    // optional version for all children so we get consistent ordering where the
+    // parent optional aspect is preferred as required.  Otherwise, we can get
+    // child sections interspersed where deeper optional segments are higher than
+    // parent optional segments, where for example, /:two would explodes _earlier_
+    // then /:one.  By always including the parent as required _for all children_
+    // first, we avoid this issue
+    result.push(...restExploded.map((subpath)=>subpath === "" ? required : [
+            required,
+            subpath
+        ].join("/"))); // Then if this is an optional value, add all child versions without
+    if (isOptional) result.push(...restExploded);
+     // for absolute paths, ensure `/` instead of empty segment
+    return result.map((exploded)=>path.startsWith("/") && exploded === "" ? "/" : exploded);
+}
+function rankRouteBranches(branches) {
+    branches.sort((a, b)=>a.score !== b.score ? b.score - a.score // Higher score first
+         : compareIndexes(a.routesMeta.map((meta)=>meta.childrenIndex), b.routesMeta.map((meta)=>meta.childrenIndex)));
+}
+const paramRe = /^:\w+$/;
+const dynamicSegmentValue = 3;
+const indexRouteValue = 2;
+const emptySegmentValue = 1;
+const staticSegmentValue = 10;
+const splatPenalty = -2;
+const isSplat = (s)=>s === "*";
+function computeScore(path, index) {
+    let segments = path.split("/");
+    let initialScore = segments.length;
+    if (segments.some(isSplat)) initialScore += splatPenalty;
+    if (index) initialScore += indexRouteValue;
+    return segments.filter((s)=>!isSplat(s)).reduce((score, segment)=>score + (paramRe.test(segment) ? dynamicSegmentValue : segment === "" ? emptySegmentValue : staticSegmentValue), initialScore);
+}
+function compareIndexes(a, b) {
+    let siblings = a.length === b.length && a.slice(0, -1).every((n, i)=>n === b[i]);
+    return siblings ? // first. This allows people to have fine-grained control over the matching
+    // behavior by simply putting routes with identical paths in the order they
+    // want them tried.
+    a[a.length - 1] - b[b.length - 1] : // so they sort equally.
+    0;
+}
+function matchRouteBranch(branch, pathname) {
+    let { routesMeta  } = branch;
+    let matchedParams = {};
+    let matchedPathname = "/";
+    let matches = [];
+    for(let i = 0; i < routesMeta.length; ++i){
+        let meta = routesMeta[i];
+        let end = i === routesMeta.length - 1;
+        let remainingPathname = matchedPathname === "/" ? pathname : pathname.slice(matchedPathname.length) || "/";
+        let match = matchPath({
+            path: meta.relativePath,
+            caseSensitive: meta.caseSensitive,
+            end
+        }, remainingPathname);
+        if (!match) return null;
+        Object.assign(matchedParams, match.params);
+        let route = meta.route;
+        matches.push({
+            // TODO: Can this as be avoided?
+            params: matchedParams,
+            pathname: joinPaths([
+                matchedPathname,
+                match.pathname
+            ]),
+            pathnameBase: normalizePathname(joinPaths([
+                matchedPathname,
+                match.pathnameBase
+            ])),
+            route
+        });
+        if (match.pathnameBase !== "/") matchedPathname = joinPaths([
+            matchedPathname,
+            match.pathnameBase
+        ]);
+    }
+    return matches;
+}
+/**
+ * Returns a path with params interpolated.
+ *
+ * @see https://reactrouter.com/utils/generate-path
+ */ function generatePath(originalPath, params) {
+    if (params === void 0) params = {};
+    let path = originalPath;
+    if (path.endsWith("*") && path !== "*" && !path.endsWith("/*")) {
+        warning(false, 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".'));
+        path = path.replace(/\*$/, "/*");
+    }
+    return path.replace(/^:(\w+)/g, (_, key)=>{
+        invariant(params[key] != null, 'Missing ":' + key + '" param');
+        return params[key];
+    }).replace(/\/:(\w+)/g, (_, key)=>{
+        invariant(params[key] != null, 'Missing ":' + key + '" param');
+        return "/" + params[key];
+    }).replace(/(\/?)\*/, (_, prefix, __, str)=>{
+        const star = "*";
+        if (params[star] == null) // If no splat was provided, trim the trailing slash _unless_ it's
+        // the entire path
+        return str === "/*" ? "/" : "";
+         // Apply the splat
+        return "" + prefix + params[star];
+    });
+}
+/**
+ * Performs pattern matching on a URL pathname and returns information about
+ * the match.
+ *
+ * @see https://reactrouter.com/utils/match-path
+ */ function matchPath(pattern, pathname) {
+    if (typeof pattern === "string") pattern = {
+        path: pattern,
+        caseSensitive: false,
+        end: true
+    };
+    let [matcher, paramNames] = compilePath(pattern.path, pattern.caseSensitive, pattern.end);
+    let match = pathname.match(matcher);
+    if (!match) return null;
+    let matchedPathname = match[0];
+    let pathnameBase = matchedPathname.replace(/(.)\/+$/, "$1");
+    let captureGroups = match.slice(1);
+    let params = paramNames.reduce((memo, paramName, index)=>{
+        // We need to compute the pathnameBase here using the raw splat value
+        // instead of using params["*"] later because it will be decoded then
+        if (paramName === "*") {
+            let splatValue = captureGroups[index] || "";
+            pathnameBase = matchedPathname.slice(0, matchedPathname.length - splatValue.length).replace(/(.)\/+$/, "$1");
+        }
+        memo[paramName] = safelyDecodeURIComponent(captureGroups[index] || "", paramName);
+        return memo;
+    }, {});
+    return {
+        params,
+        pathname: matchedPathname,
+        pathnameBase,
+        pattern
+    };
+}
+function compilePath(path, caseSensitive, end) {
+    if (caseSensitive === void 0) caseSensitive = false;
+    if (end === void 0) end = true;
+    warning(path === "*" || !path.endsWith("*") || path.endsWith("/*"), 'Route path "' + path + '" will be treated as if it were ' + ('"' + path.replace(/\*$/, "/*") + '" because the `*` character must ') + "always follow a `/` in the pattern. To get rid of this warning, " + ('please change the route path to "' + path.replace(/\*$/, "/*") + '".'));
+    let paramNames = [];
+    let regexpSource = "^" + path.replace(/\/*\*?$/, "") // Ignore trailing / and /*, we'll handle it below
+    .replace(/^\/*/, "/") // Make sure it has a leading /
+    .replace(/[\\.*+^$?{}|()[\]]/g, "\\$&") // Escape special regex chars
+    .replace(/\/:(\w+)/g, (_, paramName)=>{
+        paramNames.push(paramName);
+        return "/([^\\/]+)";
+    });
+    if (path.endsWith("*")) {
+        paramNames.push("*");
+        regexpSource += path === "*" || path === "/*" ? "(.*)$" // Already matched the initial /, just match the rest
+         : "(?:\\/(.+)|\\/*)$"; // Don't include the / in params["*"]
+    } else if (end) // When matching to the end, ignore trailing slashes
+    regexpSource += "\\/*$";
+    else if (path !== "" && path !== "/") // If our path is non-empty and contains anything beyond an initial slash,
+    // then we have _some_ form of path in our regex so we should expect to
+    // match only if we find the end of this path segment.  Look for an optional
+    // non-captured trailing slash (to match a portion of the URL) or the end
+    // of the path (if we've matched to the end).  We used to do this with a
+    // word boundary but that gives false positives on routes like
+    // /user-preferences since `-` counts as a word boundary.
+    regexpSource += "(?:(?=\\/|$))";
+    let matcher = new RegExp(regexpSource, caseSensitive ? undefined : "i");
+    return [
+        matcher,
+        paramNames
+    ];
+}
+function safelyDecodeURI(value) {
+    try {
+        return decodeURI(value);
+    } catch (error) {
+        warning(false, 'The URL path "' + value + '" could not be decoded because it is is a ' + "malformed URL segment. This is probably due to a bad percent " + ("encoding (" + error + ")."));
+        return value;
+    }
+}
+function safelyDecodeURIComponent(value, paramName) {
+    try {
+        return decodeURIComponent(value);
+    } catch (error) {
+        warning(false, 'The value for the URL param "' + paramName + '" will not be decoded because' + (' the string "' + value + '" is a malformed URL segment. This is probably') + (" due to a bad percent encoding (" + error + ")."));
+        return value;
+    }
+}
+/**
+ * @private
+ */ function stripBasename(pathname, basename) {
+    if (basename === "/") return pathname;
+    if (!pathname.toLowerCase().startsWith(basename.toLowerCase())) return null;
+     // We want to leave trailing slash behavior in the user's control, so if they
+    // specify a basename with a trailing slash, we should support it
+    let startIndex = basename.endsWith("/") ? basename.length - 1 : basename.length;
+    let nextChar = pathname.charAt(startIndex);
+    if (nextChar && nextChar !== "/") // pathname does not start with basename/
+    return null;
+    return pathname.slice(startIndex) || "/";
+}
+/**
+ * @private
+ */ function warning(cond, message) {
+    if (!cond) {
+        // eslint-disable-next-line no-console
+        if (typeof console !== "undefined") console.warn(message);
+        try {
+            // Welcome to debugging React Router!
+            //
+            // This error is thrown as a convenience so you can more easily
+            // find the source for a warning that appears in the console by
+            // enabling "pause on exceptions" in your JavaScript debugger.
+            throw new Error(message); // eslint-disable-next-line no-empty
+        } catch (e) {}
+    }
+}
+/**
+ * Returns a resolved path object relative to the given pathname.
+ *
+ * @see https://reactrouter.com/utils/resolve-path
+ */ function resolvePath(to, fromPathname) {
+    if (fromPathname === void 0) fromPathname = "/";
+    let { pathname: toPathname , search ="" , hash =""  } = typeof to === "string" ? parsePath(to) : to;
+    let pathname = toPathname ? toPathname.startsWith("/") ? toPathname : resolvePathname(toPathname, fromPathname) : fromPathname;
+    return {
+        pathname,
+        search: normalizeSearch(search),
+        hash: normalizeHash(hash)
+    };
+}
+function resolvePathname(relativePath, fromPathname) {
+    let segments = fromPathname.replace(/\/+$/, "").split("/");
+    let relativeSegments = relativePath.split("/");
+    relativeSegments.forEach((segment)=>{
+        if (segment === "..") // Keep the root "" segment so the pathname starts at /
+        {
+            if (segments.length > 1) segments.pop();
+        } else if (segment !== ".") segments.push(segment);
+    });
+    return segments.length > 1 ? segments.join("/") : "/";
+}
+function getInvalidPathError(char, field, dest, path) {
+    return "Cannot include a '" + char + "' character in a manually specified " + ("`to." + field + "` field [" + JSON.stringify(path) + "].  Please separate it out to the ") + ("`to." + dest + "` field. Alternatively you may provide the full path as ") + 'a string in <Link to="..."> and the router will parse it for you.';
+}
+/**
+ * @private
+ *
+ * When processing relative navigation we want to ignore ancestor routes that
+ * do not contribute to the path, such that index/pathless layout routes don't
+ * interfere.
+ *
+ * For example, when moving a route element into an index route and/or a
+ * pathless layout route, relative link behavior contained within should stay
+ * the same.  Both of the following examples should link back to the root:
+ *
+ *   <Route path="/">
+ *     <Route path="accounts" element={<Link to=".."}>
+ *   </Route>
+ *
+ *   <Route path="/">
+ *     <Route path="accounts">
+ *       <Route element={<AccountsLayout />}>       // <-- Does not contribute
+ *         <Route index element={<Link to=".."} />  // <-- Does not contribute
+ *       </Route
+ *     </Route>
+ *   </Route>
+ */ function getPathContributingMatches(matches) {
+    return matches.filter((match, index)=>index === 0 || match.route.path && match.route.path.length > 0);
+}
+/**
+ * @private
+ */ function resolveTo(toArg, routePathnames, locationPathname, isPathRelative) {
+    if (isPathRelative === void 0) isPathRelative = false;
+    let to;
+    if (typeof toArg === "string") to = parsePath(toArg);
+    else {
+        to = _extends({}, toArg);
+        invariant(!to.pathname || !to.pathname.includes("?"), getInvalidPathError("?", "pathname", "search", to));
+        invariant(!to.pathname || !to.pathname.includes("#"), getInvalidPathError("#", "pathname", "hash", to));
+        invariant(!to.search || !to.search.includes("#"), getInvalidPathError("#", "search", "hash", to));
+    }
+    let isEmptyPath = toArg === "" || to.pathname === "";
+    let toPathname = isEmptyPath ? "/" : to.pathname;
+    let from; // Routing is relative to the current pathname if explicitly requested.
+    //
+    // If a pathname is explicitly provided in `to`, it should be relative to the
+    // route context. This is explained in `Note on `<Link to>` values` in our
+    // migration guide from v5 as a means of disambiguation between `to` values
+    // that begin with `/` and those that do not. However, this is problematic for
+    // `to` values that do not provide a pathname. `to` can simply be a search or
+    // hash string, in which case we should assume that the navigation is relative
+    // to the current location's pathname and *not* the route pathname.
+    if (isPathRelative || toPathname == null) from = locationPathname;
+    else {
+        let routePathnameIndex = routePathnames.length - 1;
+        if (toPathname.startsWith("..")) {
+            let toSegments = toPathname.split("/"); // Each leading .. segment means "go up one route" instead of "go up one
+            // URL segment".  This is a key difference from how <a href> works and a
+            // major reason we call this a "to" value instead of a "href".
+            while(toSegments[0] === ".."){
+                toSegments.shift();
+                routePathnameIndex -= 1;
+            }
+            to.pathname = toSegments.join("/");
+        } // If there are more ".." segments than parent routes, resolve relative to
+        // the root / URL.
+        from = routePathnameIndex >= 0 ? routePathnames[routePathnameIndex] : "/";
+    }
+    let path = resolvePath(to, from); // Ensure the pathname has a trailing slash if the original "to" had one
+    let hasExplicitTrailingSlash = toPathname && toPathname !== "/" && toPathname.endsWith("/"); // Or if this was a link to the current path which has a trailing slash
+    let hasCurrentTrailingSlash = (isEmptyPath || toPathname === ".") && locationPathname.endsWith("/");
+    if (!path.pathname.endsWith("/") && (hasExplicitTrailingSlash || hasCurrentTrailingSlash)) path.pathname += "/";
+    return path;
+}
+/**
+ * @private
+ */ function getToPathname(to) {
+    // Empty strings should be treated the same as / paths
+    return to === "" || to.pathname === "" ? "/" : typeof to === "string" ? parsePath(to).pathname : to.pathname;
+}
+/**
+ * @private
+ */ const joinPaths = (paths)=>paths.join("/").replace(/\/\/+/g, "/");
+/**
+ * @private
+ */ const normalizePathname = (pathname)=>pathname.replace(/\/+$/, "").replace(/^\/*/, "/");
+/**
+ * @private
+ */ const normalizeSearch = (search)=>!search || search === "?" ? "" : search.startsWith("?") ? search : "?" + search;
+/**
+ * @private
+ */ const normalizeHash = (hash)=>!hash || hash === "#" ? "" : hash.startsWith("#") ? hash : "#" + hash;
+/**
+ * This is a shortcut for creating `application/json` responses. Converts `data`
+ * to JSON and sets the `Content-Type` header.
+ */ const json = function json(data, init) {
+    if (init === void 0) init = {};
+    let responseInit = typeof init === "number" ? {
+        status: init
+    } : init;
+    let headers = new Headers(responseInit.headers);
+    if (!headers.has("Content-Type")) headers.set("Content-Type", "application/json; charset=utf-8");
+    return new Response(JSON.stringify(data), _extends({}, responseInit, {
+        headers
+    }));
+};
+class AbortedDeferredError extends Error {
+}
+class DeferredData {
+    constructor(data){
+        this.pendingKeys = new Set();
+        this.subscriber = undefined;
+        invariant(data && typeof data === "object" && !Array.isArray(data), "defer() only accepts plain objects"); // Set up an AbortController + Promise we can race against to exit early
+        // cancellation
+        let reject;
+        this.abortPromise = new Promise((_, r)=>reject = r);
+        this.controller = new AbortController();
+        let onAbort = ()=>reject(new AbortedDeferredError("Deferred data aborted"));
+        this.unlistenAbortSignal = ()=>this.controller.signal.removeEventListener("abort", onAbort);
+        this.controller.signal.addEventListener("abort", onAbort);
+        this.data = Object.entries(data).reduce((acc, _ref)=>{
+            let [key, value] = _ref;
+            return Object.assign(acc, {
+                [key]: this.trackPromise(key, value)
+            });
+        }, {});
+    }
+    trackPromise(key, value) {
+        if (!(value instanceof Promise)) return value;
+        this.pendingKeys.add(key); // We store a little wrapper promise that will be extended with
+        // _data/_error props upon resolve/reject
+        let promise = Promise.race([
+            value,
+            this.abortPromise
+        ]).then((data)=>this.onSettle(promise, key, null, data), (error)=>this.onSettle(promise, key, error)); // Register rejection listeners to avoid uncaught promise rejections on
+        // errors or aborted deferred values
+        promise.catch(()=>{});
+        Object.defineProperty(promise, "_tracked", {
+            get: ()=>true
+        });
+        return promise;
+    }
+    onSettle(promise, key, error, data) {
+        if (this.controller.signal.aborted && error instanceof AbortedDeferredError) {
+            this.unlistenAbortSignal();
+            Object.defineProperty(promise, "_error", {
+                get: ()=>error
+            });
+            return Promise.reject(error);
+        }
+        this.pendingKeys.delete(key);
+        if (this.done) // Nothing left to abort!
+        this.unlistenAbortSignal();
+        const subscriber = this.subscriber;
+        if (error) {
+            Object.defineProperty(promise, "_error", {
+                get: ()=>error
+            });
+            subscriber && subscriber(false);
+            return Promise.reject(error);
+        }
+        Object.defineProperty(promise, "_data", {
+            get: ()=>data
+        });
+        subscriber && subscriber(false);
+        return data;
+    }
+    subscribe(fn) {
+        this.subscriber = fn;
+    }
+    cancel() {
+        this.controller.abort();
+        this.pendingKeys.forEach((v, k)=>this.pendingKeys.delete(k));
+        let subscriber = this.subscriber;
+        subscriber && subscriber(true);
+    }
+    async resolveData(signal) {
+        let aborted = false;
+        if (!this.done) {
+            let onAbort = ()=>this.cancel();
+            signal.addEventListener("abort", onAbort);
+            aborted = await new Promise((resolve)=>{
+                this.subscribe((aborted)=>{
+                    signal.removeEventListener("abort", onAbort);
+                    if (aborted || this.done) resolve(aborted);
+                });
+            });
+        }
+        return aborted;
+    }
+    get done() {
+        return this.pendingKeys.size === 0;
+    }
+    get unwrappedData() {
+        invariant(this.data !== null && this.done, "Can only unwrap data on initialized and settled deferreds");
+        return Object.entries(this.data).reduce((acc, _ref2)=>{
+            let [key, value] = _ref2;
+            return Object.assign(acc, {
+                [key]: unwrapTrackedPromise(value)
+            });
+        }, {});
+    }
+}
+function isTrackedPromise(value) {
+    return value instanceof Promise && value._tracked === true;
+}
+function unwrapTrackedPromise(value) {
+    if (!isTrackedPromise(value)) return value;
+    if (value._error) throw value._error;
+    return value._data;
+}
+function defer(data) {
+    return new DeferredData(data);
+}
+/**
+ * A redirect response. Sets the status code and the `Location` header.
+ * Defaults to "302 Found".
+ */ const redirect = function redirect(url, init) {
+    if (init === void 0) init = 302;
+    let responseInit = init;
+    if (typeof responseInit === "number") responseInit = {
+        status: responseInit
+    };
+    else if (typeof responseInit.status === "undefined") responseInit.status = 302;
+    let headers = new Headers(responseInit.headers);
+    headers.set("Location", url);
+    return new Response(null, _extends({}, responseInit, {
+        headers
+    }));
+};
+/**
+ * @private
+ * Utility class we use to hold auto-unwrapped 4xx/5xx Response bodies
+ */ class ErrorResponse {
+    constructor(status, statusText, data, internal){
+        if (internal === void 0) internal = false;
+        this.status = status;
+        this.statusText = statusText || "";
+        this.internal = internal;
+        if (data instanceof Error) {
+            this.data = data.toString();
+            this.error = data;
+        } else this.data = data;
+    }
+}
+/**
+ * Check if the given error is an ErrorResponse generated from a 4xx/5xx
+ * Response throw from an action/loader
+ */ function isRouteErrorResponse(e) {
+    return e instanceof ErrorResponse;
+}
+const validMutationMethodsArr = [
+    "post",
+    "put",
+    "patch",
+    "delete"
+];
+const validMutationMethods = new Set(validMutationMethodsArr);
+const validRequestMethodsArr = [
+    "get",
+    ...validMutationMethodsArr
+];
+const validRequestMethods = new Set(validRequestMethodsArr);
+const redirectStatusCodes = new Set([
+    301,
+    302,
+    303,
+    307,
+    308
+]);
+const redirectPreserveMethodStatusCodes = new Set([
+    307,
+    308
+]);
+const IDLE_NAVIGATION = {
+    state: "idle",
+    location: undefined,
+    formMethod: undefined,
+    formAction: undefined,
+    formEncType: undefined,
+    formData: undefined
+};
+const IDLE_FETCHER = {
+    state: "idle",
+    data: undefined,
+    formMethod: undefined,
+    formAction: undefined,
+    formEncType: undefined,
+    formData: undefined
+};
+const isBrowser = typeof window !== "undefined" && typeof window.document !== "undefined" && typeof window.document.createElement !== "undefined";
+const isServer = !isBrowser; //#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region createRouter
+////////////////////////////////////////////////////////////////////////////////
+/**
+ * Create a router and listen to history POP navigations
+ */ function createRouter(init) {
+    invariant(init.routes.length > 0, "You must provide a non-empty routes array to createRouter");
+    let dataRoutes = convertRoutesToDataRoutes(init.routes); // Cleanup function for history
+    let unlistenHistory = null; // Externally-provided functions to call on all state changes
+    let subscribers = new Set(); // Externally-provided object to hold scroll restoration locations during routing
+    let savedScrollPositions = null; // Externally-provided function to get scroll restoration keys
+    let getScrollRestorationKey = null; // Externally-provided function to get current scroll position
+    let getScrollPosition = null; // One-time flag to control the initial hydration scroll restoration.  Because
+    // we don't get the saved positions from <ScrollRestoration /> until _after_
+    // the initial render, we need to manually trigger a separate updateState to
+    // send along the restoreScrollPosition
+    // Set to true if we have `hydrationData` since we assume we were SSR'd and that
+    // SSR did the initial scroll restoration.
+    let initialScrollRestored = init.hydrationData != null;
+    let initialMatches = matchRoutes(dataRoutes, init.history.location, init.basename);
+    let initialErrors = null;
+    if (initialMatches == null) {
+        // If we do not match a user-provided-route, fall back to the root
+        // to allow the error boundary to take over
+        let error = getInternalRouterError(404, {
+            pathname: init.history.location.pathname
+        });
+        let { matches , route  } = getShortCircuitMatches(dataRoutes);
+        initialMatches = matches;
+        initialErrors = {
+            [route.id]: error
+        };
+    }
+    let initialized = !initialMatches.some((m)=>m.route.loader) || init.hydrationData != null;
+    let router;
+    let state = {
+        historyAction: init.history.action,
+        location: init.history.location,
+        matches: initialMatches,
+        initialized,
+        navigation: IDLE_NAVIGATION,
+        // Don't restore on initial updateState() if we were SSR'd
+        restoreScrollPosition: init.hydrationData != null ? false : null,
+        preventScrollReset: false,
+        revalidation: "idle",
+        loaderData: init.hydrationData && init.hydrationData.loaderData || {},
+        actionData: init.hydrationData && init.hydrationData.actionData || null,
+        errors: init.hydrationData && init.hydrationData.errors || initialErrors,
+        fetchers: new Map()
+    }; // -- Stateful internal variables to manage navigations --
+    // Current navigation in progress (to be committed in completeNavigation)
+    let pendingAction = Action.Pop; // Should the current navigation prevent the scroll reset if scroll cannot
+    // be restored?
+    let pendingPreventScrollReset = false; // AbortController for the active navigation
+    let pendingNavigationController; // We use this to avoid touching history in completeNavigation if a
+    // revalidation is entirely uninterrupted
+    let isUninterruptedRevalidation = false; // Use this internal flag to force revalidation of all loaders:
+    //  - submissions (completed or interrupted)
+    //  - useRevalidate()
+    //  - X-Remix-Revalidate (from redirect)
+    let isRevalidationRequired = false; // Use this internal array to capture routes that require revalidation due
+    // to a cancelled deferred on action submission
+    let cancelledDeferredRoutes = []; // Use this internal array to capture fetcher loads that were cancelled by an
+    // action navigation and require revalidation
+    let cancelledFetcherLoads = []; // AbortControllers for any in-flight fetchers
+    let fetchControllers = new Map(); // Track loads based on the order in which they started
+    let incrementingLoadId = 0; // Track the outstanding pending navigation data load to be compared against
+    // the globally incrementing load when a fetcher load lands after a completed
+    // navigation
+    let pendingNavigationLoadId = -1; // Fetchers that triggered data reloads as a result of their actions
+    let fetchReloadIds = new Map(); // Fetchers that triggered redirect navigations from their actions
+    let fetchRedirectIds = new Set(); // Most recent href/match for fetcher.load calls for fetchers
+    let fetchLoadMatches = new Map(); // Store DeferredData instances for active route matches.  When a
+    // route loader returns defer() we stick one in here.  Then, when a nested
+    // promise resolves we update loaderData.  If a new navigation starts we
+    // cancel active deferreds for eliminated routes.
+    let activeDeferreds = new Map(); // Initialize the router, all side effects should be kicked off from here.
+    // Implemented as a Fluent API for ease of:
+    //   let router = createRouter(init).initialize();
+    function initialize() {
+        // If history informs us of a POP navigation, start the navigation but do not update
+        // state.  We'll update our own state once the navigation completes
+        unlistenHistory = init.history.listen((_ref)=>{
+            let { action: historyAction , location  } = _ref;
+            return startNavigation(historyAction, location);
+        }); // Kick off initial data load if needed.  Use Pop to avoid modifying history
+        if (!state.initialized) startNavigation(Action.Pop, state.location);
+        return router;
+    } // Clean up a router and it's side effects
+    function dispose() {
+        if (unlistenHistory) unlistenHistory();
+        subscribers.clear();
+        pendingNavigationController && pendingNavigationController.abort();
+        state.fetchers.forEach((_, key)=>deleteFetcher(key));
+    } // Subscribe to state updates for the router
+    function subscribe(fn) {
+        subscribers.add(fn);
+        return ()=>subscribers.delete(fn);
+    } // Update our state and notify the calling context of the change
+    function updateState(newState) {
+        state = _extends({}, state, newState);
+        subscribers.forEach((subscriber)=>subscriber(state));
+    } // Complete a navigation returning the state.navigation back to the IDLE_NAVIGATION
+    // and setting state.[historyAction/location/matches] to the new route.
+    // - Location is a required param
+    // - Navigation will always be set to IDLE_NAVIGATION
+    // - Can pass any other state in newState
+    function completeNavigation(location, newState) {
+        var _location$state;
+        // Deduce if we're in a loading/actionReload state:
+        // - We have committed actionData in the store
+        // - The current navigation was a mutation submission
+        // - We're past the submitting state and into the loading state
+        // - The location being loaded is not the result of a redirect
+        let isActionReload = state.actionData != null && state.navigation.formMethod != null && isMutationMethod(state.navigation.formMethod) && state.navigation.state === "loading" && ((_location$state = location.state) == null ? void 0 : _location$state._isRedirect) !== true;
+        let actionData;
+        if (newState.actionData) {
+            if (Object.keys(newState.actionData).length > 0) actionData = newState.actionData;
+            else // Empty actionData -> clear prior actionData due to an action error
+            actionData = null;
+        } else if (isActionReload) // Keep the current data if we're wrapping up the action reload
+        actionData = state.actionData;
+        else // Clear actionData on any other completed navigations
+        actionData = null;
+         // Always preserve any existing loaderData from re-used routes
+        let loaderData = newState.loaderData ? mergeLoaderData(state.loaderData, newState.loaderData, newState.matches || [], newState.errors) : state.loaderData;
+        updateState(_extends({}, newState, {
+            actionData,
+            loaderData,
+            historyAction: pendingAction,
+            location,
+            initialized: true,
+            navigation: IDLE_NAVIGATION,
+            revalidation: "idle",
+            // Don't restore on submission navigations
+            restoreScrollPosition: state.navigation.formData ? false : getSavedScrollPosition(location, newState.matches || state.matches),
+            preventScrollReset: pendingPreventScrollReset
+        }));
+        if (isUninterruptedRevalidation) ;
+        else if (pendingAction === Action.Pop) ;
+        else if (pendingAction === Action.Push) init.history.push(location, location.state);
+        else if (pendingAction === Action.Replace) init.history.replace(location, location.state);
+         // Reset stateful navigation vars
+        pendingAction = Action.Pop;
+        pendingPreventScrollReset = false;
+        isUninterruptedRevalidation = false;
+        isRevalidationRequired = false;
+        cancelledDeferredRoutes = [];
+        cancelledFetcherLoads = [];
+    } // Trigger a navigation event, which can either be a numerical POP or a PUSH
+    // replace with an optional submission
+    async function navigate(to, opts) {
+        if (typeof to === "number") {
+            init.history.go(to);
+            return;
+        }
+        let { path , submission , error  } = normalizeNavigateOptions(to, opts);
+        let location = createLocation(state.location, path, opts && opts.state); // When using navigate as a PUSH/REPLACE we aren't reading an already-encoded
+        // URL from window.location, so we need to encode it here so the behavior
+        // remains the same as POP and non-data-router usages.  new URL() does all
+        // the same encoding we'd get from a history.pushState/window.location read
+        // without having to touch history
+        location = _extends({}, location, init.history.encodeLocation(location));
+        let userReplace = opts && opts.replace != null ? opts.replace : undefined;
+        let historyAction = Action.Push;
+        if (userReplace === true) historyAction = Action.Replace;
+        else if (userReplace === false) ;
+        else if (submission != null && isMutationMethod(submission.formMethod) && submission.formAction === state.location.pathname + state.location.search) // By default on submissions to the current location we REPLACE so that
+        // users don't have to double-click the back button to get to the prior
+        // location.  If the user redirects to a different location from the
+        // action/loader this will be ignored and the redirect will be a PUSH
+        historyAction = Action.Replace;
+        let preventScrollReset = opts && "preventScrollReset" in opts ? opts.preventScrollReset === true : undefined;
+        return await startNavigation(historyAction, location, {
+            submission,
+            // Send through the formData serialization error if we have one so we can
+            // render at the right error boundary after we match routes
+            pendingError: error,
+            preventScrollReset,
+            replace: opts && opts.replace
+        });
+    } // Revalidate all current loaders.  If a navigation is in progress or if this
+    // is interrupted by a navigation, allow this to "succeed" by calling all
+    // loaders during the next loader round
+    function revalidate() {
+        interruptActiveLoads();
+        updateState({
+            revalidation: "loading"
+        }); // If we're currently submitting an action, we don't need to start a new
+        // navigation, we'll just let the follow up loader execution call all loaders
+        if (state.navigation.state === "submitting") return;
+         // If we're currently in an idle state, start a new navigation for the current
+        // action/location and mark it as uninterrupted, which will skip the history
+        // update in completeNavigation
+        if (state.navigation.state === "idle") {
+            startNavigation(state.historyAction, state.location, {
+                startUninterruptedRevalidation: true
+            });
+            return;
+        } // Otherwise, if we're currently in a loading state, just start a new
+        // navigation to the navigation.location but do not trigger an uninterrupted
+        // revalidation so that history correctly updates once the navigation completes
+        startNavigation(pendingAction || state.historyAction, state.navigation.location, {
+            overrideNavigation: state.navigation
+        });
+    } // Start a navigation to the given action/location.  Can optionally provide a
+    // overrideNavigation which will override the normalLoad in the case of a redirect
+    // navigation
+    async function startNavigation(historyAction, location, opts) {
+        // Abort any in-progress navigations and start a new one. Unset any ongoing
+        // uninterrupted revalidations unless told otherwise, since we want this
+        // new navigation to update history normally
+        pendingNavigationController && pendingNavigationController.abort();
+        pendingNavigationController = null;
+        pendingAction = historyAction;
+        isUninterruptedRevalidation = (opts && opts.startUninterruptedRevalidation) === true; // Save the current scroll position every time we start a new navigation,
+        // and track whether we should reset scroll on completion
+        saveScrollPosition(state.location, state.matches);
+        pendingPreventScrollReset = (opts && opts.preventScrollReset) === true;
+        let loadingNavigation = opts && opts.overrideNavigation;
+        let matches = matchRoutes(dataRoutes, location, init.basename); // Short circuit with a 404 on the root error boundary if we match nothing
+        if (!matches) {
+            let error = getInternalRouterError(404, {
+                pathname: location.pathname
+            });
+            let { matches: notFoundMatches , route  } = getShortCircuitMatches(dataRoutes); // Cancel all pending deferred on 404s since we don't keep any routes
+            cancelActiveDeferreds();
+            completeNavigation(location, {
+                matches: notFoundMatches,
+                loaderData: {},
+                errors: {
+                    [route.id]: error
+                }
+            });
+            return;
+        } // Short circuit if it's only a hash change
+        if (isHashChangeOnly(state.location, location)) {
+            completeNavigation(location, {
+                matches
+            });
+            return;
+        } // Create a controller/Request for this navigation
+        pendingNavigationController = new AbortController();
+        let request = createClientSideRequest(location, pendingNavigationController.signal, opts && opts.submission);
+        let pendingActionData;
+        let pendingError;
+        if (opts && opts.pendingError) // If we have a pendingError, it means the user attempted a GET submission
+        // with binary FormData so assign here and skip to handleLoaders.  That
+        // way we handle calling loaders above the boundary etc.  It's not really
+        // different from an actionError in that sense.
+        pendingError = {
+            [findNearestBoundary(matches).route.id]: opts.pendingError
+        };
+        else if (opts && opts.submission && isMutationMethod(opts.submission.formMethod)) {
+            // Call action if we received an action submission
+            let actionOutput = await handleAction(request, location, opts.submission, matches, {
+                replace: opts.replace
+            });
+            if (actionOutput.shortCircuited) return;
+            pendingActionData = actionOutput.pendingActionData;
+            pendingError = actionOutput.pendingActionError;
+            let navigation = _extends({
+                state: "loading",
+                location
+            }, opts.submission);
+            loadingNavigation = navigation; // Create a GET request for the loaders
+            request = new Request(request.url, {
+                signal: request.signal
+            });
+        } // Call loaders
+        let { shortCircuited , loaderData , errors  } = await handleLoaders(request, location, matches, loadingNavigation, opts && opts.submission, opts && opts.replace, pendingActionData, pendingError);
+        if (shortCircuited) return;
+         // Clean up now that the action/loaders have completed.  Don't clean up if
+        // we short circuited because pendingNavigationController will have already
+        // been assigned to a new controller for the next navigation
+        pendingNavigationController = null;
+        completeNavigation(location, _extends({
+            matches
+        }, pendingActionData ? {
+            actionData: pendingActionData
+        } : {}, {
+            loaderData,
+            errors
+        }));
+    } // Call the action matched by the leaf route for this navigation and handle
+    // redirects/errors
+    async function handleAction(request, location, submission, matches, opts) {
+        interruptActiveLoads(); // Put us in a submitting state
+        let navigation = _extends({
+            state: "submitting",
+            location
+        }, submission);
+        updateState({
+            navigation
+        }); // Call our action and get the result
+        let result;
+        let actionMatch = getTargetMatch(matches, location);
+        if (!actionMatch.route.action) result = {
+            type: ResultType.error,
+            error: getInternalRouterError(405, {
+                method: request.method,
+                pathname: location.pathname,
+                routeId: actionMatch.route.id
+            })
+        };
+        else {
+            result = await callLoaderOrAction("action", request, actionMatch, matches, router.basename);
+            if (request.signal.aborted) return {
+                shortCircuited: true
+            };
+        }
+        if (isRedirectResult(result)) {
+            let replace;
+            if (opts && opts.replace != null) replace = opts.replace;
+            else // If the user didn't explicity indicate replace behavior, replace if
+            // we redirected to the exact same location we're currently at to avoid
+            // double back-buttons
+            replace = result.location === state.location.pathname + state.location.search;
+            await startRedirectNavigation(state, result, {
+                submission,
+                replace
+            });
+            return {
+                shortCircuited: true
+            };
+        }
+        if (isErrorResult(result)) {
+            // Store off the pending error - we use it to determine which loaders
+            // to call and will commit it when we complete the navigation
+            let boundaryMatch = findNearestBoundary(matches, actionMatch.route.id); // By default, all submissions are REPLACE navigations, but if the
+            // action threw an error that'll be rendered in an errorElement, we fall
+            // back to PUSH so that the user can use the back button to get back to
+            // the pre-submission form location to try again
+            if ((opts && opts.replace) !== true) pendingAction = Action.Push;
+            return {
+                // Send back an empty object we can use to clear out any prior actionData
+                pendingActionData: {},
+                pendingActionError: {
+                    [boundaryMatch.route.id]: result.error
+                }
+            };
+        }
+        if (isDeferredResult(result)) throw new Error("defer() is not supported in actions");
+        return {
+            pendingActionData: {
+                [actionMatch.route.id]: result.data
+            }
+        };
+    } // Call all applicable loaders for the given matches, handling redirects,
+    // errors, etc.
+    async function handleLoaders(request, location, matches, overrideNavigation, submission, replace, pendingActionData, pendingError) {
+        // Figure out the right navigation we want to use for data loading
+        let loadingNavigation = overrideNavigation;
+        if (!loadingNavigation) {
+            let navigation = _extends({
+                state: "loading",
+                location,
+                formMethod: undefined,
+                formAction: undefined,
+                formEncType: undefined,
+                formData: undefined
+            }, submission);
+            loadingNavigation = navigation;
+        } // If this was a redirect from an action we don't have a "submission" but
+        // we have it on the loading navigation so use that if available
+        let activeSubmission = submission ? submission : loadingNavigation.formMethod && loadingNavigation.formAction && loadingNavigation.formData && loadingNavigation.formEncType ? {
+            formMethod: loadingNavigation.formMethod,
+            formAction: loadingNavigation.formAction,
+            formData: loadingNavigation.formData,
+            formEncType: loadingNavigation.formEncType
+        } : undefined;
+        let [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(state, matches, activeSubmission, location, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, pendingActionData, pendingError, fetchLoadMatches); // Cancel pending deferreds for no-longer-matched routes or routes we're
+        // about to reload.  Note that if this is an action reload we would have
+        // already cancelled all pending deferreds so this would be a no-op
+        cancelActiveDeferreds((routeId)=>!(matches && matches.some((m)=>m.route.id === routeId)) || matchesToLoad && matchesToLoad.some((m)=>m.route.id === routeId)); // Short circuit if we have no loaders to run
+        if (matchesToLoad.length === 0 && revalidatingFetchers.length === 0) {
+            completeNavigation(location, _extends({
+                matches,
+                loaderData: {},
+                // Commit pending error if we're short circuiting
+                errors: pendingError || null
+            }, pendingActionData ? {
+                actionData: pendingActionData
+            } : {}));
+            return {
+                shortCircuited: true
+            };
+        } // If this is an uninterrupted revalidation, we remain in our current idle
+        // state.  If not, we need to switch to our loading state and load data,
+        // preserving any new action data or existing action data (in the case of
+        // a revalidation interrupting an actionReload)
+        if (!isUninterruptedRevalidation) {
+            revalidatingFetchers.forEach((_ref2)=>{
+                let [key] = _ref2;
+                let fetcher = state.fetchers.get(key);
+                let revalidatingFetcher = {
+                    state: "loading",
+                    data: fetcher && fetcher.data,
+                    formMethod: undefined,
+                    formAction: undefined,
+                    formEncType: undefined,
+                    formData: undefined,
+                    " _hasFetcherDoneAnything ": true
+                };
+                state.fetchers.set(key, revalidatingFetcher);
+            });
+            let actionData = pendingActionData || state.actionData;
+            updateState(_extends({
+                navigation: loadingNavigation
+            }, actionData ? Object.keys(actionData).length === 0 ? {
+                actionData: null
+            } : {
+                actionData
+            } : {}, revalidatingFetchers.length > 0 ? {
+                fetchers: new Map(state.fetchers)
+            } : {}));
+        }
+        pendingNavigationLoadId = ++incrementingLoadId;
+        revalidatingFetchers.forEach((_ref3)=>{
+            let [key] = _ref3;
+            return fetchControllers.set(key, pendingNavigationController);
+        });
+        let { results , loaderResults , fetcherResults  } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, request);
+        if (request.signal.aborted) return {
+            shortCircuited: true
+        };
+         // Clean up _after_ loaders have completed.  Don't clean up if we short
+        // circuited because fetchControllers would have been aborted and
+        // reassigned to new controllers for the next navigation
+        revalidatingFetchers.forEach((_ref4)=>{
+            let [key] = _ref4;
+            return fetchControllers.delete(key);
+        }); // If any loaders returned a redirect Response, start a new REPLACE navigation
+        let redirect = findRedirect(results);
+        if (redirect) {
+            await startRedirectNavigation(state, redirect, {
+                replace
+            });
+            return {
+                shortCircuited: true
+            };
+        } // Process and commit output from loaders
+        let { loaderData , errors  } = processLoaderData(state, matches, matchesToLoad, loaderResults, pendingError, revalidatingFetchers, fetcherResults, activeDeferreds); // Wire up subscribers to update loaderData as promises settle
+        activeDeferreds.forEach((deferredData, routeId)=>{
+            deferredData.subscribe((aborted)=>{
+                // Note: No need to updateState here since the TrackedPromise on
+                // loaderData is stable across resolve/reject
+                // Remove this instance if we were aborted or if promises have settled
+                if (aborted || deferredData.done) activeDeferreds.delete(routeId);
+            });
+        });
+        markFetchRedirectsDone();
+        let didAbortFetchLoads = abortStaleFetchLoads(pendingNavigationLoadId);
+        return _extends({
+            loaderData,
+            errors
+        }, didAbortFetchLoads || revalidatingFetchers.length > 0 ? {
+            fetchers: new Map(state.fetchers)
+        } : {});
+    }
+    function getFetcher(key) {
+        return state.fetchers.get(key) || IDLE_FETCHER;
+    } // Trigger a fetcher load/submit for the given fetcher key
+    function fetch(key, routeId, href, opts) {
+        if (isServer) throw new Error("router.fetch() was called during the server render, but it shouldn't be. You are likely calling a useFetcher() method in the body of your component. Try moving it to a useEffect or a callback.");
+        if (fetchControllers.has(key)) abortFetcher(key);
+        let matches = matchRoutes(dataRoutes, href, init.basename);
+        if (!matches) {
+            setFetcherError(key, routeId, getInternalRouterError(404, {
+                pathname: href
+            }));
+            return;
+        }
+        let { path , submission  } = normalizeNavigateOptions(href, opts, true);
+        let match = getTargetMatch(matches, path);
+        if (submission && isMutationMethod(submission.formMethod)) {
+            handleFetcherAction(key, routeId, path, match, matches, submission);
+            return;
+        } // Store off the match so we can call it's shouldRevalidate on subsequent
+        // revalidations
+        fetchLoadMatches.set(key, [
+            path,
+            match,
+            matches
+        ]);
+        handleFetcherLoader(key, routeId, path, match, matches, submission);
+    } // Call the action for the matched fetcher.submit(), and then handle redirects,
+    // errors, and revalidation
+    async function handleFetcherAction(key, routeId, path, match, requestMatches, submission) {
+        interruptActiveLoads();
+        fetchLoadMatches.delete(key);
+        if (!match.route.action) {
+            let error = getInternalRouterError(405, {
+                method: submission.formMethod,
+                pathname: path,
+                routeId: routeId
+            });
+            setFetcherError(key, routeId, error);
+            return;
+        } // Put this fetcher into it's submitting state
+        let existingFetcher = state.fetchers.get(key);
+        let fetcher = _extends({
+            state: "submitting"
+        }, submission, {
+            data: existingFetcher && existingFetcher.data,
+            " _hasFetcherDoneAnything ": true
+        });
+        state.fetchers.set(key, fetcher);
+        updateState({
+            fetchers: new Map(state.fetchers)
+        }); // Call the action for the fetcher
+        let abortController = new AbortController();
+        let fetchRequest = createClientSideRequest(path, abortController.signal, submission);
+        fetchControllers.set(key, abortController);
+        let actionResult = await callLoaderOrAction("action", fetchRequest, match, requestMatches, router.basename);
+        if (fetchRequest.signal.aborted) {
+            // We can delete this so long as we weren't aborted by ou our own fetcher
+            // re-submit which would have put _new_ controller is in fetchControllers
+            if (fetchControllers.get(key) === abortController) fetchControllers.delete(key);
+            return;
+        }
+        if (isRedirectResult(actionResult)) {
+            fetchControllers.delete(key);
+            fetchRedirectIds.add(key);
+            let loadingFetcher = _extends({
+                state: "loading"
+            }, submission, {
+                data: undefined,
+                " _hasFetcherDoneAnything ": true
+            });
+            state.fetchers.set(key, loadingFetcher);
+            updateState({
+                fetchers: new Map(state.fetchers)
+            });
+            return startRedirectNavigation(state, actionResult, {
+                isFetchActionRedirect: true
+            });
+        } // Process any non-redirect errors thrown
+        if (isErrorResult(actionResult)) {
+            setFetcherError(key, routeId, actionResult.error);
+            return;
+        }
+        if (isDeferredResult(actionResult)) invariant(false, "defer() is not supported in actions");
+         // Start the data load for current matches, or the next location if we're
+        // in the middle of a navigation
+        let nextLocation = state.navigation.location || state.location;
+        let revalidationRequest = createClientSideRequest(nextLocation, abortController.signal);
+        let matches = state.navigation.state !== "idle" ? matchRoutes(dataRoutes, state.navigation.location, init.basename) : state.matches;
+        invariant(matches, "Didn't find any matches after fetcher action");
+        let loadId = ++incrementingLoadId;
+        fetchReloadIds.set(key, loadId);
+        let loadFetcher = _extends({
+            state: "loading",
+            data: actionResult.data
+        }, submission, {
+            " _hasFetcherDoneAnything ": true
+        });
+        state.fetchers.set(key, loadFetcher);
+        let [matchesToLoad, revalidatingFetchers] = getMatchesToLoad(state, matches, submission, nextLocation, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, {
+            [match.route.id]: actionResult.data
+        }, undefined, fetchLoadMatches); // Put all revalidating fetchers into the loading state, except for the
+        // current fetcher which we want to keep in it's current loading state which
+        // contains it's action submission info + action data
+        revalidatingFetchers.filter((_ref5)=>{
+            let [staleKey] = _ref5;
+            return staleKey !== key;
+        }).forEach((_ref6)=>{
+            let [staleKey] = _ref6;
+            let existingFetcher = state.fetchers.get(staleKey);
+            let revalidatingFetcher = {
+                state: "loading",
+                data: existingFetcher && existingFetcher.data,
+                formMethod: undefined,
+                formAction: undefined,
+                formEncType: undefined,
+                formData: undefined,
+                " _hasFetcherDoneAnything ": true
+            };
+            state.fetchers.set(staleKey, revalidatingFetcher);
+            fetchControllers.set(staleKey, abortController);
+        });
+        updateState({
+            fetchers: new Map(state.fetchers)
+        });
+        let { results , loaderResults , fetcherResults  } = await callLoadersAndMaybeResolveData(state.matches, matches, matchesToLoad, revalidatingFetchers, revalidationRequest);
+        if (abortController.signal.aborted) return;
+        fetchReloadIds.delete(key);
+        fetchControllers.delete(key);
+        revalidatingFetchers.forEach((_ref7)=>{
+            let [staleKey] = _ref7;
+            return fetchControllers.delete(staleKey);
+        });
+        let redirect = findRedirect(results);
+        if (redirect) return startRedirectNavigation(state, redirect);
+         // Process and commit output from loaders
+        let { loaderData , errors  } = processLoaderData(state, state.matches, matchesToLoad, loaderResults, undefined, revalidatingFetchers, fetcherResults, activeDeferreds);
+        let doneFetcher = {
+            state: "idle",
+            data: actionResult.data,
+            formMethod: undefined,
+            formAction: undefined,
+            formEncType: undefined,
+            formData: undefined,
+            " _hasFetcherDoneAnything ": true
+        };
+        state.fetchers.set(key, doneFetcher);
+        let didAbortFetchLoads = abortStaleFetchLoads(loadId); // If we are currently in a navigation loading state and this fetcher is
+        // more recent than the navigation, we want the newer data so abort the
+        // navigation and complete it with the fetcher data
+        if (state.navigation.state === "loading" && loadId > pendingNavigationLoadId) {
+            invariant(pendingAction, "Expected pending action");
+            pendingNavigationController && pendingNavigationController.abort();
+            completeNavigation(state.navigation.location, {
+                matches,
+                loaderData,
+                errors,
+                fetchers: new Map(state.fetchers)
+            });
+        } else {
+            // otherwise just update with the fetcher data, preserving any existing
+            // loaderData for loaders that did not need to reload.  We have to
+            // manually merge here since we aren't going through completeNavigation
+            updateState(_extends({
+                errors,
+                loaderData: mergeLoaderData(state.loaderData, loaderData, matches, errors)
+            }, didAbortFetchLoads ? {
+                fetchers: new Map(state.fetchers)
+            } : {}));
+            isRevalidationRequired = false;
+        }
+    } // Call the matched loader for fetcher.load(), handling redirects, errors, etc.
+    async function handleFetcherLoader(key, routeId, path, match, matches, submission) {
+        let existingFetcher = state.fetchers.get(key); // Put this fetcher into it's loading state
+        let loadingFetcher = _extends({
+            state: "loading",
+            formMethod: undefined,
+            formAction: undefined,
+            formEncType: undefined,
+            formData: undefined
+        }, submission, {
+            data: existingFetcher && existingFetcher.data,
+            " _hasFetcherDoneAnything ": true
+        });
+        state.fetchers.set(key, loadingFetcher);
+        updateState({
+            fetchers: new Map(state.fetchers)
+        }); // Call the loader for this fetcher route match
+        let abortController = new AbortController();
+        let fetchRequest = createClientSideRequest(path, abortController.signal);
+        fetchControllers.set(key, abortController);
+        let result = await callLoaderOrAction("loader", fetchRequest, match, matches, router.basename); // Deferred isn't supported or fetcher loads, await everything and treat it
+        // as a normal load.  resolveDeferredData will return undefined if this
+        // fetcher gets aborted, so we just leave result untouched and short circuit
+        // below if that happens
+        if (isDeferredResult(result)) result = await resolveDeferredData(result, fetchRequest.signal, true) || result;
+         // We can delete this so long as we weren't aborted by ou our own fetcher
+        // re-load which would have put _new_ controller is in fetchControllers
+        if (fetchControllers.get(key) === abortController) fetchControllers.delete(key);
+        if (fetchRequest.signal.aborted) return;
+         // If the loader threw a redirect Response, start a new REPLACE navigation
+        if (isRedirectResult(result)) {
+            await startRedirectNavigation(state, result);
+            return;
+        } // Process any non-redirect errors thrown
+        if (isErrorResult(result)) {
+            let boundaryMatch = findNearestBoundary(state.matches, routeId);
+            state.fetchers.delete(key); // TODO: In remix, this would reset to IDLE_NAVIGATION if it was a catch -
+            // do we need to behave any differently with our non-redirect errors?
+            // What if it was a non-redirect Response?
+            updateState({
+                fetchers: new Map(state.fetchers),
+                errors: {
+                    [boundaryMatch.route.id]: result.error
+                }
+            });
+            return;
+        }
+        invariant(!isDeferredResult(result), "Unhandled fetcher deferred data"); // Put the fetcher back into an idle state
+        let doneFetcher = {
+            state: "idle",
+            data: result.data,
+            formMethod: undefined,
+            formAction: undefined,
+            formEncType: undefined,
+            formData: undefined,
+            " _hasFetcherDoneAnything ": true
+        };
+        state.fetchers.set(key, doneFetcher);
+        updateState({
+            fetchers: new Map(state.fetchers)
+        });
+    }
+    /**
+   * Utility function to handle redirects returned from an action or loader.
+   * Normally, a redirect "replaces" the navigation that triggered it.  So, for
+   * example:
+   *
+   *  - user is on /a
+   *  - user clicks a link to /b
+   *  - loader for /b redirects to /c
+   *
+   * In a non-JS app the browser would track the in-flight navigation to /b and
+   * then replace it with /c when it encountered the redirect response.  In
+   * the end it would only ever update the URL bar with /c.
+   *
+   * In client-side routing using pushState/replaceState, we aim to emulate
+   * this behavior and we also do not update history until the end of the
+   * navigation (including processed redirects).  This means that we never
+   * actually touch history until we've processed redirects, so we just use
+   * the history action from the original navigation (PUSH or REPLACE).
+   */ async function startRedirectNavigation(state, redirect, _temp) {
+        var _window;
+        let { submission , replace , isFetchActionRedirect  } = _temp === void 0 ? {} : _temp;
+        if (redirect.revalidate) isRevalidationRequired = true;
+        let redirectLocation = createLocation(state.location, redirect.location, _extends({
+            _isRedirect: true
+        }, isFetchActionRedirect ? {
+            _isFetchActionRedirect: true
+        } : {}));
+        invariant(redirectLocation, "Expected a location on the redirect navigation"); // Check if this an external redirect that goes to a new origin
+        if (typeof ((_window = window) == null ? void 0 : _window.location) !== "undefined") {
+            let newOrigin = createClientSideURL(redirect.location).origin;
+            if (window.location.origin !== newOrigin) {
+                if (replace) window.location.replace(redirect.location);
+                else window.location.assign(redirect.location);
+                return;
+            }
+        } // There's no need to abort on redirects, since we don't detect the
+        // redirect until the action/loaders have settled
+        pendingNavigationController = null;
+        let redirectHistoryAction = replace === true ? Action.Replace : Action.Push; // Use the incoming submission if provided, fallback on the active one in
+        // state.navigation
+        let { formMethod , formAction , formEncType , formData  } = state.navigation;
+        if (!submission && formMethod && formAction && formData && formEncType) submission = {
+            formMethod,
+            formAction,
+            formEncType,
+            formData
+        };
+         // If this was a 307/308 submission we want to preserve the HTTP method and
+        // re-submit the GET/POST/PUT/PATCH/DELETE as a submission navigation to the
+        // redirected location
+        if (redirectPreserveMethodStatusCodes.has(redirect.status) && submission && isMutationMethod(submission.formMethod)) await startNavigation(redirectHistoryAction, redirectLocation, {
+            submission: _extends({}, submission, {
+                formAction: redirect.location
+            })
+        });
+        else // Otherwise, we kick off a new loading navigation, preserving the
+        // submission info for the duration of this navigation
+        await startNavigation(redirectHistoryAction, redirectLocation, {
+            overrideNavigation: {
+                state: "loading",
+                location: redirectLocation,
+                formMethod: submission ? submission.formMethod : undefined,
+                formAction: submission ? submission.formAction : undefined,
+                formEncType: submission ? submission.formEncType : undefined,
+                formData: submission ? submission.formData : undefined
+            }
+        });
+    }
+    async function callLoadersAndMaybeResolveData(currentMatches, matches, matchesToLoad, fetchersToLoad, request) {
+        // Call all navigation loaders and revalidating fetcher loaders in parallel,
+        // then slice off the results into separate arrays so we can handle them
+        // accordingly
+        let results = await Promise.all([
+            ...matchesToLoad.map((match)=>callLoaderOrAction("loader", request, match, matches, router.basename)),
+            ...fetchersToLoad.map((_ref8)=>{
+                let [, href, match, fetchMatches] = _ref8;
+                return callLoaderOrAction("loader", createClientSideRequest(href, request.signal), match, fetchMatches, router.basename);
+            })
+        ]);
+        let loaderResults = results.slice(0, matchesToLoad.length);
+        let fetcherResults = results.slice(matchesToLoad.length);
+        await Promise.all([
+            resolveDeferredResults(currentMatches, matchesToLoad, loaderResults, request.signal, false, state.loaderData),
+            resolveDeferredResults(currentMatches, fetchersToLoad.map((_ref9)=>{
+                let [, , match] = _ref9;
+                return match;
+            }), fetcherResults, request.signal, true)
+        ]);
+        return {
+            results,
+            loaderResults,
+            fetcherResults
+        };
+    }
+    function interruptActiveLoads() {
+        // Every interruption triggers a revalidation
+        isRevalidationRequired = true; // Cancel pending route-level deferreds and mark cancelled routes for
+        // revalidation
+        cancelledDeferredRoutes.push(...cancelActiveDeferreds()); // Abort in-flight fetcher loads
+        fetchLoadMatches.forEach((_, key)=>{
+            if (fetchControllers.has(key)) {
+                cancelledFetcherLoads.push(key);
+                abortFetcher(key);
+            }
+        });
+    }
+    function setFetcherError(key, routeId, error) {
+        let boundaryMatch = findNearestBoundary(state.matches, routeId);
+        deleteFetcher(key);
+        updateState({
+            errors: {
+                [boundaryMatch.route.id]: error
+            },
+            fetchers: new Map(state.fetchers)
+        });
+    }
+    function deleteFetcher(key) {
+        if (fetchControllers.has(key)) abortFetcher(key);
+        fetchLoadMatches.delete(key);
+        fetchReloadIds.delete(key);
+        fetchRedirectIds.delete(key);
+        state.fetchers.delete(key);
+    }
+    function abortFetcher(key) {
+        let controller = fetchControllers.get(key);
+        invariant(controller, "Expected fetch controller: " + key);
+        controller.abort();
+        fetchControllers.delete(key);
+    }
+    function markFetchersDone(keys) {
+        for (let key of keys){
+            let fetcher = getFetcher(key);
+            let doneFetcher = {
+                state: "idle",
+                data: fetcher.data,
+                formMethod: undefined,
+                formAction: undefined,
+                formEncType: undefined,
+                formData: undefined,
+                " _hasFetcherDoneAnything ": true
+            };
+            state.fetchers.set(key, doneFetcher);
+        }
+    }
+    function markFetchRedirectsDone() {
+        let doneKeys = [];
+        for (let key of fetchRedirectIds){
+            let fetcher = state.fetchers.get(key);
+            invariant(fetcher, "Expected fetcher: " + key);
+            if (fetcher.state === "loading") {
+                fetchRedirectIds.delete(key);
+                doneKeys.push(key);
+            }
+        }
+        markFetchersDone(doneKeys);
+    }
+    function abortStaleFetchLoads(landedId) {
+        let yeetedKeys = [];
+        for (let [key, id] of fetchReloadIds)if (id < landedId) {
+            let fetcher = state.fetchers.get(key);
+            invariant(fetcher, "Expected fetcher: " + key);
+            if (fetcher.state === "loading") {
+                abortFetcher(key);
+                fetchReloadIds.delete(key);
+                yeetedKeys.push(key);
+            }
+        }
+        markFetchersDone(yeetedKeys);
+        return yeetedKeys.length > 0;
+    }
+    function cancelActiveDeferreds(predicate) {
+        let cancelledRouteIds = [];
+        activeDeferreds.forEach((dfd, routeId)=>{
+            if (!predicate || predicate(routeId)) {
+                // Cancel the deferred - but do not remove from activeDeferreds here -
+                // we rely on the subscribers to do that so our tests can assert proper
+                // cleanup via _internalActiveDeferreds
+                dfd.cancel();
+                cancelledRouteIds.push(routeId);
+                activeDeferreds.delete(routeId);
+            }
+        });
+        return cancelledRouteIds;
+    } // Opt in to capturing and reporting scroll positions during navigations,
+    // used by the <ScrollRestoration> component
+    function enableScrollRestoration(positions, getPosition, getKey) {
+        savedScrollPositions = positions;
+        getScrollPosition = getPosition;
+        getScrollRestorationKey = getKey || ((location)=>location.key); // Perform initial hydration scroll restoration, since we miss the boat on
+        // the initial updateState() because we've not yet rendered <ScrollRestoration/>
+        // and therefore have no savedScrollPositions available
+        if (!initialScrollRestored && state.navigation === IDLE_NAVIGATION) {
+            initialScrollRestored = true;
+            let y = getSavedScrollPosition(state.location, state.matches);
+            if (y != null) updateState({
+                restoreScrollPosition: y
+            });
+        }
+        return ()=>{
+            savedScrollPositions = null;
+            getScrollPosition = null;
+            getScrollRestorationKey = null;
+        };
+    }
+    function saveScrollPosition(location, matches) {
+        if (savedScrollPositions && getScrollRestorationKey && getScrollPosition) {
+            let userMatches = matches.map((m)=>createUseMatchesMatch(m, state.loaderData));
+            let key = getScrollRestorationKey(location, userMatches) || location.key;
+            savedScrollPositions[key] = getScrollPosition();
+        }
+    }
+    function getSavedScrollPosition(location, matches) {
+        if (savedScrollPositions && getScrollRestorationKey && getScrollPosition) {
+            let userMatches = matches.map((m)=>createUseMatchesMatch(m, state.loaderData));
+            let key = getScrollRestorationKey(location, userMatches) || location.key;
+            let y = savedScrollPositions[key];
+            if (typeof y === "number") return y;
+        }
+        return null;
+    }
+    router = {
+        get basename () {
+            return init.basename;
+        },
+        get state () {
+            return state;
+        },
+        get routes () {
+            return dataRoutes;
+        },
+        initialize,
+        subscribe,
+        enableScrollRestoration,
+        navigate,
+        fetch,
+        revalidate,
+        // Passthrough to history-aware createHref used by useHref so we get proper
+        // hash-aware URLs in DOM paths
+        createHref: (to)=>init.history.createHref(to),
+        encodeLocation: (to)=>init.history.encodeLocation(to),
+        getFetcher,
+        deleteFetcher,
+        dispose,
+        _internalFetchControllers: fetchControllers,
+        _internalActiveDeferreds: activeDeferreds
+    };
+    return router;
+} //#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region createStaticHandler
+////////////////////////////////////////////////////////////////////////////////
+function createStaticHandler(routes, opts) {
+    invariant(routes.length > 0, "You must provide a non-empty routes array to createStaticHandler");
+    let dataRoutes = convertRoutesToDataRoutes(routes);
+    let basename = (opts ? opts.basename : null) || "/";
+    /**
+   * The query() method is intended for document requests, in which we want to
+   * call an optional action and potentially multiple loaders for all nested
+   * routes.  It returns a StaticHandlerContext object, which is very similar
+   * to the router state (location, loaderData, actionData, errors, etc.) and
+   * also adds SSR-specific information such as the statusCode and headers
+   * from action/loaders Responses.
+   *
+   * It _should_ never throw and should report all errors through the
+   * returned context.errors object, properly associating errors to their error
+   * boundary.  Additionally, it tracks _deepestRenderedBoundaryId which can be
+   * used to emulate React error boundaries during SSr by performing a second
+   * pass only down to the boundaryId.
+   *
+   * The one exception where we do not return a StaticHandlerContext is when a
+   * redirect response is returned or thrown from any action/loader.  We
+   * propagate that out and return the raw Response so the HTTP server can
+   * return it directly.
+   */ async function query(request, _temp2) {
+        let { requestContext  } = _temp2 === void 0 ? {} : _temp2;
+        let url = new URL(request.url);
+        let method = request.method.toLowerCase();
+        let location = createLocation("", createPath(url), null, "default");
+        let matches = matchRoutes(dataRoutes, location, basename); // SSR supports HEAD requests while SPA doesn't
+        if (!isValidMethod(method) && method !== "head") {
+            let error = getInternalRouterError(405, {
+                method
+            });
+            let { matches: methodNotAllowedMatches , route  } = getShortCircuitMatches(dataRoutes);
+            return {
+                basename,
+                location,
+                matches: methodNotAllowedMatches,
+                loaderData: {},
+                actionData: null,
+                errors: {
+                    [route.id]: error
+                },
+                statusCode: error.status,
+                loaderHeaders: {},
+                actionHeaders: {}
+            };
+        } else if (!matches) {
+            let error1 = getInternalRouterError(404, {
+                pathname: location.pathname
+            });
+            let { matches: notFoundMatches , route: route1  } = getShortCircuitMatches(dataRoutes);
+            return {
+                basename,
+                location,
+                matches: notFoundMatches,
+                loaderData: {},
+                actionData: null,
+                errors: {
+                    [route1.id]: error1
+                },
+                statusCode: error1.status,
+                loaderHeaders: {},
+                actionHeaders: {}
+            };
+        }
+        let result = await queryImpl(request, location, matches, requestContext);
+        if (isResponse(result)) return result;
+         // When returning StaticHandlerContext, we patch back in the location here
+        // since we need it for React Context.  But this helps keep our submit and
+        // loadRouteData operating on a Request instead of a Location
+        return _extends({
+            location,
+            basename
+        }, result);
+    }
+    /**
+   * The queryRoute() method is intended for targeted route requests, either
+   * for fetch ?_data requests or resource route requests.  In this case, we
+   * are only ever calling a single action or loader, and we are returning the
+   * returned value directly.  In most cases, this will be a Response returned
+   * from the action/loader, but it may be a primitive or other value as well -
+   * and in such cases the calling context should handle that accordingly.
+   *
+   * We do respect the throw/return differentiation, so if an action/loader
+   * throws, then this method will throw the value.  This is important so we
+   * can do proper boundary identification in Remix where a thrown Response
+   * must go to the Catch Boundary but a returned Response is happy-path.
+   *
+   * One thing to note is that any Router-initiated Errors that make sense
+   * to associate with a status code will be thrown as an ErrorResponse
+   * instance which include the raw Error, such that the calling context can
+   * serialize the error as they see fit while including the proper response
+   * code.  Examples here are 404 and 405 errors that occur prior to reaching
+   * any user-defined loaders.
+   */ async function queryRoute(request, _temp3) {
+        let { routeId , requestContext  } = _temp3 === void 0 ? {} : _temp3;
+        let url = new URL(request.url);
+        let method = request.method.toLowerCase();
+        let location = createLocation("", createPath(url), null, "default");
+        let matches = matchRoutes(dataRoutes, location, basename); // SSR supports HEAD requests while SPA doesn't
+        if (!isValidMethod(method) && method !== "head") throw getInternalRouterError(405, {
+            method
+        });
+        else if (!matches) throw getInternalRouterError(404, {
+            pathname: location.pathname
+        });
+        let match = routeId ? matches.find((m)=>m.route.id === routeId) : getTargetMatch(matches, location);
+        if (routeId && !match) throw getInternalRouterError(403, {
+            pathname: location.pathname,
+            routeId
+        });
+        else if (!match) // This should never hit I don't think?
+        throw getInternalRouterError(404, {
+            pathname: location.pathname
+        });
+        let result = await queryImpl(request, location, matches, requestContext, match);
+        if (isResponse(result)) return result;
+        let error = result.errors ? Object.values(result.errors)[0] : undefined;
+        if (error !== undefined) // If we got back result.errors, that means the loader/action threw
+        // _something_ that wasn't a Response, but it's not guaranteed/required
+        // to be an `instanceof Error` either, so we have to use throw here to
+        // preserve the "error" state outside of queryImpl.
+        throw error;
+         // Pick off the right state value to return
+        let routeData = [
+            result.actionData,
+            result.loaderData
+        ].find((v)=>v);
+        return Object.values(routeData || {})[0];
+    }
+    async function queryImpl(request, location, matches, requestContext, routeMatch) {
+        invariant(request.signal, "query()/queryRoute() requests must contain an AbortController signal");
+        try {
+            if (isMutationMethod(request.method.toLowerCase())) {
+                let result = await submit(request, matches, routeMatch || getTargetMatch(matches, location), requestContext, routeMatch != null);
+                return result;
+            }
+            let result1 = await loadRouteData(request, matches, requestContext, routeMatch);
+            return isResponse(result1) ? result1 : _extends({}, result1, {
+                actionData: null,
+                actionHeaders: {}
+            });
+        } catch (e) {
+            // If the user threw/returned a Response in callLoaderOrAction, we throw
+            // it to bail out and then return or throw here based on whether the user
+            // returned or threw
+            if (isQueryRouteResponse(e)) {
+                if (e.type === ResultType.error && !isRedirectResponse(e.response)) throw e.response;
+                return e.response;
+            } // Redirects are always returned since they don't propagate to catch
+            // boundaries
+            if (isRedirectResponse(e)) return e;
+            throw e;
+        }
+    }
+    async function submit(request, matches, actionMatch, requestContext, isRouteRequest) {
+        let result;
+        if (!actionMatch.route.action) {
+            let error = getInternalRouterError(405, {
+                method: request.method,
+                pathname: new URL(request.url).pathname,
+                routeId: actionMatch.route.id
+            });
+            if (isRouteRequest) throw error;
+            result = {
+                type: ResultType.error,
+                error
+            };
+        } else {
+            result = await callLoaderOrAction("action", request, actionMatch, matches, basename, true, isRouteRequest, requestContext);
+            if (request.signal.aborted) {
+                let method = isRouteRequest ? "queryRoute" : "query";
+                throw new Error(method + "() call aborted");
+            }
+        }
+        if (isRedirectResult(result)) // Uhhhh - this should never happen, we should always throw these from
+        // callLoaderOrAction, but the type narrowing here keeps TS happy and we
+        // can get back on the "throw all redirect responses" train here should
+        // this ever happen :/
+        throw new Response(null, {
+            status: result.status,
+            headers: {
+                Location: result.location
+            }
+        });
+        if (isDeferredResult(result)) throw new Error("defer() is not supported in actions");
+        if (isRouteRequest) {
+            // Note: This should only be non-Response values if we get here, since
+            // isRouteRequest should throw any Response received in callLoaderOrAction
+            if (isErrorResult(result)) throw result.error;
+            return {
+                matches: [
+                    actionMatch
+                ],
+                loaderData: {},
+                actionData: {
+                    [actionMatch.route.id]: result.data
+                },
+                errors: null,
+                // Note: statusCode + headers are unused here since queryRoute will
+                // return the raw Response or value
+                statusCode: 200,
+                loaderHeaders: {},
+                actionHeaders: {}
+            };
+        }
+        if (isErrorResult(result)) {
+            // Store off the pending error - we use it to determine which loaders
+            // to call and will commit it when we complete the navigation
+            let boundaryMatch = findNearestBoundary(matches, actionMatch.route.id);
+            let context = await loadRouteData(request, matches, requestContext, undefined, {
+                [boundaryMatch.route.id]: result.error
+            }); // action status codes take precedence over loader status codes
+            return _extends({}, context, {
+                statusCode: isRouteErrorResponse(result.error) ? result.error.status : 500,
+                actionData: null,
+                actionHeaders: _extends({}, result.headers ? {
+                    [actionMatch.route.id]: result.headers
+                } : {})
+            });
+        } // Create a GET request for the loaders
+        let loaderRequest = new Request(request.url, {
+            headers: request.headers,
+            redirect: request.redirect,
+            signal: request.signal
+        });
+        let context1 = await loadRouteData(loaderRequest, matches, requestContext);
+        return _extends({}, context1, result.statusCode ? {
+            statusCode: result.statusCode
+        } : {}, {
+            actionData: {
+                [actionMatch.route.id]: result.data
+            },
+            actionHeaders: _extends({}, result.headers ? {
+                [actionMatch.route.id]: result.headers
+            } : {})
+        });
+    }
+    async function loadRouteData(request, matches, requestContext, routeMatch, pendingActionError) {
+        let isRouteRequest = routeMatch != null; // Short circuit if we have no loaders to run (queryRoute())
+        if (isRouteRequest && !(routeMatch != null && routeMatch.route.loader)) throw getInternalRouterError(400, {
+            method: request.method,
+            pathname: new URL(request.url).pathname,
+            routeId: routeMatch == null ? void 0 : routeMatch.route.id
+        });
+        let requestMatches = routeMatch ? [
+            routeMatch
+        ] : getLoaderMatchesUntilBoundary(matches, Object.keys(pendingActionError || {})[0]);
+        let matchesToLoad = requestMatches.filter((m)=>m.route.loader); // Short circuit if we have no loaders to run (query())
+        if (matchesToLoad.length === 0) return {
+            matches,
+            // Add a null for all matched routes for proper revalidation on the client
+            loaderData: matches.reduce((acc, m)=>Object.assign(acc, {
+                    [m.route.id]: null
+                }), {}),
+            errors: pendingActionError || null,
+            statusCode: 200,
+            loaderHeaders: {}
+        };
+        let results = await Promise.all([
+            ...matchesToLoad.map((match)=>callLoaderOrAction("loader", request, match, matches, basename, true, isRouteRequest, requestContext))
+        ]);
+        if (request.signal.aborted) {
+            let method = isRouteRequest ? "queryRoute" : "query";
+            throw new Error(method + "() call aborted");
+        }
+        let executedLoaders = new Set();
+        results.forEach((result, i)=>{
+            executedLoaders.add(matchesToLoad[i].route.id); // Can't do anything with these without the Remix side of things, so just
+            // cancel them for now
+            if (isDeferredResult(result)) result.deferredData.cancel();
+        }); // Process and commit output from loaders
+        let context = processRouteLoaderData(matches, matchesToLoad, results, pendingActionError); // Add a null for any non-loader matches for proper revalidation on the client
+        matches.forEach((match)=>{
+            if (!executedLoaders.has(match.route.id)) context.loaderData[match.route.id] = null;
+        });
+        return _extends({}, context, {
+            matches
+        });
+    }
+    return {
+        dataRoutes,
+        query,
+        queryRoute
+    };
+} //#endregion
+////////////////////////////////////////////////////////////////////////////////
+//#region Helpers
+////////////////////////////////////////////////////////////////////////////////
+/**
+ * Given an existing StaticHandlerContext and an error thrown at render time,
+ * provide an updated StaticHandlerContext suitable for a second SSR render
+ */ function getStaticContextFromError(routes, context, error) {
+    let newContext = _extends({}, context, {
+        statusCode: 500,
+        errors: {
+            [context._deepestRenderedBoundaryId || routes[0].id]: error
+        }
+    });
+    return newContext;
+}
+function isSubmissionNavigation(opts) {
+    return opts != null && "formData" in opts;
+} // Normalize navigation options by converting formMethod=GET formData objects to
+// URLSearchParams so they behave identically to links with query params
+function normalizeNavigateOptions(to, opts, isFetcher) {
+    if (isFetcher === void 0) isFetcher = false;
+    let path = typeof to === "string" ? to : createPath(to); // Return location verbatim on non-submission navigations
+    if (!opts || !isSubmissionNavigation(opts)) return {
+        path
+    };
+    if (opts.formMethod && !isValidMethod(opts.formMethod)) return {
+        path,
+        error: getInternalRouterError(405, {
+            method: opts.formMethod
+        })
+    };
+     // Create a Submission on non-GET navigations
+    let submission;
+    if (opts.formData) {
+        submission = {
+            formMethod: opts.formMethod || "get",
+            formAction: stripHashFromPath(path),
+            formEncType: opts && opts.formEncType || "application/x-www-form-urlencoded",
+            formData: opts.formData
+        };
+        if (isMutationMethod(submission.formMethod)) return {
+            path,
+            submission
+        };
+    } // Flatten submission onto URLSearchParams for GET submissions
+    let parsedPath = parsePath(path);
+    try {
+        let searchParams = convertFormDataToSearchParams(opts.formData); // Since fetcher GET submissions only run a single loader (as opposed to
+        // navigation GET submissions which run all loaders), we need to preserve
+        // any incoming ?index params
+        if (isFetcher && parsedPath.search && hasNakedIndexQuery(parsedPath.search)) searchParams.append("index", "");
+        parsedPath.search = "?" + searchParams;
+    } catch (e) {
+        return {
+            path,
+            error: getInternalRouterError(400)
+        };
+    }
+    return {
+        path: createPath(parsedPath),
+        submission
+    };
+} // Filter out all routes below any caught error as they aren't going to
+// render so we don't need to load them
+function getLoaderMatchesUntilBoundary(matches, boundaryId) {
+    let boundaryMatches = matches;
+    if (boundaryId) {
+        let index = matches.findIndex((m)=>m.route.id === boundaryId);
+        if (index >= 0) boundaryMatches = matches.slice(0, index);
+    }
+    return boundaryMatches;
+}
+function getMatchesToLoad(state, matches, submission, location, isRevalidationRequired, cancelledDeferredRoutes, cancelledFetcherLoads, pendingActionData, pendingError, fetchLoadMatches) {
+    let actionResult = pendingError ? Object.values(pendingError)[0] : pendingActionData ? Object.values(pendingActionData)[0] : undefined; // Pick navigation matches that are net-new or qualify for revalidation
+    let boundaryId = pendingError ? Object.keys(pendingError)[0] : undefined;
+    let boundaryMatches = getLoaderMatchesUntilBoundary(matches, boundaryId);
+    let navigationMatches = boundaryMatches.filter((match, index)=>match.route.loader != null && (isNewLoader(state.loaderData, state.matches[index], match) || // If this route had a pending deferred cancelled it must be revalidated
+        cancelledDeferredRoutes.some((id)=>id === match.route.id) || shouldRevalidateLoader(state.location, state.matches[index], submission, location, match, isRevalidationRequired, actionResult))); // Pick fetcher.loads that need to be revalidated
+    let revalidatingFetchers = [];
+    fetchLoadMatches && fetchLoadMatches.forEach((_ref10, key)=>{
+        let [href, match, fetchMatches] = _ref10;
+        // This fetcher was cancelled from a prior action submission - force reload
+        if (cancelledFetcherLoads.includes(key)) revalidatingFetchers.push([
+            key,
+            href,
+            match,
+            fetchMatches
+        ]);
+        else if (isRevalidationRequired) {
+            let shouldRevalidate = shouldRevalidateLoader(href, match, submission, href, match, isRevalidationRequired, actionResult);
+            if (shouldRevalidate) revalidatingFetchers.push([
+                key,
+                href,
+                match,
+                fetchMatches
+            ]);
+        }
+    });
+    return [
+        navigationMatches,
+        revalidatingFetchers
+    ];
+}
+function isNewLoader(currentLoaderData, currentMatch, match) {
+    let isNew = !currentMatch || // [a, b] -> [a, c]
+    match.route.id !== currentMatch.route.id; // Handle the case that we don't have data for a re-used route, potentially
+    // from a prior error or from a cancelled pending deferred
+    let isMissingData = currentLoaderData[match.route.id] === undefined; // Always load if this is a net-new route or we don't yet have data
+    return isNew || isMissingData;
+}
+function isNewRouteInstance(currentMatch, match) {
+    let currentPath = currentMatch.route.path;
+    return currentMatch.pathname !== match.pathname || // splat param changed, which is not present in match.path
+    // e.g. /files/images/avatar.jpg -> files/finances.xls
+    currentPath && currentPath.endsWith("*") && currentMatch.params["*"] !== match.params["*"];
+}
+function shouldRevalidateLoader(currentLocation, currentMatch, submission, location, match, isRevalidationRequired, actionResult) {
+    let currentUrl = createClientSideURL(currentLocation);
+    let currentParams = currentMatch.params;
+    let nextUrl = createClientSideURL(location);
+    let nextParams = match.params; // This is the default implementation as to when we revalidate.  If the route
+    // provides it's own implementation, then we give them full control but
+    // provide this value so they can leverage it if needed after they check
+    // their own specific use cases
+    // Note that fetchers always provide the same current/next locations so the
+    // URL-based checks here don't apply to fetcher shouldRevalidate calls
+    let defaultShouldRevalidate = isNewRouteInstance(currentMatch, match) || // Clicked the same link, resubmitted a GET form
+    currentUrl.toString() === nextUrl.toString() || // Search params affect all loaders
+    currentUrl.search !== nextUrl.search || // Forced revalidation due to submission, useRevalidate, or X-Remix-Revalidate
+    isRevalidationRequired;
+    if (match.route.shouldRevalidate) {
+        let routeChoice = match.route.shouldRevalidate(_extends({
+            currentUrl,
+            currentParams,
+            nextUrl,
+            nextParams
+        }, submission, {
+            actionResult,
+            defaultShouldRevalidate
+        }));
+        if (typeof routeChoice === "boolean") return routeChoice;
+    }
+    return defaultShouldRevalidate;
+}
+async function callLoaderOrAction(type, request, match, matches, basename, isStaticRequest, isRouteRequest, requestContext) {
+    if (basename === void 0) basename = "/";
+    if (isStaticRequest === void 0) isStaticRequest = false;
+    if (isRouteRequest === void 0) isRouteRequest = false;
+    let resultType;
+    let result; // Setup a promise we can race against so that abort signals short circuit
+    let reject;
+    let abortPromise = new Promise((_, r)=>reject = r);
+    let onReject = ()=>reject();
+    request.signal.addEventListener("abort", onReject);
+    try {
+        let handler = match.route[type];
+        invariant(handler, "Could not find the " + type + ' to run on the "' + match.route.id + '" route');
+        result = await Promise.race([
+            handler({
+                request,
+                params: match.params,
+                context: requestContext
+            }),
+            abortPromise
+        ]);
+        invariant(result !== undefined, "You defined " + (type === "action" ? "an action" : "a loader") + " for route " + ('"' + match.route.id + "\" but didn't return anything from your `" + type + "` ") + "function. Please return a value or `null`.");
+    } catch (e) {
+        resultType = ResultType.error;
+        result = e;
+    } finally{
+        request.signal.removeEventListener("abort", onReject);
+    }
+    if (isResponse(result)) {
+        let status = result.status; // Process redirects
+        if (redirectStatusCodes.has(status)) {
+            let location = result.headers.get("Location");
+            invariant(location, "Redirects returned/thrown from loaders/actions must have a Location header");
+            let isAbsolute = /^[a-z+]+:\/\//i.test(location) || location.startsWith("//"); // Support relative routing in internal redirects
+            if (!isAbsolute) {
+                let activeMatches = matches.slice(0, matches.indexOf(match) + 1);
+                let routePathnames = getPathContributingMatches(activeMatches).map((match)=>match.pathnameBase);
+                let resolvedLocation = resolveTo(location, routePathnames, new URL(request.url).pathname);
+                invariant(createPath(resolvedLocation), "Unable to resolve redirect location: " + location); // Prepend the basename to the redirect location if we have one
+                if (basename) {
+                    let path = resolvedLocation.pathname;
+                    resolvedLocation.pathname = path === "/" ? basename : joinPaths([
+                        basename,
+                        path
+                    ]);
+                }
+                location = createPath(resolvedLocation);
+            } // Don't process redirects in the router during static requests requests.
+            // Instead, throw the Response and let the server handle it with an HTTP
+            // redirect.  We also update the Location header in place in this flow so
+            // basename and relative routing is taken into account
+            if (isStaticRequest) {
+                result.headers.set("Location", location);
+                throw result;
+            }
+            return {
+                type: ResultType.redirect,
+                status,
+                location,
+                revalidate: result.headers.get("X-Remix-Revalidate") !== null
+            };
+        } // For SSR single-route requests, we want to hand Responses back directly
+        // without unwrapping.  We do this with the QueryRouteResponse wrapper
+        // interface so we can know whether it was returned or thrown
+        if (isRouteRequest) // eslint-disable-next-line no-throw-literal
+        throw {
+            type: resultType || ResultType.data,
+            response: result
+        };
+        let data;
+        let contentType = result.headers.get("Content-Type"); // Check between word boundaries instead of startsWith() due to the last
+        // paragraph of https://httpwg.org/specs/rfc9110.html#field.content-type
+        if (contentType && /\bapplication\/json\b/.test(contentType)) data = await result.json();
+        else data = await result.text();
+        if (resultType === ResultType.error) return {
+            type: resultType,
+            error: new ErrorResponse(status, result.statusText, data),
+            headers: result.headers
+        };
+        return {
+            type: ResultType.data,
+            data,
+            statusCode: result.status,
+            headers: result.headers
+        };
+    }
+    if (resultType === ResultType.error) return {
+        type: resultType,
+        error: result
+    };
+    if (result instanceof DeferredData) return {
+        type: ResultType.deferred,
+        deferredData: result
+    };
+    return {
+        type: ResultType.data,
+        data: result
+    };
+} // Utility method for creating the Request instances for loaders/actions during
+// client-side navigations and fetches.  During SSR we will always have a
+// Request instance from the static handler (query/queryRoute)
+function createClientSideRequest(location, signal, submission) {
+    let url = createClientSideURL(stripHashFromPath(location)).toString();
+    let init = {
+        signal
+    };
+    if (submission && isMutationMethod(submission.formMethod)) {
+        let { formMethod , formEncType , formData  } = submission;
+        init.method = formMethod.toUpperCase();
+        init.body = formEncType === "application/x-www-form-urlencoded" ? convertFormDataToSearchParams(formData) : formData;
+    } // Content-Type is inferred (https://fetch.spec.whatwg.org/#dom-request)
+    return new Request(url, init);
+}
+function convertFormDataToSearchParams(formData) {
+    let searchParams = new URLSearchParams();
+    for (let [key, value] of formData.entries()){
+        invariant(typeof value === "string", 'File inputs are not supported with encType "application/x-www-form-urlencoded", please use "multipart/form-data" instead.');
+        searchParams.append(key, value);
+    }
+    return searchParams;
+}
+function processRouteLoaderData(matches, matchesToLoad, results, pendingError, activeDeferreds) {
+    // Fill in loaderData/errors from our loaders
+    let loaderData = {};
+    let errors = null;
+    let statusCode;
+    let foundError = false;
+    let loaderHeaders = {}; // Process loader results into state.loaderData/state.errors
+    results.forEach((result, index)=>{
+        let id = matchesToLoad[index].route.id;
+        invariant(!isRedirectResult(result), "Cannot handle redirect results in processLoaderData");
+        if (isErrorResult(result)) {
+            // Look upwards from the matched route for the closest ancestor
+            // error boundary, defaulting to the root match
+            let boundaryMatch = findNearestBoundary(matches, id);
+            let error = result.error; // If we have a pending action error, we report it at the highest-route
+            // that throws a loader error, and then clear it out to indicate that
+            // it was consumed
+            if (pendingError) {
+                error = Object.values(pendingError)[0];
+                pendingError = undefined;
+            }
+            errors = errors || {}; // Prefer higher error values if lower errors bubble to the same boundary
+            if (errors[boundaryMatch.route.id] == null) errors[boundaryMatch.route.id] = error;
+             // Clear our any prior loaderData for the throwing route
+            loaderData[id] = undefined; // Once we find our first (highest) error, we set the status code and
+            // prevent deeper status codes from overriding
+            if (!foundError) {
+                foundError = true;
+                statusCode = isRouteErrorResponse(result.error) ? result.error.status : 500;
+            }
+            if (result.headers) loaderHeaders[id] = result.headers;
+        } else if (isDeferredResult(result)) {
+            activeDeferreds && activeDeferreds.set(id, result.deferredData);
+            loaderData[id] = result.deferredData.data; // TODO: Add statusCode/headers once we wire up streaming in Remix
+        } else {
+            loaderData[id] = result.data; // Error status codes always override success status codes, but if all
+            // loaders are successful we take the deepest status code.
+            if (result.statusCode != null && result.statusCode !== 200 && !foundError) statusCode = result.statusCode;
+            if (result.headers) loaderHeaders[id] = result.headers;
+        }
+    }); // If we didn't consume the pending action error (i.e., all loaders
+    // resolved), then consume it here.  Also clear out any loaderData for the
+    // throwing route
+    if (pendingError) {
+        errors = pendingError;
+        loaderData[Object.keys(pendingError)[0]] = undefined;
+    }
+    return {
+        loaderData,
+        errors,
+        statusCode: statusCode || 200,
+        loaderHeaders
+    };
+}
+function processLoaderData(state, matches, matchesToLoad, results, pendingError, revalidatingFetchers, fetcherResults, activeDeferreds) {
+    let { loaderData , errors  } = processRouteLoaderData(matches, matchesToLoad, results, pendingError, activeDeferreds); // Process results from our revalidating fetchers
+    for(let index = 0; index < revalidatingFetchers.length; index++){
+        let [key, , match] = revalidatingFetchers[index];
+        invariant(fetcherResults !== undefined && fetcherResults[index] !== undefined, "Did not find corresponding fetcher result");
+        let result = fetcherResults[index]; // Process fetcher non-redirect errors
+        if (isErrorResult(result)) {
+            let boundaryMatch = findNearestBoundary(state.matches, match.route.id);
+            if (!(errors && errors[boundaryMatch.route.id])) errors = _extends({}, errors, {
+                [boundaryMatch.route.id]: result.error
+            });
+            state.fetchers.delete(key);
+        } else if (isRedirectResult(result)) // Should never get here, redirects should get processed above, but we
+        // keep this to type narrow to a success result in the else
+        throw new Error("Unhandled fetcher revalidation redirect");
+        else if (isDeferredResult(result)) // Should never get here, deferred data should be awaited for fetchers
+        // in resolveDeferredResults
+        throw new Error("Unhandled fetcher deferred data");
+        else {
+            let doneFetcher = {
+                state: "idle",
+                data: result.data,
+                formMethod: undefined,
+                formAction: undefined,
+                formEncType: undefined,
+                formData: undefined,
+                " _hasFetcherDoneAnything ": true
+            };
+            state.fetchers.set(key, doneFetcher);
+        }
+    }
+    return {
+        loaderData,
+        errors
+    };
+}
+function mergeLoaderData(loaderData, newLoaderData, matches, errors) {
+    let mergedLoaderData = _extends({}, newLoaderData);
+    for (let match of matches){
+        let id = match.route.id;
+        if (newLoaderData.hasOwnProperty(id)) {
+            if (newLoaderData[id] !== undefined) mergedLoaderData[id] = newLoaderData[id];
+        } else if (loaderData[id] !== undefined) mergedLoaderData[id] = loaderData[id];
+        if (errors && errors.hasOwnProperty(id)) break;
+    }
+    return mergedLoaderData;
+} // Find the nearest error boundary, looking upwards from the leaf route (or the
+// route specified by routeId) for the closest ancestor error boundary,
+// defaulting to the root match
+function findNearestBoundary(matches, routeId) {
+    let eligibleMatches = routeId ? matches.slice(0, matches.findIndex((m)=>m.route.id === routeId) + 1) : [
+        ...matches
+    ];
+    return eligibleMatches.reverse().find((m)=>m.route.hasErrorBoundary === true) || matches[0];
+}
+function getShortCircuitMatches(routes) {
+    // Prefer a root layout route if present, otherwise shim in a route object
+    let route = routes.find((r)=>r.index || !r.path || r.path === "/") || {
+        id: "__shim-error-route__"
+    };
+    return {
+        matches: [
+            {
+                params: {},
+                pathname: "",
+                pathnameBase: "",
+                route
+            }
+        ],
+        route
+    };
+}
+function getInternalRouterError(status, _temp4) {
+    let { pathname , routeId , method  } = _temp4 === void 0 ? {} : _temp4;
+    let statusText = "Unknown Server Error";
+    let errorMessage = "Unknown @remix-run/router error";
+    if (status === 400) {
+        statusText = "Bad Request";
+        if (method && pathname && routeId) errorMessage = "You made a " + method + ' request to "' + pathname + '" but ' + ('did not provide a `loader` for route "' + routeId + '", ') + "so there is no way to handle the request.";
+        else errorMessage = "Cannot submit binary form data using GET";
+    } else if (status === 403) {
+        statusText = "Forbidden";
+        errorMessage = 'Route "' + routeId + '" does not match URL "' + pathname + '"';
+    } else if (status === 404) {
+        statusText = "Not Found";
+        errorMessage = 'No route matches URL "' + pathname + '"';
+    } else if (status === 405) {
+        statusText = "Method Not Allowed";
+        if (method && pathname && routeId) errorMessage = "You made a " + method.toUpperCase() + ' request to "' + pathname + '" but ' + ('did not provide an `action` for route "' + routeId + '", ') + "so there is no way to handle the request.";
+        else if (method) errorMessage = 'Invalid request method "' + method.toUpperCase() + '"';
+    }
+    return new ErrorResponse(status || 500, statusText, new Error(errorMessage), true);
+} // Find any returned redirect errors, starting from the lowest match
+function findRedirect(results) {
+    for(let i = results.length - 1; i >= 0; i--){
+        let result = results[i];
+        if (isRedirectResult(result)) return result;
+    }
+}
+function stripHashFromPath(path) {
+    let parsedPath = typeof path === "string" ? parsePath(path) : path;
+    return createPath(_extends({}, parsedPath, {
+        hash: ""
+    }));
+}
+function isHashChangeOnly(a, b) {
+    return a.pathname === b.pathname && a.search === b.search && a.hash !== b.hash;
+}
+function isDeferredResult(result) {
+    return result.type === ResultType.deferred;
+}
+function isErrorResult(result) {
+    return result.type === ResultType.error;
+}
+function isRedirectResult(result) {
+    return (result && result.type) === ResultType.redirect;
+}
+function isResponse(value) {
+    return value != null && typeof value.status === "number" && typeof value.statusText === "string" && typeof value.headers === "object" && typeof value.body !== "undefined";
+}
+function isRedirectResponse(result) {
+    if (!isResponse(result)) return false;
+    let status = result.status;
+    let location = result.headers.get("Location");
+    return status >= 300 && status <= 399 && location != null;
+}
+function isQueryRouteResponse(obj) {
+    return obj && isResponse(obj.response) && (obj.type === ResultType.data || ResultType.error);
+}
+function isValidMethod(method) {
+    return validRequestMethods.has(method);
+}
+function isMutationMethod(method) {
+    return validMutationMethods.has(method);
+}
+async function resolveDeferredResults(currentMatches, matchesToLoad, results, signal, isFetcher, currentLoaderData) {
+    for(let index = 0; index < results.length; index++){
+        let result = results[index];
+        let match = matchesToLoad[index];
+        let currentMatch = currentMatches.find((m)=>m.route.id === match.route.id);
+        let isRevalidatingLoader = currentMatch != null && !isNewRouteInstance(currentMatch, match) && (currentLoaderData && currentLoaderData[match.route.id]) !== undefined;
+        if (isDeferredResult(result) && (isFetcher || isRevalidatingLoader)) // Note: we do not have to touch activeDeferreds here since we race them
+        // against the signal in resolveDeferredData and they'll get aborted
+        // there if needed
+        await resolveDeferredData(result, signal, isFetcher).then((result)=>{
+            if (result) results[index] = result || results[index];
+        });
+    }
+}
+async function resolveDeferredData(result, signal, unwrap) {
+    if (unwrap === void 0) unwrap = false;
+    let aborted = await result.deferredData.resolveData(signal);
+    if (aborted) return;
+    if (unwrap) try {
+        return {
+            type: ResultType.data,
+            data: result.deferredData.unwrappedData
+        };
+    } catch (e) {
+        // Handle any TrackedPromise._error values encountered while unwrapping
+        return {
+            type: ResultType.error,
+            error: e
+        };
+    }
+    return {
+        type: ResultType.data,
+        data: result.deferredData.data
+    };
+}
+function hasNakedIndexQuery(search) {
+    return new URLSearchParams(search).getAll("index").some((v)=>v === "");
+} // Note: This should match the format exported by useMatches, so if you change
+// this please also change that :)  Eventually we'll DRY this up
+function createUseMatchesMatch(match, loaderData) {
+    let { route , pathname , params  } = match;
+    return {
+        id: route.id,
+        pathname,
+        params,
+        data: loaderData[route.id],
+        handle: route.handle
+    };
+}
+function getTargetMatch(matches, location) {
+    let search = typeof location === "string" ? parsePath(location).search : location.search;
+    if (matches[matches.length - 1].route.index && hasNakedIndexQuery(search || "")) // Return the leaf index route when index is present
+    return matches[matches.length - 1];
+     // Otherwise grab the deepest "path contributing" match (ignoring index and
+    // pathless layout routes)
+    let pathMatches = getPathContributingMatches(matches);
+    return pathMatches[pathMatches.length - 1];
+} //#endregion
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -27175,7 +31833,2359 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"km3Ru":[function(require,module,exports) {
+},{}],"91nZZ":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$cb96 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$cb96.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "locationContext", ()=>locationContext);
+parcelHelpers.export(exports, "getLocation", ()=>getLocation);
+parcelHelpers.export(exports, "MyRouter", ()=>MyRouter);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _homepage = require("./Pages/Homepage");
+var _cart = require("./Pages/Cart");
+var _about = require("./Pages/About");
+var _aboutDefault = parcelHelpers.interopDefault(_about);
+var _resturantPage = require("./Pages/ResturantPage");
+var _resturantPageDefault = parcelHelpers.interopDefault(_resturantPage);
+var _reactRouterDom = require("react-router-dom");
+var _header = require("./Pages/Header");
+var _headerDefault = parcelHelpers.interopDefault(_header);
+var _footer = require("./Pages/Footer");
+var _footerDefault = parcelHelpers.interopDefault(_footer);
+var _landingPage = require("./Pages/LandingPage");
+var _landingPageDefault = parcelHelpers.interopDefault(_landingPage);
+var _error = require("./Pages/Error");
+var _errorDefault = parcelHelpers.interopDefault(_error);
+var _react = require("react");
+var _s = $RefreshSig$();
+const locationContext = /*#__PURE__*/ (0, _react.createContext)();
+const getLocation = (setState)=>{
+    navigator.geolocation.getCurrentPosition((pos)=>{
+        setState(pos.coords);
+        return pos.coords;
+    }, (err)=>{
+        throw new (0, _errorDefault.default)("allow location to see rest near u");
+    });
+};
+const SearchPage = /*#__PURE__*/ (0, _react.lazy)(()=>require("f96ccf8d2cec13a8"));
+_c = SearchPage;
+const SearchResults = /*#__PURE__*/ (0, _react.lazy)(()=>require("d0d8d8e53de11ad2"));
+_c1 = SearchResults;
+const App = ()=>{
+    _s();
+    const [location, setLocation] = (0, _react.useState)({});
+    (0, _react.useEffect)(()=>{
+        getLocation(setLocation);
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(locationContext.Provider, {
+        value: location,
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
+                fileName: "src/MyApp.js",
+                lineNumber: 28,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
+                fileName: "src/MyApp.js",
+                lineNumber: 29,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
+                fileName: "src/MyApp.js",
+                lineNumber: 30,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/MyApp.js",
+        lineNumber: 27,
+        columnNumber: 10
+    }, undefined);
+};
+_s(App, "ctkjpXhbImKjjx+kV2SsrfiZPqI=");
+_c2 = App;
+const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
+    {
+        path: "/",
+        element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
+            fileName: "src/MyApp.js",
+            lineNumber: 35,
+            columnNumber: 12
+        }, undefined),
+        errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
+            fileName: "src/MyApp.js",
+            lineNumber: 36,
+            columnNumber: 17
+        }, undefined),
+        children: [
+            {
+                path: "/",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _landingPageDefault.default), {}, void 0, false, {
+                    fileName: "src/MyApp.js",
+                    lineNumber: 39,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/homePage",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepage.Homepage), {}, void 0, false, {
+                    fileName: "src/MyApp.js",
+                    lineNumber: 42,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/cart",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cart.Cart), {}, void 0, false, {
+                    fileName: "src/MyApp.js",
+                    lineNumber: 45,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/aboutUs",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
+                    fileName: "src/MyApp.js",
+                    lineNumber: 48,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/restaurant-page",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantPageDefault.default), {}, void 0, false, {
+                    fileName: "src/MyApp.js",
+                    lineNumber: 51,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/searchpage",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SearchPage, {}, void 0, false, {
+                        fileName: "src/MyApp.js",
+                        lineNumber: 55,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/MyApp.js",
+                    lineNumber: 54,
+                    columnNumber: 14
+                }, undefined)
+            },
+            {
+                path: "/searchResults",
+                element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SearchResults, {}, void 0, false, {
+                        fileName: "src/MyApp.js",
+                        lineNumber: 60,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/MyApp.js",
+                    lineNumber: 59,
+                    columnNumber: 14
+                }, undefined)
+            }
+        ]
+    }
+]);
+var _c, _c1, _c2;
+$RefreshReg$(_c, "SearchPage");
+$RefreshReg$(_c1, "SearchResults");
+$RefreshReg$(_c2, "App");
+
+  $parcel$ReactRefreshHelpers$cb96.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./Pages/Homepage":"6540u","./Pages/Cart":"3PdSH","./Pages/About":"9TUQf","./Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","./Pages/Header":"2h5Kc","./Pages/Footer":"RI2Qh","./Pages/LandingPage":"djTcg","./Pages/Error":"cerjK","react":"21dqq","f96ccf8d2cec13a8":"6kCHU","d0d8d8e53de11ad2":"iOQdU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6540u":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$16f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$16f4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Homepage", ()=>Homepage);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _body = require("./Body");
+var _bodyDefault = parcelHelpers.interopDefault(_body);
+var _carousel = require("./Carousel");
+var _carouselDefault = parcelHelpers.interopDefault(_carousel);
+var _useRestaurant = require("../customHooks/useRestaurant");
+var _useRestaurantDefault = parcelHelpers.interopDefault(_useRestaurant);
+var _homPageShimmer = require("./HomPageShimmer");
+var _homPageShimmerDefault = parcelHelpers.interopDefault(_homPageShimmer);
+var _s = $RefreshSig$();
+const Homepage = ()=>{
+    _s();
+    const [restaurants, setRestaurants] = (0, _react.useState)([]);
+    (0, _useRestaurantDefault.default)(restaurants, setRestaurants);
+    if (restaurants?.length <= 0 || typeof restaurants === "undefined") return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homPageShimmerDefault.default), {}, void 0, false, {
+        fileName: "src/Pages/Homepage.jsx",
+        lineNumber: 9,
+        columnNumber: 78
+    }, undefined);
+    else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Homepage",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
+                fileName: "src/Pages/Homepage.jsx",
+                lineNumber: 10,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {
+                Restaurants: restaurants
+            }, void 0, false, {
+                fileName: "src/Pages/Homepage.jsx",
+                lineNumber: 11,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/Homepage.jsx",
+        lineNumber: 9,
+        columnNumber: 109
+    }, undefined);
+};
+_s(Homepage, "mUtUUFHnWR2bOXVrmAp6WKT2Z9U=", false, function() {
+    return [
+        (0, _useRestaurantDefault.default)
+    ];
+});
+_c = Homepage;
+var _c;
+$RefreshReg$(_c, "Homepage");
+
+  $parcel$ReactRefreshHelpers$16f4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./Body":"jhV0B","./Carousel":"63nrR","../customHooks/useRestaurant":"cTxpy","./HomPageShimmer":"2D5qz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jhV0B":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e5ba = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e5ba.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _resturantcard = require("./Resturantcard");
+const Body = ({ Restaurants  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        id: "Available-Resturants-window",
+        className: "Available-Resturants w-full flex justify-center items-center ",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+            className: "Restaurant-container px-16 flex flex-wrap justify-start border-none w-[90%] mt-[45px] ",
+            children: Restaurants?.map((restaurant, index)=>{
+                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantcard.RestaurantCard), {
+                    restaurant: restaurant?.data?.data
+                }, index, false, {
+                    fileName: "src/Pages/Body.jsx",
+                    lineNumber: 8,
+                    columnNumber: 16
+                }, undefined);
+            })
+        }, void 0, false, {
+            fileName: "src/Pages/Body.jsx",
+            lineNumber: 6,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Pages/Body.jsx",
+        lineNumber: 5,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Body;
+exports.default = Body;
+var _c;
+$RefreshReg$(_c, "Body");
+
+  $parcel$ReactRefreshHelpers$e5ba.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","./Resturantcard":"7rXRs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7rXRs":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$7fe9 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$7fe9.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "RestaurantCard", ()=>RestaurantCard);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _constants = require("../Utilities/constants");
+var _react = require("react");
+var _reactShimmerEffects = require("react-shimmer-effects");
+var _s = $RefreshSig$();
+const RestaurantCard = ({ restaurant  })=>{
+    _s();
+    const [isLoaded, setIsLoaded] = (0, _react.useState)(false);
+    if (restaurant?.name) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+            className: " restaurant-Card w-[230px] h-fit px-3 py-4 mb-8 mt-4 hover:shadow-xl hover:border-slate-500 hover:border-[.5px] hover:border-solid",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                state: {
+                    id: restaurant?.id
+                },
+                to: "/restaurant-page",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        className: "h-0 w-0",
+                        src: (0, _constants.IMAGE_URL) + restaurant?.cloudinaryImageId,
+                        onLoad: ()=>{
+                            setIsLoaded(true);
+                        }
+                    }, void 0, false, {
+                        fileName: "src/Pages/Resturantcard.jsx",
+                        lineNumber: 16,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "restaurant-Image",
+                        children: isLoaded ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "h-34 w-56 bg-center bg-no-repeat bg-contain",
+                            src: (0, _constants.IMAGE_URL) + restaurant?.cloudinaryImageId
+                        }, void 0, false, {
+                            fileName: "src/Pages/Resturantcard.jsx",
+                            lineNumber: 20,
+                            columnNumber: 27
+                        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: " h-32 w-[210px] bg-[#e9ebe7]"
+                        }, void 0, false, {
+                            fileName: "src/Pages/Resturantcard.jsx",
+                            lineNumber: 20,
+                            columnNumber: 141
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Pages/Resturantcard.jsx",
+                        lineNumber: 19,
+                        columnNumber: 13
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "restaurant-data flex flex-col justify-start content-evenly ",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "Restaurnat-Name p-0 pb-0 text-md text-[#3e4152]",
+                                children: restaurant?.name
+                            }, void 0, false, {
+                                fileName: "src/Pages/Resturantcard.jsx",
+                                lineNumber: 23,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "restaurant-Cuisines text-xs text-[#535665] w-[200px] overflow-clip ",
+                                children: restaurant?.cuisines?.join(",")
+                            }, void 0, false, {
+                                fileName: "src/Pages/Resturantcard.jsx",
+                                lineNumber: 26,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "restaurant-Delivery-Info flex justify-between w-full items-center h-10",
+                                children: [
+                                    restaurant?.avgRating >= 4 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "Rating text-white pr-1 pl-1 text-xs p-0.5 decoration-slate-50 bg-green-600",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                className: "fa-regular fa-star fa-small"
+                                            }, void 0, false, {
+                                                fileName: "src/Pages/Resturantcard.jsx",
+                                                lineNumber: 31,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            " ",
+                                            restaurant?.avgRating
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/Pages/Resturantcard.jsx",
+                                        lineNumber: 30,
+                                        columnNumber: 47
+                                    }, undefined) : restaurant?.avgRating > 2.8 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "Rating text-white pr-1 pl-1 p-0.5 text-xs bg-[#db7c38]",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                className: "fa-regular fa-star fa-small"
+                                            }, void 0, false, {
+                                                fileName: "src/Pages/Resturantcard.jsx",
+                                                lineNumber: 34,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            " ",
+                                            restaurant?.avgRating
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/Pages/Resturantcard.jsx",
+                                        lineNumber: 33,
+                                        columnNumber: 59
+                                    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "Rating text-slate-400 text-xs ",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                className: "fa-regular fa-star fa-small"
+                                            }, void 0, false, {
+                                                fileName: "src/Pages/Resturantcard.jsx",
+                                                lineNumber: 37,
+                                                columnNumber: 21
+                                            }, undefined),
+                                            " ",
+                                            restaurant?.avgRating
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/Pages/Resturantcard.jsx",
+                                        lineNumber: 36,
+                                        columnNumber: 29
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "Time text-[13px] text-[#535665] ",
+                                        children: [
+                                            restaurant?.sla?.deliveryTime,
+                                            " Min"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/Pages/Resturantcard.jsx",
+                                        lineNumber: 41,
+                                        columnNumber: 17
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "Cost-two text-[#535665] text-xs",
+                                        children: restaurant?.costForTwoString
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/Resturantcard.jsx",
+                                        lineNumber: 44,
+                                        columnNumber: 17
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/Resturantcard.jsx",
+                                lineNumber: 29,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                                fileName: "src/Pages/Resturantcard.jsx",
+                                lineNumber: 48,
+                                columnNumber: 15
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "coupon p-1 text-[13px] text-[#8a584b] flex justify-center items-center font-[500]",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                            className: "fa-sharp fa-solid fa-tags"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/Resturantcard.jsx",
+                                            lineNumber: 51,
+                                            columnNumber: 19
+                                        }, undefined),
+                                        " ",
+                                        restaurant?.aggregatedDiscountInfo?.shortDescriptionList[0]?.meta
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/Resturantcard.jsx",
+                                    lineNumber: 50,
+                                    columnNumber: 17
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/Pages/Resturantcard.jsx",
+                                lineNumber: 49,
+                                columnNumber: 15
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/Resturantcard.jsx",
+                        lineNumber: 22,
+                        columnNumber: 13
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/Resturantcard.jsx",
+                lineNumber: 13,
+                columnNumber: 11
+            }, undefined)
+        }, void 0, false, {
+            fileName: "src/Pages/Resturantcard.jsx",
+            lineNumber: 12,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false);
+    if (restaurant === undefined) return Array(1).fill(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+        className: " restaurant-Card w-[220px] h-82 m-1 mb-4 mt-8 ",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerThumbnail), {
+            height: 150,
+            width: 220
+        }, void 0, false, {
+            fileName: "src/Pages/Resturantcard.jsx",
+            lineNumber: 60,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Pages/Resturantcard.jsx",
+        lineNumber: 59,
+        columnNumber: 54
+    }, undefined));
+};
+_s(RestaurantCard, "IYJBVyHsXBw9t28YX/YBiMCcttM=");
+_c = RestaurantCard;
+var _c;
+$RefreshReg$(_c, "RestaurantCard");
+
+  $parcel$ReactRefreshHelpers$7fe9.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5t9MR":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Popular_Cuisines", ()=>Popular_Cuisines);
+parcelHelpers.export(exports, "carousel_Images", ()=>carousel_Images);
+parcelHelpers.export(exports, "IMAGE_URL", ()=>IMAGE_URL);
+parcelHelpers.export(exports, "EMPTY_CART_IMG", ()=>EMPTY_CART_IMG);
+parcelHelpers.export(exports, "MIN_ORDER_IMG", ()=>MIN_ORDER_IMG);
+parcelHelpers.export(exports, "TRACK_ORDER_IMG", ()=>TRACK_ORDER_IMG);
+parcelHelpers.export(exports, "FAST_DEL_IMG", ()=>FAST_DEL_IMG);
+parcelHelpers.export(exports, "SERVICES_IMG_CLASSNAME", ()=>SERVICES_IMG_CLASSNAME);
+parcelHelpers.export(exports, "LANDING_PAGE_IMG", ()=>LANDING_PAGE_IMG);
+parcelHelpers.export(exports, "CITY_NAMES", ()=>CITY_NAMES);
+parcelHelpers.export(exports, "ABOUT_US", ()=>ABOUT_US);
+parcelHelpers.export(exports, "ERROR_IMG", ()=>ERROR_IMG);
+parcelHelpers.export(exports, "TEXTS", ()=>TEXTS);
+parcelHelpers.export(exports, "STYLE", ()=>STYLE);
+const Popular_Cuisines = [
+    {
+        id: "600608",
+        imageId: "rng/md/carousel/production/lbtzwnwla1pam1np4jtg"
+    },
+    {
+        id: "600813",
+        imageId: "rng/md/carousel/production/kmvbd3hyswd147u4qdn1"
+    },
+    {
+        id: "600833",
+        imageId: "rng/md/carousel/production/hvc4l0r0bgrtl6vdbbzv"
+    },
+    {
+        id: "600868",
+        imageId: "rng/md/carousel/production/oea45ipb1ctr4m61m7af"
+    },
+    {
+        id: "600828",
+        imageId: "rng/md/carousel/production/iwvt76wvh3a7dxmkljxd"
+    },
+    {
+        id: "600901",
+        imageId: "rng/md/carousel/production/vntl1lutut9bqsxjninx"
+    },
+    {
+        id: "600916",
+        imageId: "rng/md/carousel/production/wfzaxacltlxyi4shmm2u"
+    },
+    {
+        id: "600932",
+        imageId: "rng/md/carousel/production/hk7gdfeiwmy5nx6prv97"
+    },
+    {
+        id: "601037",
+        imageId: "rng/md/carousel/production/pa6ydsixfemhr7r9rjzc"
+    }
+];
+const carousel_Images = [
+    {
+        src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/s5ug2key6e2sptaxku5v"
+    },
+    {
+        src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/dpqcjrxwruipnt1wyqnh"
+    },
+    {
+        src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/jmeoz6zu9fi0h9tw7xrb"
+    },
+    {
+        src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_520,h_520/rng/md/carousel/production/lyn9at38gjithnogzfui"
+    }
+];
+const IMAGE_URL = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+const EMPTY_CART_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2";
+const MIN_ORDER_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_210,h_398/4x_-_No_min_order_x0bxuf";
+const TRACK_ORDER_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_224,h_412/4x_Live_order_zzotwy";
+const FAST_DEL_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_248,h_376/4x_-_Super_fast_delivery_awv7sn";
+const SERVICES_IMG_CLASSNAME = "img-1 w-[270px] h-[333px] flex flex-col items-center justify-centre";
+const LANDING_PAGE_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_1340/Lunch1_vlksgq";
+const CITY_NAMES = [
+    "Delhi",
+    "Mumbai",
+    ,
+    "Bangalore",
+    "Kolkata",
+    "Hyderabad",
+    "Ahmedabad",
+    "Chennai",
+    "Pune",
+    "Jaipur",
+    "Jammu",
+    "Surat",
+    "Srinagar",
+    "Lucknow",
+    "Nagpur",
+    "Visakhapatnam",
+    "Bhopal",
+    "Patna",
+    "Ludhiana",
+    "Agra",
+    "Nashik",
+    "Vadodara",
+    "Ghaziabad",
+    "Rajkot",
+    "Meerut",
+    "Amritsar",
+    "Varanasi",
+    "Aurangabad",
+    "Jabalpur",
+    "Gwalior",
+    "Vijayawada",
+    "Jodhpur",
+    "Mount Tabu",
+    "Patna",
+    "Bihar",
+    "Kanpur"
+];
+const ABOUT_US = `Manik Sharma is an aspiring front-end developer who specializes in JavaScript and React. He has a passion for web development and a deep understanding of the latest technologies and trends in the industry. With a focus on user experience and accessibility, Manik brings creativity and technical expertise to every project he works on.
+
+Manik has extensive experience in JavaScript, a versatile programming language that is widely used for front-end development. He has a strong understanding of the language's core concepts and is skilled in using JavaScript to create dynamic and interactive web experiences.
+
+In addition to JavaScript, Manik also has expertise in React, a popular JavaScript library for building user interfaces. He has a deep understanding of React's component-based architecture and is skilled in using the library to build complex and scalable applications. He is familiar with the latest developments in React, including the use of Hooks and the development of reactive user interfaces.
+
+Manik is committed to creating accessible and user-friendly web experiences. He understands the importance of accessibility for people with disabilities and is skilled in implementing accessibility features such as keyboard navigation and alternative text for images.
+
+Manik is a proactive problem-solver and a dedicated team player. He is always striving to improve his skills and stay up-to-date with the latest developments in front-end development. He is driven by a passion for creating visually stunning
+
+
+.`;
+const ERROR_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/empty_404_3x_rgdw87";
+const TEXTS = [
+    "Hungry",
+    "Cooking Gone Wrong",
+    "Movie marathon",
+    "Game night",
+    "Unexpected Guests"
+];
+const STYLE = {
+    modalOn: "Landing-Page w-full opacity-70",
+    modalOff: "Landing-Page w-full"
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ORgO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "ShimmerButton", ()=>ShimmerButton);
+parcelHelpers.export(exports, "ShimmerCircularImage", ()=>ShimmerCircularImage);
+parcelHelpers.export(exports, "ShimmerThumbnail", ()=>ShimmerThumbnail);
+parcelHelpers.export(exports, "ShimmerCard", ()=>ShimmerCard);
+parcelHelpers.export(exports, "ShimmerSimpleGallery", ()=>ShimmerSimpleGallery);
+parcelHelpers.export(exports, "ShimmerFeaturedGallery", ()=>ShimmerFeaturedGallery);
+parcelHelpers.export(exports, "ShimmerTable", ()=>ShimmerTable);
+parcelHelpers.export(exports, "ShimmerTableCol", ()=>ShimmerTableCol);
+parcelHelpers.export(exports, "ShimmerTableRow", ()=>ShimmerTableRow);
+parcelHelpers.export(exports, "ShimmerBadge", ()=>ShimmerBadge);
+parcelHelpers.export(exports, "ShimmerText", ()=>ShimmerText);
+parcelHelpers.export(exports, "ShimmerTitle", ()=>ShimmerTitle);
+parcelHelpers.export(exports, "ShimmerSocialPost", ()=>ShimmerSocialPost);
+parcelHelpers.export(exports, "ShimmerSeparator", ()=>ShimmerSeparator);
+parcelHelpers.export(exports, "ShimmerCategoryItem", ()=>ShimmerCategoryItem);
+parcelHelpers.export(exports, "ShimmerCategoryList", ()=>ShimmerCategoryList);
+parcelHelpers.export(exports, "ShimmerPostItem", ()=>ShimmerPostItem);
+parcelHelpers.export(exports, "ShimmerPostDetails", ()=>ShimmerPostDetails);
+parcelHelpers.export(exports, "ShimmerPostList", ()=>ShimmerPostList);
+parcelHelpers.export(exports, "ShimmerContentBlock", ()=>ShimmerContentBlock);
+parcelHelpers.export(exports, "ShimmerSectionHeader", ()=>ShimmerSectionHeader);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _propTypes = require("prop-types");
+var _propTypesDefault = parcelHelpers.interopDefault(_propTypes);
+function createCommonjsModule(fn, module) {
+    return module = {
+        exports: {}
+    }, fn(module, module.exports), module.exports;
+}
+var classnames = createCommonjsModule(function(module) {
+    /*!
+  Copyright (c) 2018 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/ /* global define */ (function() {
+        var hasOwn = {}.hasOwnProperty;
+        function classNames() {
+            var classes = [];
+            for(var i = 0; i < arguments.length; i++){
+                var arg = arguments[i];
+                if (!arg) continue;
+                var argType = typeof arg;
+                if (argType === "string" || argType === "number") classes.push(arg);
+                else if (Array.isArray(arg)) {
+                    if (arg.length) {
+                        var inner = classNames.apply(null, arg);
+                        if (inner) classes.push(inner);
+                    }
+                } else if (argType === "object") {
+                    if (arg.toString === Object.prototype.toString) {
+                        for(var key in arg)if (hasOwn.call(arg, key) && arg[key]) classes.push(key);
+                    } else classes.push(arg.toString());
+                }
+            }
+            return classes.join(" ");
+        }
+        if (module.exports) {
+            classNames.default = classNames;
+            module.exports = classNames;
+        } else window.classNames = classNames;
+    })();
+});
+function styleInject(css, ref) {
+    if (ref === void 0) ref = {};
+    var insertAt = ref.insertAt;
+    if (!css || typeof document === "undefined") return;
+    var head = document.head || document.getElementsByTagName("head")[0];
+    var style = document.createElement("style");
+    style.type = "text/css";
+    if (insertAt === "top") {
+        if (head.firstChild) head.insertBefore(style, head.firstChild);
+        else head.appendChild(style);
+    } else head.appendChild(style);
+    if (style.styleSheet) style.styleSheet.cssText = css;
+    else style.appendChild(document.createTextNode(css));
+}
+var css = ".shimmer-button {\n  border-radius: 4px;\n  height: 38px;\n  width: 120px;\n  margin-bottom: 20px; }\n  .shimmer-button--sm {\n    border-radius: 3px;\n    height: 31px;\n    width: 100px; }\n  .shimmer-button--lg {\n    height: 48px;\n    width: 140px;\n    border-radius: 5px; }\n";
+styleInject(css);
+var defineProperty = function(obj, key, value) {
+    if (key in obj) Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+    });
+    else obj[key] = value;
+    return obj;
+};
+var ShimmerButton = function ShimmerButton(_ref) {
+    var size = _ref.size;
+    return (0, _reactDefault.default).createElement("div", {
+        className: classnames(defineProperty({
+            "shimmer shimmer-button": true
+        }, "shimmer-button--" + size, true))
+    });
+};
+ShimmerButton.propTypes = {
+    size: (0, _propTypesDefault.default).oneOf([
+        "lg",
+        "md",
+        "sm"
+    ])
+};
+ShimmerButton.defaultProps = {
+    size: "md"
+};
+var ShimmerCircularImage = function ShimmerCircularImage(_ref) {
+    var size = _ref.size, center = _ref.center, className = _ref.className;
+    var style = {};
+    if (size) {
+        style.width = size + "px";
+        style.height = size + "px";
+    }
+    return (0, _reactDefault.default).createElement("div", {
+        className: classnames({
+            "text-center": center
+        })
+    }, (0, _reactDefault.default).createElement("div", {
+        style: style,
+        className: classnames(defineProperty({
+            "shimmer shimmer-avatar": true
+        }, className, className))
+    }));
+};
+ShimmerCircularImage.propTypes = {
+    size: (0, _propTypesDefault.default).number,
+    center: (0, _propTypesDefault.default).bool,
+    className: (0, _propTypesDefault.default).string
+};
+ShimmerCircularImage.defaultProps = {
+    center: false,
+    size: 80
+};
+var ShimmerThumbnail = function ShimmerThumbnail(_ref) {
+    var height = _ref.height, width = _ref.width, center = _ref.center, className = _ref.className, fitOnFrame = _ref.fitOnFrame, rounded = _ref.rounded;
+    var style = {};
+    if (height) style.height = height + "px";
+    if (width) style.width = width + "px";
+    return (0, _reactDefault.default).createElement("div", {
+        className: classnames({
+            "h-100": fitOnFrame,
+            "text-center ": center
+        })
+    }, (0, _reactDefault.default).createElement("div", {
+        className: classnames(defineProperty({
+            "h-100": fitOnFrame,
+            "shimmer shimmer-thumbnail": true,
+            "border-rounded": rounded
+        }, className, className)),
+        style: style
+    }));
+};
+ShimmerThumbnail.propTypes = {
+    height: (0, _propTypesDefault.default).number,
+    width: (0, _propTypesDefault.default).number,
+    center: (0, _propTypesDefault.default).bool,
+    className: (0, _propTypesDefault.default).string,
+    fitOnFrame: (0, _propTypesDefault.default).bool,
+    rounded: (0, _propTypesDefault.default).bool
+};
+ShimmerThumbnail.defaultProps = {
+    canter: false,
+    fitOnFrame: false,
+    rounded: false,
+    height: 250
+};
+var css$1 = ".shimmer-avatar {\n  width: 80px;\n  height: 80px;\n  border-radius: 50%;\n  margin-bottom: 20px;\n  display: inline-block; }\n\n.shimmer-thumbnail {\n  min-width: 80px;\n  width: 100%;\n  height: 200px;\n  margin-bottom: 20px;\n  display: inline-block; }\n";
+styleInject(css$1);
+var css$2 = ".shimmer-title {\n  margin-bottom: 20px; }\n  .shimmer-title--secondary {\n    margin-bottom: 20px; }\n    .shimmer-title--secondary .shimmer-title-line {\n      height: 16px; }\n  .shimmer-title-line {\n    width: 100%;\n    height: 24px;\n    border-radius: 20px; }\n    .shimmer-title-line:first-child {\n      width: 100% !important; }\n    .shimmer-title-line:last-child {\n      width: 40%; }\n";
+styleInject(css$2);
+var ShimmerTitle = function ShimmerTitle(_ref) {
+    var _classNames;
+    var line = _ref.line, gap = _ref.gap, variant = _ref.variant, className = _ref.className;
+    var renderLines = function renderLines() {
+        var title_lines = [];
+        for(var index = 0; index < line; index++)title_lines.push((0, _reactDefault.default).createElement("div", {
+            className: "shimmer shimmer-title-line",
+            key: index
+        }));
+        return title_lines;
+    };
+    return (0, _reactDefault.default).createElement("div", {
+        className: classnames((_classNames = {
+            grid: true,
+            "shimmer-title": variant === "primary",
+            "shimmer-title--secondary": variant === "secondary"
+        }, defineProperty(_classNames, "grid-gap-" + gap, gap), defineProperty(_classNames, className, className), _classNames))
+    }, renderLines());
+};
+ShimmerTitle.propTypes = {
+    line: (0, _propTypesDefault.default).number,
+    gap: (0, _propTypesDefault.default).oneOf([
+        10,
+        15,
+        20,
+        30
+    ]),
+    variant: (0, _propTypesDefault.default).oneOf([
+        "primary",
+        "secondary"
+    ]),
+    className: (0, _propTypesDefault.default).string
+};
+ShimmerTitle.defaultProps = {
+    line: 2,
+    gap: 10,
+    variant: "primary"
+};
+var css$3 = ".shimmer-card {\n  border-radius: 8px;\n  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);\n  background-color: #ffffff;\n  width: 100%; }\n  .shimmer-card:not(:first-child) {\n    margin-top: 30px; }\n  .shimmer-card--content-center {\n    text-align: center;\n    display: flex;\n    flex-direction: column;\n    align-items: center; }\n    .shimmer-card--content-center * {\n      width: 100%;\n      margin: auto; }\n";
+styleInject(css$3);
+var ShimmerCard = function ShimmerCard(_ref) {
+    var _classNames;
+    var children = _ref.children, className = _ref.className, paddingSize = _ref.paddingSize;
+    if (!children) return null;
+    return (0, _reactDefault.default).createElement("div", {
+        className: classnames((_classNames = {
+            "shimmer-card": true
+        }, defineProperty(_classNames, "p-" + paddingSize, paddingSize), defineProperty(_classNames, className, className), _classNames))
+    }, children);
+};
+ShimmerCard.propTypes = {
+    className: (0, _propTypesDefault.default).string,
+    children: (0, _propTypesDefault.default).oneOfType([
+        (0, _propTypesDefault.default).element,
+        (0, _propTypesDefault.default).array
+    ]).isRequired,
+    paddingSize: (0, _propTypesDefault.default).oneOf([
+        false,
+        20,
+        30
+    ])
+};
+ShimmerCard.defaultProps = {
+    paddingSize: false
+};
+var ShimmerSimpleGallery = function ShimmerSimpleGallery(_ref) {
+    var _classNames, _classNames2;
+    var row = _ref.row, col = _ref.col, gap = _ref.gap, className = _ref.className, fitOnFrame = _ref.fitOnFrame, imageType = _ref.imageType, imageHeight = _ref.imageHeight, caption = _ref.caption, card = _ref.card;
+    var renderPhotos = function renderPhotos() {
+        var photos = [];
+        var items = row * col;
+        for(var index = 0; index < items; index++)photos.push((0, _reactDefault.default).createElement("div", {
+            key: index
+        }, imageType === "thumbnail" && (0, _reactDefault.default).createElement(ShimmerThumbnail, {
+            key: index,
+            fitOnFrame: fitOnFrame,
+            height: imageHeight,
+            className: classnames({
+                "m-0": true
+            })
+        }), imageType === "circular" && (0, _reactDefault.default).createElement(ShimmerCircularImage, {
+            size: imageHeight,
+            center: true
+        }), caption && (0, _reactDefault.default).createElement(ShimmerTitle, {
+            variant: "secondary",
+            className: classnames({
+                "mt-15": imageType === "thumbnail",
+                "w-50 ml-auto mr-auto circular-image-caption": imageType === "circular"
+            })
+        })));
+        return photos;
+    };
+    if (!card) return (0, _reactDefault.default).createElement("div", {
+        className: classnames((_classNames = {
+            grid: true
+        }, defineProperty(_classNames, "grid-gap-" + gap, true), defineProperty(_classNames, "grid-column-" + col, true), defineProperty(_classNames, className, className), _classNames))
+    }, renderPhotos());
+    return (0, _reactDefault.default).createElement(ShimmerCard, {
+        paddingSize: 20
+    }, (0, _reactDefault.default).createElement("div", {
+        className: classnames((_classNames2 = {
+            grid: true
+        }, defineProperty(_classNames2, "grid-gap-" + gap, true), defineProperty(_classNames2, "grid-column-" + col, true), defineProperty(_classNames2, className, className), _classNames2))
+    }, renderPhotos()));
+};
+ShimmerSimpleGallery.propTypes = {
+    row: (0, _propTypesDefault.default).number,
+    col: (0, _propTypesDefault.default).oneOf([
+        2,
+        3,
+        4
+    ]),
+    gap: (0, _propTypesDefault.default).oneOf([
+        20,
+        30
+    ]),
+    fitOnFrame: (0, _propTypesDefault.default).bool,
+    imageType: (0, _propTypesDefault.default).oneOf([
+        "thumbnail",
+        "circular"
+    ]),
+    imageHeight: (0, _propTypesDefault.default).number,
+    caption: (0, _propTypesDefault.default).bool,
+    card: (0, _propTypesDefault.default).bool
+};
+ShimmerSimpleGallery.defaultProps = {
+    row: 3,
+    col: 3,
+    gap: 20,
+    fitOnFrame: false,
+    imageType: "thumbnail",
+    caption: false,
+    card: false
+};
+var css$4 = ".shimmer-gallery-puzzle {\n  height: 540px; }\n\n.circular-image-caption .shimmer-title-line {\n  margin: auto; }\n";
+styleInject(css$4);
+var ShimmerFeaturedGallery = function ShimmerFeaturedGallery(_ref) {
+    var row = _ref.row, col = _ref.col, gap = _ref.gap, card = _ref.card, frameHeight = _ref.frameHeight;
+    var style = {};
+    if (frameHeight) style.height = frameHeight + "px";
+    var renderContent = function renderContent() {
+        return (0, _reactDefault.default).createElement("div", {
+            className: "shimmer-row shimmer-gallery-puzzle",
+            style: style
+        }, (0, _reactDefault.default).createElement("div", {
+            className: "shimmer-col flex-1"
+        }, (0, _reactDefault.default).createElement(ShimmerThumbnail, {
+            className: "h-100",
+            fitOnFrame: true
+        })), (0, _reactDefault.default).createElement("div", {
+            className: "shimmer-col flex-1"
+        }, (0, _reactDefault.default).createElement(ShimmerSimpleGallery, {
+            row: row,
+            col: col,
+            gap: gap,
+            className: "h-100",
+            fitOnFrame: true
+        })));
+    };
+    if (!card) return renderContent();
+    return (0, _reactDefault.default).createElement(ShimmerCard, {
+        paddingSize: 20
+    }, renderContent());
+};
+ShimmerFeaturedGallery.propTypes = {
+    row: (0, _propTypesDefault.default).number,
+    col: (0, _propTypesDefault.default).oneOf([
+        2,
+        3,
+        4
+    ]),
+    gap: (0, _propTypesDefault.default).oneOf([
+        20,
+        30
+    ]),
+    card: (0, _propTypesDefault.default).bool,
+    frameHeight: (0, _propTypesDefault.default).number
+};
+ShimmerFeaturedGallery.defaultProps = {
+    card: false,
+    row: 2,
+    col: 2,
+    gap: 20,
+    frameHeight: 600
+};
+var ShimmerTableCol = function ShimmerTableCol() {
+    return (0, _reactDefault.default).createElement("div", {
+        className: "shimmer shimmer-table-col"
+    });
+};
+var ShimmerTableRow = function ShimmerTableRow(_ref) {
+    var col = _ref.col, header = _ref.header;
+    var renderColumns = function renderColumns() {
+        var columns = [];
+        for(var index = 0; index < col; index++)columns.push((0, _reactDefault.default).createElement(ShimmerTableCol, {
+            key: index
+        }));
+        return columns;
+    };
+    return (0, _reactDefault.default).createElement("div", {
+        className: classnames({
+            "shimmer-table-row": true,
+            "shimmer-table-row--header": header
+        })
+    }, renderColumns());
+};
+ShimmerTableRow.propTypes = {
+    col: (0, _propTypesDefault.default).number.isRequired,
+    header: (0, _propTypesDefault.default).bool
+};
+ShimmerTableRow.defaultProps = {
+    col: 5,
+    header: false
+};
+var css$5 = ".shimmer-table-row {\n  box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);\n  display: flex;\n  padding: 25px 0;\n  background-color: #ffffff;\n  border-radius: 5px;\n  margin-bottom: 20px; }\n  .shimmer-table-row--header {\n    background-color: transparent;\n    box-shadow: none;\n    margin: 0; }\n  .shimmer-table-row > .shimmer {\n    margin: 0 30px; }\n\n.shimmer-table-col {\n  width: 100%;\n  height: 10px;\n  border-radius: 10px; }\n";
+styleInject(css$5);
+var ShimmerTable = function ShimmerTable(_ref) {
+    var row = _ref.row, col = _ref.col;
+    var renderRows = function renderRows() {
+        var rows = [];
+        for(var index = 0; index < row; index++)rows.push((0, _reactDefault.default).createElement(ShimmerTableRow, {
+            col: col,
+            key: index
+        }));
+        return rows;
+    };
+    return (0, _reactDefault.default).createElement("div", null, (0, _reactDefault.default).createElement(ShimmerTableRow, {
+        col: col,
+        header: true
+    }), renderRows());
+};
+ShimmerTable.propTypes = {
+    row: (0, _propTypesDefault.default).number,
+    col: (0, _propTypesDefault.default).number
+};
+ShimmerTable.defaultProps = {
+    row: 5,
+    col: 5
+};
+var css$6 = ".shimmer-badge {\n  width: 80px;\n  height: 24px;\n  border-radius: 20px;\n  margin-bottom: 20px; }\n";
+styleInject(css$6);
+var ShimmerBadge = function ShimmerBadge(_ref) {
+    var width = _ref.width;
+    var style = {};
+    if (width) style.width = width + "px";
+    return (0, _reactDefault.default).createElement("div", {
+        className: "shimmer shimmer-badge",
+        style: style
+    });
+};
+ShimmerBadge.propTypes = {
+    width: (0, _propTypesDefault.default).number
+};
+var css$7 = ".shimmer-text {\n  margin-bottom: 30px; }\n  .shimmer-text-line {\n    width: 100%;\n    height: 8px;\n    border-radius: 10px; }\n    .shimmer-text-line:first-child {\n      width: 100% !important; }\n    .shimmer-text-line:last-child {\n      width: 40%; }\n";
+styleInject(css$7);
+var ShimmerText = function ShimmerText(_ref) {
+    var _classNames;
+    var line = _ref.line, gap = _ref.gap, className = _ref.className;
+    var renderLines = function renderLines() {
+        var text_lines = [];
+        for(var index = 0; index < line; index++)text_lines.push((0, _reactDefault.default).createElement("div", {
+            className: "shimmer shimmer-text-line",
+            key: index
+        }));
+        return text_lines;
+    };
+    return (0, _reactDefault.default).createElement("div", {
+        className: classnames((_classNames = {
+            "grid shimmer-text": true
+        }, defineProperty(_classNames, "grid-gap-" + gap, gap), defineProperty(_classNames, className, className), _classNames))
+    }, renderLines());
+};
+ShimmerText.propTypes = {
+    line: (0, _propTypesDefault.default).number,
+    gap: (0, _propTypesDefault.default).oneOf([
+        10,
+        15,
+        20,
+        30
+    ]),
+    className: (0, _propTypesDefault.default).string
+};
+ShimmerText.defaultProps = {
+    line: 5,
+    gap: 15
+};
+var css$8 = ".shimmer-separator {\n  height: 1px;\n  background-color: #dddddd;\n  margin: 40px 0; }\n";
+styleInject(css$8);
+var ShimmerSeparator = function ShimmerSeparator() {
+    return (0, _reactDefault.default).createElement("div", {
+        className: "shimmer-separator"
+    });
+};
+var ShimmerSocialPost = function ShimmerSocialPost(_ref) {
+    var type = _ref.type, title = _ref.title;
+    var renderContents = function renderContents() {
+        if (type === "image") return (0, _reactDefault.default).createElement(ShimmerThumbnail, {
+            height: 300,
+            className: "m-02"
+        });
+        else if (type === "text") return (0, _reactDefault.default).createElement(ShimmerText, {
+            line: 13,
+            className: "p-15"
+        });
+        else return (0, _reactDefault.default).createElement("div", null, (0, _reactDefault.default).createElement(ShimmerText, {
+            line: 3,
+            className: "p-15"
+        }), (0, _reactDefault.default).createElement(ShimmerThumbnail, {
+            height: 300,
+            className: "m-02"
+        }));
+    };
+    return (0, _reactDefault.default).createElement(ShimmerCard, null, (0, _reactDefault.default).createElement("div", {
+        className: "p-15"
+    }, (0, _reactDefault.default).createElement("div", {
+        className: "flex"
+    }, (0, _reactDefault.default).createElement(ShimmerCircularImage, null), (0, _reactDefault.default).createElement("div", {
+        className: "flex-1 p-15"
+    }, (0, _reactDefault.default).createElement(ShimmerTitle, {
+        variant: "secondary",
+        className: "w-40"
+    }))), title && (0, _reactDefault.default).createElement(ShimmerTitle, {
+        line: 1,
+        className: "w-40 m-0"
+    })), renderContents(), (0, _reactDefault.default).createElement("div", {
+        className: "p-15 flex flex-content-between"
+    }, (0, _reactDefault.default).createElement(ShimmerTitle, {
+        line: 1,
+        className: "w-10",
+        variant: "secondary"
+    }), (0, _reactDefault.default).createElement(ShimmerTitle, {
+        line: 1,
+        className: "w-10",
+        variant: "secondary"
+    })));
+};
+ShimmerSocialPost.propTypes = {
+    type: (0, _propTypesDefault.default).oneOf([
+        "text",
+        "image",
+        "both"
+    ]),
+    title: (0, _propTypesDefault.default).bool
+};
+ShimmerSocialPost.defaultProps = {
+    type: "image",
+    title: false
+};
+var ShimmerCategoryItem = function ShimmerCategoryItem(_ref) {
+    var hasImage = _ref.hasImage, imageType = _ref.imageType, imageWidth = _ref.imageWidth, imageHeight = _ref.imageHeight, title = _ref.title, text = _ref.text, cta = _ref.cta, contentCenter = _ref.contentCenter;
+    return (0, _reactDefault.default).createElement("div", null, !hasImage ? (0, _reactDefault.default).createElement("div", null, (0, _reactDefault.default).createElement(ShimmerTitle, {
+        variant: "secondary",
+        line: 1,
+        className: "mb-15 w-80"
+    }), (0, _reactDefault.default).createElement("div", {
+        className: "w-40"
+    }, (0, _reactDefault.default).createElement(ShimmerText, {
+        line: 3,
+        gap: 10
+    }))) : (0, _reactDefault.default).createElement("div", {
+        className: classnames({
+            flex: true,
+            "flex-vertical-center": contentCenter
+        })
+    }, imageType === "thumbnail" && (0, _reactDefault.default).createElement(ShimmerThumbnail, {
+        width: imageWidth,
+        height: imageHeight
+    }), imageType === "circular" && (0, _reactDefault.default).createElement(ShimmerCircularImage, {
+        size: imageWidth
+    }), (0, _reactDefault.default).createElement("div", {
+        className: "flex-1 p-15"
+    }, title && (0, _reactDefault.default).createElement(ShimmerTitle, {
+        variant: "secondary"
+    }), text && (0, _reactDefault.default).createElement(ShimmerText, {
+        line: 3,
+        gap: 10,
+        className: "mb-20"
+    }), cta && (0, _reactDefault.default).createElement(ShimmerButton, {
+        size: "sm"
+    }))));
+};
+ShimmerCategoryItem.propTypes = {
+    hasImage: (0, _propTypesDefault.default).bool.isRequired,
+    imageType: (0, _propTypesDefault.default).oneOf([
+        "circular",
+        "thumbnail"
+    ]),
+    imageWidth: (0, _propTypesDefault.default).number,
+    imageHeight: (0, _propTypesDefault.default).number,
+    title: (0, _propTypesDefault.default).bool,
+    text: (0, _propTypesDefault.default).bool,
+    cta: (0, _propTypesDefault.default).bool,
+    contentCenter: (0, _propTypesDefault.default).bool
+};
+ShimmerCategoryItem.defaultProps = {
+    hasImage: false,
+    imageType: "thumbnail",
+    title: false,
+    text: false,
+    contentCenter: false
+};
+var ShimmerCategoryList = function ShimmerCategoryList(_ref) {
+    var items = _ref.items, categoryStyle = _ref.categoryStyle, title = _ref.title;
+    var categories = {
+        STYLE_ONE: (0, _reactDefault.default).createElement(ShimmerCategoryItem, null),
+        STYLE_TWO: (0, _reactDefault.default).createElement(ShimmerCategoryItem, {
+            hasImage: true,
+            imageType: "thumbnail",
+            imageWidth: 100,
+            imageHeight: 100,
+            title: true
+        }),
+        STYLE_THREE: (0, _reactDefault.default).createElement(ShimmerCategoryItem, {
+            hasImage: true,
+            imageType: "circular",
+            imageWidth: 100,
+            imageHeight: 100,
+            title: true
+        }),
+        STYLE_FOUR: (0, _reactDefault.default).createElement(ShimmerCategoryItem, {
+            hasImage: true,
+            imageType: "thumbnail",
+            imageWidth: 100,
+            imageHeight: 100,
+            text: true
+        }),
+        STYLE_FIVE: (0, _reactDefault.default).createElement(ShimmerCategoryItem, {
+            hasImage: true,
+            imageType: "circular",
+            imageWidth: 100,
+            imageHeight: 100,
+            text: true
+        }),
+        STYLE_SIX: (0, _reactDefault.default).createElement(ShimmerCategoryItem, {
+            hasImage: true,
+            imageType: "thumbnail",
+            imageWidth: 100,
+            imageHeight: 100,
+            text: true,
+            cta: true
+        }),
+        STYLE_SEVEN: (0, _reactDefault.default).createElement(ShimmerCategoryItem, {
+            hasImage: true,
+            imageType: "circular",
+            imageWidth: 100,
+            imageHeight: 100,
+            text: true,
+            cta: true
+        })
+    };
+    var renderItems = function renderItems() {
+        var list = [];
+        for(var index = 0; index < items; index++)list.push((0, _reactDefault.default).createElement("div", {
+            key: index
+        }, categories[categoryStyle]));
+        return list;
+    };
+    return (0, _reactDefault.default).createElement(ShimmerCard, {
+        paddingSize: 20
+    }, title && (0, _reactDefault.default).createElement(ShimmerTitle, {
+        line: 1,
+        className: "w-60"
+    }), renderItems());
+};
+ShimmerCategoryList.propTypes = {
+    title: (0, _propTypesDefault.default).bool,
+    items: (0, _propTypesDefault.default).number,
+    categoryStyle: (0, _propTypesDefault.default).oneOf([
+        "STYLE_ONE",
+        "STYLE_TWO",
+        "STYLE_THREE",
+        "STYLE_FOUR",
+        "STYLE_FIVE",
+        "STYLE_SIX",
+        "STYLE_SEVEN"
+    ])
+};
+ShimmerCategoryList.defaultProps = {
+    title: false,
+    items: 5,
+    categoryStyle: "STYLE_ONE"
+};
+var ShimmerPostDetails = function ShimmerPostDetails(_ref) {
+    var variant = _ref.variant, cta = _ref.cta, card = _ref.card;
+    var variants = {
+        SIMPLE: (0, _reactDefault.default).createElement("div", null, (0, _reactDefault.default).createElement(ShimmerTitle, {
+            line: 1,
+            className: "w-40"
+        }), (0, _reactDefault.default).createElement(ShimmerTitle, {
+            line: 1,
+            variant: "secondary",
+            className: "w-20 mb-40"
+        }), (0, _reactDefault.default).createElement("div", {
+            className: "w-40 mb-40"
+        }, (0, _reactDefault.default).createElement(ShimmerText, {
+            line: 1,
+            className: "mb-15 w-20"
+        }), (0, _reactDefault.default).createElement(ShimmerText, {
+            line: 1,
+            className: "mb-15 w-40"
+        }), (0, _reactDefault.default).createElement(ShimmerText, {
+            line: 1,
+            className: "mb-30 w-60"
+        })), (0, _reactDefault.default).createElement(ShimmerTitle, {
+            line: 1,
+            variant: "secondary",
+            className: "w-30"
+        }), (0, _reactDefault.default).createElement(ShimmerText, {
+            className: "mb-40"
+        }), (0, _reactDefault.default).createElement(ShimmerTitle, {
+            line: 1,
+            variant: "secondary",
+            className: "w-30"
+        }), (0, _reactDefault.default).createElement(ShimmerText, {
+            className: "mb-40"
+        }), (0, _reactDefault.default).createElement(ShimmerTitle, {
+            line: 1,
+            variant: "secondary",
+            className: "w-30"
+        }), (0, _reactDefault.default).createElement(ShimmerText, {
+            className: "mb-40"
+        }), (0, _reactDefault.default).createElement(ShimmerTitle, {
+            line: 1,
+            variant: "secondary",
+            className: "w-30"
+        }), (0, _reactDefault.default).createElement(ShimmerText, {
+            className: "mb-40"
+        }), cta && (0, _reactDefault.default).createElement(ShimmerButton, null)),
+        EDITOR: (0, _reactDefault.default).createElement("div", null, (0, _reactDefault.default).createElement(ShimmerTitle, {
+            line: 1,
+            className: "w-40"
+        }), (0, _reactDefault.default).createElement(ShimmerThumbnail, {
+            height: 400
+        }), (0, _reactDefault.default).createElement(ShimmerText, null), (0, _reactDefault.default).createElement(ShimmerText, null), (0, _reactDefault.default).createElement("div", {
+            className: "shimmer-row"
+        }, (0, _reactDefault.default).createElement("div", {
+            className: "shimmer-col"
+        }, (0, _reactDefault.default).createElement(ShimmerText, {
+            line: 13
+        })), (0, _reactDefault.default).createElement("div", {
+            className: "shimmer-col"
+        }, (0, _reactDefault.default).createElement(ShimmerThumbnail, {
+            height: 300
+        }))), (0, _reactDefault.default).createElement(ShimmerText, null), (0, _reactDefault.default).createElement(ShimmerText, null), (0, _reactDefault.default).createElement(ShimmerText, null))
+    };
+    if (!card) return variants[variant];
+    return (0, _reactDefault.default).createElement(ShimmerCard, {
+        paddingSize: 30
+    }, variants[variant]);
+};
+ShimmerPostDetails.propTypes = {
+    variant: (0, _propTypesDefault.default).oneOf([
+        "SIMPLE",
+        "EDITOR"
+    ]),
+    cta: (0, _propTypesDefault.default).bool,
+    card: (0, _propTypesDefault.default).bool
+};
+ShimmerPostDetails.defaultProps = {
+    variant: "SIMPLE",
+    cta: false,
+    card: false
+};
+var ShimmerPostItem = function ShimmerPostItem(_ref) {
+    var cta = _ref.cta, title = _ref.title, text = _ref.text, imageType = _ref.imageType, imageWidth = _ref.imageWidth, imageHeight = _ref.imageHeight;
+    return (0, _reactDefault.default).createElement(ShimmerCard, null, imageType === "thumbnail" && (0, _reactDefault.default).createElement(ShimmerThumbnail, {
+        height: imageHeight,
+        width: imageWidth,
+        className: imageWidth && imageWidth !== "w-100" ? "m-30 mb-0" : "mb-0"
+    }), imageType === "circular" && (0, _reactDefault.default).createElement(ShimmerCircularImage, {
+        size: imageWidth,
+        className: "m-30 mb-0"
+    }), (0, _reactDefault.default).createElement("div", {
+        className: "p-30"
+    }, title && (0, _reactDefault.default).createElement(ShimmerTitle, {
+        variant: "secondary"
+    }), text && (0, _reactDefault.default).createElement(ShimmerText, {
+        line: 3,
+        gap: 10
+    }), cta && (0, _reactDefault.default).createElement(ShimmerButton, {
+        size: "sm"
+    })));
+};
+ShimmerPostItem.propTypes = {
+    title: (0, _propTypesDefault.default).bool,
+    text: (0, _propTypesDefault.default).bool,
+    cta: (0, _propTypesDefault.default).bool,
+    imageType: (0, _propTypesDefault.default).oneOf([
+        "circular",
+        "thumbnail"
+    ]),
+    imageHeight: (0, _propTypesDefault.default).number,
+    imageWidth: (0, _propTypesDefault.default).number
+};
+ShimmerPostItem.defaultProps = {
+    title: false,
+    text: false,
+    cta: false,
+    imageType: "thumbnail"
+};
+var ShimmerPostList = function ShimmerPostList(_ref) {
+    var _classNames;
+    var row = _ref.row, col = _ref.col, gap = _ref.gap, className = _ref.className, postStyle = _ref.postStyle;
+    var posts = {
+        STYLE_ONE: (0, _reactDefault.default).createElement(ShimmerPostItem, {
+            title: true,
+            text: true,
+            cta: true
+        }),
+        STYLE_TWO: (0, _reactDefault.default).createElement(ShimmerPostItem, {
+            title: true,
+            cta: true
+        }),
+        STYLE_THREE: (0, _reactDefault.default).createElement(ShimmerPostItem, {
+            title: true
+        }),
+        STYLE_FOUR: (0, _reactDefault.default).createElement(ShimmerPostItem, {
+            text: true,
+            cta: true
+        }),
+        STYLE_FIVE: (0, _reactDefault.default).createElement(ShimmerPostItem, {
+            text: true
+        }),
+        STYLE_SIX: (0, _reactDefault.default).createElement(ShimmerPostItem, {
+            title: true,
+            text: true,
+            cta: true,
+            imageType: "thumbnail",
+            imageWidth: 80,
+            imageHeight: 80,
+            contentCenter: true
+        }),
+        STYLE_SEVEN: (0, _reactDefault.default).createElement(ShimmerPostItem, {
+            text: true,
+            cta: true,
+            imageType: "thumbnail",
+            imageWidth: 80,
+            imageHeight: 80,
+            contentCenter: true
+        }),
+        STYLE_EIGHT: (0, _reactDefault.default).createElement(ShimmerPostItem, {
+            title: true,
+            cta: true,
+            imageType: "thumbnail",
+            imageWidth: 80,
+            imageHeight: 80,
+            contentCenter: true
+        })
+    };
+    var renderPosts = function renderPosts() {
+        var list = [];
+        var items = row * col;
+        for(var index = 0; index < items; index++)list.push((0, _reactDefault.default).createElement("div", {
+            key: index
+        }, posts[postStyle]));
+        return list;
+    };
+    return (0, _reactDefault.default).createElement("div", {
+        className: classnames((_classNames = {
+            grid: true
+        }, defineProperty(_classNames, "grid-gap-" + gap, true), defineProperty(_classNames, "grid-column-" + col, true), defineProperty(_classNames, className, className), _classNames))
+    }, renderPosts());
+};
+ShimmerPostList.propTypes = {
+    row: (0, _propTypesDefault.default).number,
+    col: (0, _propTypesDefault.default).oneOf([
+        2,
+        3,
+        4
+    ]),
+    gap: (0, _propTypesDefault.default).oneOf([
+        20,
+        30
+    ]),
+    postStyle: (0, _propTypesDefault.default).oneOf([
+        "STYLE_ONE",
+        "STYLE_TWO",
+        "STYLE_THREE",
+        "STYLE_FOUR",
+        "STYLE_FIVE",
+        "STYLE_SIX",
+        "STYLE_SEVEN",
+        "STYLE_EIGHT"
+    ])
+};
+ShimmerPostList.defaultProps = {
+    row: 3,
+    col: 3,
+    gap: 20,
+    postStyle: "STYLE_ONE"
+};
+var ShimmerContentBlock = function ShimmerContentBlock(_ref) {
+    var card = _ref.card, title = _ref.title, text = _ref.text, cta = _ref.cta, thumbnailWidth = _ref.thumbnailWidth, thumbnailHeight = _ref.thumbnailHeight, reverse = _ref.reverse;
+    var renderContent = function renderContent() {
+        return (0, _reactDefault.default).createElement("div", {
+            className: classnames({
+                flex: true,
+                "flex-reverse": reverse
+            })
+        }, (0, _reactDefault.default).createElement("div", {
+            className: classnames({
+                flex: true,
+                "w-50": !thumbnailWidth
+            })
+        }, (0, _reactDefault.default).createElement(ShimmerThumbnail, {
+            width: thumbnailWidth,
+            height: thumbnailHeight,
+            className: "h-100 m-0"
+        })), (0, _reactDefault.default).createElement("div", {
+            className: " flex-1 p-30"
+        }, title && (0, _reactDefault.default).createElement(ShimmerTitle, {
+            className: "w-40",
+            line: 1
+        }), text && (0, _reactDefault.default).createElement(ShimmerText, null), cta && (0, _reactDefault.default).createElement(ShimmerButton, null)));
+    };
+    if (!card) return renderContent();
+    return (0, _reactDefault.default).createElement(ShimmerCard, null, renderContent());
+};
+ShimmerContentBlock.propTypes = {
+    card: (0, _propTypesDefault.default).bool,
+    title: (0, _propTypesDefault.default).bool,
+    text: (0, _propTypesDefault.default).bool,
+    cta: (0, _propTypesDefault.default).bool,
+    thumbnailWidth: (0, _propTypesDefault.default).number,
+    thumbnailHeight: (0, _propTypesDefault.default).number,
+    reverse: (0, _propTypesDefault.default).bool
+};
+ShimmerContentBlock.defaultProps = {
+    card: true,
+    title: false,
+    text: false,
+    cta: false,
+    reverse: false
+};
+var ShimmerSectionHeader = function ShimmerSectionHeader(_ref) {
+    var title = _ref.title, subTitle = _ref.subTitle, center = _ref.center;
+    if (!title && !subTitle) return null;
+    return (0, _reactDefault.default).createElement("div", {
+        className: classnames({
+            "w-60 mb-40": true,
+            "ml-auto mr-auto": center
+        })
+    }, title && (0, _reactDefault.default).createElement(ShimmerTitle, {
+        className: classnames({
+            "w-40": true,
+            "ml-auto mr-auto": center
+        }),
+        line: 1
+    }), subTitle && (0, _reactDefault.default).createElement("div", {
+        className: classnames({
+            "flex-horizontal-center": center
+        })
+    }, (0, _reactDefault.default).createElement(ShimmerText, {
+        line: 1,
+        className: "mb-15 w-80"
+    }), (0, _reactDefault.default).createElement(ShimmerText, {
+        line: 1,
+        className: "mb-15 w-70"
+    }), (0, _reactDefault.default).createElement(ShimmerText, {
+        line: 1,
+        className: "mb-15 w-60"
+    })));
+};
+ShimmerSectionHeader.propTypes = {
+    title: (0, _propTypesDefault.default).bool,
+    subTitle: (0, _propTypesDefault.default).bool,
+    center: (0, _propTypesDefault.default).bool
+};
+ShimmerSectionHeader.defaultProps = {
+    title: true,
+    subTitle: true,
+    center: false
+};
+var css$9 = '.shimmer {\n  background: linear-gradient(to right, #f6f6f6 8%, #f0f0f0 18%, #f6f6f6 33%);\n  background-size: 1000px 100%;\n  animation: shimmer 2.2s linear infinite forwards; }\n\n@-webkit-keyframes shimmer {\n  0% {\n    background-position: -100% 0; }\n  100% {\n    background-position: 100% 0; } }\n\n@keyframes shimmer {\n  0% {\n    background-position: -1000px 0; }\n  100% {\n    background-position: 1000px 0; } }\n\n/*\n=====\nPadding Styles\n=====\n*/\n.p-30 {\n  padding: 30px; }\n\n.p-20 {\n  padding: 20px; }\n\n.p-15 {\n  padding: 15px; }\n\n/*\n=====\nMargin Styles\n=====\n*/\n.m-0 {\n  margin: 0; }\n\n.m-auto {\n  margin: auto; }\n\n.ml-auto {\n  margin-left: auto; }\n\n.mr-auto {\n  margin-right: auto; }\n\n.m-15 {\n  margin: 15px; }\n\n.m-30 {\n  margin: 30px; }\n\n.mb-0 {\n  margin-bottom: 0px; }\n\n.mb-10 {\n  margin-bottom: 10px; }\n\n.mb-15 {\n  margin-bottom: 15px; }\n\n.mb-20 {\n  margin-bottom: 20px; }\n\n.mt-15 {\n  margin-top: 15px; }\n\n.mb-30 {\n  margin-bottom: 30px; }\n\n.mb-40 {\n  margin-bottom: 40px; }\n\n/*\n=======\nContent Size Styles\n=======\n*/\n.w-10 {\n  width: 10%; }\n\n.w-20 {\n  width: 20%; }\n\n.w-30 {\n  width: 30%; }\n\n.w-40 {\n  width: 40%; }\n\n.w-50 {\n  width: 50%; }\n\n.w-60 {\n  width: 60%; }\n\n.w-70 {\n  width: 70%; }\n\n.w-80 {\n  width: 80%; }\n\n/*\n========\nFlex Styles\n========\n*/\n.flex {\n  display: flex; }\n\n.flex-direction-column {\n  flex-direction: column; }\n\n.flex-horizontal-center {\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n\n.flex-vertical-center {\n  align-items: center; }\n\n.flex-content-between {\n  justify-content: space-between; }\n\n.flex-reverse {\n  flex-direction: row-reverse; }\n\n.flex-1 {\n  flex-grow: 1; }\n\n/*\n=======\nGrid Styles\n=======\n*/\n.grid {\n  display: grid; }\n\n.grid-gap-10 {\n  gap: 10px; }\n\n.grid-gap-15 {\n  gap: 15px; }\n\n.grid-gap-20 {\n  gap: 20px; }\n\n.grid-gap-30 {\n  gap: 30px; }\n\n.grid-column-2 {\n  grid-template-columns: auto auto; }\n\n.grid-column-3 {\n  grid-template-columns: auto auto auto; }\n\n.grid-column-4 {\n  grid-template-columns: auto auto auto auto; }\n\n.text-center {\n  text-align: center; }\n\n.border-rounded {\n  border-radius: 4px; }\n\n.h-100 {\n  height: 100% !important; }\n\n.shimmer-hr {\n  border-color: #f6f6f6; }\n\n.shimmer-row {\n  display: flex;\n  margin: 0 -15px; }\n  .shimmer-row .shimmer-col,\n  .shimmer-row [class*="shimmer-col-"] {\n    padding-left: 15px;\n    padding-right: 15px;\n    flex-basis: 0;\n    flex-grow: 1;\n    max-width: 100%; }\n';
+styleInject(css$9);
+
+},{"react":"21dqq","prop-types":"7wKI2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7wKI2":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var ReactIs = require("bde7628eed65934c");
+// By explicitly using `prop-types` you are opting into new development behavior.
+// http://fb.me/prop-types-in-prod
+var throwOnDirectAccess = true;
+module.exports = require("e6affd42a0682802")(ReactIs.isElement, throwOnDirectAccess);
+
+},{"bde7628eed65934c":"7EuwB","e6affd42a0682802":"bBUgD"}],"7EuwB":[function(require,module,exports) {
+"use strict";
+module.exports = require("c32d5b3ba4c91bde");
+
+},{"c32d5b3ba4c91bde":"5DsXl"}],"5DsXl":[function(require,module,exports) {
+/** @license React v16.13.1
+ * react-is.development.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+(function() {
+    "use strict";
+    // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
+    // nor polyfill, then a plain number is used for performance.
+    var hasSymbol = typeof Symbol === "function" && Symbol.for;
+    var REACT_ELEMENT_TYPE = hasSymbol ? Symbol.for("react.element") : 0xeac7;
+    var REACT_PORTAL_TYPE = hasSymbol ? Symbol.for("react.portal") : 0xeaca;
+    var REACT_FRAGMENT_TYPE = hasSymbol ? Symbol.for("react.fragment") : 0xeacb;
+    var REACT_STRICT_MODE_TYPE = hasSymbol ? Symbol.for("react.strict_mode") : 0xeacc;
+    var REACT_PROFILER_TYPE = hasSymbol ? Symbol.for("react.profiler") : 0xead2;
+    var REACT_PROVIDER_TYPE = hasSymbol ? Symbol.for("react.provider") : 0xeacd;
+    var REACT_CONTEXT_TYPE = hasSymbol ? Symbol.for("react.context") : 0xeace; // TODO: We don't use AsyncMode or ConcurrentMode anymore. They were temporary
+    // (unstable) APIs that have been removed. Can we remove the symbols?
+    var REACT_ASYNC_MODE_TYPE = hasSymbol ? Symbol.for("react.async_mode") : 0xeacf;
+    var REACT_CONCURRENT_MODE_TYPE = hasSymbol ? Symbol.for("react.concurrent_mode") : 0xeacf;
+    var REACT_FORWARD_REF_TYPE = hasSymbol ? Symbol.for("react.forward_ref") : 0xead0;
+    var REACT_SUSPENSE_TYPE = hasSymbol ? Symbol.for("react.suspense") : 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = hasSymbol ? Symbol.for("react.suspense_list") : 0xead8;
+    var REACT_MEMO_TYPE = hasSymbol ? Symbol.for("react.memo") : 0xead3;
+    var REACT_LAZY_TYPE = hasSymbol ? Symbol.for("react.lazy") : 0xead4;
+    var REACT_BLOCK_TYPE = hasSymbol ? Symbol.for("react.block") : 0xead9;
+    var REACT_FUNDAMENTAL_TYPE = hasSymbol ? Symbol.for("react.fundamental") : 0xead5;
+    var REACT_RESPONDER_TYPE = hasSymbol ? Symbol.for("react.responder") : 0xead6;
+    var REACT_SCOPE_TYPE = hasSymbol ? Symbol.for("react.scope") : 0xead7;
+    function isValidElementType(type) {
+        return typeof type === "string" || typeof type === "function" || // Note: its typeof might be other than 'symbol' or 'number' if it's a polyfill.
+        type === REACT_FRAGMENT_TYPE || type === REACT_CONCURRENT_MODE_TYPE || type === REACT_PROFILER_TYPE || type === REACT_STRICT_MODE_TYPE || type === REACT_SUSPENSE_TYPE || type === REACT_SUSPENSE_LIST_TYPE || typeof type === "object" && type !== null && (type.$$typeof === REACT_LAZY_TYPE || type.$$typeof === REACT_MEMO_TYPE || type.$$typeof === REACT_PROVIDER_TYPE || type.$$typeof === REACT_CONTEXT_TYPE || type.$$typeof === REACT_FORWARD_REF_TYPE || type.$$typeof === REACT_FUNDAMENTAL_TYPE || type.$$typeof === REACT_RESPONDER_TYPE || type.$$typeof === REACT_SCOPE_TYPE || type.$$typeof === REACT_BLOCK_TYPE);
+    }
+    function typeOf(object) {
+        if (typeof object === "object" && object !== null) {
+            var $$typeof = object.$$typeof;
+            switch($$typeof){
+                case REACT_ELEMENT_TYPE:
+                    var type = object.type;
+                    switch(type){
+                        case REACT_ASYNC_MODE_TYPE:
+                        case REACT_CONCURRENT_MODE_TYPE:
+                        case REACT_FRAGMENT_TYPE:
+                        case REACT_PROFILER_TYPE:
+                        case REACT_STRICT_MODE_TYPE:
+                        case REACT_SUSPENSE_TYPE:
+                            return type;
+                        default:
+                            var $$typeofType = type && type.$$typeof;
+                            switch($$typeofType){
+                                case REACT_CONTEXT_TYPE:
+                                case REACT_FORWARD_REF_TYPE:
+                                case REACT_LAZY_TYPE:
+                                case REACT_MEMO_TYPE:
+                                case REACT_PROVIDER_TYPE:
+                                    return $$typeofType;
+                                default:
+                                    return $$typeof;
+                            }
+                    }
+                case REACT_PORTAL_TYPE:
+                    return $$typeof;
+            }
+        }
+        return undefined;
+    } // AsyncMode is deprecated along with isAsyncMode
+    var AsyncMode = REACT_ASYNC_MODE_TYPE;
+    var ConcurrentMode = REACT_CONCURRENT_MODE_TYPE;
+    var ContextConsumer = REACT_CONTEXT_TYPE;
+    var ContextProvider = REACT_PROVIDER_TYPE;
+    var Element = REACT_ELEMENT_TYPE;
+    var ForwardRef = REACT_FORWARD_REF_TYPE;
+    var Fragment = REACT_FRAGMENT_TYPE;
+    var Lazy = REACT_LAZY_TYPE;
+    var Memo = REACT_MEMO_TYPE;
+    var Portal = REACT_PORTAL_TYPE;
+    var Profiler = REACT_PROFILER_TYPE;
+    var StrictMode = REACT_STRICT_MODE_TYPE;
+    var Suspense = REACT_SUSPENSE_TYPE;
+    var hasWarnedAboutDeprecatedIsAsyncMode = false; // AsyncMode should be deprecated
+    function isAsyncMode(object) {
+        if (!hasWarnedAboutDeprecatedIsAsyncMode) {
+            hasWarnedAboutDeprecatedIsAsyncMode = true; // Using console['warn'] to evade Babel and ESLint
+            console["warn"]("The ReactIs.isAsyncMode() alias has been deprecated, and will be removed in React 17+. Update your code to use ReactIs.isConcurrentMode() instead. It has the exact same API.");
+        }
+        return isConcurrentMode(object) || typeOf(object) === REACT_ASYNC_MODE_TYPE;
+    }
+    function isConcurrentMode(object) {
+        return typeOf(object) === REACT_CONCURRENT_MODE_TYPE;
+    }
+    function isContextConsumer(object) {
+        return typeOf(object) === REACT_CONTEXT_TYPE;
+    }
+    function isContextProvider(object) {
+        return typeOf(object) === REACT_PROVIDER_TYPE;
+    }
+    function isElement(object) {
+        return typeof object === "object" && object !== null && object.$$typeof === REACT_ELEMENT_TYPE;
+    }
+    function isForwardRef(object) {
+        return typeOf(object) === REACT_FORWARD_REF_TYPE;
+    }
+    function isFragment(object) {
+        return typeOf(object) === REACT_FRAGMENT_TYPE;
+    }
+    function isLazy(object) {
+        return typeOf(object) === REACT_LAZY_TYPE;
+    }
+    function isMemo(object) {
+        return typeOf(object) === REACT_MEMO_TYPE;
+    }
+    function isPortal(object) {
+        return typeOf(object) === REACT_PORTAL_TYPE;
+    }
+    function isProfiler(object) {
+        return typeOf(object) === REACT_PROFILER_TYPE;
+    }
+    function isStrictMode(object) {
+        return typeOf(object) === REACT_STRICT_MODE_TYPE;
+    }
+    function isSuspense(object) {
+        return typeOf(object) === REACT_SUSPENSE_TYPE;
+    }
+    exports.AsyncMode = AsyncMode;
+    exports.ConcurrentMode = ConcurrentMode;
+    exports.ContextConsumer = ContextConsumer;
+    exports.ContextProvider = ContextProvider;
+    exports.Element = Element;
+    exports.ForwardRef = ForwardRef;
+    exports.Fragment = Fragment;
+    exports.Lazy = Lazy;
+    exports.Memo = Memo;
+    exports.Portal = Portal;
+    exports.Profiler = Profiler;
+    exports.StrictMode = StrictMode;
+    exports.Suspense = Suspense;
+    exports.isAsyncMode = isAsyncMode;
+    exports.isConcurrentMode = isConcurrentMode;
+    exports.isContextConsumer = isContextConsumer;
+    exports.isContextProvider = isContextProvider;
+    exports.isElement = isElement;
+    exports.isForwardRef = isForwardRef;
+    exports.isFragment = isFragment;
+    exports.isLazy = isLazy;
+    exports.isMemo = isMemo;
+    exports.isPortal = isPortal;
+    exports.isProfiler = isProfiler;
+    exports.isStrictMode = isStrictMode;
+    exports.isSuspense = isSuspense;
+    exports.isValidElementType = isValidElementType;
+    exports.typeOf = typeOf;
+})();
+
+},{}],"bBUgD":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactIs = require("ddb0ac0049a1a39d");
+var assign = require("7cfc9e451286");
+var ReactPropTypesSecret = require("e78c42da84e4d07f");
+var has = require("460c4375ff6099e");
+var checkPropTypes = require("4b42c2176c1a14f6");
+var printWarning = function() {};
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+function emptyFunctionThatReturnsNull() {
+    return null;
+}
+module.exports = function(isValidElement, throwOnDirectAccess) {
+    /* global Symbol */ var ITERATOR_SYMBOL = typeof Symbol === "function" && Symbol.iterator;
+    var FAUX_ITERATOR_SYMBOL = "@@iterator"; // Before Symbol spec.
+    /**
+   * Returns the iterator method function contained on the iterable object.
+   *
+   * Be sure to invoke the function with the iterable as context:
+   *
+   *     var iteratorFn = getIteratorFn(myIterable);
+   *     if (iteratorFn) {
+   *       var iterator = iteratorFn.call(myIterable);
+   *       ...
+   *     }
+   *
+   * @param {?object} maybeIterable
+   * @return {?function}
+   */ function getIteratorFn(maybeIterable) {
+        var iteratorFn = maybeIterable && (ITERATOR_SYMBOL && maybeIterable[ITERATOR_SYMBOL] || maybeIterable[FAUX_ITERATOR_SYMBOL]);
+        if (typeof iteratorFn === "function") return iteratorFn;
+    }
+    /**
+   * Collection of methods that allow declaration and validation of props that are
+   * supplied to React components. Example usage:
+   *
+   *   var Props = require('ReactPropTypes');
+   *   var MyArticle = React.createClass({
+   *     propTypes: {
+   *       // An optional string prop named "description".
+   *       description: Props.string,
+   *
+   *       // A required enum prop named "category".
+   *       category: Props.oneOf(['News','Photos']).isRequired,
+   *
+   *       // A prop named "dialog" that requires an instance of Dialog.
+   *       dialog: Props.instanceOf(Dialog).isRequired
+   *     },
+   *     render: function() { ... }
+   *   });
+   *
+   * A more formal specification of how these methods are used:
+   *
+   *   type := array|bool|func|object|number|string|oneOf([...])|instanceOf(...)
+   *   decl := ReactPropTypes.{type}(.isRequired)?
+   *
+   * Each and every declaration produces a function with the same signature. This
+   * allows the creation of custom validation functions. For example:
+   *
+   *  var MyLink = React.createClass({
+   *    propTypes: {
+   *      // An optional string or URI prop named "href".
+   *      href: function(props, propName, componentName) {
+   *        var propValue = props[propName];
+   *        if (propValue != null && typeof propValue !== 'string' &&
+   *            !(propValue instanceof URI)) {
+   *          return new Error(
+   *            'Expected a string or an URI for ' + propName + ' in ' +
+   *            componentName
+   *          );
+   *        }
+   *      }
+   *    },
+   *    render: function() {...}
+   *  });
+   *
+   * @internal
+   */ var ANONYMOUS = "<<anonymous>>";
+    // Important!
+    // Keep this list in sync with production version in `./factoryWithThrowingShims.js`.
+    var ReactPropTypes = {
+        array: createPrimitiveTypeChecker("array"),
+        bigint: createPrimitiveTypeChecker("bigint"),
+        bool: createPrimitiveTypeChecker("boolean"),
+        func: createPrimitiveTypeChecker("function"),
+        number: createPrimitiveTypeChecker("number"),
+        object: createPrimitiveTypeChecker("object"),
+        string: createPrimitiveTypeChecker("string"),
+        symbol: createPrimitiveTypeChecker("symbol"),
+        any: createAnyTypeChecker(),
+        arrayOf: createArrayOfTypeChecker,
+        element: createElementTypeChecker(),
+        elementType: createElementTypeTypeChecker(),
+        instanceOf: createInstanceTypeChecker,
+        node: createNodeChecker(),
+        objectOf: createObjectOfTypeChecker,
+        oneOf: createEnumTypeChecker,
+        oneOfType: createUnionTypeChecker,
+        shape: createShapeTypeChecker,
+        exact: createStrictShapeTypeChecker
+    };
+    /**
+   * inlined Object.is polyfill to avoid requiring consumers ship their own
+   * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+   */ /*eslint-disable no-self-compare*/ function is(x, y) {
+        // SameValue algorithm
+        if (x === y) // Steps 1-5, 7-10
+        // Steps 6.b-6.e: +0 != -0
+        return x !== 0 || 1 / x === 1 / y;
+        else // Step 6.a: NaN == NaN
+        return x !== x && y !== y;
+    }
+    /*eslint-enable no-self-compare*/ /**
+   * We use an Error-like object for backward compatibility as people may call
+   * PropTypes directly and inspect their output. However, we don't use real
+   * Errors anymore. We don't inspect their stack anyway, and creating them
+   * is prohibitively expensive if they are created too often, such as what
+   * happens in oneOfType() for any type before the one that matched.
+   */ function PropTypeError(message, data) {
+        this.message = message;
+        this.data = data && typeof data === "object" ? data : {};
+        this.stack = "";
+    }
+    // Make `instanceof Error` still work for returned errors.
+    PropTypeError.prototype = Error.prototype;
+    function createChainableTypeChecker(validate) {
+        var manualPropTypeCallCache = {};
+        var manualPropTypeWarningCount = 0;
+        function checkType(isRequired, props, propName, componentName, location, propFullName, secret) {
+            componentName = componentName || ANONYMOUS;
+            propFullName = propFullName || propName;
+            if (secret !== ReactPropTypesSecret) {
+                if (throwOnDirectAccess) {
+                    // New behavior only for users of `prop-types` package
+                    var err = new Error("Calling PropTypes validators directly is not supported by the `prop-types` package. Use `PropTypes.checkPropTypes()` to call them. Read more at http://fb.me/use-check-prop-types");
+                    err.name = "Invariant Violation";
+                    throw err;
+                } else if (typeof console !== "undefined") {
+                    // Old behavior for people using React.PropTypes
+                    var cacheKey = componentName + ":" + propName;
+                    if (!manualPropTypeCallCache[cacheKey] && // Avoid spamming the console because they are often not actionable except for lib authors
+                    manualPropTypeWarningCount < 3) {
+                        printWarning("You are manually calling a React.PropTypes validation function for the `" + propFullName + "` prop on `" + componentName + "`. This is deprecated " + "and will throw in the standalone `prop-types` package. " + "You may be seeing this warning due to a third-party PropTypes " + "library. See https://fb.me/react-warning-dont-call-proptypes " + "for details.");
+                        manualPropTypeCallCache[cacheKey] = true;
+                        manualPropTypeWarningCount++;
+                    }
+                }
+            }
+            if (props[propName] == null) {
+                if (isRequired) {
+                    if (props[propName] === null) return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required " + ("in `" + componentName + "`, but its value is `null`."));
+                    return new PropTypeError("The " + location + " `" + propFullName + "` is marked as required in " + ("`" + componentName + "`, but its value is `undefined`."));
+                }
+                return null;
+            } else return validate(props, propName, componentName, location, propFullName);
+        }
+        var chainedCheckType = checkType.bind(null, false);
+        chainedCheckType.isRequired = checkType.bind(null, true);
+        return chainedCheckType;
+    }
+    function createPrimitiveTypeChecker(expectedType) {
+        function validate(props, propName, componentName, location, propFullName, secret) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== expectedType) {
+                // `propValue` being instance of, say, date/regexp, pass the 'object'
+                // check, but we can offer a more precise error message here rather than
+                // 'of type `object`'.
+                var preciseType = getPreciseType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + preciseType + "` supplied to `" + componentName + "`, expected ") + ("`" + expectedType + "`."), {
+                    expectedType: expectedType
+                });
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createAnyTypeChecker() {
+        return createChainableTypeChecker(emptyFunctionThatReturnsNull);
+    }
+    function createArrayOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside arrayOf.");
+            var propValue = props[propName];
+            if (!Array.isArray(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an array."));
+            }
+            for(var i = 0; i < propValue.length; i++){
+                var error = typeChecker(propValue, i, componentName, location, propFullName + "[" + i + "]", ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!isValidElement(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createElementTypeTypeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            if (!ReactIs.isValidElementType(propValue)) {
+                var propType = getPropType(propValue);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected a single ReactElement type."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createInstanceTypeChecker(expectedClass) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!(props[propName] instanceof expectedClass)) {
+                var expectedClassName = expectedClass.name || ANONYMOUS;
+                var actualClassName = getClassName(props[propName]);
+                return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + actualClassName + "` supplied to `" + componentName + "`, expected ") + ("instance of `" + expectedClassName + "`."));
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createEnumTypeChecker(expectedValues) {
+        if (!Array.isArray(expectedValues)) {
+            {
+                if (arguments.length > 1) printWarning("Invalid arguments supplied to oneOf, expected an array, got " + arguments.length + " arguments. " + "A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).");
+                else printWarning("Invalid argument supplied to oneOf, expected an array.");
+            }
+            return emptyFunctionThatReturnsNull;
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            for(var i = 0; i < expectedValues.length; i++){
+                if (is(propValue, expectedValues[i])) return null;
+            }
+            var valuesString = JSON.stringify(expectedValues, function replacer(key, value) {
+                var type = getPreciseType(value);
+                if (type === "symbol") return String(value);
+                return value;
+            });
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` of value `" + String(propValue) + "` " + ("supplied to `" + componentName + "`, expected one of " + valuesString + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createObjectOfTypeChecker(typeChecker) {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (typeof typeChecker !== "function") return new PropTypeError("Property `" + propFullName + "` of component `" + componentName + "` has invalid PropType notation inside objectOf.");
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type " + ("`" + propType + "` supplied to `" + componentName + "`, expected an object."));
+            for(var key in propValue)if (has(propValue, key)) {
+                var error = typeChecker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error instanceof Error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createUnionTypeChecker(arrayOfTypeCheckers) {
+        if (!Array.isArray(arrayOfTypeCheckers)) {
+            printWarning("Invalid argument supplied to oneOfType, expected an instance of array.");
+            return emptyFunctionThatReturnsNull;
+        }
+        for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+            var checker = arrayOfTypeCheckers[i];
+            if (typeof checker !== "function") {
+                printWarning("Invalid argument supplied to oneOfType. Expected an array of check functions, but received " + getPostfixForTypeWarning(checker) + " at index " + i + ".");
+                return emptyFunctionThatReturnsNull;
+            }
+        }
+        function validate(props, propName, componentName, location, propFullName) {
+            var expectedTypes = [];
+            for(var i = 0; i < arrayOfTypeCheckers.length; i++){
+                var checker = arrayOfTypeCheckers[i];
+                var checkerResult = checker(props, propName, componentName, location, propFullName, ReactPropTypesSecret);
+                if (checkerResult == null) return null;
+                if (checkerResult.data && has(checkerResult.data, "expectedType")) expectedTypes.push(checkerResult.data.expectedType);
+            }
+            var expectedTypesMessage = expectedTypes.length > 0 ? ", expected one of type [" + expectedTypes.join(", ") + "]" : "";
+            return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`" + expectedTypesMessage + "."));
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createNodeChecker() {
+        function validate(props, propName, componentName, location, propFullName) {
+            if (!isNode(props[propName])) return new PropTypeError("Invalid " + location + " `" + propFullName + "` supplied to " + ("`" + componentName + "`, expected a ReactNode."));
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function invalidValidatorError(componentName, location, propFullName, key, type) {
+        return new PropTypeError((componentName || "React class") + ": " + location + " type `" + propFullName + "." + key + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + type + "`.");
+    }
+    function createShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            for(var key in shapeTypes){
+                var checker = shapeTypes[key];
+                if (typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function createStrictShapeTypeChecker(shapeTypes) {
+        function validate(props, propName, componentName, location, propFullName) {
+            var propValue = props[propName];
+            var propType = getPropType(propValue);
+            if (propType !== "object") return new PropTypeError("Invalid " + location + " `" + propFullName + "` of type `" + propType + "` " + ("supplied to `" + componentName + "`, expected `object`."));
+            // We need to check all keys in case some are required but missing from props.
+            var allKeys = assign({}, props[propName], shapeTypes);
+            for(var key in allKeys){
+                var checker = shapeTypes[key];
+                if (has(shapeTypes, key) && typeof checker !== "function") return invalidValidatorError(componentName, location, propFullName, key, getPreciseType(checker));
+                if (!checker) return new PropTypeError("Invalid " + location + " `" + propFullName + "` key `" + key + "` supplied to `" + componentName + "`." + "\nBad object: " + JSON.stringify(props[propName], null, "  ") + "\nValid keys: " + JSON.stringify(Object.keys(shapeTypes), null, "  "));
+                var error = checker(propValue, key, componentName, location, propFullName + "." + key, ReactPropTypesSecret);
+                if (error) return error;
+            }
+            return null;
+        }
+        return createChainableTypeChecker(validate);
+    }
+    function isNode(propValue) {
+        switch(typeof propValue){
+            case "number":
+            case "string":
+            case "undefined":
+                return true;
+            case "boolean":
+                return !propValue;
+            case "object":
+                if (Array.isArray(propValue)) return propValue.every(isNode);
+                if (propValue === null || isValidElement(propValue)) return true;
+                var iteratorFn = getIteratorFn(propValue);
+                if (iteratorFn) {
+                    var iterator = iteratorFn.call(propValue);
+                    var step;
+                    if (iteratorFn !== propValue.entries) while(!(step = iterator.next()).done){
+                        if (!isNode(step.value)) return false;
+                    }
+                    else // Iterator will provide entry [k,v] tuples rather than values.
+                    while(!(step = iterator.next()).done){
+                        var entry = step.value;
+                        if (entry) {
+                            if (!isNode(entry[1])) return false;
+                        }
+                    }
+                } else return false;
+                return true;
+            default:
+                return false;
+        }
+    }
+    function isSymbol(propType, propValue) {
+        // Native Symbol.
+        if (propType === "symbol") return true;
+        // falsy value can't be a Symbol
+        if (!propValue) return false;
+        // 19.4.3.5 Symbol.prototype[@@toStringTag] === 'Symbol'
+        if (propValue["@@toStringTag"] === "Symbol") return true;
+        // Fallback for non-spec compliant Symbols which are polyfilled.
+        if (typeof Symbol === "function" && propValue instanceof Symbol) return true;
+        return false;
+    }
+    // Equivalent of `typeof` but with special handling for array and regexp.
+    function getPropType(propValue) {
+        var propType = typeof propValue;
+        if (Array.isArray(propValue)) return "array";
+        if (propValue instanceof RegExp) // Old webkits (at least until Android 4.0) return 'function' rather than
+        // 'object' for typeof a RegExp. We'll normalize this here so that /bla/
+        // passes PropTypes.object.
+        return "object";
+        if (isSymbol(propType, propValue)) return "symbol";
+        return propType;
+    }
+    // This handles more types than `getPropType`. Only used for error messages.
+    // See `createPrimitiveTypeChecker`.
+    function getPreciseType(propValue) {
+        if (typeof propValue === "undefined" || propValue === null) return "" + propValue;
+        var propType = getPropType(propValue);
+        if (propType === "object") {
+            if (propValue instanceof Date) return "date";
+            else if (propValue instanceof RegExp) return "regexp";
+        }
+        return propType;
+    }
+    // Returns a string that is postfixed to a warning about an invalid type.
+    // For example, "undefined" or "of type array"
+    function getPostfixForTypeWarning(value) {
+        var type = getPreciseType(value);
+        switch(type){
+            case "array":
+            case "object":
+                return "an " + type;
+            case "boolean":
+            case "date":
+            case "regexp":
+                return "a " + type;
+            default:
+                return type;
+        }
+    }
+    // Returns class name of the object, if any.
+    function getClassName(propValue) {
+        if (!propValue.constructor || !propValue.constructor.name) return ANONYMOUS;
+        return propValue.constructor.name;
+    }
+    ReactPropTypes.checkPropTypes = checkPropTypes;
+    ReactPropTypes.resetWarningCache = checkPropTypes.resetWarningCache;
+    ReactPropTypes.PropTypes = ReactPropTypes;
+    return ReactPropTypes;
+};
+
+},{"ddb0ac0049a1a39d":"7EuwB","7cfc9e451286":"7OXxh","e78c42da84e4d07f":"jZTZJ","460c4375ff6099e":"fqKuf","4b42c2176c1a14f6":"5VwyJ"}],"7OXxh":[function(require,module,exports) {
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/ "use strict";
+/* eslint-disable no-unused-vars */ var getOwnPropertySymbols = Object.getOwnPropertySymbols;
+var hasOwnProperty = Object.prototype.hasOwnProperty;
+var propIsEnumerable = Object.prototype.propertyIsEnumerable;
+function toObject(val) {
+    if (val === null || val === undefined) throw new TypeError("Object.assign cannot be called with null or undefined");
+    return Object(val);
+}
+function shouldUseNative() {
+    try {
+        if (!Object.assign) return false;
+        // Detect buggy property enumeration order in older V8 versions.
+        // https://bugs.chromium.org/p/v8/issues/detail?id=4118
+        var test1 = new String("abc"); // eslint-disable-line no-new-wrappers
+        test1[5] = "de";
+        if (Object.getOwnPropertyNames(test1)[0] === "5") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test2 = {};
+        for(var i = 0; i < 10; i++)test2["_" + String.fromCharCode(i)] = i;
+        var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
+            return test2[n];
+        });
+        if (order2.join("") !== "0123456789") return false;
+        // https://bugs.chromium.org/p/v8/issues/detail?id=3056
+        var test3 = {};
+        "abcdefghijklmnopqrst".split("").forEach(function(letter) {
+            test3[letter] = letter;
+        });
+        if (Object.keys(Object.assign({}, test3)).join("") !== "abcdefghijklmnopqrst") return false;
+        return true;
+    } catch (err) {
+        // We don't expect any of the above to throw, but better to be safe.
+        return false;
+    }
+}
+module.exports = shouldUseNative() ? Object.assign : function(target, source) {
+    var from;
+    var to = toObject(target);
+    var symbols;
+    for(var s = 1; s < arguments.length; s++){
+        from = Object(arguments[s]);
+        for(var key in from)if (hasOwnProperty.call(from, key)) to[key] = from[key];
+        if (getOwnPropertySymbols) {
+            symbols = getOwnPropertySymbols(from);
+            for(var i = 0; i < symbols.length; i++)if (propIsEnumerable.call(from, symbols[i])) to[symbols[i]] = from[symbols[i]];
+        }
+    }
+    return to;
+};
+
+},{}],"jZTZJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var ReactPropTypesSecret = "SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED";
+module.exports = ReactPropTypesSecret;
+
+},{}],"fqKuf":[function(require,module,exports) {
+module.exports = Function.call.bind(Object.prototype.hasOwnProperty);
+
+},{}],"5VwyJ":[function(require,module,exports) {
+/**
+ * Copyright (c) 2013-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ "use strict";
+var printWarning = function() {};
+var ReactPropTypesSecret = require("46f20517385cd2ee");
+var loggedTypeFailures = {};
+var has = require("a77439c413edd4aa");
+printWarning = function(text) {
+    var message = "Warning: " + text;
+    if (typeof console !== "undefined") console.error(message);
+    try {
+        // --- Welcome to debugging React ---
+        // This error was thrown as a convenience so that you can use this stack
+        // to find the callsite that caused this warning to fire.
+        throw new Error(message);
+    } catch (x) {}
+};
+/**
+ * Assert that the values match with the type specs.
+ * Error messages are memorized and will only be shown once.
+ *
+ * @param {object} typeSpecs Map of name to a ReactPropType
+ * @param {object} values Runtime values that need to be type-checked
+ * @param {string} location e.g. "prop", "context", "child context"
+ * @param {string} componentName Name of the component for error messages.
+ * @param {?Function} getStack Returns the component stack.
+ * @private
+ */ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
+    for(var typeSpecName in typeSpecs)if (has(typeSpecs, typeSpecName)) {
+        var error;
+        // Prop type validation may throw. In case they do, we don't want to
+        // fail the render phase where it didn't fail before. So we log it.
+        // After these have been cleaned up, we'll let them throw.
+        try {
+            // This is intentionally an invariant that gets caught. It's the same
+            // behavior as without this statement except with a better message.
+            if (typeof typeSpecs[typeSpecName] !== "function") {
+                var err = Error((componentName || "React class") + ": " + location + " type `" + typeSpecName + "` is invalid; " + "it must be a function, usually from the `prop-types` package, but received `" + typeof typeSpecs[typeSpecName] + "`." + "This often happens because of typos such as `PropTypes.function` instead of `PropTypes.func`.");
+                err.name = "Invariant Violation";
+                throw err;
+            }
+            error = typeSpecs[typeSpecName](values, typeSpecName, componentName, location, null, ReactPropTypesSecret);
+        } catch (ex) {
+            error = ex;
+        }
+        if (error && !(error instanceof Error)) printWarning((componentName || "React class") + ": type specification of " + location + " `" + typeSpecName + "` is invalid; the type checker " + "function must return `null` or an `Error` but returned a " + typeof error + ". " + "You may have forgotten to pass an argument to the type checker " + "creator (arrayOf, instanceOf, objectOf, oneOf, oneOfType, and " + "shape all require an argument).");
+        if (error instanceof Error && !(error.message in loggedTypeFailures)) {
+            // Only monitor this failure once because there tends to be a lot of the
+            // same error.
+            loggedTypeFailures[error.message] = true;
+            var stack = getStack ? getStack() : "";
+            printWarning("Failed " + location + " type: " + error.message + (stack != null ? stack : ""));
+        }
+    }
+}
+/**
+ * Resets warning cache when testing.
+ *
+ * @private
+ */ checkPropTypes.resetWarningCache = function() {
+    loggedTypeFailures = {};
+};
+module.exports = checkPropTypes;
+
+},{"46f20517385cd2ee":"jZTZJ","a77439c413edd4aa":"fqKuf"}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("a1caaa0c0bb143d1");
 function debounce(func, delay) {
@@ -27309,6 +34319,2995 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"a1caaa0c0bb143d1":"786KC"}]},["1xC6H","82D6y","7dhfe"], "7dhfe", "parcelRequireb877")
+},{"a1caaa0c0bb143d1":"786KC"}],"63nrR":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2885 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2885.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _constants = require("../Utilities/constants");
+const Carousel = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "carousel bg-[#171a29] flex justify-evenly items-center w-full p-12 px-[85px]",
+        children: (0, _constants.carousel_Images).map((image, index)=>{
+            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "Carousel-Image w-56 h-56 hover:scale-110",
+                src: image.src,
+                alt: "carousel image"
+            }, index, false, {
+                fileName: "src/Pages/Carousel.jsx",
+                lineNumber: 5,
+                columnNumber: 14
+            }, undefined);
+        })
+    }, void 0, false, {
+        fileName: "src/Pages/Carousel.jsx",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Carousel;
+exports.default = Carousel;
+var _c;
+$RefreshReg$(_c, "Carousel");
+
+  $parcel$ReactRefreshHelpers$2885.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cTxpy":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$056a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$056a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _myApp = require("../MyApp");
+var _reactShimmerEffects = require("react-shimmer-effects");
+var _s = $RefreshSig$();
+const useRestaurant = (resturants, setRestaurants)=>{
+    _s();
+    const [offset, setOffset] = (0, _react.useState)(31);
+    const [flag, setflag] = (0, _react.useState)(true);
+    const cordinates = (0, _react.useContext)((0, _myApp.locationContext));
+    (0, _react.useEffect)(()=>{
+        const controller = new AbortController();
+        const signal = controller.signal;
+        getResturants(signal, setRestaurants);
+        return ()=>{
+            controller.abort();
+            window.onscroll = null;
+        };
+    }, [
+        cordinates
+    ]);
+    // getting Restaurants on homepage didMount
+    const getResturants = async (signal, setRestaurants)=>{
+        const resturantDataSwiggy = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates.latitude}&lng=${cordinates.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`, signal).then((res)=>res.json()).catch((err)=>{
+            throw new Error("Something Went Wrong");
+        });
+        setRestaurants([
+            ...resturantDataSwiggy?.data?.cards,
+            ...Array(12).fill(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerThumbnail), {
+                height: 200,
+                width: 250
+            }, void 0, false, {
+                fileName: "src/customHooks/useRestaurant.js",
+                lineNumber: 23,
+                columnNumber: 76
+            }, undefined))
+        ]);
+    };
+    // remove scroll listener on changing page
+    const removeListener = ()=>{
+        window.onscroll = null;
+        const newArray = resturants.slice(0, -12);
+        setRestaurants(newArray);
+        setflag(false);
+    };
+    // fetch more restaurants on scroll
+    const fetchMoreRestaurants = (setRestaurants, offset, setOffset, cordinates, removeListener)=>{
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1200 && window.innerHeight + window.scrollY < document.body.offsetHeight) {
+            const getResturants = async ()=>{
+                const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offset}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>{
+                    throw new Error("Something Went Wrong");
+                });
+                const moreResturants = await fetchResturants?.data?.cards;
+                if (moreResturants) {
+                    setRestaurants((prevItems)=>[
+                            ...prevItems.slice(0, prevItems.length - 12),
+                            ...moreResturants,
+                            ...prevItems.slice(prevItems.length - 12)
+                        ]);
+                    setOffset(offset + 16);
+                } else removeListener();
+            };
+            getResturants();
+        }
+    };
+    // throttled fetch more Restaurants
+    const getMoreRestaurant = throttle(fetchMoreRestaurants, 1000);
+    function throttle(fn, wait) {
+        let lastCall = 0;
+        return function(...args) {
+            const now = Date.now();
+            if (now - lastCall < wait) return;
+            lastCall = now;
+            fn(...args);
+        };
+    }
+    // setting event listener only on component did mount
+    const setEvenlistener = ()=>{
+        if (offset >= 31 & flag === true) window.onscroll = ()=>{
+            getMoreRestaurant(setRestaurants, offset, setOffset, cordinates, removeListener);
+        };
+        else return;
+    };
+    setEvenlistener();
+};
+_s(useRestaurant, "bw7ScJ10EHNUHxznwYzGPLiZIWw=");
+exports.default = useRestaurant;
+
+  $parcel$ReactRefreshHelpers$056a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../MyApp":"91nZZ","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2D5qz":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$2b17 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$2b17.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactShimmerEffects = require("react-shimmer-effects");
+const HomPageShimmer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Home-Shimmer h-fit",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "carousel bg-[#171a29] flex justify-evenly items-center w-full p-12 px-32",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerThumbnail), {
+                        height: 256,
+                        width: 256
+                    }, void 0, false, {
+                        fileName: "src/Pages/HomPageShimmer.jsx",
+                        lineNumber: 6,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerThumbnail), {
+                        height: 256,
+                        width: 256
+                    }, void 0, false, {
+                        fileName: "src/Pages/HomPageShimmer.jsx",
+                        lineNumber: 7,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerThumbnail), {
+                        height: 256,
+                        width: 256
+                    }, void 0, false, {
+                        fileName: "src/Pages/HomPageShimmer.jsx",
+                        lineNumber: 8,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerThumbnail), {
+                        height: 256,
+                        width: 256
+                    }, void 0, false, {
+                        fileName: "src/Pages/HomPageShimmer.jsx",
+                        lineNumber: 9,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/HomPageShimmer.jsx",
+                lineNumber: 5,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                id: "Available-Resturants-window",
+                className: "Available-Resturants w-full flex justify-center items-center",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "shiimer-body w-[1200px] px-6 py-28",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerSimpleGallery), {
+                        card: true,
+                        imageHeight: 150,
+                        caption: true
+                    }, void 0, false, {
+                        fileName: "src/Pages/HomPageShimmer.jsx",
+                        lineNumber: 13,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/Pages/HomPageShimmer.jsx",
+                    lineNumber: 12,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/HomPageShimmer.jsx",
+                lineNumber: 11,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/HomPageShimmer.jsx",
+        lineNumber: 4,
+        columnNumber: 10
+    }, undefined);
+};
+_c = HomPageShimmer;
+exports.default = HomPageShimmer;
+var _c;
+$RefreshReg$(_c, "HomPageShimmer");
+
+  $parcel$ReactRefreshHelpers$2b17.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3PdSH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$99a4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$99a4.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Cart", ()=>Cart);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _cartItem = require("./CartItem");
+var _cartItemDefault = parcelHelpers.interopDefault(_cartItem);
+var _constants = require("../Utilities/constants");
+var _emptyCart = require("./EmptyCart");
+var _emptyCartDefault = parcelHelpers.interopDefault(_emptyCart);
+var _s = $RefreshSig$();
+const Cart = ()=>{
+    _s();
+    const [cartItems, setCartItems] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        getCartItems(setCartItems);
+    }, []);
+    const getCartItems = (setState)=>{
+        if (JSON.parse(localStorage.getItem("orders"))) setState(JSON.parse(localStorage.getItem("orders")));
+        else setCartItems([]);
+    };
+    const handleUpdate = ()=>{
+        getCartItems(setCartItems);
+    };
+    let cartTotal = 0;
+    if (cartItems?.length <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _emptyCartDefault.default), {}, void 0, false, {
+        fileName: "src/Pages/Cart.jsx",
+        lineNumber: 19,
+        columnNumber: 38
+    }, undefined);
+    else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "cart w-full h-fit flex-col flex justify-center items-center py-14 px-10",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "Checkout-Box rounded-sm w-[1120px] bg-white h-fit",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "Restaurant-info w-[full] h-[100px] px-4 pt-4 flex justify-start items-center ",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "image",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "Image rounded-md bg-no-repeat bg-center bg-contain h-[80px] w-[80px]",
+                                src: (0, _constants.IMAGE_URL) + cartItems[0]?.restaurant?.cloudinaryImageId
+                            }, void 0, false, {
+                                fileName: "src/Pages/Cart.jsx",
+                                lineNumber: 23,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Pages/Cart.jsx",
+                            lineNumber: 22,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "Restaurant-Info ml-4",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "text-[18px] font-[900px] text-[#3e4152]",
+                                    children: cartItems[0]?.restaurant?.name
+                                }, void 0, false, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 26,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "text-[12px] font-[100px]",
+                                    children: cartItems[0]?.restaurant?.locality
+                                }, void 0, false, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 30,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Pages/Cart.jsx",
+                            lineNumber: 25,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/Cart.jsx",
+                    lineNumber: 21,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "billing-info w-full p-4",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                            children: cartItems?.map((item, index)=>{
+                                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartItemDefault.default), {
+                                        updateParent: handleUpdate,
+                                        cartItem: item
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/Cart.jsx",
+                                        lineNumber: 39,
+                                        columnNumber: 19
+                                    }, undefined)
+                                }, index, false, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 38,
+                                    columnNumber: 20
+                                }, undefined);
+                            })
+                        }, void 0, false, {
+                            fileName: "src/Pages/Cart.jsx",
+                            lineNumber: 36,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "w-full h-[60px] my-4 p-4 bg-[#f9f9f9] flex justify-start items-center",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                    className: "text-[20px] relative right-2",
+                                    children: "❝"
+                                }, void 0, false, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 44,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                    placeholder: "Any suggstions we will pass it on to the restaurant...",
+                                    className: "suggestion w-10/12 bg-[#f9f9f9]",
+                                    type: "text"
+                                }, void 0, false, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 45,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Pages/Cart.jsx",
+                            lineNumber: 43,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "no-contact-delivery border-[#535665] border-[.5px] p-3 flex justify-start items-start ",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                    type: "checkbox"
+                                }, void 0, false, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 49,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "no-contact-info ml-3",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            className: " text-[#3e4152] font-[600] text-[14px]",
+                                            children: "Opt in for No-contact Delivery"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/Cart.jsx",
+                                            lineNumber: 51,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            className: " text-[13px] m-0 p-0 text-[#535665]",
+                                            children: "Unwell, or avoiding contact? Please select no-contact delivery. Partner will safely place the order outside your door (not for COD)"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/Cart.jsx",
+                                            lineNumber: 54,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 50,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Pages/Cart.jsx",
+                            lineNumber: 48,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "bill-details my-4",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                    children: "Bill details"
+                                }, void 0, false, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 62,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "flex justify-between my-1 text-[#535665] font-thin text-[13px]",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            children: [
+                                                "Item Total",
+                                                cartItems.map((item)=>{
+                                                    cartTotal += item?.dish?.price * item?.qty;
+                                                }),
+                                                " "
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/Pages/Cart.jsx",
+                                            lineNumber: 64,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            children: cartTotal / 100
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/Cart.jsx",
+                                            lineNumber: 70,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 63,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "flex justify-between my-1 font-thin",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            className: "text-[#535665] text-[13px]",
+                                            children: "Delivery Partner Fee"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/Cart.jsx",
+                                            lineNumber: 73,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            className: " text-[#60b246] font-thin text-[13px]",
+                                            children: "FREE"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/Cart.jsx",
+                                            lineNumber: 76,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 72,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 80,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "flex justify-between my-3 text-[#535665] text-[14px] font-thin",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            children: "Govt Taxes And Charges"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/Cart.jsx",
+                                            lineNumber: 82,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            children: "₹35.7"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/Cart.jsx",
+                                            lineNumber: 83,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 81,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
+                                    className: "border-black border-[.5px] "
+                                }, void 0, false, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 85,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "flex justify-between mt-3 font-[600] text-[13px] ",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            children: "To Pay"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/Cart.jsx",
+                                            lineNumber: 87,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                            children: cartTotal / 100 + 35.7
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/Cart.jsx",
+                                            lineNumber: 88,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/Cart.jsx",
+                                    lineNumber: 86,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Pages/Cart.jsx",
+                            lineNumber: 61,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/Cart.jsx",
+                    lineNumber: 35,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "Place-Order w-[1125px] p-4",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "w-full p-4 bg-[#60b246] rounded-sm text-white text-[20px]",
+                        children: "Place Order"
+                    }, void 0, false, {
+                        fileName: "src/Pages/Cart.jsx",
+                        lineNumber: 93,
+                        columnNumber: 13
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/Pages/Cart.jsx",
+                    lineNumber: 92,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Pages/Cart.jsx",
+            lineNumber: 20,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Pages/Cart.jsx",
+        lineNumber: 19,
+        columnNumber: 64
+    }, undefined);
+};
+_s(Cart, "yMyLm0mTOdUD4xRL2vnEhQFbjeY=");
+_c = Cart;
+var _c;
+$RefreshReg$(_c, "Cart");
+
+  $parcel$ReactRefreshHelpers$99a4.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./CartItem":"g2qA5","../Utilities/constants":"5t9MR","./EmptyCart":"59mBH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g2qA5":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1f30 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1f30.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _helpers = require("../Utilities/helpers");
+var _s = $RefreshSig$();
+const CartItem = ({ cartItem , updateParent  })=>{
+    _s();
+    const [count, setCount] = (0, _react.useState)(cartItem?.qty);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Item-info flex justify-between h-fit items-center mt-3",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "name w-1/2 ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                        className: "text-[14px] text-[#282c3f]",
+                        children: cartItem?.dish?.name
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 10,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[10px] after:text-[10px] after:font-[900] after:ml-[3px] after:text-[#fc8019] after:content-['>']",
+                        children: "Customize"
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 13,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/CartItem.jsx",
+                lineNumber: 9,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "btns flex w-1/5 border-[#d4d5d9] border-[.5px]",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: " w-1/3 text-[20px] text-[#bebfc5]",
+                        onClick: ()=>{
+                            location.reload();
+                            setCount((n)=>n - 1);
+                            (0, _helpers.decrement)(cartItem);
+                            updateParent();
+                        },
+                        children: "-"
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 18,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "w-1/3 text-[#60b246] text-[12px] flex justify-center items-center ",
+                        children: cartItem.qty
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: "w-1/3 text-[20px] text-[#60b246]",
+                        onClick: ()=>{
+                            location.reload();
+                            setCount((n)=>n + 1);
+                            (0, _helpers.addToCart)({
+                                dish: cartItem?.dish,
+                                restaurant: cartItem?.restaurant,
+                                qty: cartItem?.qty + 1
+                            });
+                            updateParent();
+                        },
+                        children: "+"
+                    }, void 0, false, {
+                        fileName: "src/Pages/CartItem.jsx",
+                        lineNumber: 29,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/CartItem.jsx",
+                lineNumber: 17,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "price w-1/5 flex justify-end ",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "text-[#535665] text-[13px]",
+                    children: [
+                        "₹",
+                        cartItem?.dish?.price / 100 * cartItem?.qty
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/CartItem.jsx",
+                    lineNumber: 43,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/CartItem.jsx",
+                lineNumber: 42,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/CartItem.jsx",
+        lineNumber: 8,
+        columnNumber: 10
+    }, undefined);
+};
+_s(CartItem, "4faNLjflZtroUHvcDNqX55bybcQ=");
+_c = CartItem;
+exports.default = CartItem;
+var _c;
+$RefreshReg$(_c, "CartItem");
+
+  $parcel$ReactRefreshHelpers$1f30.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/helpers":"4t9SJ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4t9SJ":[function(require,module,exports) {
+// Add an item to cart
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "addToCart", ()=>addToCart);
+parcelHelpers.export(exports, "decrement", ()=>decrement);
+const addToCart = (Dish)=>{
+    // is local storage empty || first order
+    if (localStorage.getItem("orders")) {
+        let Orders = JSON.parse(localStorage.getItem("orders"));
+        //are orders from same restaurant
+        if (Orders[0]?.restaurant?.id === Dish?.restaurant?.id) {
+            if (Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id) >= 0) {
+                //inc qty of similar dish
+                let prevIndex = Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id);
+                let prevQty = Orders[Orders.findIndex((item)=>item.dish.id === Dish?.dish?.id)].qty;
+                let newOrder = Orders.filter((item)=>item.dish.id != Dish?.dish?.id);
+                newOrder.splice(prevIndex, 0, {
+                    dish: Dish.dish,
+                    qty: prevQty + 1,
+                    restaurant: Dish.restaurant
+                });
+                localStorage.clear();
+                localStorage.setItem("orders", JSON.stringify(newOrder));
+            } else {
+                // similar rest diff dish
+                Orders.push(Dish);
+                localStorage.clear();
+                localStorage.setItem("orders", JSON.stringify(Orders));
+            }
+        } else {
+            //ask to create new basket
+            if (window.confirm("Start a fresh cart")) {
+                localStorage.clear();
+                localStorage.setItem("orders", JSON.stringify([
+                    Dish
+                ]));
+            } else return null;
+        }
+    } else localStorage.setItem("orders", JSON.stringify([
+        Dish
+    ]));
+};
+const decrement = (updateItem)=>{
+    let CartItems = JSON.parse(localStorage.getItem("orders"));
+    let prevQty = updateItem?.qty;
+    if (prevQty === 1) {
+        let newCart = CartItems.filter((item)=>item.dish.id != updateItem?.dish?.id);
+        if (newCart.length >= 1) {
+            localStorage.clear();
+            localStorage.setItem("orders", JSON.stringify(newCart));
+        } else localStorage.clear();
+    } else {
+        let prevIndex = CartItems.findIndex((item)=>item.dish.id === updateItem?.dish?.id);
+        let newCartItems = CartItems.filter((item)=>item.dish.id != updateItem?.dish?.id);
+        localStorage.clear();
+        newCartItems.splice(prevIndex, 0, {
+            dish: updateItem.dish,
+            qty: prevQty - 1,
+            restaurant: updateItem.restaurant
+        });
+        localStorage.setItem("orders", JSON.stringify(newCartItems));
+    }
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"59mBH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f65d = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f65d.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+const EmptyCart = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "empty-cart w-full h-[700px] bg-white flex flex-col justify-center items-center",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: " bg-center bg-contain bg-no-repeat w-[270px] h-[276px]",
+                src: "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0",
+                alt: "Empty Cart"
+            }, void 0, false, {
+                fileName: "src/Pages/EmptyCart.jsx",
+                lineNumber: 4,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "text-[16px] font-[900] my-3",
+                children: "Your cart is empty"
+            }, void 0, false, {
+                fileName: "src/Pages/EmptyCart.jsx",
+                lineNumber: 5,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "text-[12px] text-[#7e808c] ",
+                children: "You can go to home page to view more restaurants"
+            }, void 0, false, {
+                fileName: "src/Pages/EmptyCart.jsx",
+                lineNumber: 6,
+                columnNumber: 13
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: "/homePage",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: "border-none p-2 text-[13px] bg-[#fc8019] my-3 text-white font-[700] rounded-sm",
+                    children: "SEE RESTAURANTS NEAR YOU"
+                }, void 0, false, {
+                    fileName: "src/Pages/EmptyCart.jsx",
+                    lineNumber: 8,
+                    columnNumber: 13
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/EmptyCart.jsx",
+                lineNumber: 7,
+                columnNumber: 13
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/EmptyCart.jsx",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = EmptyCart;
+exports.default = EmptyCart;
+var _c;
+$RefreshReg$(_c, "EmptyCart");
+
+  $parcel$ReactRefreshHelpers$f65d.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9TUQf":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ff22 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ff22.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _constants = require("../Utilities/constants");
+const About = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: " py-32 text-[18px] tracking-wide font-[100] px-36",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            children: (0, _constants.ABOUT_US)
+        }, void 0, false, {
+            fileName: "src/Pages/About.jsx",
+            lineNumber: 4,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Pages/About.jsx",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = About;
+exports.default = About;
+var _c;
+$RefreshReg$(_c, "About");
+
+  $parcel$ReactRefreshHelpers$ff22.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"GvK7j":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8ffb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8ffb.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _react = require("react");
+var _restaurantPageBanner = require("./RestaurantPageBanner");
+var _restaurantPageBannerDefault = parcelHelpers.interopDefault(_restaurantPageBanner);
+var _restaurantPageSearchbox = require("./RestaurantPageSearchbox");
+var _restaurantPageSearchboxDefault = parcelHelpers.interopDefault(_restaurantPageSearchbox);
+var _useRestaurantPage = require("../customHooks/useRestaurantPage");
+var _useRestaurantPageDefault = parcelHelpers.interopDefault(_useRestaurantPage);
+var _restaurantPageBody = require("./RestaurantPageBody");
+var _restaurantPageBodyDefault = parcelHelpers.interopDefault(_restaurantPageBody);
+var _restaurantPageShimmer = require("./RestaurantPageShimmer");
+var _restaurantPageShimmerDefault = parcelHelpers.interopDefault(_restaurantPageShimmer);
+var _s = $RefreshSig$();
+const ResturantPage = ()=>{
+    _s();
+    const [menu, setMenu] = (0, _react.useState)([]);
+    const [filteredMenu, setFilteredMenu] = (0, _react.useState)([]);
+    scrollTo(0, 0);
+    const location = (0, _reactRouterDom.useLocation)();
+    const resturantID = location.state.id;
+    const resturantData = (0, _useRestaurantPageDefault.default)(resturantID, setMenu, setFilteredMenu);
+    if (resturantData <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantPageShimmerDefault.default), {}, void 0, false, {
+        fileName: "src/Pages/ResturantPage.jsx",
+        lineNumber: 15,
+        columnNumber: 34
+    }, undefined);
+    else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Resturant-Page",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantPageBannerDefault.default), {
+                resturantData: resturantData
+            }, void 0, false, {
+                fileName: "src/Pages/ResturantPage.jsx",
+                lineNumber: 16,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantPageSearchboxDefault.default), {
+                menu: menu,
+                setFilteredMenu: setFilteredMenu
+            }, void 0, false, {
+                fileName: "src/Pages/ResturantPage.jsx",
+                lineNumber: 18,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantPageBodyDefault.default), {
+                resturantData: resturantData,
+                menu: menu,
+                filteredMenu: filteredMenu,
+                setFilteredMenu: setFilteredMenu
+            }, void 0, false, {
+                fileName: "src/Pages/ResturantPage.jsx",
+                lineNumber: 20,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/ResturantPage.jsx",
+        lineNumber: 15,
+        columnNumber: 72
+    }, undefined);
+};
+_s(ResturantPage, "4aiMqIsBs0hQpbkz09bS3UYUPN8=", false, function() {
+    return [
+        (0, _reactRouterDom.useLocation),
+        (0, _useRestaurantPageDefault.default)
+    ];
+});
+_c = ResturantPage;
+exports.default = ResturantPage;
+var _c;
+$RefreshReg$(_c, "ResturantPage");
+
+  $parcel$ReactRefreshHelpers$8ffb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","./RestaurantPageBanner":"ilOYm","./RestaurantPageSearchbox":"eDluk","../customHooks/useRestaurantPage":"4rT59","./RestaurantPageBody":"cQR1i","./RestaurantPageShimmer":"lK9cM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ilOYm":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e33b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e33b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _constants = require("../Utilities/constants");
+const RestaurantPageBanner = ({ resturantData  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Resturant-banner sticky top-0 z-20 bg-[#171a29] px-12 py-12 h-245 ",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "flex justify-around items-center px-16",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "Resturant-Image",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                        className: "w-[230px] h-[135px] bg-centre bg-contain bg-no-repeat",
+                        src: (0, _constants.IMAGE_URL) + resturantData?.cloudinaryImageId
+                    }, void 0, false, {
+                        fileName: "src/Pages/RestaurantPageBanner.jsx",
+                        lineNumber: 8,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                    lineNumber: 7,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "Resturant-Info relative h-[145px] flex flex-col justify-between right-[60px] text-white ",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: " text-[25px]",
+                            children: resturantData?.name
+                        }, void 0, false, {
+                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                            lineNumber: 12,
+                            columnNumber: 11
+                        }, undefined),
+                        resturantData?.cuisines?.map((item, index)=>{
+                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-[13px] text-[#686b78]",
+                                children: [
+                                    item,
+                                    " "
+                                ]
+                            }, index, true, {
+                                fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                lineNumber: 14,
+                                columnNumber: 18
+                            }, undefined);
+                        }),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "text-[13px] text-[#686b78]",
+                            children: resturantData?.locality
+                        }, void 0, false, {
+                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                            lineNumber: 18,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                            className: "flex justify-start items-center w-[350px] h-[60px]",
+                            children: [
+                                resturantData?.avgRating >= 2.5 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    className: "mr-11 px-2 text-[18px] relative right-[5px]",
+                                    children: [
+                                        " ",
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                            className: "fa-regular fa-star fa-small"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 24,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        " ",
+                                        resturantData?.avgRating,
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            className: "text-[10px] text-[#686b78]",
+                                            children: "Rating"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 26,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                    lineNumber: 22,
+                                    columnNumber: 48
+                                }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    className: "mr-11 px-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                className: "fa-regular fa-star fa-small"
+                                            }, void 0, false, {
+                                                fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                                lineNumber: 29,
+                                                columnNumber: 19
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 28,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            className: "text-xs text-[#686b78]",
+                                            children: " --too few Rating-"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 31,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                    lineNumber: 27,
+                                    columnNumber: 23
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    className: "mr-11 px-2",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            children: [
+                                                resturantData?.sla?.deliveryTime,
+                                                " Mins"
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 35,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            className: "text-[10px] text-[#686b78]",
+                                            children: "Delivery Time"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 36,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                    lineNumber: 34,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    className: "mr-11 px-2",
+                                    children: [
+                                        "₹ ",
+                                        resturantData?.costForTwo / 100,
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                            className: "text-[10px] text-[#686b78]",
+                                            children: "Cost for two"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 40,
+                                            columnNumber: 15
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                    lineNumber: 38,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                            lineNumber: 21,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                    lineNumber: 10,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "Resturant-Offers text-[white]",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("fieldset", {
+                        className: "border-[1px] w-[340px] h-[145px]",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("legend", {
+                                className: "text-[18px] p-2",
+                                children: "OFFERS"
+                            }, void 0, false, {
+                                fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                lineNumber: 46,
+                                columnNumber: 13
+                            }, undefined),
+                            resturantData?.aggregatedDiscountInfoV2?.descriptionList?.map((item, index)=>{
+                                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "p-1 px-2 text-[14px]",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                            class: "fa-solid fa-tags fa-lg"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                            lineNumber: 49,
+                                            columnNumber: 21
+                                        }, undefined),
+                                        " ",
+                                        item.meta
+                                    ]
+                                }, index, true, {
+                                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                                    lineNumber: 48,
+                                    columnNumber: 20
+                                }, undefined);
+                            })
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/RestaurantPageBanner.jsx",
+                        lineNumber: 45,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "src/Pages/RestaurantPageBanner.jsx",
+                    lineNumber: 44,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Pages/RestaurantPageBanner.jsx",
+            lineNumber: 6,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Pages/RestaurantPageBanner.jsx",
+        lineNumber: 5,
+        columnNumber: 10
+    }, undefined);
+};
+_c = RestaurantPageBanner;
+exports.default = RestaurantPageBanner;
+var _c;
+$RefreshReg$(_c, "RestaurantPageBanner");
+
+  $parcel$ReactRefreshHelpers$e33b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eDluk":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$642f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$642f.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _utils = require("../Utilities/utils");
+var _s = $RefreshSig$();
+const RestaurantPageSearchbox = ({ menu , setFilteredMenu  })=>{
+    _s();
+    const [searchText, setSearchText] = (0, _react.useState)("");
+    const [isVeg, setIsVeg] = (0, _react.useState)(false);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Resturant-Page-Input-Field sticky w-[530px] z-30 top-[255px] left-[405px] bottom-[32px] flex justify-between p-2 text-[white]",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                className: "bg-white p-4 px-8 flex justify-start items-center shadow-xl text-[black] ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                        class: "fa-solid fa-magnifying-glass fa-lg relative right-[10px]"
+                    }, void 0, false, {
+                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+                        lineNumber: 11,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        className: " bg-[white] w-[260px]",
+                        value: searchText,
+                        placeholder: "Search for Dishes...",
+                        onChange: (e)=>{
+                            setSearchText(e.target.value);
+                            (0, _utils.handleFilterMenuItems)(e.target.value, menu, setFilteredMenu);
+                        },
+                        type: "text"
+                    }, void 0, false, {
+                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+                        lineNumber: 13,
+                        columnNumber: 7
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+                lineNumber: 10,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                className: "bg-white flex justify-center items-center text-black p-2 px-4 shadow-xl",
+                children: [
+                    "Veg Only",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        className: "m-2 w-[20px] h-[20px]",
+                        value: isVeg,
+                        onChange: (e)=>{
+                            setIsVeg(e.target.value);
+                            (0, _utils.handleFilterVegItems)(e.target.checked, menu, setFilteredMenu);
+                        },
+                        type: "checkbox"
+                    }, void 0, false, {
+                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+                        lineNumber: 20,
+                        columnNumber: 7
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+                lineNumber: 18,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+        lineNumber: 9,
+        columnNumber: 10
+    }, undefined);
+};
+_s(RestaurantPageSearchbox, "D10ElH+j2+SafQcKM4rbXiLElYA=");
+_c = RestaurantPageSearchbox;
+exports.default = RestaurantPageSearchbox;
+var _c;
+$RefreshReg$(_c, "RestaurantPageSearchbox");
+
+  $parcel$ReactRefreshHelpers$642f.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bIOxy":[function(require,module,exports) {
+// get searchpage data / search resturants amd dishes data
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getSearchedResturants", ()=>getSearchedResturants);
+parcelHelpers.export(exports, "handleFilterMenuItems", ()=>handleFilterMenuItems);
+parcelHelpers.export(exports, "handleCategoryMenu", ()=>handleCategoryMenu);
+parcelHelpers.export(exports, "handleFilterVegItems", ()=>handleFilterVegItems);
+const searchResturants = async (text, setState)=>{
+    const similarresturants = await fetch(`https://www.swiggy.com/dapi/restaurants/search/suggest?lat=32.681881&lng=74.906294&str=${text}&trackingId=null`).then((res)=>res.json()).catch((res)=>{
+        throw new Error("Something Went Wrong");
+    });
+    setState(similarresturants?.data?.suggestions);
+};
+const debounce = (callback, delay)=>{
+    let timer;
+    return (...args)=>{
+        clearTimeout(timer);
+        timer = setTimeout(()=>{
+            callback(...args);
+        }, delay);
+    };
+};
+const getSearchedResturants = debounce(searchResturants, 500);
+const handleFilterMenuItems = (DishName, state, setState)=>{
+    setState(state.filter((resturant)=>{
+        if (resturant.name.toLowerCase().includes(DishName.toLowerCase())) return resturant;
+        if (DishName === "") return state;
+        else return null;
+    }));
+};
+const handleCategoryMenu = (categoryName, state, setState)=>{
+    setState(state.filter((item)=>item.category === categoryName));
+};
+const handleFilterVegItems = (isVeg, state, setState)=>{
+    isVeg ? setState(state.filter((item)=>item.isVeg >= 1)) : setState(state);
+}; //-------------------------------------------------------------------------------
+ //
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4rT59":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$5b23 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$5b23.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _myApp = require("../MyApp");
+var _s = $RefreshSig$();
+const useRestaurantPage = (resturantID, setMenu, setFilteredMenu)=>{
+    _s();
+    const [resturantData, setResturantData] = (0, _react.useState)([]);
+    const cordinates = (0, _react.useContext)((0, _myApp.locationContext));
+    (0, _react.useEffect)(()=>{
+        const controller = new AbortController();
+        const signal = controller.signal;
+        getResturantMenu(signal, resturantID, setResturantData, setMenu, setFilteredMenu);
+        return ()=>controller.abort();
+    }, []);
+    const getResturantMenu = async (signal, resturantID, setResturantData, setMenu, setFilteredMenu)=>{
+        const response = await fetch(`https://www.swiggy.com/dapi/menu/v4/full?$lat=${cordinates.latitude}&lng=${cordinates.longitude}&menuId=${resturantID}`, signal).then((res)=>res.json()).catch((err)=>{
+            throw new Error("Something Went Wrong");
+        });
+        setResturantData(response?.data);
+        setMenu(Object.values(response?.data?.menu?.items));
+        setFilteredMenu(Object.values(response?.data?.menu?.items));
+    };
+    return resturantData;
+};
+_s(useRestaurantPage, "TzGFwtBwFPzUkZDPCNty25j6s3I=");
+exports.default = useRestaurantPage;
+
+  $parcel$ReactRefreshHelpers$5b23.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","../MyApp":"91nZZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cQR1i":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$386a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$386a.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _utils = require("../Utilities/utils");
+var _resturantMenuItemCard = require("./ResturantMenuItemCard");
+var _resturantMenuItemCardDefault = parcelHelpers.interopDefault(_resturantMenuItemCard);
+var _miniCart = require("./MiniCart");
+var _miniCartDefault = parcelHelpers.interopDefault(_miniCart);
+var _constants = require("../Utilities/constants");
+const RestaurantPageBody = ({ resturantData , menu , filteredMenu , setFilteredMenu  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Resturant-Menu-Body w-11/12 justify-start flex",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Resturant-Categories w-[410px] overflow-scroll sticky top-[310px] z-10 pr-2 h-fit flex flex-col",
+                children: resturantData?.menu?.widgets?.map((item)=>item.type === "category" ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                        className: " flex justify-end p-2 text-[15px] hover:text-[#fc8019] active:text-[#fc8019]",
+                        onClick: ()=>{
+                            (0, _utils.handleCategoryMenu)(item.name, menu, setFilteredMenu);
+                        },
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            children: item.name
+                        }, void 0, false, {
+                            fileName: "src/Pages/RestaurantPageBody.jsx",
+                            lineNumber: 16,
+                            columnNumber: 15
+                        }, undefined)
+                    }, item.id, false, {
+                        fileName: "src/Pages/RestaurantPageBody.jsx",
+                        lineNumber: 13,
+                        columnNumber: 79
+                    }, undefined) : null)
+            }, void 0, false, {
+                fileName: "src/Pages/RestaurantPageBody.jsx",
+                lineNumber: 12,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Resturant-Menu-Items border-[black] border-l-[1px] ",
+                children: filteredMenu.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantMenuItemCardDefault.default), {
+                        foodItem: item,
+                        RestaurantData: resturantData
+                    }, item.id, false, {
+                        fileName: "src/Pages/RestaurantPageBody.jsx",
+                        lineNumber: 20,
+                        columnNumber: 35
+                    }, undefined))
+            }, void 0, false, {
+                fileName: "src/Pages/RestaurantPageBody.jsx",
+                lineNumber: 19,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "mini-cart",
+                children: JSON.parse(localStorage.getItem("orders")) ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _miniCartDefault.default), {}, void 0, false, {
+                    fileName: "src/Pages/RestaurantPageBody.jsx",
+                    lineNumber: 23,
+                    columnNumber: 55
+                }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "mini-Checkout-Box sticky ml-[115px] z-[1] top-[340px] w-[300px] bg-white h-fit p-3 ",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "w-full px-4 text-[25px] font-[700] text-[#7e808c]",
+                            children: "Cart Empty"
+                        }, void 0, false, {
+                            fileName: "src/Pages/RestaurantPageBody.jsx",
+                            lineNumber: 24,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "w-full px-4 h-[250px] bg-center bg-contain bg-no-repeat",
+                            src: (0, _constants.EMPTY_CART_IMG),
+                            alt: "",
+                            srcset: ""
+                        }, void 0, false, {
+                            fileName: "src/Pages/RestaurantPageBody.jsx",
+                            lineNumber: 27,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "w-full text-[#7e808c] px-4",
+                            children: "Good food is always cooking! Go ahead, order some yummy items from the menu."
+                        }, void 0, false, {
+                            fileName: "src/Pages/RestaurantPageBody.jsx",
+                            lineNumber: 28,
+                            columnNumber: 13
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/RestaurantPageBody.jsx",
+                    lineNumber: 23,
+                    columnNumber: 70
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/RestaurantPageBody.jsx",
+                lineNumber: 22,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/RestaurantPageBody.jsx",
+        lineNumber: 11,
+        columnNumber: 10
+    }, undefined);
+};
+_c = RestaurantPageBody;
+exports.default = RestaurantPageBody;
+var _c;
+$RefreshReg$(_c, "RestaurantPageBody");
+
+  $parcel$ReactRefreshHelpers$386a.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA","./MiniCart":"efG2m","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"k7iTA":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$fb03 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$fb03.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _constants = require("../Utilities/constants");
+var _helpers = require("../Utilities/helpers");
+var _react = require("react");
+var _s = $RefreshSig$();
+const ResturantMenuItemCard = ({ foodItem , RestaurantData  })=>{
+    _s();
+    const [isLoaded, setIsLoaded] = (0, _react.useState)(false);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Food-Item-Card flex justify-between items-center h-fit w-[450px] relative m-[20px] border-b-[1px] border-slate-500 border-opacity-50",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Food-Item-Info relative bottom-[20px] w-2/3 h-1/3",
+                children: [
+                    foodItem?.isVeg === 1 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[15px]",
+                        children: [
+                            foodItem?.name,
+                            " ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-green-600",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                    class: "fa-sharp fa-solid fa-leaf"
+                                }, void 0, false, {
+                                    fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                                    lineNumber: 14,
+                                    columnNumber: 15
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                                lineNumber: 13,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                        lineNumber: 11,
+                        columnNumber: 34
+                    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[15px]",
+                        children: [
+                            foodItem?.name,
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-red-600",
+                                children: [
+                                    "  ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                        class: "fa-solid fa-egg"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                                        lineNumber: 20,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                                lineNumber: 18,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                        lineNumber: 16,
+                        columnNumber: 18
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[15px]",
+                        children: [
+                            "₹ ",
+                            foodItem?.price <= 0 ? 100 : foodItem?.price / 100
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                        lineNumber: 23,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[12px] text-[#535665]",
+                        children: foodItem?.description
+                    }, void 0, false, {
+                        fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                        lineNumber: 26,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                lineNumber: 10,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Food-Item",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "Food-Item-Image",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "h-0 w-0",
+                                src: (0, _constants.IMAGE_URL) + foodItem?.cloudinaryImageId,
+                                onLoad: ()=>{
+                                    setIsLoaded(true);
+                                }
+                            }, void 0, false, {
+                                fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                                lineNumber: 30,
+                                columnNumber: 9
+                            }, undefined),
+                            isLoaded ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "rounded-lg w-[100px] h-[90px] bg-center bg-contain bg-no-repeat",
+                                src: (0, _constants.IMAGE_URL) + foodItem?.cloudinaryImageId
+                            }, void 0, false, {
+                                fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                                lineNumber: 33,
+                                columnNumber: 23
+                            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "rounded-lg w-[100px] h-[90px] border-none bg-[#e8e9e6]"
+                            }, void 0, false, {
+                                fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                                lineNumber: 33,
+                                columnNumber: 156
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                        lineNumber: 29,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "Food-Add-Btn",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: " bg-white border-opacity-50 border-[1px] border-slate-500 p-1 px-4 text-green-600 shadow-xl relative left-[14px] bottom-[20px]",
+                            onClick: ()=>{
+                                location.reload();
+                                (0, _helpers.addToCart)({
+                                    dish: foodItem,
+                                    restaurant: RestaurantData,
+                                    qty: 1
+                                });
+                            },
+                            children: "ADD"
+                        }, void 0, false, {
+                            fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                            lineNumber: 36,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                        lineNumber: 35,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                lineNumber: 28,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/ResturantMenuItemCard.jsx",
+        lineNumber: 9,
+        columnNumber: 10
+    }, undefined);
+};
+_s(ResturantMenuItemCard, "IYJBVyHsXBw9t28YX/YBiMCcttM=");
+_c = ResturantMenuItemCard;
+exports.default = ResturantMenuItemCard;
+var _c;
+$RefreshReg$(_c, "ResturantMenuItemCard");
+
+  $parcel$ReactRefreshHelpers$fb03.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","../Utilities/helpers":"4t9SJ","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"efG2m":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$34d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$34d6.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactRouterDom = require("react-router-dom");
+var _cartItem = require("./CartItem");
+var _cartItemDefault = parcelHelpers.interopDefault(_cartItem);
+var _s = $RefreshSig$();
+const MiniCart = ()=>{
+    _s();
+    const [cartItems, setCartItems] = (0, _react.useState)([]);
+    (0, _react.useEffect)(()=>{
+        getCartItems(setCartItems);
+    }, []);
+    const getCartItems = (setState)=>{
+        if (JSON.parse(localStorage.getItem("orders"))) setState(JSON.parse(localStorage.getItem("orders")));
+        else setCartItems([]);
+    };
+    const handleUpdate = ()=>{
+        getCartItems(setCartItems);
+    };
+    let cartTotal = 0;
+    let totalitems = 0;
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "mini-Checkout-Box sticky ml-[115px] z-[1] top-[340px] w-[300px] bg-white h-fit p-3",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Restaurant-info w-[full] px-4 flex justify-start items-center ",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    className: "text-[30px] font-[900]",
+                    children: "Cart"
+                }, void 0, false, {
+                    fileName: "src/Pages/MiniCart.jsx",
+                    lineNumber: 21,
+                    columnNumber: 11
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/MiniCart.jsx",
+                lineNumber: 20,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {}, void 0, false, {
+                fileName: "src/Pages/MiniCart.jsx",
+                lineNumber: 23,
+                columnNumber: 9
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                className: "w-full px-4 text-[15px]",
+                children: [
+                    cartItems.map((item)=>{
+                        totalitems += item.qty;
+                    }),
+                    totalitems > 1 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: [
+                            totalitems,
+                            " Items"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/MiniCart.jsx",
+                        lineNumber: 28,
+                        columnNumber: 29
+                    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: [
+                            totalitems,
+                            " Item"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/MiniCart.jsx",
+                        lineNumber: 28,
+                        columnNumber: 57
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/MiniCart.jsx",
+                lineNumber: 24,
+                columnNumber: 9
+            }, undefined),
+            cartItems.map((item)=>{
+                cartTotal += item?.dish?.price * item?.qty;
+            }),
+            " ",
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "billing-info w-full px-4",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                        children: cartItems?.map((item, index)=>{
+                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                    className: " p-0 m-0 w-[230px]",
+                                    onClick: ()=>location.reload(),
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cartItemDefault.default), {
+                                        updateParent: handleUpdate,
+                                        cartItem: item
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/MiniCart.jsx",
+                                        lineNumber: 38,
+                                        columnNumber: 19
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/Pages/MiniCart.jsx",
+                                    lineNumber: 37,
+                                    columnNumber: 19
+                                }, undefined)
+                            }, index, false, {
+                                fileName: "src/Pages/MiniCart.jsx",
+                                lineNumber: 36,
+                                columnNumber: 18
+                            }, undefined);
+                        })
+                    }, void 0, false, {
+                        fileName: "src/Pages/MiniCart.jsx",
+                        lineNumber: 34,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "bill-details my-4",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "flex justify-between my-1 text-[#535665] font-thin text-[13px]",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        className: "text-[16px] font-[700] ",
+                                        children: "Subtotal"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/MiniCart.jsx",
+                                        lineNumber: 46,
+                                        columnNumber: 17
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "src/Pages/MiniCart.jsx",
+                                    lineNumber: 45,
+                                    columnNumber: 15
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                    className: "text-[16px] font-[700]",
+                                    children: [
+                                        "₹",
+                                        cartTotal / 100
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/MiniCart.jsx",
+                                    lineNumber: 48,
+                                    columnNumber: 15
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Pages/MiniCart.jsx",
+                            lineNumber: 44,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Pages/MiniCart.jsx",
+                        lineNumber: 43,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                        to: "/cart",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                            className: " w-full bg-[#60b246] text-white py-2",
+                            children: "Checkout"
+                        }, void 0, false, {
+                            fileName: "src/Pages/MiniCart.jsx",
+                            lineNumber: 52,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Pages/MiniCart.jsx",
+                        lineNumber: 51,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/MiniCart.jsx",
+                lineNumber: 33,
+                columnNumber: 9
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/MiniCart.jsx",
+        lineNumber: 19,
+        columnNumber: 10
+    }, undefined);
+};
+_s(MiniCart, "yMyLm0mTOdUD4xRL2vnEhQFbjeY=");
+_c = MiniCart;
+exports.default = MiniCart;
+var _c;
+$RefreshReg$(_c, "MiniCart");
+
+  $parcel$ReactRefreshHelpers$34d6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","./CartItem":"g2qA5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lK9cM":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$4c83 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$4c83.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactShimmerEffects = require("react-shimmer-effects");
+const RestaurantPageShimmer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Resturant-Page",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "Resturant-banner sticky top-0 z-20 bg-[#171a29] px-12 py-12 h-245 flex justify-around items-center ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerThumbnail), {
+                        height: 165,
+                        width: 254,
+                        rounded: true
+                    }, void 0, false, {
+                        fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                        lineNumber: 5,
+                        columnNumber: 9
+                    }, undefined),
+                    ";",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "info relative right-[150px] w-[300px] h-[165px]",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerSectionHeader), {}, void 0, false, {
+                                fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                                lineNumber: 7,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "info-details flex",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerButton), {
+                                        size: "sm"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                                        lineNumber: 9,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    ";",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerButton), {
+                                        size: "sm"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                                        lineNumber: 10,
+                                        columnNumber: 13
+                                    }, undefined),
+                                    ";",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerButton), {
+                                        size: "sm"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                                        lineNumber: 11,
+                                        columnNumber: 13
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                                lineNumber: 8,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                        lineNumber: 6,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "offer h-[165px] w-[300px] flex flex-col",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerBadge), {
+                                width: 240
+                            }, void 0, false, {
+                                fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                                lineNumber: 15,
+                                columnNumber: 11
+                            }, undefined),
+                            ";",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerBadge), {
+                                width: 240
+                            }, void 0, false, {
+                                fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                                lineNumber: 16,
+                                columnNumber: 11
+                            }, undefined),
+                            ";",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerBadge), {
+                                width: 240
+                            }, void 0, false, {
+                                fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                                lineNumber: 17,
+                                columnNumber: 11
+                            }, undefined),
+                            ";"
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                        lineNumber: 14,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                lineNumber: 4,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: " flex w-[700px] justify-between relative left-[220px] ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "widgets relative top-[50px] ",
+                        children: Array(12).fill(1).map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerBadge), {
+                                width: 140
+                            }, index, false, {
+                                fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                                lineNumber: 22,
+                                columnNumber: 51
+                            }, undefined))
+                    }, void 0, false, {
+                        fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                        lineNumber: 21,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "body relative top-[50px] w-[500px] h-[700px]",
+                        children: Array(2).fill(1).map((item, index)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerPostItem), {
+                                card: true,
+                                title: true,
+                                cta: true,
+                                imageType: "thumbnail",
+                                imageWidth: 80,
+                                imageHeight: 80,
+                                contentCenter: true
+                            }, index, false, {
+                                fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                                lineNumber: 25,
+                                columnNumber: 50
+                            }, undefined))
+                    }, void 0, false, {
+                        fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/RestaurantPageShimmer.jsx",
+                lineNumber: 20,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/RestaurantPageShimmer.jsx",
+        lineNumber: 3,
+        columnNumber: 10
+    }, undefined);
+};
+_c = RestaurantPageShimmer;
+exports.default = RestaurantPageShimmer;
+var _c;
+$RefreshReg$(_c, "RestaurantPageShimmer");
+
+  $parcel$ReactRefreshHelpers$4c83.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2h5Kc":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1591 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1591.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _react = require("react");
+var _useAddress = require("../customHooks/useAddress");
+var _s = $RefreshSig$();
+const Header = ()=>{
+    _s();
+    const [cartLength] = (0, _react.useState)(()=>{
+        let length = 0;
+        JSON.parse(localStorage.getItem("orders"))?.map((item)=>length += item.qty);
+        return length;
+    });
+    const address = (0, _useAddress.useAddress)();
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "Header sticky top-0 bg-white z-10 pt-3 pb-2 px-[130px] w-full flex justify-between items-center shadow-xl",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "header-logo w-2/3 flex items-center ",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/homePage",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "logo w-[100px] h-[80px] bg-no-repeat bg-contain bg-center bg-[url('/src/asset/logo.jpeg')]"
+                            }, void 0, false, {
+                                fileName: "src/Pages/Header.jsx",
+                                lineNumber: 15,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Pages/Header.jsx",
+                            lineNumber: 14,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "address",
+                            children: address?.display_name ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                className: "text-[11px] font-[900]",
+                                children: [
+                                    "\uD83D\uDCCD ",
+                                    address?.address?.suburb,
+                                    " ",
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                        className: "text-[9px] font-[100]",
+                                        children: [
+                                            address?.address?.city,
+                                            " ,",
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                                children: address?.address?.country
+                                            }, void 0, false, {
+                                                fileName: "src/Pages/Header.jsx",
+                                                lineNumber: 22,
+                                                columnNumber: 19
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "src/Pages/Header.jsx",
+                                        lineNumber: 20,
+                                        columnNumber: 17
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/Header.jsx",
+                                lineNumber: 18,
+                                columnNumber: 38
+                            }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[10px] font-[100]",
+                                children: "Fetching Location ... "
+                            }, void 0, false, {
+                                fileName: "src/Pages/Header.jsx",
+                                lineNumber: 24,
+                                columnNumber: 25
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Pages/Header.jsx",
+                            lineNumber: 17,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/Header.jsx",
+                    lineNumber: 13,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "Header-Links w-1/3 flex text-[13px] justify-around",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/searchpage",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                    className: "fa-solid fa-magnifying-glass"
+                                }, void 0, false, {
+                                    fileName: "src/Pages/Header.jsx",
+                                    lineNumber: 29,
+                                    columnNumber: 13
+                                }, undefined),
+                                " Search"
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Pages/Header.jsx",
+                            lineNumber: 28,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/aboutUs",
+                            children: "AboutUs"
+                        }, void 0, false, {
+                            fileName: "src/Pages/Header.jsx",
+                            lineNumber: 31,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                            to: "/cart",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                        className: "fa-sharp fa-solid fa-cart-shopping fa-xl"
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/Header.jsx",
+                                        lineNumber: 35,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    cartLength === 0 ? null : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "cart-length rounded-[10px] bottom-10 right-[165px] bg-white h-5 w-5 m-0 pt-[2px] pl-[6px] font-[700] absolute text-[10px] border-[#fc8019] border-[1px] text-[#fc8019] ",
+                                        children: cartLength
+                                    }, void 0, false, {
+                                        fileName: "src/Pages/Header.jsx",
+                                        lineNumber: 37,
+                                        columnNumber: 42
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "src/Pages/Header.jsx",
+                                lineNumber: 34,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "src/Pages/Header.jsx",
+                            lineNumber: 33,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/Header.jsx",
+                    lineNumber: 27,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Pages/Header.jsx",
+            lineNumber: 12,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
+};
+_s(Header, "LFT2OzjhcBD/AsFInyxi3lS3Wds=", false, function() {
+    return [
+        (0, _useAddress.useAddress)
+    ];
+});
+_c = Header;
+exports.default = Header;
+var _c;
+$RefreshReg$(_c, "Header");
+
+  $parcel$ReactRefreshHelpers$1591.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","../customHooks/useAddress":"WZy98","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"WZy98":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$3853 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$3853.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useAddress", ()=>useAddress);
+var _react = require("react");
+var _myApp = require("../MyApp");
+var _s = $RefreshSig$();
+const useAddress = ()=>{
+    _s();
+    const [address, setAddress] = (0, _react.useState)({});
+    const cordinates = (0, _react.useContext)((0, _myApp.locationContext));
+    (0, _react.useEffect)(()=>{
+        const controller = new AbortController();
+        const signal = controller.signal;
+        const getAddress = async ()=>{
+            const location = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${cordinates.latitude}&lon=${cordinates.longitude}&zoom=18&addressdetails=1`, signal).then((res)=>res.json()).catch((err)=>{
+                throw new Error("Something Went Wrong");
+            });
+            setAddress(location);
+        };
+        getAddress();
+        return controller.abort();
+    }, [
+        cordinates
+    ]);
+    if (address?.display_name) return address;
+};
+_s(useAddress, "ME/LODm+NLUoc4zUS41wsCtiGIY=");
+
+  $parcel$ReactRefreshHelpers$3853.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react":"21dqq","../MyApp":"91nZZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"RI2Qh":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$cfe0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$cfe0.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _constants = require("../Utilities/constants");
+const Footer = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "footer w-full bg-black p-10 ",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "container pl-20 pr-16 w-full text-[13px] text-white",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "city-names",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                            className: "text-[20px] ml-2",
+                            children: "We deliver to"
+                        }, void 0, false, {
+                            fileName: "src/Pages/Footer.jsx",
+                            lineNumber: 7,
+                            columnNumber: 9
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                            className: "w-full h-[300px] flex flex-wrap flex-col ",
+                            children: (0, _constants.CITY_NAMES).map((city, index)=>{
+                                return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                    className: "text-[#d6d6da] text-[15px] p-2",
+                                    children: city
+                                }, index, false, {
+                                    fileName: "src/Pages/Footer.jsx",
+                                    lineNumber: 10,
+                                    columnNumber: 18
+                                }, undefined);
+                            })
+                        }, void 0, false, {
+                            fileName: "src/Pages/Footer.jsx",
+                            lineNumber: 8,
+                            columnNumber: 9
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/Footer.jsx",
+                    lineNumber: 6,
+                    columnNumber: 7
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
+                    className: "bg-white mb-5"
+                }, void 0, false, {
+                    fileName: "src/Pages/Footer.jsx",
+                    lineNumber: 15,
+                    columnNumber: 11
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "p-1 ml-[450px]",
+                    children: [
+                        "\xa9 ",
+                        new Date().getFullYear(),
+                        " Hungrig"
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/Footer.jsx",
+                    lineNumber: 16,
+                    columnNumber: 7
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                    className: "p-1",
+                    children: [
+                        "Built with ",
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                            role: "img",
+                            "aria-label": "love",
+                            children: " ❤️ "
+                        }, void 0, false, {
+                            fileName: "src/Pages/Footer.jsx",
+                            lineNumber: 18,
+                            columnNumber: 20
+                        }, undefined),
+                        "by Manik Sharma"
+                    ]
+                }, void 0, true, {
+                    fileName: "src/Pages/Footer.jsx",
+                    lineNumber: 17,
+                    columnNumber: 7
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "src/Pages/Footer.jsx",
+            lineNumber: 5,
+            columnNumber: 5
+        }, undefined)
+    }, void 0, false, {
+        fileName: "src/Pages/Footer.jsx",
+        lineNumber: 3,
+        columnNumber: 22
+    }, undefined);
+_c = Footer;
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$cfe0.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"djTcg":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$baba = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$baba.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactDom = require("react-dom");
+var _reactRouterDom = require("react-router-dom");
+var _constants = require("../Utilities/constants");
+var _myApp = require("../MyApp");
+var _modalContent = require("./ModalContent");
+var _modalContentDefault = parcelHelpers.interopDefault(_modalContent);
+var _s = $RefreshSig$();
+const LandingPage = ()=>{
+    _s();
+    const [text, setText] = (0, _react.useState)("Unexpected Guests");
+    const [showModal, setShowModal] = (0, _react.useState)(true);
+    const [pageStyle, setPageStyle] = (0, _react.useState)((0, _constants.STYLE).modalOn);
+    const location = (0, _react.useContext)((0, _myApp.locationContext));
+    (0, _react.useEffect)(()=>{
+        let timer = 0;
+        let i = 0;
+        timer = setInterval(()=>{
+            setText((0, _constants.TEXTS)[i]);
+            i >= 4 ? i = 0 : i++;
+        }, 2000);
+        return ()=>clearInterval(timer);
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: pageStyle,
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "upper-box flex ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "locationBox w-[850px] h-[550px] ",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "flex flex-col p-12 w-10/12 h-full",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "text-[40px] font-[900] mt-10",
+                                    children: [
+                                        text,
+                                        " ? "
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/LandingPage.jsx",
+                                    lineNumber: 26,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "text-[24px] text-[#686b78] ",
+                                    children: "Order food from your favourite restaurant near you"
+                                }, void 0, false, {
+                                    fileName: "src/Pages/LandingPage.jsx",
+                                    lineNumber: 27,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "btn flex my-10 ",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                            onClick: ()=>{
+                                                location.latitude ? alert(`kindly explore restaurants`) : alert("allow access to location");
+                                            },
+                                            className: "w-[170px] p-3 h-[50px] text-[#686b78] border-[#686b78] border-[1px] mr-10 ",
+                                            children: "\uD83D\uDCCD Locate Me"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/LandingPage.jsx",
+                                            lineNumber: 31,
+                                            columnNumber: 15
+                                        }, undefined),
+                                        !location.latitude ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                            onClick: ()=>{
+                                                alert("allow location to see restaurant near you");
+                                            },
+                                            className: "w-[170px] p-3 h-[50px] bg-[#f5a666] text-white",
+                                            children: "Find Food"
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/LandingPage.jsx",
+                                            lineNumber: 37,
+                                            columnNumber: 37
+                                        }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                                            to: "/homePage",
+                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                                className: "w-[170px] p-3 h-[50px] font-[900] bg-[#fc8019] text-white",
+                                                children: "Find Food"
+                                            }, void 0, false, {
+                                                fileName: "src/Pages/LandingPage.jsx",
+                                                lineNumber: 42,
+                                                columnNumber: 19
+                                            }, undefined)
+                                        }, void 0, false, {
+                                            fileName: "src/Pages/LandingPage.jsx",
+                                            lineNumber: 41,
+                                            columnNumber: 29
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "src/Pages/LandingPage.jsx",
+                                    lineNumber: 30,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "text-[19px] text-[#6f6f73]",
+                                    children: "Popular cities in india"
+                                }, void 0, false, {
+                                    fileName: "src/Pages/LandingPage.jsx",
+                                    lineNumber: 47,
+                                    columnNumber: 13
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    className: "text-[21px] font-[500] text-[#757578] my-3",
+                                    children: "Ahmedabad Bangalore Chennai Jammu Delhi Gurgaon Hyderabad Kolkata Mumbai Pune and more"
+                                }, void 0, false, {
+                                    fileName: "src/Pages/LandingPage.jsx",
+                                    lineNumber: 50,
+                                    columnNumber: 13
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "src/Pages/LandingPage.jsx",
+                            lineNumber: 25,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Pages/LandingPage.jsx",
+                        lineNumber: 24,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "img-1 w-[650] h-[550px]",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                            className: "w-full h-full bg-center bg-contain bg-no-repeat",
+                            src: (0, _constants.LANDING_PAGE_IMG),
+                            alt: "image"
+                        }, void 0, false, {
+                            fileName: "src/Pages/LandingPage.jsx",
+                            lineNumber: 57,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "src/Pages/LandingPage.jsx",
+                        lineNumber: 56,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/LandingPage.jsx",
+                lineNumber: 23,
+                columnNumber: 7
+            }, undefined),
+            showModal && /*#__PURE__*/ (0, _reactDom.createPortal)(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _modalContentDefault.default), {
+                onClose: ()=>{
+                    setShowModal(false);
+                    setPageStyle((0, _constants.STYLE).modalOff);
+                }
+            }, void 0, false, {
+                fileName: "src/Pages/LandingPage.jsx",
+                lineNumber: 60,
+                columnNumber: 34
+            }, undefined), document.body),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "img-2-box w-full h-[450px] px-36 py-16 flex justify-between items-start bg-[#5C4033] ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: (0, _constants.SERVICES_IMG_CLASSNAME),
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "h-[199px] w-[115px] bg-center bg-contain bg-no-repeat",
+                                src: (0, _constants.MIN_ORDER_IMG),
+                                alt: "image"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 66,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[20px] font-[900] text-white",
+                                children: "No minimum order"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 67,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[#e0cbc1] text-[15px]",
+                                children: "Order in for yourself or for the group,"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 68,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[#e0cbc1] text-[15px]",
+                                children: "with no restrictions on order value"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 71,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/LandingPage.jsx",
+                        lineNumber: 65,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: (0, _constants.SERVICES_IMG_CLASSNAME),
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "h-[199px] w-[115px] bg-center bg-contain bg-no-repeat",
+                                src: (0, _constants.TRACK_ORDER_IMG),
+                                alt: "image"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 76,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[20px] font-[900] text-white",
+                                children: "Live Order Tracking"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 77,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[#e0cbc1] text-[15px]",
+                                children: "Know where your order is at all times,"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 80,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[#e0cbc1] text-[15px]",
+                                children: "from the restaurant to your doorstep"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 83,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/LandingPage.jsx",
+                        lineNumber: 75,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: (0, _constants.SERVICES_IMG_CLASSNAME),
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                className: "h-[199px] w-[115px] bg-center bg-contain bg-no-repeat",
+                                src: (0, _constants.FAST_DEL_IMG),
+                                alt: "image"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 88,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[20px] font-[900] text-white",
+                                children: "Lightning-Fast Delivery"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 89,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[#e0cbc1] text-[15px]",
+                                children: "Experience Swiggy's superfast delivery"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 92,
+                                columnNumber: 11
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                className: "text-[#e0cbc1] text-[15px]",
+                                children: "for food delivered fresh and on time"
+                            }, void 0, false, {
+                                fileName: "src/Pages/LandingPage.jsx",
+                                lineNumber: 95,
+                                columnNumber: 11
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/LandingPage.jsx",
+                        lineNumber: 87,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/LandingPage.jsx",
+                lineNumber: 64,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/LandingPage.jsx",
+        lineNumber: 22,
+        columnNumber: 10
+    }, undefined);
+};
+_s(LandingPage, "m8R5GJ74epte+JB7pirl1xr+StE=");
+_c = LandingPage;
+exports.default = LandingPage;
+var _c;
+$RefreshReg$(_c, "LandingPage");
+
+  $parcel$ReactRefreshHelpers$baba.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","../MyApp":"91nZZ","./ModalContent":"hNMfs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hNMfs":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ec6e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ec6e.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const ModalContent = ({ onClose  })=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: " rounded-md w-[350px] h-fit border-[1px] border-gray shadow-2xl absolute bottom-[300px] left-[550px] bg-white flex flex-col justify-centre items-end",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "info px-5 pt-5 w-full text-[14px]",
+                children: "Enable Chrome CORS to access the website by adding a plugin/Extension or starting the browser with web security turned off."
+            }, void 0, false, {
+                fileName: "src/Pages/ModalContent.jsx",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "flex justify-around",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: " px-3 py-2 mt-4 m-6 rounded-sm text-white bg-[#fc8019] border-none",
+                    onClick: onClose,
+                    children: "Close"
+                }, void 0, false, {
+                    fileName: "src/Pages/ModalContent.jsx",
+                    lineNumber: 10,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/ModalContent.jsx",
+                lineNumber: 9,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/ModalContent.jsx",
+        lineNumber: 5,
+        columnNumber: 10
+    }, undefined);
+};
+_c = ModalContent;
+exports.default = ModalContent;
+var _c;
+$RefreshReg$(_c, "ModalContent");
+
+  $parcel$ReactRefreshHelpers$ec6e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cerjK":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$39d5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$39d5.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _reactRouterDom = require("react-router-dom");
+var _constants = require("../Utilities/constants");
+const Error = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex flex-col justify-center items-center w-full h-[700px]",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "bg-centre bg-contain bg-no-repeat w-[340px] h-[260px]",
+                src: (0, _constants.ERROR_IMG)
+            }, void 0, false, {
+                fileName: "src/Pages/Error.jsx",
+                lineNumber: 5,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "w-[430] flex flex-col justify-center items-center",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[#282c3f] text-[32px] mt-2 ",
+                        children: "Page Not Found"
+                    }, void 0, false, {
+                        fileName: "src/Pages/Error.jsx",
+                        lineNumber: 7,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[#93959f] text-[16px]",
+                        children: "Uh-oh! Looks like the page you are trying to access, doesn't"
+                    }, void 0, false, {
+                        fileName: "src/Pages/Error.jsx",
+                        lineNumber: 8,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[#93959f] text-[16px]",
+                        children: "exist. Please start afresh."
+                    }, void 0, false, {
+                        fileName: "src/Pages/Error.jsx",
+                        lineNumber: 11,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/Error.jsx",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: "/homePage",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: " px-3 py-2 mt-4 rounded-sm text-white bg-[#fc8019] border-none",
+                    children: "Go Home"
+                }, void 0, false, {
+                    fileName: "src/Pages/Error.jsx",
+                    lineNumber: 16,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/Error.jsx",
+                lineNumber: 15,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/Error.jsx",
+        lineNumber: 4,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Error;
+exports.default = Error;
+var _c;
+$RefreshReg$(_c, "Error");
+
+  $parcel$ReactRefreshHelpers$39d5.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6kCHU":[function(require,module,exports) {
+module.exports = require("f7177aad69e84f4b")(require("f60b5f7c8f167ce1").getBundleURL("5cfN0") + "SearchPage.39e008e8.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("h0jL8"));
+
+},{"f7177aad69e84f4b":"61B45","f60b5f7c8f167ce1":"lgJ39"}],"61B45":[function(require,module,exports) {
+"use strict";
+var cacheLoader = require("dbe6c88f24e4d43f");
+module.exports = cacheLoader(function(bundle) {
+    return new Promise(function(resolve, reject) {
+        // Don't insert the same script twice (e.g. if it was already in the HTML)
+        var existingScripts = document.getElementsByTagName("script");
+        if ([].concat(existingScripts).some(function isCurrentBundle(script) {
+            return script.src === bundle;
+        })) {
+            resolve();
+            return;
+        }
+        var preloadLink = document.createElement("link");
+        preloadLink.href = bundle;
+        preloadLink.rel = "preload";
+        preloadLink.as = "script";
+        document.head.appendChild(preloadLink);
+        var script = document.createElement("script");
+        script.async = true;
+        script.type = "text/javascript";
+        script.src = bundle;
+        script.onerror = function(e) {
+            var error = new TypeError("Failed to fetch dynamically imported module: ".concat(bundle, ". Error: ").concat(e.message));
+            script.onerror = script.onload = null;
+            script.remove();
+            reject(error);
+        };
+        script.onload = function() {
+            script.onerror = script.onload = null;
+            resolve();
+        };
+        document.getElementsByTagName("head")[0].appendChild(script);
+    });
+});
+
+},{"dbe6c88f24e4d43f":"j49pS"}],"j49pS":[function(require,module,exports) {
+"use strict";
+var cachedBundles = {};
+var cachedPreloads = {};
+var cachedPrefetches = {};
+function getCache(type) {
+    switch(type){
+        case "preload":
+            return cachedPreloads;
+        case "prefetch":
+            return cachedPrefetches;
+        default:
+            return cachedBundles;
+    }
+}
+module.exports = function(loader, type) {
+    return function(bundle) {
+        var cache = getCache(type);
+        if (cache[bundle]) return cache[bundle];
+        return cache[bundle] = loader.apply(null, arguments).catch(function(e) {
+            delete cache[bundle];
+            throw e;
+        });
+    };
+};
+
+},{}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"iOQdU":[function(require,module,exports) {
+module.exports = require("2c989d651b0dce95")(require("bb65f221ba6017e").getBundleURL("5cfN0") + "SearchResults.0d3eb75b.js" + "?" + Date.now()).catch((err)=>{
+    delete module.bundle.cache[module.id];
+    throw err;
+}).then(()=>module.bundle.root("v2HEr"));
+
+},{"2c989d651b0dce95":"61B45","bb65f221ba6017e":"lgJ39"}]},["1xC6H","82D6y","7dhfe"], "7dhfe", "parcelRequireb877")
 
 //# sourceMappingURL=index.97a9311a.js.map

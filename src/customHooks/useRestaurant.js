@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { locationContext } from "../Utilities/MyApp";
+import { locationContext } from "../MyApp";
 import { ShimmerThumbnail } from "react-shimmer-effects";
 
 const useRestaurant = (resturants, setRestaurants) => {

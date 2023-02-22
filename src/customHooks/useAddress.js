@@ -1,5 +1,5 @@
 import { useEffect,useContext, useState } from "react";
-import { locationContext } from "../Utilities/MyApp";
+import { locationContext } from "../MyApp";
 export const useAddress = () => {
   const [address, setAddress] = useState({});
   const cordinates = useContext(locationContext);
