@@ -5,23 +5,29 @@ import ResturantPage from "../Pages/ResturantPage";
 import { createBrowserRouter, Outlet } from "react-router-dom";
 import Header from "../Pages/Header";
 import Footer from "../Pages/Footer";
-import SearchPage from "../Pages/SearchPage";
-import SearchResults from "../Pages/SearchResults";
 import LandingPage from "../Pages/LandingPage";
 import ErrorElement from "../Pages/ErrorElement";
-import { createContext, useEffect, useState } from "react";
+import { createContext, lazy, Suspense, useEffect, useState } from "react";
 
 export const locationContext = createContext();
 export const getLocation = (setState) => {
   navigator.geolocation.getCurrentPosition(
-    (pos) => {setState(pos.coords)
-    return pos.coords},
-    (err) => { throw new Error('allow location to see rest near u')}
+    (pos) => {
+      setState(pos.coords);
+      return pos.coords;
+    },
+    (err) => {
+      throw new Error("allow location to see rest near u");
+    }
   );
 };
+
+const SearchPage = lazy(() => import("../Pages/SearchPage"));
+const SearchResults = lazy(() => import("../Pages/SearchResults"));
+
 const App = () => {
   const [location, setLocation] = useState({});
-  
+
   useEffect(() => {
     getLocation(setLocation);
   }, []);
@@ -33,6 +39,7 @@ const App = () => {
     </locationContext.Provider>
   );
 };
+
 export const MyRouter = createBrowserRouter([
   {
     path: "/",
@@ -65,9 +72,20 @@ export const MyRouter = createBrowserRouter([
       },
       {
         path: "/searchpage",
-        element: <SearchPage />,
+        element: (
+          <Suspense>
+            <SearchPage />
+          </Suspense>
+        ),
       },
-      { path: "/searchResults", element: <SearchResults /> },
+      {
+        path: "/searchResults",
+        element: (
+          <Suspense>
+            <SearchResults />
+          </Suspense>
+        ),
+      },
     ],
   },
 ]);
