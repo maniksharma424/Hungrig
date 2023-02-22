@@ -32004,7 +32004,7 @@ $RefreshReg$(_c2, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Pages/Homepage":"6540u","../Pages/Cart":"3PdSH","../Pages/About":"9TUQf","../Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","../Pages/Header":"2h5Kc","../Pages/Footer":"RI2Qh","../Pages/LandingPage":"djTcg","../Pages/ErrorElement":"2S7pN","react":"21dqq","2b30a17d093dd956":"6IbKI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","2997ce9af7c6d47b":"gEmN8"}],"6540u":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Pages/Homepage":"6540u","../Pages/Cart":"3PdSH","../Pages/About":"9TUQf","../Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","../Pages/Header":"2h5Kc","../Pages/Footer":"RI2Qh","../Pages/LandingPage":"djTcg","react":"21dqq","2b30a17d093dd956":"6IbKI","2997ce9af7c6d47b":"gEmN8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Pages/ErrorElement":"2S7pN"}],"6540u":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$16f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37031,36 +37031,7 @@ $RefreshReg$(_c, "LandingPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","../Utilities/MyApp":"aw7YL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2S7pN":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$1959 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$1959.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-const ErrorElement = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: "err page"
-    }, void 0, false, {
-        fileName: "src/Pages/ErrorElement.jsx",
-        lineNumber: 2,
-        columnNumber: 10
-    }, undefined);
-};
-_c = ErrorElement;
-exports.default = ErrorElement;
-var _c;
-$RefreshReg$(_c, "ErrorElement");
-
-  $parcel$ReactRefreshHelpers$1959.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6IbKI":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","../Utilities/MyApp":"aw7YL","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6IbKI":[function(require,module,exports) {
 module.exports = require("12e83404a697ed2")(require("2eb4cf79908bb4f0").getBundleURL("5MzDn") + "SearchPage.39e008e8.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
@@ -37168,6 +37139,35 @@ module.exports = require("bd6cd68a127f9c52")(require("86028bca23e80f3b").getBund
     throw err;
 }).then(()=>module.bundle.root("v2HEr"));
 
-},{"bd6cd68a127f9c52":"61B45","86028bca23e80f3b":"lgJ39"}]},["1xC6H","dl2Sr","8h89G"], "8h89G", "parcelRequireb877")
+},{"bd6cd68a127f9c52":"61B45","86028bca23e80f3b":"lgJ39"}],"2S7pN":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$1959 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$1959.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+const ErrorElement = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        children: "err page"
+    }, void 0, false, {
+        fileName: "src/Pages/ErrorElement.jsx",
+        lineNumber: 2,
+        columnNumber: 10
+    }, undefined);
+};
+_c = ErrorElement;
+exports.default = ErrorElement;
+var _c;
+$RefreshReg$(_c, "ErrorElement");
+
+  $parcel$ReactRefreshHelpers$1959.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","dl2Sr","8h89G"], "8h89G", "parcelRequireb877")
 
 //# sourceMappingURL=index.c3f022c4.js.map
