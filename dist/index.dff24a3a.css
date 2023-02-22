@@ -399,6 +399,10 @@ img, video {
   left: 550px;
 }
 
+.bottom-9 {
+  bottom: 2.25rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -1005,6 +1009,11 @@ img, video {
   border-color: rgb(100 116 139 / var(--tw-border-opacity));
 }
 
+.border-slate-100 {
+  --tw-border-opacity: 1;
+  border-color: rgb(241 245 249 / var(--tw-border-opacity));
+}
+
 .border-opacity-50 {
   --tw-border-opacity: .5;
 }
@@ -1310,6 +1319,10 @@ img, video {
 
 .pt-5 {
   padding-top: 1.25rem;
+}
+
+.pb-1 {
+  padding-bottom: .25rem;
 }
 
 .text-\[18px\] {
