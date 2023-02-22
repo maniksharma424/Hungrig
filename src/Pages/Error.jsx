@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+ import { Link } from "react-router-dom";
 import { ERROR_IMG } from "../Utilities/constants";
 const Error = () => {
   return (
