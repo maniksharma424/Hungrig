@@ -660,10 +660,6 @@ img, video {
   height: 333px;
 }
 
-.h-\[500px\] {
-  height: 500px;
-}
-
 .max-h-fit {
   max-height: -moz-fit-content;
   max-height: fit-content;
@@ -1013,10 +1009,6 @@ img, video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-}
-
-.bg-\[\] {
-  background-color: ;
 }
 
 .bg-\[\#f5a666\] {
