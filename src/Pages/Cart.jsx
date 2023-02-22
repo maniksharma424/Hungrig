@@ -4,6 +4,7 @@ import EmptyCart from "./EmptyCart";
 import { useSelector } from "react-redux";
 
 export const Cart = () => {
+  scrollTo(0,0)
   let totalAmount = 0;
 
   const cartItems = useSelector((store) => store.cart.items);

@@ -34591,6 +34591,7 @@ var _reactRedux = require("react-redux");
 var _s = $RefreshSig$();
 const Cart = ()=>{
     _s();
+    scrollTo(0, 0);
     let totalAmount = 0;
     const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
     cartItems.map((item)=>{
@@ -34598,7 +34599,7 @@ const Cart = ()=>{
     });
     if (cartItems?.length <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _emptyCartDefault.default), {}, void 0, false, {
         fileName: "src/Pages/Cart.jsx",
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 38
     }, undefined);
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34616,12 +34617,12 @@ const Cart = ()=>{
                                 src: (0, _constants.IMAGE_URL) + cartItems[0]?.restaurant?.cloudinaryImageId
                             }, void 0, false, {
                                 fileName: "src/Pages/Cart.jsx",
-                                lineNumber: 15,
+                                lineNumber: 16,
                                 columnNumber: 15
                             }, undefined)
                         }, void 0, false, {
                             fileName: "src/Pages/Cart.jsx",
-                            lineNumber: 14,
+                            lineNumber: 15,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34632,7 +34633,7 @@ const Cart = ()=>{
                                     children: cartItems[0]?.restaurant?.name
                                 }, void 0, false, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 18,
+                                    lineNumber: 19,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -34640,19 +34641,19 @@ const Cart = ()=>{
                                     children: cartItems[0]?.restaurant?.locality
                                 }, void 0, false, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 22,
+                                    lineNumber: 23,
                                     columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/Pages/Cart.jsx",
-                            lineNumber: 17,
+                            lineNumber: 18,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Pages/Cart.jsx",
-                    lineNumber: 13,
+                    lineNumber: 14,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34665,18 +34666,18 @@ const Cart = ()=>{
                                         cartItem: item
                                     }, void 0, false, {
                                         fileName: "src/Pages/Cart.jsx",
-                                        lineNumber: 31,
+                                        lineNumber: 32,
                                         columnNumber: 21
                                     }, undefined)
                                 }, index, false, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 30,
+                                    lineNumber: 31,
                                     columnNumber: 20
                                 }, undefined);
                             })
                         }, void 0, false, {
                             fileName: "src/Pages/Cart.jsx",
-                            lineNumber: 28,
+                            lineNumber: 29,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34687,7 +34688,7 @@ const Cart = ()=>{
                                     children: "❝"
                                 }, void 0, false, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 36,
+                                    lineNumber: 37,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -34696,13 +34697,13 @@ const Cart = ()=>{
                                     type: "text"
                                 }, void 0, false, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 37,
+                                    lineNumber: 38,
                                     columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/Pages/Cart.jsx",
-                            lineNumber: 35,
+                            lineNumber: 36,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34712,7 +34713,7 @@ const Cart = ()=>{
                                     type: "checkbox"
                                 }, void 0, false, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 41,
+                                    lineNumber: 42,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34723,7 +34724,7 @@ const Cart = ()=>{
                                             children: "Opt in for No-contact Delivery"
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 43,
+                                            lineNumber: 44,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -34731,19 +34732,19 @@ const Cart = ()=>{
                                             children: "Unwell, or avoiding contact? Please select no-contact delivery. Partner will safely place the order outside your door (not for COD)"
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 46,
+                                            lineNumber: 47,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 42,
+                                    lineNumber: 43,
                                     columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/Pages/Cart.jsx",
-                            lineNumber: 40,
+                            lineNumber: 41,
                             columnNumber: 13
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34753,7 +34754,7 @@ const Cart = ()=>{
                                     children: "Bill details"
                                 }, void 0, false, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 54,
+                                    lineNumber: 55,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -34763,20 +34764,20 @@ const Cart = ()=>{
                                             children: "Item Total"
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 56,
+                                            lineNumber: 57,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                             children: totalAmount
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 57,
+                                            lineNumber: 58,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 55,
+                                    lineNumber: 56,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -34787,7 +34788,7 @@ const Cart = ()=>{
                                             children: "Delivery Partner Fee"
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 60,
+                                            lineNumber: 61,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -34795,18 +34796,18 @@ const Cart = ()=>{
                                             children: "FREE"
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 63,
+                                            lineNumber: 64,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 59,
+                                    lineNumber: 60,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 67,
+                                    lineNumber: 68,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -34816,27 +34817,27 @@ const Cart = ()=>{
                                             children: "Govt Taxes And Charges"
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 69,
+                                            lineNumber: 70,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                             children: "₹35.7"
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 70,
+                                            lineNumber: 71,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 68,
+                                    lineNumber: 69,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {
                                     className: "border-black border-[.5px] "
                                 }, void 0, false, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 72,
+                                    lineNumber: 73,
                                     columnNumber: 15
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
@@ -34846,32 +34847,32 @@ const Cart = ()=>{
                                             children: "To Pay"
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 74,
+                                            lineNumber: 75,
                                             columnNumber: 17
                                         }, undefined),
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                             children: totalAmount + 35.7
                                         }, void 0, false, {
                                             fileName: "src/Pages/Cart.jsx",
-                                            lineNumber: 75,
+                                            lineNumber: 76,
                                             columnNumber: 17
                                         }, undefined)
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Pages/Cart.jsx",
-                                    lineNumber: 73,
+                                    lineNumber: 74,
                                     columnNumber: 15
                                 }, undefined)
                             ]
                         }, void 0, true, {
                             fileName: "src/Pages/Cart.jsx",
-                            lineNumber: 53,
+                            lineNumber: 54,
                             columnNumber: 13
                         }, undefined)
                     ]
                 }, void 0, true, {
                     fileName: "src/Pages/Cart.jsx",
-                    lineNumber: 27,
+                    lineNumber: 28,
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -34881,23 +34882,23 @@ const Cart = ()=>{
                         children: "Place Order"
                     }, void 0, false, {
                         fileName: "src/Pages/Cart.jsx",
-                        lineNumber: 80,
+                        lineNumber: 81,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/Pages/Cart.jsx",
-                    lineNumber: 79,
+                    lineNumber: 80,
                     columnNumber: 11
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/Pages/Cart.jsx",
-            lineNumber: 12,
+            lineNumber: 13,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/Cart.jsx",
-        lineNumber: 11,
+        lineNumber: 12,
         columnNumber: 64
     }, undefined);
 };
