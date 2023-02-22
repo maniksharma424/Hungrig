@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import {
   FAST_DEL_IMG,
@@ -7,25 +8,29 @@ import {
   SERVICES_IMG_CLASSNAME,
   TRACK_ORDER_IMG,
 } from "../Utilities/constants";
-import {locationContext } from "../Utilities/MyApp";
-const TEXTS = ["Hungry", "Cooking Gone Wrong", "Movie marathon", "Game night",'Unexpected Guests'];
+import { locationContext } from "../Utilities/MyApp";
+import ModalContent from "./ModalContent";
+import { TEXTS, STYLE } from "../Utilities/constants";
 
 const LandingPage = () => {
   const [text, setText] = useState("Unexpected Guests");
+  const [showModal, setShowModal] = useState(true);
+  const [pageStyle, setPageStyle] = useState(STYLE.modalOn);
   const location = useContext(locationContext);
+
   useEffect(() => {
     let timer = 0;
     let i = 0;
-   timer =  setInterval(() => {
-      setText(TEXTS[i])
-      i>= 4 ? i = 0:i++
+    timer = setInterval(() => {
+      setText(TEXTS[i]);
+      i >= 4 ? (i = 0) : i++;
     }, 2000);
 
-return ()=> clearInterval(timer)
+    return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="LandingPage w-full">
+    <div className={pageStyle}>
       <div className="upper-box flex  ">
         <div className="locationBox w-[850px] h-[550px] ">
           <div className="flex flex-col p-12 w-10/12 h-full">
@@ -36,7 +41,9 @@ return ()=> clearInterval(timer)
             <div className="btn flex my-10  ">
               <button
                 onClick={() => {
-                  location.latitude ?alert(`kindly explore restaurants`):alert('allow access to location')
+                  location.latitude
+                    ? alert(`kindly explore restaurants`)
+                    : alert("allow access to location");
                 }}
                 className="w-[170px] p-3 h-[50px]  text-[#686b78] 
               border-[#686b78] border-[1px] mr-10 "
@@ -77,7 +84,16 @@ return ()=> clearInterval(timer)
           />
         </div>
       </div>
-
+      {showModal &&
+        createPortal(
+          <ModalContent
+            onClose={() => {
+              setShowModal(false);
+              setPageStyle(STYLE.modalOff);
+            }}
+          />,
+          document.body
+        )}
       <div className="img-2-box w-full h-[450px] px-36 py-16 flex justify-between items-start bg-[#5C4033] ">
         <div className={SERVICES_IMG_CLASSNAME}>
           <img
