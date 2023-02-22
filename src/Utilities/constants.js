@@ -57,9 +57,7 @@ export const TRACK_ORDER_IMG = "https://res.cloudinary.com/swiggy/image/upload/f
 export const FAST_DEL_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_248,h_376/4x_-_Super_fast_delivery_awv7sn"
 export const SERVICES_IMG_CLASSNAME = "img-1 w-[270px] h-[333px] flex flex-col items-center justify-centre"
 export const LANDING_PAGE_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_1340/Lunch1_vlksgq"
-export const CITY_NAMES =['Delhi', 'Mumbai', ,'Bangalore', 'Kolkata', 'Hyderabad', 'Ahmedabad', 'Chennai', 'Pune', 'Jaipur',"Jammu", 'Surat','Srinagar',              'Lucknow', 'Nagpur', 'Visakhapatnam', 'Bhopal', 'Patna', 'Ludhiana', 'Agra', 'Nashik', 'Vadodara', 'Ghaziabad',              'Rajkot', 'Meerut', 'Amritsar', 'Varanasi', 'Aurangabad', 'Jabalpur', 'Gwalior', 'Vijayawada', 'Jodhpur','Mount Tabu','Patna','Bihar','Kanpur'
-
-]
+export const CITY_NAMES =['Delhi', 'Mumbai', ,'Bangalore', 'Kolkata', 'Hyderabad', 'Ahmedabad', 'Chennai', 'Pune', 'Jaipur',"Jammu", 'Surat','Srinagar',              'Lucknow', 'Nagpur', 'Visakhapatnam', 'Bhopal', 'Patna', 'Ludhiana', 'Agra', 'Nashik', 'Vadodara', 'Ghaziabad',              'Rajkot', 'Meerut', 'Amritsar', 'Varanasi', 'Aurangabad', 'Jabalpur', 'Gwalior', 'Vijayawada', 'Jodhpur','Mount Tabu','Patna','Bihar','Kanpur']
 export const ABOUT_US = `Manik Sharma is an aspiring front-end developer who specializes in JavaScript and React. He has a passion for web development and a deep understanding of the latest technologies and trends in the industry. With a focus on user experience and accessibility, Manik brings creativity and technical expertise to every project he works on.
 
 Manik has extensive experience in JavaScript, a versatile programming language that is widely used for front-end development. He has a strong understanding of the language's core concepts and is skilled in using JavaScript to create dynamic and interactive web experiences.
@@ -72,3 +70,4 @@ Manik is a proactive problem-solver and a dedicated team player. He is always st
 
 
 .`
+export const ERROR_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/empty_404_3x_rgdw87"

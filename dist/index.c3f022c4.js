@@ -31859,8 +31859,8 @@ var _footer = require("../Pages/Footer");
 var _footerDefault = parcelHelpers.interopDefault(_footer);
 var _landingPage = require("../Pages/LandingPage");
 var _landingPageDefault = parcelHelpers.interopDefault(_landingPage);
-var _errorElement = require("../Pages/ErrorElement");
-var _errorElementDefault = parcelHelpers.interopDefault(_errorElement);
+var _error = require("../Pages/Error");
+var _errorDefault = parcelHelpers.interopDefault(_error);
 var _react = require("react");
 var _s = $RefreshSig$();
 const locationContext = /*#__PURE__*/ (0, _react.createContext)();
@@ -31869,7 +31869,7 @@ const getLocation = (setState)=>{
         setState(pos.coords);
         return pos.coords;
     }, (err)=>{
-        throw new Error("allow location to see rest near u");
+        throw new (0, _errorDefault.default)("allow location to see rest near u");
     });
 };
 const SearchPage = /*#__PURE__*/ (0, _react.lazy)(()=>require("2b30a17d093dd956"));
@@ -31917,7 +31917,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
             lineNumber: 35,
             columnNumber: 12
         }, undefined),
-        errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorElementDefault.default), {}, void 0, false, {
+        errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/Utilities/MyApp.js",
             lineNumber: 36,
             columnNumber: 17
@@ -32004,7 +32004,11 @@ $RefreshReg$(_c2, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
+<<<<<<< HEAD
 },{"react/jsx-dev-runtime":"iTorj","../Pages/Homepage":"6540u","../Pages/Cart":"3PdSH","../Pages/About":"9TUQf","../Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","../Pages/Header":"2h5Kc","../Pages/Footer":"RI2Qh","../Pages/LandingPage":"djTcg","react":"21dqq","2b30a17d093dd956":"6IbKI","2997ce9af7c6d47b":"gEmN8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Pages/ErrorElement":"2S7pN"}],"6540u":[function(require,module,exports) {
+=======
+},{"react/jsx-dev-runtime":"iTorj","../Pages/Homepage":"6540u","../Pages/Cart":"3PdSH","../Pages/About":"9TUQf","../Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","../Pages/Header":"2h5Kc","../Pages/Footer":"RI2Qh","../Pages/LandingPage":"djTcg","react":"21dqq","2b30a17d093dd956":"6IbKI","2997ce9af7c6d47b":"gEmN8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../Pages/Error":"cerjK"}],"6540u":[function(require,module,exports) {
+>>>>>>> master
 var $parcel$ReactRefreshHelpers$16f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -32363,6 +32367,7 @@ parcelHelpers.export(exports, "SERVICES_IMG_CLASSNAME", ()=>SERVICES_IMG_CLASSNA
 parcelHelpers.export(exports, "LANDING_PAGE_IMG", ()=>LANDING_PAGE_IMG);
 parcelHelpers.export(exports, "CITY_NAMES", ()=>CITY_NAMES);
 parcelHelpers.export(exports, "ABOUT_US", ()=>ABOUT_US);
+parcelHelpers.export(exports, "ERROR_IMG", ()=>ERROR_IMG);
 const Popular_Cuisines = [
     {
         id: "600608",
@@ -32472,6 +32477,7 @@ Manik is a proactive problem-solver and a dedicated team player. He is always st
 
 
 .`;
+const ERROR_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/empty_404_3x_rgdw87";
 
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5ORgO":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -37139,16 +37145,25 @@ module.exports = require("bd6cd68a127f9c52")(require("86028bca23e80f3b").getBund
     throw err;
 }).then(()=>module.bundle.root("v2HEr"));
 
+<<<<<<< HEAD
 },{"bd6cd68a127f9c52":"61B45","86028bca23e80f3b":"lgJ39"}],"2S7pN":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1959 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
 $parcel$ReactRefreshHelpers$1959.prelude(module);
+=======
+},{"bd6cd68a127f9c52":"61B45","86028bca23e80f3b":"lgJ39"}],"cerjK":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$39d5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$39d5.prelude(module);
+>>>>>>> master
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
+<<<<<<< HEAD
 const ErrorElement = ()=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         children: "err page"
@@ -37164,10 +37179,91 @@ var _c;
 $RefreshReg$(_c, "ErrorElement");
 
   $parcel$ReactRefreshHelpers$1959.postlude(module);
+=======
+var _reactRouterDom = require("react-router-dom");
+var _constants = require("../Utilities/constants");
+const Error = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "flex flex-col justify-center items-center w-full h-[700px]",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                className: "bg-centre bg-contain bg-no-repeat w-[340px] h-[260px]",
+                src: (0, _constants.ERROR_IMG)
+            }, void 0, false, {
+                fileName: "src/Pages/Error.jsx",
+                lineNumber: 5,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "w-[430] flex flex-col justify-center items-center",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[#282c3f] text-[32px] mt-2 ",
+                        children: "Page Not Found"
+                    }, void 0, false, {
+                        fileName: "src/Pages/Error.jsx",
+                        lineNumber: 7,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[#93959f] text-[16px]",
+                        children: "Uh-oh! Looks like the page you are trying to access, doesn't"
+                    }, void 0, false, {
+                        fileName: "src/Pages/Error.jsx",
+                        lineNumber: 8,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[#93959f] text-[16px]",
+                        children: "exist. Please start afresh."
+                    }, void 0, false, {
+                        fileName: "src/Pages/Error.jsx",
+                        lineNumber: 11,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/Error.jsx",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
+                to: "/homePage",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                    className: " px-3 py-2 mt-4 rounded-sm text-white bg-[#fc8019] border-none",
+                    children: "Go Home"
+                }, void 0, false, {
+                    fileName: "src/Pages/Error.jsx",
+                    lineNumber: 16,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "src/Pages/Error.jsx",
+                lineNumber: 15,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/Error.jsx",
+        lineNumber: 4,
+        columnNumber: 10
+    }, undefined);
+};
+_c = Error;
+exports.default = Error;
+var _c;
+$RefreshReg$(_c, "Error");
+
+  $parcel$ReactRefreshHelpers$39d5.postlude(module);
+>>>>>>> master
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
+<<<<<<< HEAD
 },{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","dl2Sr","8h89G"], "8h89G", "parcelRequireb877")
+=======
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","dl2Sr","8h89G"], "8h89G", "parcelRequireb877")
+>>>>>>> master
 
 //# sourceMappingURL=index.c3f022c4.js.map

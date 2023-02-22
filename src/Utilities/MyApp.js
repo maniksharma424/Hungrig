@@ -6,7 +6,7 @@ import { createBrowserRouter, Outlet } from "react-router-dom";
 import Header from "../Pages/Header";
 import Footer from "../Pages/Footer";
 import LandingPage from "../Pages/LandingPage";
-import ErrorElement from "../Pages/ErrorElement";
+import Error from "../Pages/Error";
 import { createContext, lazy, Suspense, useEffect, useState } from "react";
 
 export const locationContext = createContext();
@@ -44,7 +44,7 @@ export const MyRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement: <ErrorElement />,
+    errorElement:<Error />,
 
     children: [
       {
