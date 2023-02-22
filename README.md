@@ -26,11 +26,12 @@ Open your favorite code editor and run locally!
 
 ## Features 
 
-- Homepage
+- LazyLoading
+- GeoCoding
 - Products Listing Page
 - Filters based on different parameters
 - Cart Management
-- GeoCoding
+
 
 <img width="1000" height="500" alt="Screenshot 2023-02-21 at 3 03 40 PM" src="https://user-images.githubusercontent.com/115614705/220306200-232d14d7-0887-42a7-9d85-d13005d8c874.png">
 
@@ -40,6 +41,7 @@ Open your favorite code editor and run locally!
 
 ## Tech Stack
 - React.js
+- @reduxjs/toolkit
 - React-router
 - TailwindCss
 
