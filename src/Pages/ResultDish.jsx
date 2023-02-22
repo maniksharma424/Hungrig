@@ -1,9 +1,11 @@
-import { addToCart } from "../Utilities/helpers";
 import { IMAGE_URL } from "../Utilities/constants";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addItem } from "../Utilities/cartSlice";
 
 const ResultDish = ({ Dish }) => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const dispatch  = useDispatch()
 
   return (
     <div className="Search-Result-Dish-Card bg-white w-[300px] p-2 m-4 rounded-lg h-[200px]  flex hover:cursor-pointer  justify-evenly ">
@@ -65,11 +67,11 @@ const ResultDish = ({ Dish }) => {
           className=" bg-white border-opacity-50 border-[1px] border-slate-500 px-4 text-green-600 shadow-md relative left-[9px] bottom-[15px]"
           onClick={(e) => {
             e.preventDefault();
-            addToCart({
-              dish: Dish?.info,
-              restaurant: Dish?.restaurant?.info,
-              qty: 1,
-            });
+            dispatch(addItem({
+                dish: Dish?.info,
+                restaurant: Dish?.restaurant?.info,
+                qty: 1,
+              }))
           }}
         >
           Add

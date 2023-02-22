@@ -8,7 +8,8 @@ import Footer from "./Pages/Footer";
 import LandingPage from "./Pages/LandingPage";
 import Error from "./Pages/Error";
 import { createContext, lazy, Suspense, useEffect, useState } from "react";
-
+import { Provider } from "react-redux";
+import store from "./Utilities/store";
 
 export const locationContext = createContext();
 export const getLocation = (setState) => {
@@ -33,11 +34,13 @@ const App = () => {
     getLocation(setLocation);
   }, []);
   return (
+    <Provider store={store}>
     <locationContext.Provider value={location}>
       <Header />
       <Outlet />
       <Footer />
     </locationContext.Provider>
+    </Provider>
   );
 };
 

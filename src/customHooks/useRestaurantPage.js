@@ -25,7 +25,7 @@ const useRestaurantPage = (resturantID, setMenu, setFilteredMenu) => {
     setFilteredMenu
   ) => {
     const response = await fetch(
-      `https://www.swiggy.com/dapi/menu/v4/full?$lat=${cordinates.latitude}&lng=${cordinates.longitude}&menuId=${resturantID}`,
+      `https://www.swiggy.com/dapi/menu/v4/full?$lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&menuId=${resturantID}`,
       signal
     )
       .then((res) => res.json())

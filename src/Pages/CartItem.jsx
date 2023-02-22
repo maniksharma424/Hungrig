@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { addToCart, decrement } from "../Utilities/helpers";
+import { useDispatch } from "react-redux";
+import { addItem, removeItem } from "../Utilities/cartSlice";
 
-const CartItem = ({ cartItem, updateParent }) => {
-  const [count, setCount] = useState(cartItem?.qty);
+const CartItem = ({ cartItem }) => {
+  const dispatch = useDispatch();
 
   return (
     <div className="Item-info flex justify-between h-fit  items-center  mt-3">
@@ -18,10 +18,7 @@ const CartItem = ({ cartItem, updateParent }) => {
         <button
           className=" w-1/3 text-[20px] text-[#bebfc5]"
           onClick={() => {
-            location.reload();
-            setCount((n) => n - 1);
-            decrement(cartItem);
-            updateParent();
+            dispatch(removeItem(cartItem));
           }}
         >
           -
@@ -32,14 +29,13 @@ const CartItem = ({ cartItem, updateParent }) => {
         <button
           className="w-1/3 text-[20px] text-[#60b246]"
           onClick={() => {
-            location.reload();
-            setCount((n) => n + 1);
-            addToCart({
-              dish: cartItem?.dish,
-              restaurant: cartItem?.restaurant,
-              qty: cartItem?.qty + 1,
-            });
-            updateParent();
+            dispatch(
+              addItem({
+                dish: cartItem?.dish,
+                restaurant: cartItem?.restaurant,
+                qty: cartItem?.qty + 1,
+              })
+            );
           }}
         >
           +

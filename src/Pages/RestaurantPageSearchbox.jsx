@@ -6,7 +6,7 @@ const RestaurantPageSearchbox = ({menu,setFilteredMenu}) => {
     const [isVeg, setIsVeg] = useState(false);
 
   return (
-    <div className="Resturant-Page-Input-Field sticky    w-[530px] z-30 top-[255px] left-[405px] bottom-[32px] flex justify-between p-2 text-[white]">
+    <div className="Resturant-Page-Input-Field sticky    w-[530px] z-30 top-[195px] left-[405px] bottom-[32px] flex justify-between p-2 text-[white]">
     <label className="bg-white p-4 px-8 flex justify-start items-center shadow-xl text-[black]  ">
       <i class="fa-solid fa-magnifying-glass fa-lg relative right-[10px]"></i>
 

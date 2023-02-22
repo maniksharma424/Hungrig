@@ -9,7 +9,7 @@ export const useAddress = () => {
     const signal = controller.signal;
     const getAddress = async () => {
       const location = await fetch(
-        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${cordinates.latitude}&lon=${cordinates.longitude}&zoom=18&addressdetails=1`,
+        `https://nominatim.openstreetmap.org/reverse?format=json&lat=${cordinates?.latitude}&lon=${cordinates?.longitude}&zoom=18&addressdetails=1`,
 
         signal
       )
