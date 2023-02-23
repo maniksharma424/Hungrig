@@ -11,7 +11,7 @@ const RestaurantPageBody = ({
   filteredMenu,
   setFilteredMenu,
 }) => {
-  const cartItems = useSelector(store=>store.cart.items)
+  const cartItems = useSelector(store=>store?.cart?.items)
   return (
     <div className="Resturant-Menu-Body w-11/12    justify-start flex">
       <div className="Resturant-Categories  w-[410px] overflow-scroll  sticky top-[310px] z-10 pr-2   h-fit flex flex-col">

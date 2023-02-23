@@ -32014,7 +32014,7 @@ $RefreshReg$(_c2, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./Pages/Homepage":"6540u","./Pages/Cart":"3PdSH","./Pages/About":"9TUQf","./Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","./Pages/Header":"2h5Kc","./Pages/Footer":"RI2Qh","./Pages/LandingPage":"djTcg","./Pages/Error":"cerjK","react":"21dqq","f96ccf8d2cec13a8":"6kCHU","d0d8d8e53de11ad2":"iOQdU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","./Utilities/store":"cJCRp"}],"6540u":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./Pages/Homepage":"6540u","./Pages/Cart":"3PdSH","./Pages/About":"9TUQf","./Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","./Pages/Header":"2h5Kc","./Pages/Footer":"RI2Qh","./Pages/LandingPage":"djTcg","./Pages/Error":"cerjK","react":"21dqq","react-redux":"bdVon","./Utilities/store":"cJCRp","f96ccf8d2cec13a8":"6kCHU","d0d8d8e53de11ad2":"iOQdU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6540u":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$16f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34915,7 +34915,7 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./CartItem":"g2qA5","../Utilities/constants":"5t9MR","./EmptyCart":"59mBH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon"}],"g2qA5":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./CartItem":"g2qA5","../Utilities/constants":"5t9MR","./EmptyCart":"59mBH","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g2qA5":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1f30 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35042,7 +35042,7 @@ $RefreshReg$(_c, "CartItem");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","../Utilities/cartSlice":"9wB3I"}],"bdVon":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-redux":"bdVon","../Utilities/cartSlice":"9wB3I","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bdVon":[function(require,module,exports) {
 // The primary entry point assumes we're working with standard ReactDOM/RN, but
 // older versions that do not include `useSyncExternalStore` (React 16.9 - 17.x).
 // Because of that, the useSyncExternalStore compat shim is needed.
@@ -36661,23 +36661,23 @@ const cartSlice = (0, _toolkit.createSlice)({
     reducers: {
         addItem: (state, action)=>{
             // check cart is empty or not
-            if (state.items[0]) {
+            if (state?.items[0]) {
                 // check is item from same restaurant
-                if (state.items[0]?.restaurant?.id === action.payload.restaurant?.id) {
+                if (state?.items[0]?.restaurant?.id === action.payload.restaurant?.id) {
                     const existingItemIndex = state.items.findIndex((item)=>item.dish.id === action.payload.dish.id);
                     if (existingItemIndex !== -1) state.items[existingItemIndex].qty += 1;
-                    else state.items.push(action.payload);
+                    else state?.items?.push(action.payload);
                 } else {
                     if (window.confirm("Start a fresh cart")) {
                         state.items = [];
-                        state.items.push(action.payload);
-                    } else return null;
+                        state?.items?.push(action.payload);
+                    } else return;
                 }
-            } else state.items.push(action.payload);
+            } else state?.items?.push(action.payload);
         },
         removeItem: (state, action)=>{
             const existingItemIndex = state.items.findIndex((item)=>item.dish.id === action.payload.dish.id);
-            if (state.items[existingItemIndex].qty <= 1) state.items.splice(existingItemIndex, 1);
+            if (state.items[existingItemIndex].qty <= 1) state?.items?.splice(existingItemIndex, 1);
             else state.items[existingItemIndex].qty -= 1;
         }
     }
@@ -36737,8 +36737,8 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var global = arguments[3];
 var process = require("91da2a0b3b42edcf");
+var global = arguments[3];
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({
@@ -41155,7 +41155,7 @@ var _reactRedux = require("react-redux");
 var _s = $RefreshSig$();
 const RestaurantPageBody = ({ resturantData , menu , filteredMenu , setFilteredMenu  })=>{
     _s();
-    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    const cartItems = (0, _reactRedux.useSelector)((store)=>store?.cart?.items);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "Resturant-Menu-Body w-11/12 justify-start flex",
         children: [
@@ -41266,7 +41266,7 @@ $RefreshReg$(_c, "RestaurantPageBody");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA","./MiniCart":"efG2m","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon"}],"k7iTA":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA","./MiniCart":"efG2m","../Utilities/constants":"5t9MR","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"k7iTA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fb03 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41454,7 +41454,7 @@ $RefreshReg$(_c, "ResturantMenuItemCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","../Utilities/cartSlice":"9wB3I"}],"efG2m":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","react":"21dqq","react-redux":"bdVon","../Utilities/cartSlice":"9wB3I","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"efG2m":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$34d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41643,7 +41643,7 @@ $RefreshReg$(_c, "MiniCart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","./CartItem":"g2qA5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","../Utilities/store":"cJCRp"}],"cJCRp":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"bdVon","react-router-dom":"9xmpe","../Utilities/store":"cJCRp","./CartItem":"g2qA5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cJCRp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _toolkit = require("@reduxjs/toolkit");
@@ -41656,7 +41656,7 @@ const store = (0, _toolkit.configureStore)({
 });
 exports.default = store;
 
-},{"@reduxjs/toolkit":"lL1Ef","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./cartSlice":"9wB3I"}],"lK9cM":[function(require,module,exports) {
+},{"@reduxjs/toolkit":"lL1Ef","./cartSlice":"9wB3I","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lK9cM":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4c83 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42008,7 +42008,7 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../customHooks/useAddress":"WZy98","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon"}],"WZy98":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../customHooks/useAddress":"WZy98","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"WZy98":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3853 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
