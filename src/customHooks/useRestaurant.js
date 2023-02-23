@@ -23,7 +23,7 @@ const useRestaurant = (resturants, setRestaurants) => {
   // getting Restaurants on homepage didMount
   const getResturants = async (signal, setRestaurants) => {
     const resturantDataSwiggy = await fetch(
-      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates.latitude}&lng=${cordinates.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
+      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
       signal
     )
       .then((res) => res.json())
