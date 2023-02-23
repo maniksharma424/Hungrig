@@ -32014,7 +32014,7 @@ $RefreshReg$(_c2, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./Pages/Homepage":"6540u","./Pages/Cart":"3PdSH","./Pages/About":"9TUQf","./Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","./Pages/Header":"2h5Kc","./Pages/Footer":"RI2Qh","./Pages/LandingPage":"djTcg","./Pages/Error":"cerjK","react":"21dqq","f96ccf8d2cec13a8":"6kCHU","d0d8d8e53de11ad2":"iOQdU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","./Utilities/store":"cJCRp"}],"6540u":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./Pages/Homepage":"6540u","./Pages/Cart":"3PdSH","./Pages/About":"9TUQf","./Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","./Pages/Header":"2h5Kc","./Pages/Footer":"RI2Qh","./Pages/LandingPage":"djTcg","./Pages/Error":"cerjK","react":"21dqq","react-redux":"bdVon","./Utilities/store":"cJCRp","f96ccf8d2cec13a8":"6kCHU","d0d8d8e53de11ad2":"iOQdU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6540u":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$16f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34916,7 +34916,7 @@ $RefreshReg$(_c, "Cart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./CartItem":"g2qA5","../Utilities/constants":"5t9MR","./EmptyCart":"59mBH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon"}],"g2qA5":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./CartItem":"g2qA5","../Utilities/constants":"5t9MR","./EmptyCart":"59mBH","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"g2qA5":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1f30 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -35043,7 +35043,7 @@ $RefreshReg$(_c, "CartItem");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","../Utilities/cartSlice":"9wB3I"}],"bdVon":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-redux":"bdVon","../Utilities/cartSlice":"9wB3I","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bdVon":[function(require,module,exports) {
 // The primary entry point assumes we're working with standard ReactDOM/RN, but
 // older versions that do not include `useSyncExternalStore` (React 16.9 - 17.x).
 // Because of that, the useSyncExternalStore compat shim is needed.
@@ -36738,8 +36738,8 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var global = arguments[3];
 var process = require("91da2a0b3b42edcf");
+var global = arguments[3];
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({
@@ -41267,7 +41267,7 @@ $RefreshReg$(_c, "RestaurantPageBody");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA","./MiniCart":"efG2m","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon"}],"k7iTA":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA","./MiniCart":"efG2m","../Utilities/constants":"5t9MR","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"k7iTA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fb03 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41455,7 +41455,7 @@ $RefreshReg$(_c, "ResturantMenuItemCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","../Utilities/cartSlice":"9wB3I"}],"efG2m":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","react":"21dqq","react-redux":"bdVon","../Utilities/cartSlice":"9wB3I","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"efG2m":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$34d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41644,7 +41644,7 @@ $RefreshReg$(_c, "MiniCart");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-router-dom":"9xmpe","./CartItem":"g2qA5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon","../Utilities/store":"cJCRp"}],"cJCRp":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-redux":"bdVon","react-router-dom":"9xmpe","../Utilities/store":"cJCRp","./CartItem":"g2qA5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cJCRp":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _toolkit = require("@reduxjs/toolkit");
@@ -42009,7 +42009,7 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../customHooks/useAddress":"WZy98","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon"}],"WZy98":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../customHooks/useAddress":"WZy98","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"WZy98":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$3853 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
