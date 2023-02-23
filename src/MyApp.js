@@ -10,6 +10,7 @@ import Error from "./Pages/Error";
 import { createContext, lazy, Suspense, useEffect, useState } from "react";
 import { Provider } from "react-redux";
 import store from "./Utilities/store";
+import SuspenseCard from "./Pages/SuspenseCard";
 
 export const locationContext = createContext();
 export const getLocation = (setState) => {
@@ -77,7 +78,7 @@ export const MyRouter = createBrowserRouter([
       {
         path: "/searchpage",
         element: (
-          <Suspense>
+          <Suspense fallback={<SuspenseCard/>}>
             <SearchPage />
           </Suspense>
         ),
@@ -85,7 +86,7 @@ export const MyRouter = createBrowserRouter([
       {
         path: "/searchResults",
         element: (
-          <Suspense>
+          <Suspense fallback={<SuspenseCard/>}>
             <SearchResults />
           </Suspense>
         ),

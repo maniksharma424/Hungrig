@@ -31865,6 +31865,8 @@ var _react = require("react");
 var _reactRedux = require("react-redux");
 var _store = require("./Utilities/store");
 var _storeDefault = parcelHelpers.interopDefault(_store);
+var _suspenseCard = require("./Pages/SuspenseCard");
+var _suspenseCardDefault = parcelHelpers.interopDefault(_suspenseCard);
 var _s = $RefreshSig$();
 const locationContext = /*#__PURE__*/ (0, _react.createContext)();
 const getLocation = (setState)=>{
@@ -31892,28 +31894,28 @@ const App = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 31,
+                    lineNumber: 32,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 32,
+                    lineNumber: 33,
                     columnNumber: 7
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 33,
+                    lineNumber: 34,
                     columnNumber: 7
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/MyApp.js",
-            lineNumber: 30,
+            lineNumber: 31,
             columnNumber: 5
         }, undefined)
     }, void 0, false, {
         fileName: "src/MyApp.js",
-        lineNumber: 29,
+        lineNumber: 30,
         columnNumber: 10
     }, undefined);
 };
@@ -31924,12 +31926,12 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
             fileName: "src/MyApp.js",
-            lineNumber: 39,
+            lineNumber: 40,
             columnNumber: 12
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/MyApp.js",
-            lineNumber: 40,
+            lineNumber: 41,
             columnNumber: 17
         }, undefined),
         children: [
@@ -31937,7 +31939,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _landingPageDefault.default), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 43,
+                    lineNumber: 44,
                     columnNumber: 14
                 }, undefined)
             },
@@ -31945,7 +31947,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/homePage",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepage.Homepage), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 46,
+                    lineNumber: 47,
                     columnNumber: 14
                 }, undefined)
             },
@@ -31953,7 +31955,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cart.Cart), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 49,
+                    lineNumber: 50,
                     columnNumber: 14
                 }, undefined)
             },
@@ -31961,7 +31963,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/aboutUs",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 52,
+                    lineNumber: 53,
                     columnNumber: 14
                 }, undefined)
             },
@@ -31969,35 +31971,37 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restaurant-page",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantPageDefault.default), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 55,
+                    lineNumber: 56,
                     columnNumber: 14
                 }, undefined)
             },
             {
                 path: "/searchpage",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
+                    fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _suspenseCardDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SearchPage, {}, void 0, false, {
                         fileName: "src/MyApp.js",
-                        lineNumber: 59,
+                        lineNumber: 60,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 58,
+                    lineNumber: 59,
                     columnNumber: 14
                 }, undefined)
             },
             {
                 path: "/searchResults",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Suspense), {
+                    fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _suspenseCardDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SearchResults, {}, void 0, false, {
                         fileName: "src/MyApp.js",
-                        lineNumber: 64,
+                        lineNumber: 65,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 63,
+                    lineNumber: 64,
                     columnNumber: 14
                 }, undefined)
             }
@@ -32014,7 +32018,7 @@ $RefreshReg$(_c2, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./Pages/Homepage":"6540u","./Pages/Cart":"3PdSH","./Pages/About":"9TUQf","./Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","./Pages/Header":"2h5Kc","./Pages/Footer":"RI2Qh","./Pages/LandingPage":"djTcg","./Pages/Error":"cerjK","react":"21dqq","react-redux":"bdVon","./Utilities/store":"cJCRp","f96ccf8d2cec13a8":"6kCHU","d0d8d8e53de11ad2":"iOQdU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6540u":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./Pages/Homepage":"6540u","./Pages/Cart":"3PdSH","./Pages/About":"9TUQf","./Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","./Pages/Header":"2h5Kc","./Pages/Footer":"RI2Qh","./Pages/LandingPage":"djTcg","./Pages/Error":"cerjK","react":"21dqq","react-redux":"bdVon","./Utilities/store":"cJCRp","f96ccf8d2cec13a8":"6kCHU","d0d8d8e53de11ad2":"iOQdU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Pages/SuspenseCard":"lJ6pH"}],"6540u":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$16f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42736,6 +42740,40 @@ module.exports = require("2c989d651b0dce95")(require("bb65f221ba6017e").getBundl
     throw err;
 }).then(()=>module.bundle.root("v2HEr"));
 
-},{"2c989d651b0dce95":"61B45","bb65f221ba6017e":"lgJ39"}]},["1xC6H","82D6y","7dhfe"], "7dhfe", "parcelRequireb877")
+},{"2c989d651b0dce95":"61B45","bb65f221ba6017e":"lgJ39"}],"lJ6pH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6b75 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6b75.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactShimmerEffects = require("react-shimmer-effects");
+const SuspenseCard = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerPostDetails), {
+        card: true,
+        cta: true,
+        variant: "SIMPLE"
+    }, void 0, false, {
+        fileName: "src/Pages/SuspenseCard.jsx",
+        lineNumber: 4,
+        columnNumber: 10
+    }, undefined);
+};
+_c = SuspenseCard;
+exports.default = SuspenseCard;
+var _c;
+$RefreshReg$(_c, "SuspenseCard");
+
+  $parcel$ReactRefreshHelpers$6b75.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","82D6y","7dhfe"], "7dhfe", "parcelRequireb877")
 
 //# sourceMappingURL=index.97a9311a.js.map
