@@ -36662,23 +36662,23 @@ const cartSlice = (0, _toolkit.createSlice)({
     reducers: {
         addItem: (state, action)=>{
             // check cart is empty or not
-            if (state.items[0]) {
+            if (state?.items[0]) {
                 // check is item from same restaurant
-                if (state.items[0]?.restaurant?.id === action.payload.restaurant?.id) {
+                if (state?.items[0]?.restaurant?.id === action.payload.restaurant?.id) {
                     const existingItemIndex = state.items.findIndex((item)=>item.dish.id === action.payload.dish.id);
                     if (existingItemIndex !== -1) state.items[existingItemIndex].qty += 1;
-                    else state.items.push(action.payload);
+                    else state?.items?.push(action.payload);
                 } else {
                     if (window.confirm("Start a fresh cart")) {
                         state.items = [];
-                        state.items.push(action.payload);
-                    } else return null;
+                        state?.items?.push(action.payload);
+                    } else return;
                 }
-            } else state.items.push(action.payload);
+            } else state?.items?.push(action.payload);
         },
         removeItem: (state, action)=>{
             const existingItemIndex = state.items.findIndex((item)=>item.dish.id === action.payload.dish.id);
-            if (state.items[existingItemIndex].qty <= 1) state.items.splice(existingItemIndex, 1);
+            if (state.items[existingItemIndex].qty <= 1) state?.items?.splice(existingItemIndex, 1);
             else state.items[existingItemIndex].qty -= 1;
         }
     }
@@ -41156,7 +41156,7 @@ var _reactRedux = require("react-redux");
 var _s = $RefreshSig$();
 const RestaurantPageBody = ({ resturantData , menu , filteredMenu , setFilteredMenu  })=>{
     _s();
-    const cartItems = (0, _reactRedux.useSelector)((store)=>store.cart.items);
+    const cartItems = (0, _reactRedux.useSelector)((store)=>store?.cart?.items);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "Resturant-Menu-Body w-11/12 justify-start flex",
         children: [
