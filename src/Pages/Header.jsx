@@ -12,14 +12,14 @@ const Header = () => {
 
   return (
     <>
-      <div className="Header sticky top-0  bg-white z-10 pt-3 pb-1  px-[130px] w-full flex justify-between items-center shadow-xl">
+      <div className="Header sticky top-0  bg-white z-10 sm:pt-3 sm:pb-1  sm:px-[130px] sm:w-full w-[400px]  flex justify-between items-center shadow-xl">
         <div className="header-logo w-2/3  flex items-center ">
           <Link to="/homePage">
             <div className="logo w-[100px] h-[60px] bg-no-repeat bg-contain bg-center bg-[url('/src/asset/logo.jpeg')]"></div>
           </Link>
           <div className="address">
             {address?.display_name ? (
-              <span className="text-[11px] font-[900]">
+              <span className="sm:text-[11px] text-[7px] font-[900]">
                 📍 {address?.address?.suburb}{" "}
                 <span className="text-[9px] font-[100]">
                   {address?.address?.city} ,
@@ -27,11 +27,11 @@ const Header = () => {
                 </span>
               </span>
             ) : (
-              <p className="text-[10px] font-[100]">Fetching Location ... </p>
+              <p className="sm:text-[10px] text-[7px] font-[100]">Fetching Location ... </p>
             )}
           </div>
         </div>
-        <div className="Header-Links w-1/3 flex text-[13px]  justify-around">
+        <div className="Header-Links w-1/3 flex sm:text-[13px] text-[7px]  justify-around">
           <Link to="/searchpage">
             <i className="fa-solid fa-magnifying-glass"></i> Search
           </Link>

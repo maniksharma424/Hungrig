@@ -32433,7 +32433,7 @@ const EMPTY_CART_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,
 const MIN_ORDER_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_210,h_398/4x_-_No_min_order_x0bxuf";
 const TRACK_ORDER_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_224,h_412/4x_Live_order_zzotwy";
 const FAST_DEL_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_248,h_376/4x_-_Super_fast_delivery_awv7sn";
-const SERVICES_IMG_CLASSNAME = "img-1 w-[270px] h-[333px] flex flex-col items-center justify-centre";
+const SERVICES_IMG_CLASSNAME = "img-1 sm:w-[270px] sm:h-[333px] w-[100px] h-[180px] sm:flex sm:flex-col sm:items-center sm:justify-centre flex flex-col items-centre justify-centre";
 const LANDING_PAGE_IMG = "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_1340/Lunch1_vlksgq";
 const CITY_NAMES = [
     "Delhi",
@@ -36737,8 +36737,8 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var process = require("91da2a0b3b42edcf");
 var global = arguments[3];
+var process = require("91da2a0b3b42edcf");
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({
@@ -41853,7 +41853,7 @@ const Header = ()=>{
     });
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "Header sticky top-0 bg-white z-10 pt-3 pb-1 px-[130px] w-full flex justify-between items-center shadow-xl",
+            className: "Header sticky top-0 bg-white z-10 sm:pt-3 sm:pb-1 sm:px-[130px] sm:w-full w-[400px] flex justify-between items-center shadow-xl",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "header-logo w-2/3 flex items-center ",
@@ -41875,7 +41875,7 @@ const Header = ()=>{
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: "address",
                             children: address?.display_name ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "text-[11px] font-[900]",
+                                className: "sm:text-[11px] text-[7px] font-[900]",
                                 children: [
                                     "\uD83D\uDCCD ",
                                     address?.address?.suburb,
@@ -41904,7 +41904,7 @@ const Header = ()=>{
                                 lineNumber: 18,
                                 columnNumber: 38
                             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[10px] font-[100]",
+                                className: "sm:text-[10px] text-[7px] font-[100]",
                                 children: "Fetching Location ... "
                             }, void 0, false, {
                                 fileName: "src/Pages/Header.jsx",
@@ -41923,7 +41923,7 @@ const Header = ()=>{
                     columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "Header-Links w-1/3 flex text-[13px] justify-around",
+                    className: "Header-Links w-1/3 flex sm:text-[13px] text-[7px] justify-around",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                             to: "/searchpage",
@@ -42062,15 +42062,15 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _constants = require("../Utilities/constants");
 const Footer = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "footer w-full bg-black p-10 ",
+        className: "footer sm:w-full bg-black sm:p-10 w-[400px] p-3 ",
         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "container pl-20 pr-16 w-full text-[13px] text-white",
+            className: "container sm:pl-20 sm:pr-16 sm:w-full sm:text-[13px] text-white text-[8px]",
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     className: "city-names",
                     children: [
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                            className: "text-[20px] ml-2",
+                            className: "sm:text-[20px] text-[12px] ml-2",
                             children: "We deliver to"
                         }, void 0, false, {
                             fileName: "src/Pages/Footer.jsx",
@@ -42078,10 +42078,10 @@ const Footer = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             columnNumber: 9
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                            className: "w-full h-[300px] flex flex-wrap flex-col ",
+                            className: "sm:w-full w-[400px] h-[300px] flex flex-wrap flex-col ",
                             children: (0, _constants.CITY_NAMES).map((city, index)=>{
                                 return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                    className: "text-[#d6d6da] text-[15px] p-2",
+                                    className: "text-[#d6d6da] sm:text-[15px] text-[7px] p-2",
                                     children: city
                                 }, index, false, {
                                     fileName: "src/Pages/Footer.jsx",
@@ -42108,7 +42108,7 @@ const Footer = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                     columnNumber: 11
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                    className: "p-1 ml-[450px]",
+                    className: "p-1 sm:ml-[450px] ml-[80px]",
                     children: [
                         "\xa9 ",
                         new Date().getFullYear(),
@@ -42198,15 +42198,15 @@ const LandingPage = ()=>{
         className: pageStyle,
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "upper-box flex ",
+                className: "upper-box flex w-[400px] sm:w-full ",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "locationBox w-[850px] h-[550px] ",
+                        className: "locationBox sm:w-[850px] sm:h-[550px] w-[200px] ",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "flex flex-col p-12 w-10/12 h-full",
+                            className: "flex flex-col p-12 sm:w-10/12 sm:h-full w-[200px] h-[250px]",
                             children: [
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    className: "text-[40px] font-[900] mt-10",
+                                    className: "sm:text-[40px] text-[9px] font-[900] sm:mt-10",
                                     children: [
                                         text,
                                         " ? "
@@ -42217,7 +42217,7 @@ const LandingPage = ()=>{
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    className: "text-[24px] text-[#686b78] ",
+                                    className: "sm:text-[24px] text-[7px] text-[#686b78] ",
                                     children: "Order food from your favourite restaurant near you"
                                 }, void 0, false, {
                                     fileName: "src/Pages/LandingPage.jsx",
@@ -42225,13 +42225,13 @@ const LandingPage = ()=>{
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "btn flex my-10 ",
+                                    className: "btn flex sm:my-10 my-2 ",
                                     children: [
                                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                                             onClick: ()=>{
                                                 location.latitude ? alert(`kindly explore restaurants`) : alert("allow access to location");
                                             },
-                                            className: "w-[170px] p-3 h-[50px] text-[#686b78] border-[#686b78] border-[1px] mr-10 ",
+                                            className: "sm:w-[170px] sm:h-[50px] sm:text-[15px] text-[4px] w-[40px] sm:p-3 p-1 h-[20px] sm:mt-0 mt-[6px] text-[#686b78] border-[#686b78] border-[1px] sm:mr-10 ",
                                             children: "\uD83D\uDCCD Locate Me"
                                         }, void 0, false, {
                                             fileName: "src/Pages/LandingPage.jsx",
@@ -42242,7 +42242,7 @@ const LandingPage = ()=>{
                                             onClick: ()=>{
                                                 alert("allow location to see restaurant near you");
                                             },
-                                            className: "w-[170px] p-3 h-[50px] bg-[#f5a666] text-white",
+                                            className: "sm:w-[170px] sm:h-[50px] sm:text-[15px] w-[40px] text-[5px] ml-2 sm:p-3 h-[20px] p-1 font-[300] sm:font-[900] bg-[#fc8019] text-white",
                                             children: "Find Food"
                                         }, void 0, false, {
                                             fileName: "src/Pages/LandingPage.jsx",
@@ -42251,7 +42251,7 @@ const LandingPage = ()=>{
                                         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Link), {
                                             to: "/homePage",
                                             children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                                className: "w-[170px] p-3 h-[50px] font-[900] bg-[#fc8019] text-white",
+                                                className: "sm:w-[170px] sm:h-[50px] sm:text-[15px] w-[40px] ml-2 text-[5px] sm:p-3 h-[20px] p-1 font-[300] sm:font-[900] bg-[#fc8019] text-white",
                                                 children: "Find Food"
                                             }, void 0, false, {
                                                 fileName: "src/Pages/LandingPage.jsx",
@@ -42270,7 +42270,7 @@ const LandingPage = ()=>{
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    className: "text-[19px] text-[#6f6f73]",
+                                    className: "sm:text-[19px] text-[9px] text-[#6f6f73]",
                                     children: "Popular cities in india"
                                 }, void 0, false, {
                                     fileName: "src/Pages/LandingPage.jsx",
@@ -42278,7 +42278,7 @@ const LandingPage = ()=>{
                                     columnNumber: 13
                                 }, undefined),
                                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    className: "text-[21px] font-[500] text-[#757578] my-3",
+                                    className: "sm:text-[21px] text-[5px] font-[500] text-[#757578] my-3",
                                     children: "Ahmedabad Bangalore Chennai Jammu Delhi Gurgaon Hyderabad Kolkata Mumbai Pune and more"
                                 }, void 0, false, {
                                     fileName: "src/Pages/LandingPage.jsx",
@@ -42297,7 +42297,7 @@ const LandingPage = ()=>{
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "img-1 w-[650] h-[550px]",
+                        className: "img-1 sm:w-[650] sm:h-[550px] w-[200px] h-[250px]",
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
                             className: "w-full h-full bg-center bg-contain bg-no-repeat",
                             src: (0, _constants.LANDING_PAGE_IMG),
@@ -42329,13 +42329,13 @@ const LandingPage = ()=>{
                 columnNumber: 34
             }, undefined), document.body),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "img-2-box w-full h-[450px] px-36 py-16 flex justify-between items-start bg-[#5C4033] ",
+                className: "img-2-box sm:w-full sm:h-[450px] w-[400px] h-[170px] sm:px-36 sm:py-16 sm:flex sm:justify-between sm:items-start flex justify-around bg-[#5C4033] ",
                 children: [
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                         className: (0, _constants.SERVICES_IMG_CLASSNAME),
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "h-[199px] w-[115px] bg-center bg-contain bg-no-repeat",
+                                className: "sm:h-[199px] sm:w-[115px] w-[50px] h-[80px] bg-center bg-contain bg-no-repeat",
                                 src: (0, _constants.MIN_ORDER_IMG),
                                 alt: "image"
                             }, void 0, false, {
@@ -42344,7 +42344,7 @@ const LandingPage = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[20px] font-[900] text-white",
+                                className: "sm:text-[20px] sm:font-[900] text-[8px] font-[300] text-white",
                                 children: "No minimum order"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
@@ -42352,7 +42352,7 @@ const LandingPage = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[#e0cbc1] text-[15px]",
+                                className: "text-[#e0cbc1] sm:text-[15px] text-[5px]",
                                 children: "Order in for yourself or for the group,"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
@@ -42360,7 +42360,7 @@ const LandingPage = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[#e0cbc1] text-[15px]",
+                                className: "text-[#e0cbc1] sm:text-[15px] text-[6px]",
                                 children: "with no restrictions on order value"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
@@ -42377,7 +42377,7 @@ const LandingPage = ()=>{
                         className: (0, _constants.SERVICES_IMG_CLASSNAME),
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "h-[199px] w-[115px] bg-center bg-contain bg-no-repeat",
+                                className: "h-[80px] w-[50px] bg-center bg-contain bg-no-repeat sm:w-[115px] sm:h-[199px]",
                                 src: (0, _constants.TRACK_ORDER_IMG),
                                 alt: "image"
                             }, void 0, false, {
@@ -42386,7 +42386,7 @@ const LandingPage = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[20px] font-[900] text-white",
+                                className: "sm:text-[20px] sm:font-[900] text-[8px] font-[300] text-white",
                                 children: "Live Order Tracking"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
@@ -42394,7 +42394,7 @@ const LandingPage = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[#e0cbc1] text-[15px]",
+                                className: "text-[#e0cbc1] sm:text-[15px] text-[5px]",
                                 children: "Know where your order is at all times,"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
@@ -42402,7 +42402,7 @@ const LandingPage = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[#e0cbc1] text-[15px]",
+                                className: "text-[#e0cbc1] sm:text-[15px] text-[5px]",
                                 children: "from the restaurant to your doorstep"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
@@ -42419,7 +42419,7 @@ const LandingPage = ()=>{
                         className: (0, _constants.SERVICES_IMG_CLASSNAME),
                         children: [
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                className: "h-[199px] w-[115px] bg-center bg-contain bg-no-repeat",
+                                className: "sm:h-[199px] sm:w-[115px] h-[80px] w-[50px] bg-center bg-contain bg-no-repeat",
                                 src: (0, _constants.FAST_DEL_IMG),
                                 alt: "image"
                             }, void 0, false, {
@@ -42428,7 +42428,7 @@ const LandingPage = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[20px] font-[900] text-white",
+                                className: "sm:text-[20px] sm:font-[900] text-[8px] font-[300] text-white",
                                 children: "Lightning-Fast Delivery"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
@@ -42436,7 +42436,7 @@ const LandingPage = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[#e0cbc1] text-[15px]",
+                                className: "text-[#e0cbc1] sm:text-[15px] text-[5px]",
                                 children: "Experience Swiggy's superfast delivery"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
@@ -42444,7 +42444,7 @@ const LandingPage = ()=>{
                                 columnNumber: 11
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                className: "text-[#e0cbc1] text-[15px]",
+                                className: "text-[#e0cbc1] sm:text-[15px] text-[5px]",
                                 children: "for food delivered fresh and on time"
                             }, void 0, false, {
                                 fileName: "src/Pages/LandingPage.jsx",
@@ -42495,10 +42495,10 @@ var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 const ModalContent = ({ onClose  })=>{
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: " rounded-md w-[350px] h-fit border-[1px] border-gray shadow-2xl absolute bottom-[300px] left-[550px] bg-white flex flex-col justify-centre items-end",
+        className: " rounded-md sm:w-[350px] sm:h-fit border-[1px] border-gray shadow-2xl absolute bottom-[300px] w-[250px] h-fit p-3 sm:p-0 sm:left-[550px] left-[50px] bg-white flex flex-col justify-centre items-end",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "info px-5 pt-5 w-full text-[14px]",
+                className: "info sm:px-5 sm:pt-5 w-full sm:text-[14px] text-[9px]",
                 children: "Enable Chrome CORS to access the website by adding a plugin/Extension or starting the browser with web security turned off."
             }, void 0, false, {
                 fileName: "src/Pages/ModalContent.jsx",
@@ -42508,17 +42508,17 @@ const ModalContent = ({ onClose  })=>{
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "flex justify-around",
                 children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    className: " px-3 py-2 mt-4 m-6 rounded-sm text-white bg-[#fc8019] border-none",
+                    className: " sm:px-3 sm:py-2 sm:mt-4 sm:m-6 rounded-sm text-white bg-[#fc8019] sm:text-[15px] text-[10px] font-[300] py-1 px-1 border-none",
                     onClick: onClose,
                     children: "Close"
                 }, void 0, false, {
                     fileName: "src/Pages/ModalContent.jsx",
-                    lineNumber: 10,
+                    lineNumber: 11,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Pages/ModalContent.jsx",
-                lineNumber: 9,
+                lineNumber: 10,
                 columnNumber: 5
             }, undefined)
         ]
