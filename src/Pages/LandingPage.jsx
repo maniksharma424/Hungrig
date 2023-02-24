@@ -31,22 +31,22 @@ const LandingPage = () => {
 
   return (
     <div className={pageStyle}>
-      <div className="upper-box flex  ">
-        <div className="locationBox w-[850px] h-[550px] ">
-          <div className="flex flex-col p-12 w-10/12 h-full">
-            <p className="text-[40px] font-[900] mt-10">{text} ? </p>
-            <p className="text-[24px] text-[#686b78] ">
+      <div className="upper-box flex w-[400px] sm:w-full  ">
+        <div className="locationBox sm:w-[850px] sm:h-[550px] w-[200px] ">
+          <div className="flex flex-col p-12 sm:w-10/12 sm:h-full w-[200px] h-[250px]">
+            <p className="sm:text-[40px] text-[9px]  font-[900] sm:mt-10">{text} ? </p>
+            <p className="sm:text-[24px] text-[7px] text-[#686b78] ">
               Order food from your favourite restaurant near you
             </p>
-            <div className="btn flex my-10  ">
+            <div className="btn flex sm:my-10 my-2  ">
               <button
                 onClick={() => {
                   location.latitude
                     ? alert(`kindly explore restaurants`)
                     : alert("allow access to location");
                 }}
-                className="w-[170px] p-3 h-[50px]  text-[#686b78] 
-              border-[#686b78] border-[1px] mr-10 "
+                className="sm:w-[170px] sm:h-[50px] sm:text-[15px] text-[4px] w-[40px]  sm:p-3 p-1 h-[20px] sm:mt-0 mt-[6px]  text-[#686b78] 
+              border-[#686b78] border-[1px] sm:mr-10 "
               >
                 📍 Locate Me
               </button>
@@ -55,28 +55,28 @@ const LandingPage = () => {
                   onClick={() => {
                     alert("allow location to see restaurant near you");
                   }}
-                  className="w-[170px] p-3 h-[50px] bg-[#f5a666] text-white"
+                  className="sm:w-[170px] sm:h-[50px] sm:text-[15px] w-[40px] text-[5px] ml-2 sm:p-3 h-[20px] p-1 font-[300] sm:font-[900]  bg-[#fc8019] text-white"
                 >
                   Find Food
                 </button>
               ) : (
                 <Link to="/homePage">
-                  <button className="w-[170px] p-3 h-[50px]  font-[900]  bg-[#fc8019] text-white">
+                  <button className="sm:w-[170px] sm:h-[50px] sm:text-[15px] w-[40px] ml-2 text-[5px] sm:p-3 h-[20px] p-1 font-[300] sm:font-[900]  bg-[#fc8019] text-white">
                     Find Food
                   </button>
                 </Link>
               )}
             </div>
-            <p className="text-[19px] text-[#6f6f73]">
+            <p className="sm:text-[19px] text-[9px] text-[#6f6f73]">
               Popular cities in india
             </p>
-            <p className="text-[21px] font-[500]  text-[#757578] my-3">
+            <p className="sm:text-[21px] text-[5px] font-[500]  text-[#757578] my-3">
               Ahmedabad Bangalore Chennai Jammu Delhi Gurgaon Hyderabad Kolkata
               Mumbai Pune and more
             </p>
           </div>
         </div>
-        <div className="img-1 w-[650] h-[550px]">
+        <div className="img-1 sm:w-[650] sm:h-[550px] w-[200px] h-[250px]">
           <img
             className="w-full h-full bg-center bg-contain bg-no-repeat"
             src={LANDING_PAGE_IMG}
@@ -94,50 +94,50 @@ const LandingPage = () => {
           />,
           document.body
         )}
-      <div className="img-2-box w-full h-[450px] px-36 py-16 flex justify-between items-start bg-[#5C4033] ">
+      <div className="img-2-box sm:w-full sm:h-[450px] w-[400px] h-[170px] sm:px-36 sm:py-16 sm:flex sm:justify-between sm:items-start flex justify-around bg-[#5C4033] ">
         <div className={SERVICES_IMG_CLASSNAME}>
           <img
-            className="h-[199px] w-[115px] bg-center bg-contain bg-no-repeat"
+            className="sm:h-[199px] sm:w-[115px] w-[50px] h-[80px] bg-center bg-contain bg-no-repeat"
             src={MIN_ORDER_IMG}
             alt="image"
           />
-          <p className="text-[20px] font-[900] text-white">No minimum order</p>
-          <p className="text-[#e0cbc1] text-[15px]">
+          <p className="sm:text-[20px] sm:font-[900] text-[8px] font-[300] text-white">No minimum order</p>
+          <p className="text-[#e0cbc1] sm:text-[15px] text-[5px]">
             Order in for yourself or for the group,
           </p>
-          <p className="text-[#e0cbc1] text-[15px]">
+          <p className="text-[#e0cbc1] sm:text-[15px] text-[6px]">
             with no restrictions on order value
           </p>
         </div>
         <div className={SERVICES_IMG_CLASSNAME}>
           <img
-            className="h-[199px] w-[115px] bg-center bg-contain bg-no-repeat"
+            className="h-[80px] w-[50px] bg-center bg-contain bg-no-repeat sm:w-[115px] sm:h-[199px]"
             src={TRACK_ORDER_IMG}
             alt="image"
           />
-          <p className="text-[20px] font-[900] text-white">
+          <p className="sm:text-[20px] sm:font-[900] text-[8px] font-[300] text-white">
             Live Order Tracking
           </p>
-          <p className="text-[#e0cbc1] text-[15px]">
+          <p className="text-[#e0cbc1] sm:text-[15px] text-[5px]">
             Know where your order is at all times,
           </p>
-          <p className="text-[#e0cbc1] text-[15px]">
+          <p className="text-[#e0cbc1] sm:text-[15px] text-[5px]">
             from the restaurant to your doorstep
           </p>
         </div>
         <div className={SERVICES_IMG_CLASSNAME}>
           <img
-            className="h-[199px] w-[115px] bg-center bg-contain bg-no-repeat"
+            className="sm:h-[199px] sm:w-[115px] h-[80px] w-[50px] bg-center bg-contain bg-no-repeat"
             src={FAST_DEL_IMG}
             alt="image"
           />
-          <p className="text-[20px] font-[900] text-white">
+          <p className="sm:text-[20px] sm:font-[900] text-[8px] font-[300] text-white">
             Lightning-Fast Delivery
           </p>
-          <p className="text-[#e0cbc1] text-[15px]">
+          <p className="text-[#e0cbc1] sm:text-[15px] text-[5px]">
             Experience Swiggy's superfast delivery
           </p>
-          <p className="text-[#e0cbc1] text-[15px]">
+          <p className="text-[#e0cbc1] sm:text-[15px] text-[5px]">
             for food delivered fresh and on time
           </p>
         </div>
