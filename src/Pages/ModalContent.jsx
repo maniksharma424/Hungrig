@@ -6,6 +6,9 @@ const ModalContent = ({ onClose }) => {
     <div className=" rounded-md sm:w-[350px] sm:h-fit border-[1px] border-gray shadow-2xl absolute bottom-[300px] w-[250px] h-fit p-3 sm:p-0 sm:left-[550px] left-[50px] bg-white flex flex-col justify-centre items-end">
       <div className="info sm:px-5 sm:pt-5  w-full sm:text-[14px] text-[9px]">
       Enable Chrome CORS to access the website by adding a plugin/Extension or starting the browser with web security turned off.
+     <p>
+       <a  className="underline text-blue-900" target="blank" href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en">Click here</a><span> to add extension</span>
+      </p>
 
       </div>
     <div className="flex justify-around">
