@@ -1489,6 +1489,18 @@ img, video {
   color: rgb(100 116 139 / var(--tw-text-opacity));
 }
 
+<<<<<<< HEAD
+=======
+.text-blue-900 {
+  --tw-text-opacity: 1;
+  color: rgb(30 58 138 / var(--tw-text-opacity));
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+>>>>>>> develop
 .decoration-slate-50 {
   text-decoration-color: #f8fafc;
 }

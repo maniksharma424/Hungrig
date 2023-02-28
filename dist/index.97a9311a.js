@@ -42504,8 +42504,35 @@ const ModalContent = ({ onClose  })=>{
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "info sm:px-5 sm:pt-5 w-full sm:text-[14px] text-[9px]",
-                children: "Enable Chrome CORS to access the website by adding a plugin/Extension or starting the browser with web security turned off."
-            }, void 0, false, {
+                children: [
+                    "Enable Chrome CORS to access the website by adding a plugin/Extension or starting the browser with web security turned off.",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                className: "underline text-blue-900",
+                                target: "blank",
+                                href: "https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en",
+                                children: "Click here"
+                            }, void 0, false, {
+                                fileName: "src/Pages/ModalContent.jsx",
+                                lineNumber: 9,
+                                columnNumber: 8
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
+                                children: " to add extension"
+                            }, void 0, false, {
+                                fileName: "src/Pages/ModalContent.jsx",
+                                lineNumber: 9,
+                                columnNumber: 190
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/ModalContent.jsx",
+                        lineNumber: 8,
+                        columnNumber: 6
+                    }, undefined)
+                ]
+            }, void 0, true, {
                 fileName: "src/Pages/ModalContent.jsx",
                 lineNumber: 6,
                 columnNumber: 7
@@ -42518,12 +42545,12 @@ const ModalContent = ({ onClose  })=>{
                     children: "Close"
                 }, void 0, false, {
                     fileName: "src/Pages/ModalContent.jsx",
-                    lineNumber: 11,
+                    lineNumber: 14,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Pages/ModalContent.jsx",
-                lineNumber: 10,
+                lineNumber: 13,
                 columnNumber: 5
             }, undefined)
         ]
