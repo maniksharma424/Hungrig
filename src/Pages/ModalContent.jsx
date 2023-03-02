@@ -9,7 +9,7 @@ const ModalContent = ({ onClose }) => {
      <p>
        <a  className="underline text-blue-900" target="blank" href="https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en">Click here</a><span> to add extension</span>
       </p>
-
+      <p>Know more about <a className="underline text-blue-900" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">CORS</a></p>
       </div>
     <div className="flex justify-around">
         <button  className=" sm:px-3 sm:py-2 sm:mt-4 sm:m-6 rounded-sm text-white bg-[#fc8019] sm:text-[15px] text-[10px] font-[300] py-1 px-1 border-none"onClick={onClose}>Close</button>

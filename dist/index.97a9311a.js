@@ -36737,8 +36737,8 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var global = arguments[3];
 var process = require("91da2a0b3b42edcf");
+var global = arguments[3];
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({
@@ -42525,6 +42525,24 @@ const ModalContent = ({ onClose  })=>{
                         fileName: "src/Pages/ModalContent.jsx",
                         lineNumber: 8,
                         columnNumber: 6
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        children: [
+                            "Know more about ",
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                className: "underline text-blue-900",
+                                href: "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS",
+                                children: "CORS"
+                            }, void 0, false, {
+                                fileName: "src/Pages/ModalContent.jsx",
+                                lineNumber: 11,
+                                columnNumber: 26
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/ModalContent.jsx",
+                        lineNumber: 11,
+                        columnNumber: 7
                     }, undefined)
                 ]
             }, void 0, true, {
