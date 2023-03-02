@@ -1449,6 +1449,11 @@ img, video {
   color: rgb(224 203 193 / var(--tw-text-opacity));
 }
 
+.text-blue-900 {
+  --tw-text-opacity: 1;
+  color: rgb(30 58 138 / var(--tw-text-opacity));
+}
+
 .text-\[white\] {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1490,12 +1495,15 @@ img, video {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 .text-blue-900 {
   --tw-text-opacity: 1;
   color: rgb(30 58 138 / var(--tw-text-opacity));
 }
 
+=======
+>>>>>>> develop
 .underline {
   text-decoration-line: underline;
 }
