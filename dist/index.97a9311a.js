@@ -32018,7 +32018,7 @@ $RefreshReg$(_c2, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","./Pages/Homepage":"6540u","./Pages/Cart":"3PdSH","./Pages/About":"9TUQf","./Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","./Pages/Header":"2h5Kc","./Pages/Footer":"RI2Qh","./Pages/LandingPage":"djTcg","./Pages/Error":"cerjK","react":"21dqq","react-redux":"bdVon","./Utilities/store":"cJCRp","f96ccf8d2cec13a8":"6kCHU","d0d8d8e53de11ad2":"iOQdU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Pages/SuspenseCard":"lJ6pH"}],"6540u":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","./Pages/Homepage":"6540u","./Pages/Cart":"3PdSH","./Pages/About":"9TUQf","./Pages/ResturantPage":"GvK7j","react-router-dom":"9xmpe","./Pages/Header":"2h5Kc","./Pages/Footer":"RI2Qh","./Pages/LandingPage":"djTcg","./Pages/Error":"cerjK","react":"21dqq","react-redux":"bdVon","./Utilities/store":"cJCRp","./Pages/SuspenseCard":"lJ6pH","f96ccf8d2cec13a8":"6kCHU","d0d8d8e53de11ad2":"iOQdU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6540u":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$16f4 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36742,8 +36742,8 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var process = require("91da2a0b3b42edcf");
 var global = arguments[3];
+var process = require("91da2a0b3b42edcf");
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({
@@ -42677,7 +42677,41 @@ $RefreshReg$(_c, "Error");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6kCHU":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lJ6pH":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6b75 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6b75.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _reactShimmerEffects = require("react-shimmer-effects");
+const SuspenseCard = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerPostDetails), {
+        card: true,
+        cta: true,
+        variant: "SIMPLE"
+    }, void 0, false, {
+        fileName: "src/Pages/SuspenseCard.jsx",
+        lineNumber: 4,
+        columnNumber: 10
+    }, undefined);
+};
+_c = SuspenseCard;
+exports.default = SuspenseCard;
+var _c;
+$RefreshReg$(_c, "SuspenseCard");
+
+  $parcel$ReactRefreshHelpers$6b75.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6kCHU":[function(require,module,exports) {
 module.exports = require("f7177aad69e84f4b")(require("f60b5f7c8f167ce1").getBundleURL("5cfN0") + "SearchPage.39e008e8.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
@@ -42785,40 +42819,6 @@ module.exports = require("2c989d651b0dce95")(require("bb65f221ba6017e").getBundl
     throw err;
 }).then(()=>module.bundle.root("v2HEr"));
 
-},{"2c989d651b0dce95":"61B45","bb65f221ba6017e":"lgJ39"}],"lJ6pH":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$6b75 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$6b75.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _reactShimmerEffects = require("react-shimmer-effects");
-const SuspenseCard = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerPostDetails), {
-        card: true,
-        cta: true,
-        variant: "SIMPLE"
-    }, void 0, false, {
-        fileName: "src/Pages/SuspenseCard.jsx",
-        lineNumber: 4,
-        columnNumber: 10
-    }, undefined);
-};
-_c = SuspenseCard;
-exports.default = SuspenseCard;
-var _c;
-$RefreshReg$(_c, "SuspenseCard");
-
-  $parcel$ReactRefreshHelpers$6b75.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","82D6y","7dhfe"], "7dhfe", "parcelRequireb877")
+},{"2c989d651b0dce95":"61B45","bb65f221ba6017e":"lgJ39"}]},["1xC6H","82D6y","7dhfe"], "7dhfe", "parcelRequireb877")
 
 //# sourceMappingURL=index.97a9311a.js.map
