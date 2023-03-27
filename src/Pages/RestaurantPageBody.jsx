@@ -4,30 +4,27 @@ import MiniCart from "./MiniCart";
 import { EMPTY_CART_IMG } from "../Utilities/constants";
 import { useSelector } from "react-redux";
 
-
 const RestaurantPageBody = ({
   resturantData,
   menu,
   filteredMenu,
   setFilteredMenu,
 }) => {
-  const cartItems = useSelector(store=>store?.cart?.items)
+  const cartItems = useSelector((store) => store?.cart?.items);
   return (
     <div className="Resturant-Menu-Body w-11/12    justify-start flex">
       <div className="Resturant-Categories  w-[410px] overflow-scroll  sticky top-[310px] z-10 pr-2   h-fit flex flex-col">
-        {resturantData?.menu?.widgets?.map((item) =>
-          item.type === "category" ? (
-            <button
-              className=" flex justify-end p-2 text-[15px]   hover:text-[#fc8019] active:text-[#fc8019]"
-              key={item.id}
-              onClick={() => {
-                handleCategoryMenu(item.name, menu, setFilteredMenu);
-              }}
-            >
-              <span>{item.name}</span>
-            </button>
-          ) : null
-        )}
+        {filteredMenu?.map((item) => (
+          <button
+            className=" flex justify-end p-2 text-[15px]   hover:text-[#fc8019] active:text-[#fc8019]"
+            key={item.id}
+            onClick={() => {
+              handleCategoryMenu(item.name, menu, setFilteredMenu);
+            }}
+          >
+            <span>{item?.card?.card?.title}</span>
+          </button>
+        ))}
       </div>
       <div className="Resturant-Menu-Items border-[black] border-l-[1px]   ">
         {filteredMenu.map((item) => (
@@ -39,7 +36,7 @@ const RestaurantPageBody = ({
         ))}
       </div>
       <div className="mini-cart">
-        {cartItems?.length >0 ? (
+        {cartItems?.length > 0 ? (
           <MiniCart />
         ) : (
           <div className="mini-Checkout-Box sticky ml-[115px] z-[1] top-[340px]    w-[300px] bg-white h-fit p-3 ">

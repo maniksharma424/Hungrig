@@ -36742,8 +36742,8 @@ var _reselect = require("reselect");
 // src/getDefaultMiddleware.ts
 var _reduxThunk = require("redux-thunk");
 var _reduxThunkDefault = parcelHelpers.interopDefault(_reduxThunk);
-var global = arguments[3];
 var process = require("91da2a0b3b42edcf");
+var global = arguments[3];
 var __extends = undefined && undefined.__extends || function() {
     var extendStatics = function(d, b) {
         extendStatics = Object.setPrototypeOf || ({
@@ -41116,19 +41116,24 @@ const useRestaurantPage = (resturantID, setMenu, setFilteredMenu)=>{
     _s();
     const [resturantData, setResturantData] = (0, _react.useState)([]);
     const cordinates = (0, _react.useContext)((0, _myApp.locationContext));
+    console.log(cordinates);
     (0, _react.useEffect)(()=>{
         const controller = new AbortController();
         const signal = controller.signal;
         getResturantMenu(signal, resturantID, setResturantData, setMenu, setFilteredMenu);
         return ()=>controller.abort();
-    }, []);
+    }, [
+        cordinates
+    ]);
     const getResturantMenu = async (signal, resturantID, setResturantData, setMenu, setFilteredMenu)=>{
-        const response = await fetch(`https://www.swiggy.com/dapi/menu/v4/full?$lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&menuId=${resturantID}`, signal).then((res)=>res.json()).catch((err)=>{
+        const response = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&restaurantId=${resturantID}&submitAction=ENTER`, signal).then((res)=>res.json()).catch((err)=>{
             throw new Error("Something Went Wrong");
         });
-        setResturantData(response?.data);
-        setMenu(Object.values(response?.data?.menu?.items));
-        setFilteredMenu(Object.values(response?.data?.menu?.items));
+        setResturantData(response?.data?.cards[0]?.card?.card?.info);
+        console.log(response?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR.cards);
+        // setMenu(Object.values(response?.data?.menu?.items));
+        // setFilteredMenu(Object.values(response?.data?.menu?.items));
+        setFilteredMenu(response?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR.cards);
     };
     return resturantData;
 };
@@ -41166,23 +41171,23 @@ const RestaurantPageBody = ({ resturantData , menu , filteredMenu , setFilteredM
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                 className: "Resturant-Categories w-[410px] overflow-scroll sticky top-[310px] z-10 pr-2 h-fit flex flex-col",
-                children: resturantData?.menu?.widgets?.map((item)=>item.type === "category" ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                children: filteredMenu?.map((item)=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
                         className: " flex justify-end p-2 text-[15px] hover:text-[#fc8019] active:text-[#fc8019]",
                         onClick: ()=>{
                             (0, _utils.handleCategoryMenu)(item.name, menu, setFilteredMenu);
                         },
                         children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                            children: item.name
+                            children: item?.card?.card?.title
                         }, void 0, false, {
                             fileName: "src/Pages/RestaurantPageBody.jsx",
                             lineNumber: 18,
-                            columnNumber: 15
+                            columnNumber: 13
                         }, undefined)
                     }, item.id, false, {
                         fileName: "src/Pages/RestaurantPageBody.jsx",
                         lineNumber: 15,
-                        columnNumber: 79
-                    }, undefined) : null)
+                        columnNumber: 36
+                    }, undefined))
             }, void 0, false, {
                 fileName: "src/Pages/RestaurantPageBody.jsx",
                 lineNumber: 14,
