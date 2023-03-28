@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { handleFilterMenuItems,handleFilterVegItems } from '../Utilities/utils';
 
-const RestaurantPageSearchbox = ({menu,setFilteredMenu}) => {
+const RestaurantPageSearchbox = ({menu,filterMenu,setFilteredMenu}) => {
     const [searchText, setSearchText] = useState("");
     const [isVeg, setIsVeg] = useState(false);
-
+  const categoriy = filterMenu?.card?.card?.title
   return (
     <div className="Resturant-Page-Input-Field sticky    w-[530px] z-30 top-[195px] left-[405px] bottom-[32px] flex justify-between p-2 text-[white]">
     <label className="bg-white p-4 px-8 flex justify-start items-center shadow-xl text-[black]  ">
@@ -16,7 +16,7 @@ const RestaurantPageSearchbox = ({menu,setFilteredMenu}) => {
         placeholder="Search for Dishes..."
         onChange={(e) => {
           setSearchText(e.target.value);
-          handleFilterMenuItems(e.target.value, menu, setFilteredMenu);
+          handleFilterMenuItems(e.target.value, menu,categoriy, setFilteredMenu);
         }}
         type="text"
       />

@@ -33,16 +33,25 @@ const useRestaurantPage = (resturantID, setMenu, setFilteredMenu) => {
       .catch((err) => {
         throw new Error("Something Went Wrong");
       });
+      console.log(response);
     setResturantData(response?.data?.cards[0]?.card?.card?.info);
+    const length = response?.data?.cards.length
     console.log(
-      response?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR.cards
+      response?.data?.cards[length-1]?.groupedCard?.cardGroupMap?.REGULAR.cards
     );
 
-    // setMenu(Object.values(response?.data?.menu?.items));
-    // setFilteredMenu(Object.values(response?.data?.menu?.items));
-    setFilteredMenu(
-      response?.data?.cards[3]?.groupedCard?.cardGroupMap?.REGULAR.cards
+
+      console.log(length);
+    setMenu(
+      response?.data?.cards[length-1]?.groupedCard?.cardGroupMap?.REGULAR.cards
     );
+    // setFilteredMenu(
+    //   response?.data?.cards[length-1]?.groupedCard?.cardGroupMap?.REGULAR.cards.find(item=>item?.card?.card.title === "Recommended")
+    // );
+    setFilteredMenu(
+      response?.data?.cards[length-1]?.groupedCard?.cardGroupMap?.REGULAR.cards[1]
+    );
+   
   };
   return resturantData;
 };
