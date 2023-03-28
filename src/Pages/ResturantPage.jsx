@@ -6,6 +6,7 @@ import useRestaurantPage from "../customHooks/useRestaurantPage";
 import RestaurantPageBody from "./RestaurantPageBody";
 import RestaurantPageShimmer from "./RestaurantPageShimmer";
 
+
 const ResturantPage = () => {
   const [menu, setMenu] = useState([]);
   const [filteredMenu, setFilteredMenu] = useState([]);
@@ -19,7 +20,7 @@ const ResturantPage = () => {
   );
 
 
-
+console.log(resturantData);
   if(resturantData) return (
       <div className="Resturant-Page">
         <RestaurantPageBanner resturantData={resturantData} />

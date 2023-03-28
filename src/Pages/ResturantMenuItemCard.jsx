@@ -26,9 +26,15 @@ const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
             </span>
           </p>
         )}
-        <p className="text-[15px]">
+        {
+          foodItem?.price ? 
+          <p className="text-[15px]">
           ₹ {foodItem?.price <= 0 ? 100 : foodItem?.price / 100}
-        </p>
+        </p>: 
+        <p className="text-[15px]">
+        ₹ {foodItem?.defaultPrice <= 0 ? 100 : foodItem?.defaultPrice / 100}
+      </p>
+        }
         <p className="text-[12px] text-[#535665]">{foodItem?.description}</p>
       </div>
       <div className="Food-Item">
