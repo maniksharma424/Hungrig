@@ -12,14 +12,14 @@ const RestaurantPageBody = ({
 }) => {
   const cartItems = useSelector((store) => store?.cart?.items);
   return (
-    <div className="Resturant-Menu-Body w-11/12    justify-start flex">
+    <div className="Resturant-Menu-Body w-11/12    justify-start flex py-3">
       <div className="Resturant-Categories  w-[410px] overflow-scroll  sticky top-[310px] z-10 pr-2   h-fit flex flex-col">
-        {filteredMenu?.map((item) => (
+        {menu?.map((item) => (
           <button
             className=" flex justify-end p-2 text-[15px]   hover:text-[#fc8019] active:text-[#fc8019]"
             key={item.id}
             onClick={() => {
-              handleCategoryMenu(item.name, menu, setFilteredMenu);
+              handleCategoryMenu(item?.card?.card?.title, menu, setFilteredMenu);
             }}
           >
             <span>{item?.card?.card?.title}</span>
@@ -27,13 +27,30 @@ const RestaurantPageBody = ({
         ))}
       </div>
       <div className="Resturant-Menu-Items border-[black] border-l-[1px]   ">
-        {filteredMenu.map((item) => (
+        {/* {filteredMenu?.map((item) => (
           <ResturantMenuItemCard
             key={item.id}
-            foodItem={item}
+            foodItem={item?.card?.info}
             RestaurantData={resturantData}
           />
-        ))}
+        ))} */}
+        {filteredMenu?.card?.card.itemCards
+          ? filteredMenu?.card?.card.itemCards?.map((item) => (
+              <ResturantMenuItemCard
+                key={item.id}
+                foodItem={item?.card?.info}
+                RestaurantData={resturantData}
+              />
+            ))
+          : filteredMenu?.card?.card.categories?.map((item) =>
+              item?.itemCards?.map((item) => (
+                <ResturantMenuItemCard
+                  key={item.id}
+                  foodItem={item?.card?.info}
+                  RestaurantData={resturantData}
+                />
+              ))
+            )}
       </div>
       <div className="mini-cart">
         {cartItems?.length > 0 ? (
