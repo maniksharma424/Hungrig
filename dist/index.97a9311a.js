@@ -40713,11 +40713,7 @@ $RefreshReg$(_c, "ResturantPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","./RestaurantPageBanner":"ilOYm","../customHooks/useRestaurantPage":"4rT59","./RestaurantPageBody":"cQR1i","./RestaurantPageShimmer":"lK9cM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./RestaurantPageSearchbox":"eDluk"}],"ilOYm":[function(require,module,exports) {
-=======
 },{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","./RestaurantPageBanner":"ilOYm","../customHooks/useRestaurantPage":"4rT59","./RestaurantPageBody":"cQR1i","./RestaurantPageShimmer":"lK9cM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ilOYm":[function(require,module,exports) {
->>>>>>> new
 var $parcel$ReactRefreshHelpers$e33b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41177,21 +41173,12 @@ const debounce = (callback, delay)=>{
     };
 };
 const getSearchedResturants = debounce(searchResturants, 500);
-<<<<<<< HEAD
-const handleFilterMenuItems = (DishName, state, setState)=>{
-=======
 const handleFilterMenuItems = (DishName, state, Category, setState)=>{
->>>>>>> new
     setState(state.filter((resturant)=>{
         if (resturant.name.toLowerCase().includes(DishName.toLowerCase())) return resturant;
         if (DishName === "") return state;
         else return null;
     }));
-<<<<<<< HEAD
-};
-const handleCategoryMenu = (categoryName, state, setState)=>{
-    setState(state.filter((item)=>item.category === categoryName));
-=======
     const currentCategoryMenu = state.find((item)=>item?.card?.card?.title === Category);
     console.log(currentCategoryMenu);
 // setState(currentCategoryMenu?.card?.card.)
@@ -41209,7 +41196,6 @@ const handleCategoryMenu = (categoryName, state, setState)=>{
 };
 const handleCategoryMenu = (categoryName, state, setState)=>{
     setState(state.find((item)=>item?.card?.card?.title === categoryName));
->>>>>>> new
 };
 const handleFilterVegItems = (isVeg, state, setState)=>{
     isVeg ? setState(state.filter((item)=>item.isVeg >= 1)) : setState(state);
@@ -41779,98 +41765,7 @@ $RefreshReg$(_c, "RestaurantPageShimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eDluk":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$642f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$642f.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _utils = require("../Utilities/utils");
-var _s = $RefreshSig$();
-const RestaurantPageSearchbox = ({ menu , setFilteredMenu  })=>{
-    _s();
-    const [searchText, setSearchText] = (0, _react.useState)("");
-    const [isVeg, setIsVeg] = (0, _react.useState)(false);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "Resturant-Page-Input-Field sticky w-[530px] z-30 top-[195px] left-[405px] bottom-[32px] flex justify-between p-2 text-[white]",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                className: "bg-white p-4 px-8 flex justify-start items-center shadow-xl text-[black] ",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                        class: "fa-solid fa-magnifying-glass fa-lg relative right-[10px]"
-                    }, void 0, false, {
-                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-                        lineNumber: 11,
-                        columnNumber: 7
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        className: " bg-[white] w-[260px]",
-                        value: searchText,
-                        placeholder: "Search for Dishes...",
-                        onChange: (e)=>{
-                            setSearchText(e.target.value);
-                            (0, _utils.handleFilterMenuItems)(e.target.value, menu, setFilteredMenu);
-                        },
-                        type: "text"
-                    }, void 0, false, {
-                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-                        lineNumber: 13,
-                        columnNumber: 7
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-                lineNumber: 10,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                className: "bg-white flex justify-center items-center text-black p-2 px-4 shadow-xl",
-                children: [
-                    "Veg Only",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        className: "m-2 w-[20px] h-[20px]",
-                        value: isVeg,
-                        onChange: (e)=>{
-                            setIsVeg(e.target.value);
-                            (0, _utils.handleFilterVegItems)(e.target.checked, menu, setFilteredMenu);
-                        },
-                        type: "checkbox"
-                    }, void 0, false, {
-                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-                        lineNumber: 20,
-                        columnNumber: 7
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-                lineNumber: 18,
-                columnNumber: 5
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-        lineNumber: 9,
-        columnNumber: 10
-    }, undefined);
-};
-_s(RestaurantPageSearchbox, "D10ElH+j2+SafQcKM4rbXiLElYA=");
-_c = RestaurantPageSearchbox;
-exports.default = RestaurantPageSearchbox;
-var _c;
-$RefreshReg$(_c, "RestaurantPageSearchbox");
-
-  $parcel$ReactRefreshHelpers$642f.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2h5Kc":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2h5Kc":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1591 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
