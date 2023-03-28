@@ -27,20 +27,20 @@ export const getSearchedResturants = debounce(searchResturants, 500);
 
 //handle SearchResult for menuItems in resturantPage
 export const handleFilterMenuItems = (DishName, state, Category, setState) => {
-  setState(
-    state.filter((resturant) => {
-      if (resturant.name.toLowerCase().includes(DishName.toLowerCase()))
-        return resturant;
+  // setState(
+  //   state.filter((resturant) => {
+  //     if (resturant.name.toLowerCase().includes(DishName.toLowerCase()))
+  //       return resturant;
 
-      if (DishName === "") return state;
-      else return null;
-    })
-  );
+  //     if (DishName === "") return state;
+  //     else return null;
+  //   })
+  // );
   const currentCategoryMenu = state.find(
     (item) => item?.card?.card?.title === Category
   );
   console.log(currentCategoryMenu);
-  // setState(currentCategoryMenu?.card?.card.)
+
 
   // currentCategoryMenu?.card?.card.itemCards ?
   //  setState(
@@ -53,6 +53,16 @@ export const handleFilterMenuItems = (DishName, state, Category, setState) => {
   //     item?.itemCards?.map((item) => (
   //       item?.card?.info?.name?.toLowerCase().includes(DishName.toLowerCase()
   //     ))
+
+
+       setState(
+        currentCategoryMenu?.card?.card.itemCards?.filter((item) =>
+          item?.card?.info?.name?.toLowerCase().includes(DishName.toLowerCase())
+        )
+      )
+      
+
+
       
       }
 

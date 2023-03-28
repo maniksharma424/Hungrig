@@ -40665,6 +40665,7 @@ const ResturantPage = ()=>{
     const location = (0, _reactRouterDom.useLocation)();
     const resturantID = location.state.id;
     const resturantData = (0, _useRestaurantPageDefault.default)(resturantID, setMenu, setFilteredMenu);
+    console.log(resturantData);
     if (resturantData) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "Resturant-Page",
         children: [
@@ -40672,7 +40673,7 @@ const ResturantPage = ()=>{
                 resturantData: resturantData
             }, void 0, false, {
                 fileName: "src/Pages/ResturantPage.jsx",
-                lineNumber: 15,
+                lineNumber: 16,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantPageBodyDefault.default), {
@@ -40682,18 +40683,18 @@ const ResturantPage = ()=>{
                 setFilteredMenu: setFilteredMenu
             }, void 0, false, {
                 fileName: "src/Pages/ResturantPage.jsx",
-                lineNumber: 23,
+                lineNumber: 24,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Pages/ResturantPage.jsx",
-        lineNumber: 14,
+        lineNumber: 15,
         columnNumber: 29
     }, undefined);
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _restaurantPageShimmerDefault.default), {}, void 0, false, {
         fileName: "src/Pages/ResturantPage.jsx",
-        lineNumber: 24,
+        lineNumber: 25,
         columnNumber: 26
     }, undefined);
 };
@@ -40975,7 +40976,7 @@ var _myApp = require("../MyApp");
 var _s = $RefreshSig$();
 const useRestaurantPage = (resturantID, setMenu, setFilteredMenu)=>{
     _s();
-    const [resturantData, setResturantData] = (0, _react.useState)([]);
+    const [resturantData, setResturantData] = (0, _react.useState)(null);
     const cordinates = (0, _react.useContext)((0, _myApp.locationContext));
     console.log(cordinates);
     (0, _react.useEffect)(()=>{
@@ -41003,7 +41004,7 @@ const useRestaurantPage = (resturantID, setMenu, setFilteredMenu)=>{
     };
     return resturantData;
 };
-_s(useRestaurantPage, "TzGFwtBwFPzUkZDPCNty25j6s3I=");
+_s(useRestaurantPage, "MTz7iXo41NPwY6msrVRGfCkpKwI=");
 exports.default = useRestaurantPage;
 
   $parcel$ReactRefreshHelpers$5b23.postlude(module);
@@ -41174,25 +41175,28 @@ const debounce = (callback, delay)=>{
 };
 const getSearchedResturants = debounce(searchResturants, 500);
 const handleFilterMenuItems = (DishName, state, Category, setState)=>{
-    setState(state.filter((resturant)=>{
-        if (resturant.name.toLowerCase().includes(DishName.toLowerCase())) return resturant;
-        if (DishName === "") return state;
-        else return null;
-    }));
+    // setState(
+    //   state.filter((resturant) => {
+    //     if (resturant.name.toLowerCase().includes(DishName.toLowerCase()))
+    //       return resturant;
+    //     if (DishName === "") return state;
+    //     else return null;
+    //   })
+    // );
     const currentCategoryMenu = state.find((item)=>item?.card?.card?.title === Category);
     console.log(currentCategoryMenu);
-// setState(currentCategoryMenu?.card?.card.)
-// currentCategoryMenu?.card?.card.itemCards ?
-//  setState(
-//       currentCategoryMenu?.card?.card.itemCards?.filter((item) =>
-//         item?.card?.info?.name?.toLowerCase().includes(DishName.toLowerCase())
-//       )
-//     )
-//   : setState(
-//     currentCategoryMenu?.card?.card.categories?.map((item) =>
-//     item?.itemCards?.map((item) => (
-//       item?.card?.info?.name?.toLowerCase().includes(DishName.toLowerCase()
-//     ))
+    // currentCategoryMenu?.card?.card.itemCards ?
+    //  setState(
+    //       currentCategoryMenu?.card?.card.itemCards?.filter((item) =>
+    //         item?.card?.info?.name?.toLowerCase().includes(DishName.toLowerCase())
+    //       )
+    //     )
+    //   : setState(
+    //     currentCategoryMenu?.card?.card.categories?.map((item) =>
+    //     item?.itemCards?.map((item) => (
+    //       item?.card?.info?.name?.toLowerCase().includes(DishName.toLowerCase()
+    //     ))
+    setState(currentCategoryMenu?.card?.card.itemCards?.filter((item)=>item?.card?.info?.name?.toLowerCase().includes(DishName.toLowerCase())));
 };
 const handleCategoryMenu = (categoryName, state, setState)=>{
     setState(state.find((item)=>item?.card?.card?.title === categoryName));
@@ -41278,7 +41282,7 @@ const ResturantMenuItemCard = ({ foodItem , RestaurantData  })=>{
                         lineNumber: 18,
                         columnNumber: 18
                     }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                    foodItem?.price ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         className: "text-[15px]",
                         children: [
                             "₹ ",
@@ -41287,14 +41291,24 @@ const ResturantMenuItemCard = ({ foodItem , RestaurantData  })=>{
                     }, void 0, true, {
                         fileName: "src/Pages/ResturantMenuItemCard.jsx",
                         lineNumber: 25,
-                        columnNumber: 9
+                        columnNumber: 28
+                    }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                        className: "text-[15px]",
+                        children: [
+                            "₹ ",
+                            foodItem?.defaultPrice <= 0 ? 100 : foodItem?.defaultPrice / 100
+                        ]
+                    }, void 0, true, {
+                        fileName: "src/Pages/ResturantMenuItemCard.jsx",
+                        lineNumber: 27,
+                        columnNumber: 16
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                         className: "text-[12px] text-[#535665]",
                         children: foodItem?.description
                     }, void 0, false, {
                         fileName: "src/Pages/ResturantMenuItemCard.jsx",
-                        lineNumber: 28,
+                        lineNumber: 30,
                         columnNumber: 9
                     }, undefined)
                 ]
@@ -41317,7 +41331,7 @@ const ResturantMenuItemCard = ({ foodItem , RestaurantData  })=>{
                                 }
                             }, void 0, false, {
                                 fileName: "src/Pages/ResturantMenuItemCard.jsx",
-                                lineNumber: 32,
+                                lineNumber: 34,
                                 columnNumber: 11
                             }, undefined),
                             isLoaded ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
@@ -41325,19 +41339,19 @@ const ResturantMenuItemCard = ({ foodItem , RestaurantData  })=>{
                                 src: (0, _constants.IMAGE_URL) + foodItem?.imageId
                             }, void 0, false, {
                                 fileName: "src/Pages/ResturantMenuItemCard.jsx",
-                                lineNumber: 35,
+                                lineNumber: 37,
                                 columnNumber: 23
                             }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                                 className: "rounded-lg w-[100px] h-[90px] border-none bg-[#e8e9e6"
                             }, void 0, false, {
                                 fileName: "src/Pages/ResturantMenuItemCard.jsx",
-                                lineNumber: 35,
+                                lineNumber: 37,
                                 columnNumber: 146
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Pages/ResturantMenuItemCard.jsx",
-                        lineNumber: 31,
+                        lineNumber: 33,
                         columnNumber: 9
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -41354,18 +41368,18 @@ const ResturantMenuItemCard = ({ foodItem , RestaurantData  })=>{
                             children: "ADD"
                         }, void 0, false, {
                             fileName: "src/Pages/ResturantMenuItemCard.jsx",
-                            lineNumber: 38,
+                            lineNumber: 40,
                             columnNumber: 11
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/Pages/ResturantMenuItemCard.jsx",
-                        lineNumber: 37,
+                        lineNumber: 39,
                         columnNumber: 9
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Pages/ResturantMenuItemCard.jsx",
-                lineNumber: 30,
+                lineNumber: 32,
                 columnNumber: 7
             }, undefined)
         ]
