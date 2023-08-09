@@ -8,8 +8,9 @@ export const Homepage = () => {
   const [restaurants, setRestaurants] = useState([]);
 
   useRestaurant(restaurants, setRestaurants);
+  console.log(restaurants);
 
-  if (restaurants?.length <= 0 || typeof restaurants === "undefined")
+  if (restaurants?.length <= 0)
     return <HomPageShimmer />;
   else
     return (

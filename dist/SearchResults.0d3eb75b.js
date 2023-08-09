@@ -767,7 +767,7 @@ const SimilarRestaurnts = ({ Restaurant  })=>{
                         }, undefined),
                         /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: " bg-white border-opacity-50 border-[1px] text-[9px] font-[900] w-fit py-[2px] px-[4px] text-[#ed5e0e] rounded-md shadow-md relative left-[14px] flex justify-center items-center bottom-[8px] h-fit p-0.5",
-                            children: Restaurant?.info?.aggregatedDiscountInfo.header
+                            children: Restaurant?.info?.aggregatedDiscountInfo?.header
                         }, void 0, false, {
                             fileName: "src/Pages/SimilarRestaurnts.jsx",
                             lineNumber: 15,

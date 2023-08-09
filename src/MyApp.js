@@ -16,6 +16,7 @@ export const locationContext = createContext();
 export const getLocation = (setState) => {
   navigator.geolocation.getCurrentPosition(
     (pos) => {
+      console.log(pos.coords);
       setState(pos.coords);
       return pos.coords;
     },
@@ -36,11 +37,11 @@ const App = () => {
   }, []);
   return (
     <Provider store={store}>
-    <locationContext.Provider value={location}>
-      <Header />
-      <Outlet />
-      <Footer />
-    </locationContext.Provider>
+      <locationContext.Provider value={location}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </locationContext.Provider>
     </Provider>
   );
 };
@@ -49,7 +50,7 @@ export const MyRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement:<Error />,
+    errorElement: <Error />,
 
     children: [
       {
@@ -78,7 +79,7 @@ export const MyRouter = createBrowserRouter([
       {
         path: "/searchpage",
         element: (
-          <Suspense fallback={<SuspenseCard/>}>
+          <Suspense fallback={<SuspenseCard />}>
             <SearchPage />
           </Suspense>
         ),
@@ -86,7 +87,7 @@ export const MyRouter = createBrowserRouter([
       {
         path: "/searchResults",
         element: (
-          <Suspense fallback={<SuspenseCard/>}>
+          <Suspense fallback={<SuspenseCard />}>
             <SearchResults />
           </Suspense>
         ),

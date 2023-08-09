@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { IMAGE_URL } from "../Utilities/constants";
 import { useState } from "react";
-
+import {AiOutlineStar} from "react-icons"
 import { ShimmerThumbnail } from "react-shimmer-effects";
 // for review
 
@@ -40,17 +40,17 @@ export const RestaurantCard = ({ restaurant }) => {
               <div className="restaurant-Delivery-Info flex justify-between w-full  items-center h-10">
                 {restaurant?.avgRating >= 4 ? (
                   <span className="Rating text-white pr-1 pl-1 text-xs p-0.5 decoration-slate-50  bg-green-600">
-                    <i className="fa-regular fa-star fa-small"></i>{" "}
+                    <AiOutlineStar/>{" "}
                     {restaurant?.avgRating}
                   </span>
                 ) : restaurant?.avgRating > 2.8 ? (
                   <span className="Rating text-white pr-1 pl-1 p-0.5 text-xs bg-[#db7c38]">
-                    <i className="fa-regular fa-star fa-small"></i>{" "}
+                    <AiOutlineStar/>{" "}
                     {restaurant?.avgRating}
                   </span>
                 ) : (
                   <span className="Rating text-slate-400 text-xs ">
-                    <i className="fa-regular fa-star fa-small"></i>{" "}
+                    <AiOutlineStar/>{" "}
                     {restaurant?.avgRating}
                   </span>
                 )}
@@ -59,7 +59,7 @@ export const RestaurantCard = ({ restaurant }) => {
                   {restaurant?.sla?.deliveryTime} Min
                 </span>
                 <span className="Cost-two text-[#535665] text-xs">
-                  {restaurant?.costForTwoString}
+                  {restaurant?.costForTwo}
                 </span>
               </div>
               <hr />

@@ -22,19 +22,38 @@ const useRestaurant = (resturants, setRestaurants) => {
 
   // getting Restaurants on homepage didMount
   const getResturants = async (signal, setRestaurants) => {
-    const resturantDataSwiggy = await fetch(
-      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
-      signal
-    )
-      .then((res) => res.json())
-      .catch((err) => {
-        throw new Error("Something Went Wrong");
-      });
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const resturantDataSwiggy =  fetch(
+          `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${pos?.coords?.latitude}&lng=${pos?.coords?.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
+          signal
+        )
+          .then((res) => res.json())
+          .catch((err) => {
+            throw new Error("Something Went Wrong");
+          });
+    
+        console.log(
+          resturantDataSwiggy?.data?.cards[3]
+        );
+        setRestaurants([
+          ...resturantDataSwiggy?.data?.cards[3],
+          ...Array(12).fill(<ShimmerThumbnail height={200} width={250} />),
+        ]);
+      },
+      (err) => {
+        throw new Error("allow location to see rest near u");
+      }
+    );
 
-    setRestaurants([
-      ...resturantDataSwiggy?.data?.cards,
-      ...Array(12).fill(<ShimmerThumbnail height={200} width={250} />),
-    ]);
+    
+
+
+
+
+
+
+    
   };
 
   // remove scroll listener on changing page
@@ -53,19 +72,27 @@ const useRestaurant = (resturants, setRestaurants) => {
     cordinates,
     removeListener
   ) => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1200
-      && window.innerHeight + window.scrollY < document.body.offsetHeight ) 
-     {
+    if (
+      window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 1200 &&
+      window.innerHeight + window.scrollY < document.body.offsetHeight
+    ) {
       const getResturants = async () => {
         const fetchResturants = await fetch(
-          `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offset}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
+          `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${
+            cordinates?.latitude
+          }&lng=${
+            cordinates?.longitude
+          }&offset=${"COVCELQ4KID4v7i0g7XUBDCnEzgD"}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
         )
           .then((res) => res.json())
           .catch((err) => {
             throw new Error("Something Went Wrong");
           });
 
-        const moreResturants = await fetchResturants?.data?.cards;
+        const moreResturants = await fetchResturants?.data?.cards[3]?.card?.card
+          ?.gridElements?.infoWithStyle?.restaurants;
+
         if (moreResturants) {
           setRestaurants((prevItems) => [
             ...prevItems.slice(0, prevItems.length - 12),
