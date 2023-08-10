@@ -6,6 +6,7 @@ import { addItem } from "../Utilities/cartSlice";
 const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const dispatch = useDispatch();
+
   return (
     <div className="Food-Item-Card flex justify-between items-center h-fit w-[450px] relative   m-[20px] border-b-[1px] border-slate-500 border-opacity-50">
       <div className="Food-Item-Info  relative bottom-[20px]  w-2/3 h-1/3">
@@ -25,16 +26,22 @@ const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
             </span>
           </p>
         )}
-        <p className="text-[15px]">
+        {
+          foodItem?.price ? 
+          <p className="text-[15px]">
           ₹ {foodItem?.price <= 0 ? 100 : foodItem?.price / 100}
-        </p>
+        </p>: 
+        <p className="text-[15px]">
+        ₹ {foodItem?.defaultPrice <= 0 ? 100 : foodItem?.defaultPrice / 100}
+      </p>
+        }
         <p className="text-[12px] text-[#535665]">{foodItem?.description}</p>
       </div>
       <div className="Food-Item">
         <div className="Food-Item-Image">
           <img
             className="h-0 w-0"
-            src={IMAGE_URL + foodItem?.cloudinaryImageId}
+            src={IMAGE_URL + foodItem?.imageId}
             onLoad={() => {
               setIsLoaded(true);
             }}
@@ -42,7 +49,7 @@ const ResturantMenuItemCard = ({ foodItem, RestaurantData }) => {
           {isLoaded ? (
             <img
               className="rounded-lg w-[100px] h-[90px]  bg-center bg-contain bg-no-repeat"
-              src={IMAGE_URL + foodItem?.cloudinaryImageId}
+              src={IMAGE_URL + foodItem?.imageId}
             />
           ) : (
             <div className="rounded-lg w-[100px] h-[90px] border-none bg-[#e8e9e6" />

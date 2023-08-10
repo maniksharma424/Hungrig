@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 body{
-    font-family: ProximaNova,arial,Helvetica Neue,sans-serif;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 *{
     margin: 0;

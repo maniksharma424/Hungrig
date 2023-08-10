@@ -1,18 +1,17 @@
 import SimilarRestaurnts from "./SimilarRestaurnts";
 import SearchResultResturantCard from "./SearchResultResturantCard";
 import { ShimmerPostItem } from "react-shimmer-effects";
-import { useLocation,Navigate  } from "react-router-dom";
+import { useLocation, Navigate } from "react-router-dom";
 import { useState } from "react";
 import { useSearchResult } from "../customHooks/useSearchResult";
 import SearchPageSearchBox from "./SearchPageSearchBox";
+import { useSelector } from "react-redux";
 const SearchResults = () => {
-
   const location = useLocation();
   const item = location?.state?.item;
   const [searchText, setSearchText] = useState(item?.text);
-
-  const searchResturantResult = useSearchResult(item);
-
+  const { lat, lon } = useSelector((store) => store?.location?.address);
+  const searchResturantResult = useSearchResult(item, lat, lon);
 
   if (searchText === "") return <Navigate to="/searchpage" />;
   else
@@ -28,11 +27,12 @@ const SearchResults = () => {
             <ul className=" searched-Dish flex  justify-evenly m-2  flex-wrap ">
               {searchResturantResult?.DISH ? (
                 searchResturantResult.DISH.cards.map((dish, index) => {
-                  if(index > 0) return (
-                    <li key={index}>
-                      <SearchResultResturantCard Dish={dish} />
-                    </li>
-                  );
+                  if (index > 0)
+                    return (
+                      <li key={index}>
+                        <SearchResultResturantCard Dish={dish} />
+                      </li>
+                    );
                 })
               ) : searchResturantResult?.RESTAURANT ? (
                 <>

@@ -3,13 +3,16 @@ import Body from "./Body";
 import Carousel from "./Carousel";
 import useRestaurant from "../customHooks/useRestaurant";
 import HomPageShimmer from "./HomPageShimmer";
+import { useSelector } from "react-redux";
 
 export const Homepage = () => {
   const [restaurants, setRestaurants] = useState([]);
+const {lat,lon} = useSelector(store=>store.location.address)
+console.log( lat,lon);
+  useRestaurant(restaurants, setRestaurants,lat,lon);
+  console.log(restaurants);
 
-  useRestaurant(restaurants, setRestaurants);
-
-  if (restaurants?.length <= 0 || typeof restaurants === "undefined")
+  if (restaurants?.length <= 0)
     return <HomPageShimmer />;
   else
     return (

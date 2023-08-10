@@ -805,6 +805,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _utils = require("../Utilities/utils");
+var _reactRedux = require("react-redux");
 var _s = $RefreshSig$();
 const SearchPageSearchBox = ({ searchText , setSearchText , setSuggestedResturants  })=>{
     _s();
@@ -812,6 +813,7 @@ const SearchPageSearchBox = ({ searchText , setSearchText , setSuggestedResturan
     (0, _react.useEffect)(()=>{
         inputRef.current.focus();
     }, []);
+    const { lat , lon  } = (0, _reactRedux.useSelector)((store)=>store?.location?.address);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
@@ -821,11 +823,11 @@ const SearchPageSearchBox = ({ searchText , setSearchText , setSuggestedResturan
                 placeholder: "search for resturants and food ... ",
                 onChange: (e)=>{
                     setSearchText(e.target.value);
-                    setSuggestedResturants && (0, _utils.getSearchedResturants)(e.target.value, setSuggestedResturants);
+                    setSuggestedResturants && (0, _utils.getSearchedResturants)(e.target.value, setSuggestedResturants, lat, lon);
                 }
             }, void 0, false, {
                 fileName: "src/Pages/SearchPageSearchBox.jsx",
-                lineNumber: 13,
+                lineNumber: 18,
                 columnNumber: 7
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
@@ -838,18 +840,22 @@ const SearchPageSearchBox = ({ searchText , setSearchText , setSuggestedResturan
                     class: "fa-solid fa-xmark fa-2xl"
                 }, void 0, false, {
                     fileName: "src/Pages/SearchPageSearchBox.jsx",
-                    lineNumber: 21,
+                    lineNumber: 26,
                     columnNumber: 9
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/Pages/SearchPageSearchBox.jsx",
-                lineNumber: 17,
+                lineNumber: 22,
                 columnNumber: 7
             }, undefined)
         ]
     }, void 0, true);
 };
-_s(SearchPageSearchBox, "cBQ6FQ+sf5H+lvNONLKqtm4aeQ8=");
+_s(SearchPageSearchBox, "xcwEJBkbcsRiRnMFNOIgF1SjjBM=", false, function() {
+    return [
+        (0, _reactRedux.useSelector)
+    ];
+});
 _c = SearchPageSearchBox;
 exports.default = SearchPageSearchBox;
 var _c;
@@ -860,6 +866,6 @@ $RefreshReg$(_c, "SearchPageSearchBox");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["1xC6H","clWGD"], null, "parcelRequireb877")
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-redux":"bdVon"}]},["1xC6H","clWGD"], null, "parcelRequireb877")
 
 //# sourceMappingURL=SearchPage.39e008e8.js.map

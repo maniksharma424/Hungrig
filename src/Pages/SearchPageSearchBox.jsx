@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { getSearchedResturants } from "../Utilities/utils";
-
+import { useSelector } from "react-redux";
 const SearchPageSearchBox = ({
   searchText,
   setSearchText,
@@ -10,6 +10,9 @@ const SearchPageSearchBox = ({
   useEffect(() => {
     inputRef.current.focus();
   }, []);
+
+
+  const {lat,lon} = useSelector(store=>store?.location?.address)
   return (
     <>
       <input
@@ -21,7 +24,7 @@ const SearchPageSearchBox = ({
           setSearchText(e.target.value);
 
           setSuggestedResturants
-            ? getSearchedResturants(e.target.value, setSuggestedResturants)
+            ? getSearchedResturants(e.target.value, setSuggestedResturants,lat,lon)
             : null;
         }}
       />

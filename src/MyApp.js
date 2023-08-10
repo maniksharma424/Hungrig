@@ -7,39 +7,20 @@ import Header from "./Pages/Header";
 import Footer from "./Pages/Footer";
 import LandingPage from "./Pages/LandingPage";
 import Error from "./Pages/Error";
-import { createContext, lazy, Suspense, useEffect, useState } from "react";
+import { lazy, Suspense } from "react";
 import { Provider } from "react-redux";
 import store from "./Utilities/store";
-
-export const locationContext = createContext();
-export const getLocation = (setState) => {
-  navigator.geolocation.getCurrentPosition(
-    (pos) => {
-      setState(pos.coords);
-      return pos.coords;
-    },
-    (err) => {
-      throw new Error("allow location to see rest near u");
-    }
-  );
-};
+import SuspenseCard from "./Pages/SuspenseCard";
 
 const SearchPage = lazy(() => import("./Pages/SearchPage"));
 const SearchResults = lazy(() => import("./Pages/SearchResults"));
 
 const App = () => {
-  const [location, setLocation] = useState({});
-
-  useEffect(() => {
-    getLocation(setLocation);
-  }, []);
   return (
     <Provider store={store}>
-    <locationContext.Provider value={location}>
       <Header />
       <Outlet />
       <Footer />
-    </locationContext.Provider>
     </Provider>
   );
 };
@@ -48,7 +29,7 @@ export const MyRouter = createBrowserRouter([
   {
     path: "/",
     element: <App />,
-    errorElement:<Error />,
+    errorElement: <Error />,
 
     children: [
       {
@@ -77,7 +58,7 @@ export const MyRouter = createBrowserRouter([
       {
         path: "/searchpage",
         element: (
-          <Suspense>
+          <Suspense fallback={<SuspenseCard />}>
             <SearchPage />
           </Suspense>
         ),
@@ -85,7 +66,7 @@ export const MyRouter = createBrowserRouter([
       {
         path: "/searchResults",
         element: (
-          <Suspense>
+          <Suspense fallback={<SuspenseCard />}>
             <SearchResults />
           </Suspense>
         ),

@@ -8,7 +8,7 @@ const ResultDish = ({ Dish }) => {
   const dispatch  = useDispatch()
 
   return (
-    <div className="Search-Result-Dish-Card bg-white w-[300px] p-2 m-4 rounded-lg h-[200px]  flex hover:cursor-pointer  justify-evenly ">
+    <div className="Search-Result-Dish-Card bg-white w-[300px] p-2 m-4 rounded-lg h-fit  flex hover:cursor-pointer  justify-evenly ">
       <div className="Search-Result-Dish-Info overflow-hidden  w-[200px]    ">
         <p className="text-[11px] font-[800] text-[#686b78] ">
           By {Dish?.restaurant?.info?.name}

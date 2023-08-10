@@ -1,26 +1,30 @@
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import RestaurantPageBanner from "./RestaurantPageBanner";
-import RestaurantPageSearchbox from "./RestaurantPageSearchbox";
+
 import useRestaurantPage from "../customHooks/useRestaurantPage";
 import RestaurantPageBody from "./RestaurantPageBody";
 import RestaurantPageShimmer from "./RestaurantPageShimmer";
-
+import { useSelector } from "react-redux";
+import RestaurantPageSearchbox from "./RestaurantPageSearchbox";
 const ResturantPage = () => {
   const [menu, setMenu] = useState([]);
   const [filteredMenu, setFilteredMenu] = useState([]);
-scrollTo(0,0)
+  scrollTo(0, 0);
   const location = useLocation();
   const resturantID = location.state.id;
+
+  const { lat, lon } = useSelector((store) => store.location.address);
   const resturantData = useRestaurantPage(
     resturantID,
     setMenu,
-    setFilteredMenu
+    setFilteredMenu,
+    lat,
+    lon
   );
 
-
-  if (resturantData <= 0) return <RestaurantPageShimmer />;
-  else
+  console.log(resturantData);
+  if (resturantData)
     return (
       <div className="Resturant-Page">
         <RestaurantPageBanner resturantData={resturantData} />
@@ -28,6 +32,7 @@ scrollTo(0,0)
         <RestaurantPageSearchbox
           menu={menu}
           setFilteredMenu={setFilteredMenu}
+          filterMenu={filteredMenu}
         />
 
         <RestaurantPageBody
@@ -38,5 +43,6 @@ scrollTo(0,0)
         />
       </div>
     );
+  else return <RestaurantPageShimmer />;
 };
 export default ResturantPage;

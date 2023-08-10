@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import {
@@ -8,15 +8,15 @@ import {
   SERVICES_IMG_CLASSNAME,
   TRACK_ORDER_IMG,
 } from "../Utilities/constants";
-import { locationContext } from "../MyApp";
+
 import ModalContent from "./ModalContent";
 import { TEXTS, STYLE } from "../Utilities/constants";
+import { useSelector } from "react-redux";
 
 const LandingPage = () => {
   const [text, setText] = useState("Unexpected Guests");
   const [showModal, setShowModal] = useState(true);
   const [pageStyle, setPageStyle] = useState(STYLE.modalOn);
-  const location = useContext(locationContext);
 
   useEffect(() => {
     let timer = 0;
@@ -28,13 +28,16 @@ const LandingPage = () => {
 
     return () => clearInterval(timer);
   }, []);
+  const address = useSelector((store) => store.location);
 
   return (
     <div className={pageStyle}>
       <div className="upper-box flex w-[400px] sm:w-full  ">
         <div className="locationBox sm:w-[850px] sm:h-[550px] w-[200px] ">
           <div className="flex flex-col p-12 sm:w-10/12 sm:h-full w-[200px] h-[250px]">
-            <p className="sm:text-[40px] text-[9px]  font-[900] sm:mt-10">{text} ? </p>
+            <p className="sm:text-[40px] text-[9px]  font-[900] sm:mt-10">
+              {text} ?{" "}
+            </p>
             <p className="sm:text-[24px] text-[7px] text-[#686b78] ">
               Order food from your favourite restaurant near you
             </p>
@@ -50,7 +53,7 @@ const LandingPage = () => {
               >
                 📍 Locate Me
               </button>
-              {!location.latitude ? (
+              {!address ? (
                 <button
                   onClick={() => {
                     alert("allow location to see restaurant near you");
@@ -101,7 +104,9 @@ const LandingPage = () => {
             src={MIN_ORDER_IMG}
             alt="image"
           />
-          <p className="sm:text-[20px] sm:font-[900] text-[8px] font-[300] text-white">No minimum order</p>
+          <p className="sm:text-[20px] sm:font-[900] text-[8px] font-[300] text-white">
+            No minimum order
+          </p>
           <p className="text-[#e0cbc1] sm:text-[15px] text-[5px]">
             Order in for yourself or for the group,
           </p>

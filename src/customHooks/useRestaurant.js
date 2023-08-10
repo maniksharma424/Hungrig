@@ -1,12 +1,10 @@
 import { useState, useEffect, useContext } from "react";
-import { locationContext } from "../MyApp";
+
 import { ShimmerThumbnail } from "react-shimmer-effects";
 
-const useRestaurant = (resturants, setRestaurants) => {
+const useRestaurant = (resturants, setRestaurants, lat, lon) => {
   const [offset, setOffset] = useState(31);
   const [flag, setflag] = useState(true);
-
-  const cordinates = useContext(locationContext);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -18,12 +16,12 @@ const useRestaurant = (resturants, setRestaurants) => {
       controller.abort();
       window.onscroll = null;
     };
-  }, [cordinates]);
+  }, [lat, lon]);
 
   // getting Restaurants on homepage didMount
   const getResturants = async (signal, setRestaurants) => {
     const resturantDataSwiggy = await fetch(
-      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates.latitude}&lng=${cordinates.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
+      `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${lon}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`,
       signal
     )
       .then((res) => res.json())
@@ -31,8 +29,13 @@ const useRestaurant = (resturants, setRestaurants) => {
         throw new Error("Something Went Wrong");
       });
 
+    console.log(
+      resturantDataSwiggy?.data?.cards[5]?.card?.card?.gridElements
+        ?.infoWithStyle?.restaurants
+    );
     setRestaurants([
-      ...resturantDataSwiggy?.data?.cards,
+      ...resturantDataSwiggy?.data?.cards[5]?.card?.card?.gridElements
+        ?.infoWithStyle?.restaurants,
       ...Array(12).fill(<ShimmerThumbnail height={200} width={250} />),
     ]);
   };
@@ -50,22 +53,27 @@ const useRestaurant = (resturants, setRestaurants) => {
     setRestaurants,
     offset,
     setOffset,
-    cordinates,
+    lat,
+    lon,
     removeListener
   ) => {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1200
-      && window.innerHeight + window.scrollY < document.body.offsetHeight ) 
-     {
+    if (
+      window.innerHeight + window.scrollY >=
+        document.body.offsetHeight - 1200 &&
+      window.innerHeight + window.scrollY < document.body.offsetHeight
+    ) {
       const getResturants = async () => {
         const fetchResturants = await fetch(
-          `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offset}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
+          `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${lat}&lng=${lon}&offset=${"COVCELQ4KID4v7i0g7XUBDCnEzgD"}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`
         )
           .then((res) => res.json())
           .catch((err) => {
             throw new Error("Something Went Wrong");
           });
 
-        const moreResturants = await fetchResturants?.data?.cards;
+        const moreResturants = await fetchResturants?.data?.cards[3]?.card?.card
+          ?.gridElements?.infoWithStyle?.restaurants;
+
         if (moreResturants) {
           setRestaurants((prevItems) => [
             ...prevItems.slice(0, prevItems.length - 12),
@@ -103,7 +111,8 @@ const useRestaurant = (resturants, setRestaurants) => {
           setRestaurants,
           offset,
           setOffset,
-          cordinates,
+          lat,
+          lon,
           removeListener
         );
       };

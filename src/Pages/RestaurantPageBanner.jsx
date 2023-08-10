@@ -41,7 +41,7 @@ const RestaurantPageBanner = ({ resturantData }) => {
             )}
 
             <li className="mr-11 px-2">
-              <p>{resturantData?.sla?.deliveryTime} Mins</p>
+              <p className="text-[16px]">{resturantData?.sla?.deliveryTime} Mins</p>
               <p className="text-[10px] text-[#686b78]">Delivery Time</p>
             </li>
             <li className="mr-11 px-2">
