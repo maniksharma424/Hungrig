@@ -31871,6 +31871,7 @@ var _s = $RefreshSig$();
 const locationContext = /*#__PURE__*/ (0, _react.createContext)();
 const getLocation = (setState)=>{
     navigator.geolocation.getCurrentPosition((pos)=>{
+        console.log(pos.coords);
         setState(pos.coords);
         return pos.coords;
     }, (err)=>{
@@ -31894,28 +31895,28 @@ const App = ()=>{
             children: [
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 32,
-                    columnNumber: 7
+                    lineNumber: 33,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactRouterDom.Outlet), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 33,
-                    columnNumber: 7
+                    lineNumber: 34,
+                    columnNumber: 9
                 }, undefined),
                 /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 34,
-                    columnNumber: 7
+                    lineNumber: 35,
+                    columnNumber: 9
                 }, undefined)
             ]
         }, void 0, true, {
             fileName: "src/MyApp.js",
-            lineNumber: 31,
-            columnNumber: 5
+            lineNumber: 32,
+            columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/MyApp.js",
-        lineNumber: 30,
+        lineNumber: 31,
         columnNumber: 10
     }, undefined);
 };
@@ -31926,12 +31927,12 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
         path: "/",
         element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(App, {}, void 0, false, {
             fileName: "src/MyApp.js",
-            lineNumber: 40,
+            lineNumber: 41,
             columnNumber: 12
         }, undefined),
         errorElement: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _errorDefault.default), {}, void 0, false, {
             fileName: "src/MyApp.js",
-            lineNumber: 41,
+            lineNumber: 42,
             columnNumber: 17
         }, undefined),
         children: [
@@ -31939,7 +31940,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _landingPageDefault.default), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 44,
+                    lineNumber: 45,
                     columnNumber: 14
                 }, undefined)
             },
@@ -31947,7 +31948,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/homePage",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homepage.Homepage), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 47,
+                    lineNumber: 48,
                     columnNumber: 14
                 }, undefined)
             },
@@ -31955,7 +31956,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/cart",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _cart.Cart), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 50,
+                    lineNumber: 51,
                     columnNumber: 14
                 }, undefined)
             },
@@ -31963,7 +31964,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/aboutUs",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 53,
+                    lineNumber: 54,
                     columnNumber: 14
                 }, undefined)
             },
@@ -31971,7 +31972,7 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                 path: "/restaurant-page",
                 element: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantPageDefault.default), {}, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 56,
+                    lineNumber: 57,
                     columnNumber: 14
                 }, undefined)
             },
@@ -31981,12 +31982,12 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _suspenseCardDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SearchPage, {}, void 0, false, {
                         fileName: "src/MyApp.js",
-                        lineNumber: 60,
+                        lineNumber: 61,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 59,
+                    lineNumber: 60,
                     columnNumber: 14
                 }, undefined)
             },
@@ -31996,12 +31997,12 @@ const MyRouter = (0, _reactRouterDom.createBrowserRouter)([
                     fallback: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _suspenseCardDefault.default), {}, void 0, false, void 0, void 0),
                     children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(SearchResults, {}, void 0, false, {
                         fileName: "src/MyApp.js",
-                        lineNumber: 65,
+                        lineNumber: 66,
                         columnNumber: 13
                     }, undefined)
                 }, void 0, false, {
                     fileName: "src/MyApp.js",
-                    lineNumber: 64,
+                    lineNumber: 65,
                     columnNumber: 14
                 }, undefined)
             }
@@ -32043,31 +32044,32 @@ const Homepage = ()=>{
     _s();
     const [restaurants, setRestaurants] = (0, _react.useState)([]);
     (0, _useRestaurantDefault.default)(restaurants, setRestaurants);
-    if (restaurants?.length <= 0 || typeof restaurants === "undefined") return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homPageShimmerDefault.default), {}, void 0, false, {
+    console.log(restaurants);
+    if (restaurants?.length <= 0) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _homPageShimmerDefault.default), {}, void 0, false, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 9,
-        columnNumber: 78
+        lineNumber: 10,
+        columnNumber: 40
     }, undefined);
     else return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         className: "Homepage",
         children: [
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _carouselDefault.default), {}, void 0, false, {
                 fileName: "src/Pages/Homepage.jsx",
-                lineNumber: 10,
+                lineNumber: 11,
                 columnNumber: 9
             }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _bodyDefault.default), {
                 Restaurants: restaurants
             }, void 0, false, {
                 fileName: "src/Pages/Homepage.jsx",
-                lineNumber: 11,
+                lineNumber: 12,
                 columnNumber: 9
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/Pages/Homepage.jsx",
-        lineNumber: 9,
-        columnNumber: 109
+        lineNumber: 10,
+        columnNumber: 71
     }, undefined);
 };
 _s(Homepage, "mUtUUFHnWR2bOXVrmAp6WKT2Z9U=", false, function() {
@@ -32096,6 +32098,7 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _resturantcard = require("./Resturantcard");
 const Body = ({ Restaurants  })=>{
+    console.log(Restaurants);
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         id: "Available-Resturants-window",
         className: "Available-Resturants w-full flex justify-center items-center ",
@@ -32103,21 +32106,21 @@ const Body = ({ Restaurants  })=>{
             className: "Restaurant-container px-16 flex flex-wrap justify-start border-none w-[90%] mt-[45px] ",
             children: Restaurants?.map((restaurant, index)=>{
                 return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _resturantcard.RestaurantCard), {
-                    restaurant: restaurant?.data?.data
+                    restaurant: restaurant?.info
                 }, index, false, {
                     fileName: "src/Pages/Body.jsx",
-                    lineNumber: 8,
+                    lineNumber: 9,
                     columnNumber: 16
                 }, undefined);
             })
         }, void 0, false, {
             fileName: "src/Pages/Body.jsx",
-            lineNumber: 6,
+            lineNumber: 7,
             columnNumber: 7
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/Body.jsx",
-        lineNumber: 5,
+        lineNumber: 6,
         columnNumber: 10
     }, undefined);
 };
@@ -32145,6 +32148,7 @@ var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _reactRouterDom = require("react-router-dom");
 var _constants = require("../Utilities/constants");
 var _react = require("react");
+var _reactIcons = require("react-icons");
 var _reactShimmerEffects = require("react-shimmer-effects");
 var _s = $RefreshSig$();
 const RestaurantCard = ({ restaurant  })=>{
@@ -32167,7 +32171,7 @@ const RestaurantCard = ({ restaurant  })=>{
                         }
                     }, void 0, false, {
                         fileName: "src/Pages/Resturantcard.jsx",
-                        lineNumber: 16,
+                        lineNumber: 17,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32177,18 +32181,18 @@ const RestaurantCard = ({ restaurant  })=>{
                             src: (0, _constants.IMAGE_URL) + restaurant?.cloudinaryImageId
                         }, void 0, false, {
                             fileName: "src/Pages/Resturantcard.jsx",
-                            lineNumber: 20,
+                            lineNumber: 21,
                             columnNumber: 27
                         }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
                             className: " h-32 w-[210px] bg-[#e9ebe7]"
                         }, void 0, false, {
                             fileName: "src/Pages/Resturantcard.jsx",
-                            lineNumber: 20,
+                            lineNumber: 21,
                             columnNumber: 141
                         }, undefined)
                     }, void 0, false, {
                         fileName: "src/Pages/Resturantcard.jsx",
-                        lineNumber: 19,
+                        lineNumber: 20,
                         columnNumber: 13
                     }, undefined),
                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32199,7 +32203,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                 children: restaurant?.name
                             }, void 0, false, {
                                 fileName: "src/Pages/Resturantcard.jsx",
-                                lineNumber: 23,
+                                lineNumber: 24,
                                 columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32207,7 +32211,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                 children: restaurant?.cuisines?.join(",")
                             }, void 0, false, {
                                 fileName: "src/Pages/Resturantcard.jsx",
-                                lineNumber: 26,
+                                lineNumber: 27,
                                 columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32216,11 +32220,9 @@ const RestaurantCard = ({ restaurant  })=>{
                                     restaurant?.avgRating >= 4 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "Rating text-white pr-1 pl-1 text-xs p-0.5 decoration-slate-50 bg-green-600",
                                         children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                className: "fa-regular fa-star fa-small"
-                                            }, void 0, false, {
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactIcons.AiOutlineStar), {}, void 0, false, {
                                                 fileName: "src/Pages/Resturantcard.jsx",
-                                                lineNumber: 31,
+                                                lineNumber: 32,
                                                 columnNumber: 21
                                             }, undefined),
                                             " ",
@@ -32228,16 +32230,14 @@ const RestaurantCard = ({ restaurant  })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/Resturantcard.jsx",
-                                        lineNumber: 30,
+                                        lineNumber: 31,
                                         columnNumber: 47
                                     }, undefined) : restaurant?.avgRating > 2.8 ? /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "Rating text-white pr-1 pl-1 p-0.5 text-xs bg-[#db7c38]",
                                         children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                className: "fa-regular fa-star fa-small"
-                                            }, void 0, false, {
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactIcons.AiOutlineStar), {}, void 0, false, {
                                                 fileName: "src/Pages/Resturantcard.jsx",
-                                                lineNumber: 34,
+                                                lineNumber: 35,
                                                 columnNumber: 21
                                             }, undefined),
                                             " ",
@@ -32245,16 +32245,14 @@ const RestaurantCard = ({ restaurant  })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/Resturantcard.jsx",
-                                        lineNumber: 33,
+                                        lineNumber: 34,
                                         columnNumber: 59
                                     }, undefined) : /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "Rating text-slate-400 text-xs ",
                                         children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                className: "fa-regular fa-star fa-small"
-                                            }, void 0, false, {
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactIcons.AiOutlineStar), {}, void 0, false, {
                                                 fileName: "src/Pages/Resturantcard.jsx",
-                                                lineNumber: 37,
+                                                lineNumber: 38,
                                                 columnNumber: 21
                                             }, undefined),
                                             " ",
@@ -32262,7 +32260,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/Resturantcard.jsx",
-                                        lineNumber: 36,
+                                        lineNumber: 37,
                                         columnNumber: 29
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
@@ -32273,26 +32271,26 @@ const RestaurantCard = ({ restaurant  })=>{
                                         ]
                                     }, void 0, true, {
                                         fileName: "src/Pages/Resturantcard.jsx",
-                                        lineNumber: 41,
+                                        lineNumber: 42,
                                         columnNumber: 17
                                     }, undefined),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
                                         className: "Cost-two text-[#535665] text-xs",
-                                        children: restaurant?.costForTwoString
+                                        children: restaurant?.costForTwo
                                     }, void 0, false, {
                                         fileName: "src/Pages/Resturantcard.jsx",
-                                        lineNumber: 44,
+                                        lineNumber: 45,
                                         columnNumber: 17
                                     }, undefined)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/Pages/Resturantcard.jsx",
-                                lineNumber: 29,
+                                lineNumber: 30,
                                 columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("hr", {}, void 0, false, {
                                 fileName: "src/Pages/Resturantcard.jsx",
-                                lineNumber: 48,
+                                lineNumber: 49,
                                 columnNumber: 15
                             }, undefined),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
@@ -32303,7 +32301,7 @@ const RestaurantCard = ({ restaurant  })=>{
                                             className: "fa-sharp fa-solid fa-tags"
                                         }, void 0, false, {
                                             fileName: "src/Pages/Resturantcard.jsx",
-                                            lineNumber: 51,
+                                            lineNumber: 52,
                                             columnNumber: 19
                                         }, undefined),
                                         " ",
@@ -32311,29 +32309,29 @@ const RestaurantCard = ({ restaurant  })=>{
                                     ]
                                 }, void 0, true, {
                                     fileName: "src/Pages/Resturantcard.jsx",
-                                    lineNumber: 50,
+                                    lineNumber: 51,
                                     columnNumber: 17
                                 }, undefined)
                             }, void 0, false, {
                                 fileName: "src/Pages/Resturantcard.jsx",
-                                lineNumber: 49,
+                                lineNumber: 50,
                                 columnNumber: 15
                             }, undefined)
                         ]
                     }, void 0, true, {
                         fileName: "src/Pages/Resturantcard.jsx",
-                        lineNumber: 22,
+                        lineNumber: 23,
                         columnNumber: 13
                     }, undefined)
                 ]
             }, void 0, true, {
                 fileName: "src/Pages/Resturantcard.jsx",
-                lineNumber: 13,
+                lineNumber: 14,
                 columnNumber: 11
             }, undefined)
         }, void 0, false, {
             fileName: "src/Pages/Resturantcard.jsx",
-            lineNumber: 12,
+            lineNumber: 13,
             columnNumber: 9
         }, undefined)
     }, void 0, false);
@@ -32344,12 +32342,12 @@ const RestaurantCard = ({ restaurant  })=>{
             width: 220
         }, void 0, false, {
             fileName: "src/Pages/Resturantcard.jsx",
-            lineNumber: 60,
+            lineNumber: 61,
             columnNumber: 9
         }, undefined)
     }, void 0, false, {
         fileName: "src/Pages/Resturantcard.jsx",
-        lineNumber: 59,
+        lineNumber: 60,
         columnNumber: 54
     }, undefined));
 };
@@ -32363,7 +32361,7 @@ $RefreshReg$(_c, "RestaurantCard");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5t9MR":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-icons":"6Q2Cv"}],"5t9MR":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Popular_Cuisines", ()=>Popular_Cuisines);
@@ -34333,7 +34331,328 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-},{"a1caaa0c0bb143d1":"786KC"}],"63nrR":[function(require,module,exports) {
+},{"a1caaa0c0bb143d1":"786KC"}],"6Q2Cv":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _iconsManifest = require("./iconsManifest");
+parcelHelpers.exportAll(_iconsManifest, exports);
+var _iconBase = require("./iconBase");
+parcelHelpers.exportAll(_iconBase, exports);
+var _iconContext = require("./iconContext");
+parcelHelpers.exportAll(_iconContext, exports);
+
+},{"./iconsManifest":"llitG","./iconBase":"lCI1W","./iconContext":"iAR5o","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"llitG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "IconsManifest", ()=>IconsManifest);
+var IconsManifest = [
+    {
+        "id": "ci",
+        "name": "Circum Icons",
+        "projectUrl": "https://circumicons.com/",
+        "license": "MPL-2.0 license",
+        "licenseUrl": "https://github.com/Klarr-Agency/Circum-Icons/blob/main/LICENSE"
+    },
+    {
+        "id": "fa",
+        "name": "Font Awesome 5",
+        "projectUrl": "https://fontawesome.com/",
+        "license": "CC BY 4.0 License",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+        "id": "fa6",
+        "name": "Font Awesome 6",
+        "projectUrl": "https://fontawesome.com/",
+        "license": "CC BY 4.0 License",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+        "id": "io",
+        "name": "Ionicons 4",
+        "projectUrl": "https://ionicons.com/",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/ionic-team/ionicons/blob/master/LICENSE"
+    },
+    {
+        "id": "io5",
+        "name": "Ionicons 5",
+        "projectUrl": "https://ionicons.com/",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/ionic-team/ionicons/blob/master/LICENSE"
+    },
+    {
+        "id": "md",
+        "name": "Material Design icons",
+        "projectUrl": "http://google.github.io/material-design-icons/",
+        "license": "Apache License Version 2.0",
+        "licenseUrl": "https://github.com/google/material-design-icons/blob/master/LICENSE"
+    },
+    {
+        "id": "ti",
+        "name": "Typicons",
+        "projectUrl": "http://s-ings.com/typicons/",
+        "license": "CC BY-SA 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0/"
+    },
+    {
+        "id": "go",
+        "name": "Github Octicons icons",
+        "projectUrl": "https://octicons.github.com/",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/primer/octicons/blob/master/LICENSE"
+    },
+    {
+        "id": "fi",
+        "name": "Feather",
+        "projectUrl": "https://feathericons.com/",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/feathericons/feather/blob/master/LICENSE"
+    },
+    {
+        "id": "lu",
+        "name": "Lucide",
+        "projectUrl": "https://lucide.dev/",
+        "license": "ISC",
+        "licenseUrl": "https://github.com/lucide-icons/lucide/blob/main/LICENSE"
+    },
+    {
+        "id": "gi",
+        "name": "Game Icons",
+        "projectUrl": "https://game-icons.net/",
+        "license": "CC BY 3.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/3.0/"
+    },
+    {
+        "id": "wi",
+        "name": "Weather Icons",
+        "projectUrl": "https://erikflowers.github.io/weather-icons/",
+        "license": "SIL OFL 1.1",
+        "licenseUrl": "http://scripts.sil.org/OFL"
+    },
+    {
+        "id": "di",
+        "name": "Devicons",
+        "projectUrl": "https://vorillaz.github.io/devicons/",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+    },
+    {
+        "id": "ai",
+        "name": "Ant Design Icons",
+        "projectUrl": "https://github.com/ant-design/ant-design-icons",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+    },
+    {
+        "id": "bs",
+        "name": "Bootstrap Icons",
+        "projectUrl": "https://github.com/twbs/icons",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+    },
+    {
+        "id": "ri",
+        "name": "Remix Icon",
+        "projectUrl": "https://github.com/Remix-Design/RemixIcon",
+        "license": "Apache License Version 2.0",
+        "licenseUrl": "http://www.apache.org/licenses/"
+    },
+    {
+        "id": "fc",
+        "name": "Flat Color Icons",
+        "projectUrl": "https://github.com/icons8/flat-color-icons",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+    },
+    {
+        "id": "gr",
+        "name": "Grommet-Icons",
+        "projectUrl": "https://github.com/grommet/grommet-icons",
+        "license": "Apache License Version 2.0",
+        "licenseUrl": "http://www.apache.org/licenses/"
+    },
+    {
+        "id": "hi",
+        "name": "Heroicons",
+        "projectUrl": "https://github.com/tailwindlabs/heroicons",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+    },
+    {
+        "id": "hi2",
+        "name": "Heroicons 2",
+        "projectUrl": "https://github.com/tailwindlabs/heroicons",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+    },
+    {
+        "id": "si",
+        "name": "Simple Icons",
+        "projectUrl": "https://simpleicons.org/",
+        "license": "CC0 1.0 Universal",
+        "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+        "id": "sl",
+        "name": "Simple Line Icons",
+        "projectUrl": "https://thesabbir.github.io/simple-line-icons/",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+    },
+    {
+        "id": "im",
+        "name": "IcoMoon Free",
+        "projectUrl": "https://github.com/Keyamoon/IcoMoon-Free",
+        "license": "CC BY 4.0 License",
+        "licenseUrl": "https://github.com/Keyamoon/IcoMoon-Free/blob/master/License.txt"
+    },
+    {
+        "id": "bi",
+        "name": "BoxIcons",
+        "projectUrl": "https://github.com/atisawd/boxicons",
+        "license": "CC BY 4.0 License",
+        "licenseUrl": "https://github.com/atisawd/boxicons/blob/master/LICENSE"
+    },
+    {
+        "id": "cg",
+        "name": "css.gg",
+        "projectUrl": "https://github.com/astrit/css.gg",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+    },
+    {
+        "id": "vsc",
+        "name": "VS Code Icons",
+        "projectUrl": "https://github.com/microsoft/vscode-codicons",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+    },
+    {
+        "id": "tb",
+        "name": "Tabler Icons",
+        "projectUrl": "https://github.com/tabler/tabler-icons",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
+    },
+    {
+        "id": "tfi",
+        "name": "Themify Icons",
+        "projectUrl": "https://github.com/lykmapipo/themify-icons",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/thecreation/standard-icons/blob/master/modules/themify-icons/LICENSE"
+    },
+    {
+        "id": "rx",
+        "name": "Radix Icons",
+        "projectUrl": "https://icons.radix-ui.com",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/radix-ui/icons/blob/master/LICENSE"
+    },
+    {
+        "id": "pi",
+        "name": "Phosphor Icons",
+        "projectUrl": "https://github.com/phosphor-icons/core",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/phosphor-icons/core/blob/main/LICENSE"
+    },
+    {
+        "id": "lia",
+        "name": "Icons8 Line Awesome",
+        "projectUrl": "https://icons8.com/line-awesome",
+        "license": "MIT",
+        "licenseUrl": "https://github.com/icons8/line-awesome/blob/master/LICENSE.md"
+    }
+];
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lCI1W":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "GenIcon", ()=>GenIcon);
+parcelHelpers.export(exports, "IconBase", ()=>IconBase);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _iconContext = require("./iconContext");
+var __assign = undefined && undefined.__assign || function() {
+    __assign = Object.assign || function(t) {
+        for(var s, i = 1, n = arguments.length; i < n; i++){
+            s = arguments[i];
+            for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = undefined && undefined.__rest || function(s, e) {
+    var t = {};
+    for(var p in s)if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function") {
+        for(var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++)if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+    }
+    return t;
+};
+function Tree2Element(tree) {
+    return tree && tree.map(function(node, i) {
+        return (0, _reactDefault.default).createElement(node.tag, __assign({
+            key: i
+        }, node.attr), Tree2Element(node.child));
+    });
+}
+function GenIcon(data) {
+    // eslint-disable-next-line react/display-name
+    return function(props) {
+        return (0, _reactDefault.default).createElement(IconBase, __assign({
+            attr: __assign({}, data.attr)
+        }, props), Tree2Element(data.child));
+    };
+}
+function IconBase(props) {
+    var elem = function(conf) {
+        var attr = props.attr, size = props.size, title = props.title, svgProps = __rest(props, [
+            "attr",
+            "size",
+            "title"
+        ]);
+        var computedSize = size || conf.size || "1em";
+        var className;
+        if (conf.className) className = conf.className;
+        if (props.className) className = (className ? className + " " : "") + props.className;
+        return (0, _reactDefault.default).createElement("svg", __assign({
+            stroke: "currentColor",
+            fill: "currentColor",
+            strokeWidth: "0"
+        }, conf.attr, attr, svgProps, {
+            className: className,
+            style: __assign(__assign({
+                color: props.color || conf.color
+            }, conf.style), props.style),
+            height: computedSize,
+            width: computedSize,
+            xmlns: "http://www.w3.org/2000/svg"
+        }), title && (0, _reactDefault.default).createElement("title", null, title), props.children);
+    };
+    return (0, _iconContext.IconContext) !== undefined ? (0, _reactDefault.default).createElement((0, _iconContext.IconContext).Consumer, null, function(conf) {
+        return elem(conf);
+    }) : elem((0, _iconContext.DefaultContext));
+}
+
+},{"react":"21dqq","./iconContext":"iAR5o","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iAR5o":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "DefaultContext", ()=>DefaultContext);
+parcelHelpers.export(exports, "IconContext", ()=>IconContext);
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var DefaultContext = {
+    color: undefined,
+    size: undefined,
+    className: undefined,
+    style: undefined,
+    attr: undefined
+};
+var IconContext = (0, _reactDefault.default).createContext && (0, _reactDefault.default).createContext(DefaultContext);
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"63nrR":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2885 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -34406,20 +34725,25 @@ const useRestaurant = (resturants, setRestaurants)=>{
     ]);
     // getting Restaurants on homepage didMount
     const getResturants = async (signal, setRestaurants)=>{
-        const resturantDataSwiggy = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`, signal).then((res)=>res.json()).catch((err)=>{
-            throw new Error("Something Went Wrong");
+        navigator.geolocation.getCurrentPosition((pos)=>{
+            const resturantDataSwiggy = fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${pos?.coords?.latitude}&lng=${pos?.coords?.longitude}&offset=15&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`, signal).then((res)=>res.json()).catch((err)=>{
+                throw new Error("Something Went Wrong");
+            });
+            console.log(resturantDataSwiggy?.data?.cards[3]);
+            setRestaurants([
+                ...resturantDataSwiggy?.data?.cards[3],
+                ...Array(12).fill(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerThumbnail), {
+                    height: 200,
+                    width: 250
+                }, void 0, false, {
+                    fileName: "src/customHooks/useRestaurant.js",
+                    lineNumber: 25,
+                    columnNumber: 81
+                }, undefined))
+            ]);
+        }, (err)=>{
+            throw new Error("allow location to see rest near u");
         });
-        setRestaurants([
-            ...resturantDataSwiggy?.data?.cards,
-            ...Array(12).fill(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactShimmerEffects.ShimmerThumbnail), {
-                height: 200,
-                width: 250
-            }, void 0, false, {
-                fileName: "src/customHooks/useRestaurant.js",
-                lineNumber: 23,
-                columnNumber: 76
-            }, undefined))
-        ]);
     };
     // remove scroll listener on changing page
     const removeListener = ()=>{
@@ -34432,10 +34756,10 @@ const useRestaurant = (resturants, setRestaurants)=>{
     const fetchMoreRestaurants = (setRestaurants, offset, setOffset, cordinates, removeListener)=>{
         if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 1200 && window.innerHeight + window.scrollY < document.body.offsetHeight) {
             const getResturants = async ()=>{
-                const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${offset}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>{
+                const fetchResturants = await fetch(`https://www.swiggy.com/dapi/restaurants/list/v5?lat=${cordinates?.latitude}&lng=${cordinates?.longitude}&offset=${"COVCELQ4KID4v7i0g7XUBDCnEzgD"}&sortBy=RELEVANCE&pageType=SEE_ALL&page_type=DESKTOP_SEE_ALL_LISTING`).then((res)=>res.json()).catch((err)=>{
                     throw new Error("Something Went Wrong");
                 });
-                const moreResturants = await fetchResturants?.data?.cards;
+                const moreResturants = await fetchResturants?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
                 if (moreResturants) {
                     setRestaurants((prevItems)=>[
                             ...prevItems.slice(0, prevItems.length - 12),
@@ -34476,7 +34800,7 @@ exports.default = useRestaurant;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../MyApp":"91nZZ","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2D5qz":[function(require,module,exports) {
+},{"react":"21dqq","../MyApp":"91nZZ","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj"}],"2D5qz":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2b17 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

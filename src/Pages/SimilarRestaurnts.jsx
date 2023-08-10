@@ -14,7 +14,7 @@ const SimilarRestaurnts = ({ Restaurant }) => {
             />
           </div>
           <div className="  bg-white border-opacity-50 border-[1px] text-[9px]  font-[900] w-fit py-[2px] px-[4px]  text-[#ed5e0e] rounded-md shadow-md relative left-[14px] flex justify-center items-center bottom-[8px] h-fit p-0.5">
-            {Restaurant?.info?.aggregatedDiscountInfo.header}
+            {Restaurant?.info?.aggregatedDiscountInfo?.header}
           </div>
         </div>
         <div className="Search-Result-Restaurant-info w-[180px]">
