@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 
 import { ShimmerThumbnail } from "react-shimmer-effects";
 
