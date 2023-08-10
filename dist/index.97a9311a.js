@@ -34472,7 +34472,7 @@ exports.default = useRestaurant;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../MyApp":"91nZZ","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2D5qz":[function(require,module,exports) {
+},{"react":"21dqq","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-dev-runtime":"iTorj","../MyApp":"91nZZ"}],"2D5qz":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$2b17 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40718,7 +40718,7 @@ $RefreshReg$(_c, "ResturantPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","./RestaurantPageBanner":"ilOYm","./RestaurantPageSearchbox":"eDluk","../customHooks/useRestaurantPage":"4rT59","./RestaurantPageBody":"cQR1i","./RestaurantPageShimmer":"lK9cM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ilOYm":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-router-dom":"9xmpe","react":"21dqq","./RestaurantPageBanner":"ilOYm","../customHooks/useRestaurantPage":"4rT59","./RestaurantPageBody":"cQR1i","./RestaurantPageShimmer":"lK9cM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./RestaurantPageSearchbox":"eDluk"}],"ilOYm":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e33b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -40965,137 +40965,7 @@ $RefreshReg$(_c, "RestaurantPageBanner");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eDluk":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$642f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$642f.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _utils = require("../Utilities/utils");
-var _s = $RefreshSig$();
-const RestaurantPageSearchbox = ({ menu , setFilteredMenu  })=>{
-    _s();
-    const [searchText, setSearchText] = (0, _react.useState)("");
-    const [isVeg, setIsVeg] = (0, _react.useState)(false);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "Resturant-Page-Input-Field sticky w-[530px] z-30 top-[195px] left-[405px] bottom-[32px] flex justify-between p-2 text-[white]",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                className: "bg-white p-4 px-8 flex justify-start items-center shadow-xl text-[black] ",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                        class: "fa-solid fa-magnifying-glass fa-lg relative right-[10px]"
-                    }, void 0, false, {
-                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-                        lineNumber: 11,
-                        columnNumber: 7
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        className: " bg-[white] w-[260px]",
-                        value: searchText,
-                        placeholder: "Search for Dishes...",
-                        onChange: (e)=>{
-                            setSearchText(e.target.value);
-                            (0, _utils.handleFilterMenuItems)(e.target.value, menu, setFilteredMenu);
-                        },
-                        type: "text"
-                    }, void 0, false, {
-                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-                        lineNumber: 13,
-                        columnNumber: 7
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-                lineNumber: 10,
-                columnNumber: 5
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                className: "bg-white flex justify-center items-center text-black p-2 px-4 shadow-xl",
-                children: [
-                    "Veg Only",
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                        className: "m-2 w-[20px] h-[20px]",
-                        value: isVeg,
-                        onChange: (e)=>{
-                            setIsVeg(e.target.value);
-                            (0, _utils.handleFilterVegItems)(e.target.checked, menu, setFilteredMenu);
-                        },
-                        type: "checkbox"
-                    }, void 0, false, {
-                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-                        lineNumber: 20,
-                        columnNumber: 7
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-                lineNumber: 18,
-                columnNumber: 5
-            }, undefined)
-        ]
-    }, void 0, true, {
-        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
-        lineNumber: 9,
-        columnNumber: 10
-    }, undefined);
-};
-_s(RestaurantPageSearchbox, "D10ElH+j2+SafQcKM4rbXiLElYA=");
-_c = RestaurantPageSearchbox;
-exports.default = RestaurantPageSearchbox;
-var _c;
-$RefreshReg$(_c, "RestaurantPageSearchbox");
-
-  $parcel$ReactRefreshHelpers$642f.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bIOxy":[function(require,module,exports) {
-// get searchpage data / search resturants amd dishes data
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "getSearchedResturants", ()=>getSearchedResturants);
-parcelHelpers.export(exports, "handleFilterMenuItems", ()=>handleFilterMenuItems);
-parcelHelpers.export(exports, "handleCategoryMenu", ()=>handleCategoryMenu);
-parcelHelpers.export(exports, "handleFilterVegItems", ()=>handleFilterVegItems);
-const searchResturants = async (text, setState)=>{
-    const similarresturants = await fetch(`https://www.swiggy.com/dapi/restaurants/search/suggest?lat=32.681881&lng=74.906294&str=${text}&trackingId=null`).then((res)=>res.json()).catch((res)=>{
-        throw new Error("Something Went Wrong");
-    });
-    setState(similarresturants?.data?.suggestions);
-};
-const debounce = (callback, delay)=>{
-    let timer;
-    return (...args)=>{
-        clearTimeout(timer);
-        timer = setTimeout(()=>{
-            callback(...args);
-        }, delay);
-    };
-};
-const getSearchedResturants = debounce(searchResturants, 500);
-const handleFilterMenuItems = (DishName, state, setState)=>{
-    setState(state.filter((resturant)=>{
-        if (resturant.name.toLowerCase().includes(DishName.toLowerCase())) return resturant;
-        if (DishName === "") return state;
-        else return null;
-    }));
-};
-const handleCategoryMenu = (categoryName, state, setState)=>{
-    setState(state.filter((item)=>item.category === categoryName));
-};
-const handleFilterVegItems = (isVeg, state, setState)=>{
-    isVeg ? setState(state.filter((item)=>item.isVeg >= 1)) : setState(state);
-}; //-------------------------------------------------------------------------------
- //
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4rT59":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/constants":"5t9MR","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4rT59":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$5b23 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41135,7 +41005,7 @@ exports.default = useRestaurantPage;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","../MyApp":"91nZZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cQR1i":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../MyApp":"91nZZ"}],"cQR1i":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$386a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41266,7 +41136,46 @@ $RefreshReg$(_c, "RestaurantPageBody");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA","./MiniCart":"efG2m","../Utilities/constants":"5t9MR","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"k7iTA":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","../Utilities/utils":"bIOxy","./ResturantMenuItemCard":"k7iTA","./MiniCart":"efG2m","../Utilities/constants":"5t9MR","react-redux":"bdVon","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bIOxy":[function(require,module,exports) {
+// get searchpage data / search resturants amd dishes data
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "getSearchedResturants", ()=>getSearchedResturants);
+parcelHelpers.export(exports, "handleFilterMenuItems", ()=>handleFilterMenuItems);
+parcelHelpers.export(exports, "handleCategoryMenu", ()=>handleCategoryMenu);
+parcelHelpers.export(exports, "handleFilterVegItems", ()=>handleFilterVegItems);
+const searchResturants = async (text, setState)=>{
+    const similarresturants = await fetch(`https://www.swiggy.com/dapi/restaurants/search/suggest?lat=32.681881&lng=74.906294&str=${text}&trackingId=null`).then((res)=>res.json()).catch((res)=>{
+        throw new Error("Something Went Wrong");
+    });
+    setState(similarresturants?.data?.suggestions);
+};
+const debounce = (callback, delay)=>{
+    let timer;
+    return (...args)=>{
+        clearTimeout(timer);
+        timer = setTimeout(()=>{
+            callback(...args);
+        }, delay);
+    };
+};
+const getSearchedResturants = debounce(searchResturants, 500);
+const handleFilterMenuItems = (DishName, state, setState)=>{
+    setState(state.filter((resturant)=>{
+        if (resturant.name.toLowerCase().includes(DishName.toLowerCase())) return resturant;
+        if (DishName === "") return state;
+        else return null;
+    }));
+};
+const handleCategoryMenu = (categoryName, state, setState)=>{
+    setState(state.filter((item)=>item.category === categoryName));
+};
+const handleFilterVegItems = (isVeg, state, setState)=>{
+    isVeg ? setState(state.filter((item)=>item.isVeg >= 1)) : setState(state);
+}; //-------------------------------------------------------------------------------
+ //
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k7iTA":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$fb03 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -41829,7 +41738,98 @@ $RefreshReg$(_c, "RestaurantPageShimmer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2h5Kc":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react-shimmer-effects":"5ORgO","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"eDluk":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$642f = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$642f.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _utils = require("../Utilities/utils");
+var _s = $RefreshSig$();
+const RestaurantPageSearchbox = ({ menu , setFilteredMenu  })=>{
+    _s();
+    const [searchText, setSearchText] = (0, _react.useState)("");
+    const [isVeg, setIsVeg] = (0, _react.useState)(false);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "Resturant-Page-Input-Field sticky w-[530px] z-30 top-[195px] left-[405px] bottom-[32px] flex justify-between p-2 text-[white]",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                className: "bg-white p-4 px-8 flex justify-start items-center shadow-xl text-[black] ",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                        class: "fa-solid fa-magnifying-glass fa-lg relative right-[10px]"
+                    }, void 0, false, {
+                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+                        lineNumber: 11,
+                        columnNumber: 7
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        className: " bg-[white] w-[260px]",
+                        value: searchText,
+                        placeholder: "Search for Dishes...",
+                        onChange: (e)=>{
+                            setSearchText(e.target.value);
+                            (0, _utils.handleFilterMenuItems)(e.target.value, menu, setFilteredMenu);
+                        },
+                        type: "text"
+                    }, void 0, false, {
+                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+                        lineNumber: 13,
+                        columnNumber: 7
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+                lineNumber: 10,
+                columnNumber: 5
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                className: "bg-white flex justify-center items-center text-black p-2 px-4 shadow-xl",
+                children: [
+                    "Veg Only",
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                        className: "m-2 w-[20px] h-[20px]",
+                        value: isVeg,
+                        onChange: (e)=>{
+                            setIsVeg(e.target.value);
+                            (0, _utils.handleFilterVegItems)(e.target.checked, menu, setFilteredMenu);
+                        },
+                        type: "checkbox"
+                    }, void 0, false, {
+                        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+                        lineNumber: 20,
+                        columnNumber: 7
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+                lineNumber: 18,
+                columnNumber: 5
+            }, undefined)
+        ]
+    }, void 0, true, {
+        fileName: "src/Pages/RestaurantPageSearchbox.jsx",
+        lineNumber: 9,
+        columnNumber: 10
+    }, undefined);
+};
+_s(RestaurantPageSearchbox, "D10ElH+j2+SafQcKM4rbXiLElYA=");
+_c = RestaurantPageSearchbox;
+exports.default = RestaurantPageSearchbox;
+var _c;
+$RefreshReg$(_c, "RestaurantPageSearchbox");
+
+  $parcel$ReactRefreshHelpers$642f.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../Utilities/utils":"bIOxy","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"2h5Kc":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$1591 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42048,7 +42048,7 @@ _s(useAddress, "ME/LODm+NLUoc4zUS41wsCtiGIY=");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react":"21dqq","../MyApp":"91nZZ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"RI2Qh":[function(require,module,exports) {
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../MyApp":"91nZZ"}],"RI2Qh":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$cfe0 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -42481,7 +42481,7 @@ $RefreshReg$(_c, "LandingPage");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","../MyApp":"91nZZ","./ModalContent":"hNMfs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hNMfs":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","react-router-dom":"9xmpe","../Utilities/constants":"5t9MR","./ModalContent":"hNMfs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../MyApp":"91nZZ"}],"hNMfs":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ec6e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
